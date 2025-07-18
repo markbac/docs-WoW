@@ -24,6 +24,7 @@ The purpose of this Decision Log is to:
 * Record the date, deciders, and any implications of the decision.
 * Provide a historical context for future architectural or project evolution.
 * Facilitate impact analysis when changes are proposed.
+* **Where applicable, ensure decisions are linked to relevant Architecture Decision Records (ADRs).**
 
 ### 1.2 Scope
 
@@ -31,7 +32,7 @@ This Decision Log covers decisions related to [briefly describe the scope, e.g.,
 
 ## 2. Decision Log Entries
 
-[List each decision made. For each decision, include its rationale, alternatives considered, and any agreed-upon next steps or implications. Link to an ADR if it's an architectural decision.]
+[List each decision made. For each decision, include its rationale, alternatives considered, and any agreed-upon next steps or implications. **Architectural decisions should, where applicable, link to a corresponding Architecture Decision Record (ADR) for more detailed context and justification.**]
 
 | Decision ID | Decision (Concise) | Rationale | Alternatives Considered | Implications | Deciders | Date Made | Related ADR (if applicable) | Status | Notes |
 |-------------|--------------------|-----------|-------------------------|--------------|----------|-----------|-----------------------------|--------|-------|
