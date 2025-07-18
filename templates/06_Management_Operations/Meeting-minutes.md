@@ -6,7 +6,7 @@ time: HH:MM - HH:MM [Timezone]
 location: [e.g., Virtual (Google Meet/Zoom), Conference Room A]
 facilitator: [Name or Role of Facilitator]
 scribe: [Name or Role of Scribe]
-attendees:
+- attendees:
   - [Name 1] ([Role/Team])
   - [Name 2] ([Role/Team])
   - [Name 3] ([Role/Team])
