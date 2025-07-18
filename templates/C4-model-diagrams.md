@@ -83,7 +83,7 @@ C4Context
 
 **Mermaid Example:**
 
-```mermiad
+```mermaid
 C4Container
     title Container Diagram for [System Name]
 
