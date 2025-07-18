@@ -1,20 +1,20 @@
 ---
-title: Meeting Minutes - [Meeting Name/Topic]
-status: Draft / Reviewed / Finalised
-date: YYYY-MM-DD (Date of Meeting)
-time: HH:MM - HH:MM [Timezone]
-location: [e.g., Virtual (Google Meet/Zoom), Conference Room A]
-facilitator: [Name or Role of Facilitator]
-scribe: [Name or Role of Scribe]
-- attendees:
-  - [Name 1] ([Role/Team])
-  - [Name 2] ([Role/Team])
-  - [Name 3] ([Role/Team])
+title: "Meeting Minutes - [Meeting Name/Topic]"
+status: "[Draft | Reviewed | Finalised]"
+date: "YYYY-MM-DD"  # Date of Meeting
+time: "HH:MM - HH:MM [Timezone]"
+location: "[e.g., Virtual (Google Meet/Zoom), Conference Room A]"
+facilitator: "[Name or Role of Facilitator]"
+scribe: "[Name or Role of Scribe]"
+attendees:
+  - "[Name 1] ([Role/Team])"
+  - "[Name 2] ([Role/Team])"
+  - "[Name 3] ([Role/Team])"
 absentees:
-  - [Name 4] ([Reason for absence])
-version: 1.0
+  - "[Name 4] ([Reason for absence])"
+version: "1.0"
 related_documents:
-  - [Link to relevant project plan, design doc, etc.]
+  - "[Link to relevant project plan, design doc, etc.]"
 ---
 
 # 🗓️ Meeting Minutes / Decision Log: [Meeting Name/Topic]
