@@ -486,6 +486,8 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * *Diagram: Keystone lifecycle showing a V-model with a distinct, wavy, iterative section at its base, representing the Agile core within the structured V, with artifact placements indicated.*
 
+* **6.3 Transition Points and Gates:** Briefly explain what happens at the transition points between the V-arms and the wavy point (e.g., system requirements baselined before detailed design starts, integrated build before system test). This highlights how the structured and agile parts connect.
+
 ### Chapter 7: Culture and Leadership for Keystone Success: Operationalizing the Philosophy 🧑‍🤝‍🧑🚀
 
 * **7.1 Building a Culture of Trust and Empowerment:** This section details how to operationalize the "Psychological Safety" and "Autonomy" principles from Chapter 1.
@@ -496,17 +498,21 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Empowerment and Autonomy:** Trusting teams to make decisions and self-organise within the defined framework, focusing on enabling them rather than micro-managing.
 
+  * **Specific Leadership Behaviors:** Examples include active listening, delegating decision-making, providing clear boundaries without dictating methods, and celebrating initiative.
+
 * **7.2 Outcome-Driven Leadership:** This section details how to operationalize the "Purpose" and "Outcomes, Not Outputs" principles from Chapter 1.
 
   * **Shifting from Metrics to Value:** Focusing on delivering tangible outcomes and business value rather than solely on process metrics (e.g., velocity, lines of code).
 
   * **Clear Vision and Goals:** Leaders articulate a compelling product vision and clear, measurable outcomes, allowing teams to align their work effectively.
 
-  * **Adaptive Leadership in a Hybrid Environment:** How leaders (managers, architects) adapt their style to support both structured planning (V-arms) and iterative development (wavy core).
+  * **Adaptive Leadership in a Hybrid Environment:** How leaders (managers, architects) adapt their style to support both structured planning (V-arms) and iterative development (wavy core). This includes being comfortable with emergent solutions and managing uncertainty.
 
 * **7.3 Mentoring and Skill Development:** Building capabilities within teams for hybrid ways of working. This operationalizes the "Mastery" principle from Chapter 1.
 
 * **7.4 Championing Continuous Improvement:** Encouraging a mindset of learning and adaptation. This operationalizes the "Continuous Improvement Culture" principle from Chapter 1.
+
+  * **Assessing Team Health:** Beyond performance metrics, how leaders assess team well-being and collaboration (e.g., regular 1:1s, informal pulse checks, psychological safety surveys, observation of communication patterns).
 
 ### Chapter 8: Key Functions and Managing Living Artifacts 📚✨
 
@@ -522,39 +528,43 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Quality Assurance & Testing.
 
+  * **Interplay of Functions:** How these functions collaborate effectively (e.g., Product Vision and Architectural Guidance co-create high-level requirements; Process Facilitation supports cross-functional team syncs).
+
 * **8.2 Keystone Artifacts: Practical "Docs as Code" Implementation and Management:** This section provides a deep dive into the practical creation, maintenance, and governance of Keystone's living artifacts, operationalizing the "Lightweight Documentation" and "Decision Transparency" principles from Chapter 1.
 
-  * **Vision Brief / Product Vision Document:** How to create and manage this foundational artifact.
+  * **Vision Brief / Product Vision Document:** How to create and manage this foundational artifact, emphasizing conciseness and clarity.
 
-  * **arc42 Inception Canvas / Project Canvas:** Practical application and evolution.
+  * **arc42 Inception Canvas / Project Canvas:** Practical application and evolution for initial project alignment.
 
-  * **Requirements (System, Software, Firmware, Hardware):** Techniques for defining, linking, and evolving requirements in a living system, including the **Requirements Traceability Matrix (RTM)**.
+  * **Requirements (System, Software, Firmware, Hardware):** Techniques for defining, linking, and evolving requirements in a living system, including the **Requirements Traceability Matrix (RTM)** for end-to-end traceability.
 
-  * **Architecture Decision Records (ADRs):** Best practices for capturing and leveraging architectural decisions.
+  * **Architecture Decision Records (ADRs):** Best practices for capturing and leveraging architectural decisions, including templates and review processes.
 
-  * **Requests for Comments (RFCs) / Design Proposals:** Facilitating collaborative design and decision-making.
+  * **Requests for Comments (RFCs) / Design Proposals:** Facilitating collaborative design and decision-making through lightweight proposal and feedback mechanisms.
 
-  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Strategies for keeping design documentation current and integrated with code.
+  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Strategies for keeping design documentation current and integrated with code, emphasizing automated updates where possible.
 
-  * **arc42 Architecture Communication Canvas:** Practical application of communication strategies.
+  * **arc42 Architecture Communication Canvas:** Practical application of communication strategies to ensure the right information reaches the right audience.
 
-  * **Test Plans & Reports (Integrated):** How to integrate testing documentation and reporting into the continuous flow.
+  * **Test Plans & Reports (Integrated):** How to integrate testing documentation and reporting into the continuous flow, leveraging automation.
 
   * **Toolchain Setup for Docs as Code:** Detailed guidance on setting up Git repositories for documentation, integrating static site generators (e.g., MkDocs, Sphinx), and automated publishing via CI/CD pipelines.
 
-  * **Markdown/AsciiDoc Best Practices:** Standards for writing clear, concise, and consistent documentation.
+  * **Markdown/AsciiDoc Best Practices:** Standards for writing clear, concise, and consistent documentation, including conventions for linking and referencing.
 
-  * **Diagramming Workflows:** How to effectively use embedded diagrams (Mermaid, PlantUML) within markdown for living diagrams.
+  * **Diagramming Workflows:** How to effectively use embedded diagrams (Mermaid, PlantUML) within markdown for living diagrams, ensuring they are version-controlled alongside text.
 
-  * **Review & Approval Workflows:** Using pull requests for documentation changes, just like code.
+  * **Review & Approval Workflows:** Using pull requests for documentation changes, just like code, enabling collaborative review and versioning.
 
-  * **Information Architecture:** Organizing documentation for discoverability and maintainability across large projects.
+  * **Information Architecture:** Organizing documentation for discoverability and maintainability across large projects, including folder structures and naming conventions.
 
-  * **Governance & Quality:** How to ensure documentation remains high quality and relevant over time.
+  * **Governance & Quality:** How to ensure documentation remains high quality and relevant over time, potentially through automated linting and periodic reviews.
 
 ### Chapter 9: Practical Risk Management in Keystone ⚠️
 
 * **9.1 Why Risk Management is Critical in Keystone:** To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Keystone lifecycle, ensuring proactive decision-making. This operationalizes the "Risk-Driven Development" principle from Chapter 4 and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
+
+  * **Risk Culture:** How a culture of psychological safety (from Chapter 7) enables honest and early risk reporting without fear of blame.
 
 * **9.2 Risk Identification Techniques:**
 
@@ -585,6 +595,8 @@ This approach exists to be adapted. What matters most is not following this docu
   * **Redundancy & Fault Tolerance:** Design patterns for critical systems.
 
   * **Contingency Planning:** What to do if a risk materializes.
+
+  * **Risk-Driven Prioritization:** How identified risks influence planning and prioritization in the "wavy iterative point" (e.g., high-risk items often tackled in early iterations as spikes or dedicated de-risking activities).
 
 * **9.5 Continuous Risk Monitoring & Review:**
 
@@ -650,6 +662,8 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Static analysis and code quality gates.
 
+  * **Version Control Strategies:** Common branching strategies relevant to embedded/firmware development (e.g., feature branches, release branches, Gitflow adaptations).
+
 * **10.4 Verification & Validation:**
 
   * **Unit Testing:** For individual functions and modules.
@@ -663,6 +677,8 @@ This approach exists to be adapted. What matters most is not following this docu
   * **Acceptance Testing:** Validating against user and system requirements (referencing **Test Plans & Reports**).
 
   * Automating test execution and reporting.
+
+  * **Tooling Integration:** Brief mention of how specific tools (e.g., specific IDEs, debuggers, static analysis tools, test harnesses) are used in these practices.
 
 ### Chapter 11: Keystone for Integrated Products: Hardware & Mechanical Considerations 🔩🔌
 
@@ -704,6 +720,10 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Using **Living Design Documents** and **ADRs** for hardware design decisions.
 
+  * **Hardware Design Tools:** Mention of common CAD/EDA tools (e.g., SolidWorks, Altium Designer) and how their outputs are managed as "Docs as Code."
+
+  * **Physical Prototyping Stages:** Briefly outline common hardware prototyping stages (e.g., breadboard, PCB rev 1, pre-production prototypes).
+
 * **11.5 Integrated Verification & Validation:**
 
   * **Physical Testing:** Environmental, stress, durability testing.
@@ -714,19 +734,21 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Managing test environments for mixed-discipline products.
 
+  * **Supply Chain Risks:** Briefly cross-reference with Chapter 9 on how supply chain vulnerabilities for hardware components are managed as risks.
+
 ### Chapter 12: Managing Complex Dependencies and PLM Integration 🔗🏗️
 
 * **12.1 Managing Complex Dependencies & Integration Points:**
 
   * **Dependency Mapping Techniques:** Visualising dependencies between software modules, firmware components, hardware revisions, and mechanical parts.
 
-  * **Interface Control Documents (ICDs):** How these are managed as living artifacts within Keystone.
+  * **Interface Control Documents (ICDs):** How these are managed as living artifacts within Keystone, ensuring clear communication between interconnected components.
 
-  * **Staged Integration Strategies:** Planning incremental integration points across disciplines.
+  * **Staged Integration Strategies:** Planning incremental integration points across disciplines to reduce risk and enable earlier feedback.
 
-  * **Managing Long Lead Times:** Specific strategies for hardware procurement and prototyping within iterative cycles.
+  * **Managing Long Lead Times:** Specific strategies for hardware procurement and prototyping within iterative cycles, including buffer management and parallel development.
 
-  * **Backward/Forward Compatibility:** Strategies for managing changes across different component versions.
+  * **Backward/Forward Compatibility:** Strategies for managing changes across different component versions to ensure system integrity over time.
 
 * **12.2 Product Lifecycle Management (PLM) Integration:**
 
@@ -734,19 +756,19 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Content Ideas:**
 
-    * **PLM's Role in Integrated Product Development:** From concept to retirement.
+    * **PLM's Role in Integrated Product Development:** From concept to retirement, managing the complete digital thread of the product.
 
-    * **Configuration Management:** Managing baselines and versions of the *entire* product (hardware, software, firmware, documentation) within a PLM system.
+    * **Configuration Management:** Managing baselines and versions of the *entire* product (hardware, software, firmware, documentation) within a PLM system, ensuring consistency and control.
 
-    * **Change Control & Impact Analysis:** How changes originating from the "wavy iterative point" are formally managed and propagated across all product components within PLM.
+    * **Change Control & Impact Analysis:** How changes originating from the "wavy iterative point" are formally managed and propagated across all product components within PLM, including impact analysis across disciplines.
 
     * **Traceability Across Disciplines:** Leveraging PLM to maintain end-to-end traceability from high-level requirements through design, manufacturing, and service data.
 
-    * **Data Handover from Development to PLM:** Strategies for seamlessly transferring living artifacts and design data into the PLM system.
+    * **Data Handover from Development to PLM:** Strategies for seamlessly transferring living artifacts and design data from development repositories into the formal PLM system at appropriate milestones.
 
-    * **Version Management of the Complete Product:** How PLM helps manage different product variants and revisions over time.
+    * **Version Management of the Complete Product:** How PLM helps manage different product variants and revisions over time, supporting product evolution.
 
-    * **Integration with Enterprise Systems:** Connecting PLM with ERP, CRM, and service management systems.
+    * **Integration with Enterprise Systems:** Connecting PLM with ERP, CRM, and service management systems for a holistic business view.
 
 ### Chapter 13: Tools and Technologies for Keystone Success 🛠️
 
@@ -776,17 +798,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Diagramming tools: Mermaid, PlantUML, draw\.io (for embedding diagrams in **Living Design Documents**).
 
-  * **Toolchain Setup:** Detailed guidance on setting up Git repositories for documentation, integrating static site generators, and automated publishing via CI/CD.
+  * **Toolchain Integration:** Beyond listing tools, briefly discuss how these tools are *integrated* to support the seamless flow (e.g., "Git as the central source of truth, integrated with CI/CD for automated builds and documentation publishing").
 
-  * **Markdown/AsciiDoc Best Practices:** Standards for writing clear, concise, and consistent documentation.
-
-  * **Diagramming Workflows:** How to effectively use embedded diagrams within markdown for living diagrams.
-
-  * **Review & Approval Workflows:** Using pull requests for documentation changes, just like code.
-
-  * **Information Architecture:** Organizing documentation for discoverability and maintainability across large projects.
-
-  * **Governance & Quality:** How to ensure documentation remains high quality and relevant over time.
+  * **Tool Selection Criteria:** Briefly mention factors for choosing tools (cost, scalability, ease of integration, team familiarity, vendor support, regulatory compliance features).
 
 * **13.5 Simulation & Emulation:**
 
@@ -852,6 +866,8 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Navigating the Tension:** How to manage the tension between existing structures and the ideal Keystone organization, using pilot projects and continuous improvement to drive change.
 
+* **14.5 Organizational Maturity Model:** Briefly introduce the idea of an organizational maturity model (e.g., CMMI levels, Agile Fluency Model) and how it relates to the progressive adoption of Keystone, emphasizing that full implementation is a journey, not a switch.
+
 ### Chapter 15: Adopting Keystone: Strategy, Pitfalls, and Phased Rollout 🚀
 
 * **15.1 Adopting Keystone: A Phased Approach:**
@@ -863,6 +879,10 @@ This approach exists to be adapted. What matters most is not following this docu
   * Practical steps for transitioning teams and processes.
 
   * Addressing initial resistance and building early wins.
+
+  * **Pilot Project Selection Criteria:** Guidance on choosing the right initial project for a successful Keystone pilot (e.g., manageable scope, supportive stakeholders, engaged team).
+
+  * **Communication Strategy for Adoption:** How to effectively communicate the "why" and benefits of adopting Keystone to the organization to build buy-in and manage expectations.
 
 * **15.2 Common Pitfalls and How to Avoid Them:**
 
@@ -923,6 +943,10 @@ This approach exists to be adapted. What matters most is not following this docu
       * Using measurement results to inform continuous improvement cycles, adjusting the Keystone process itself based on what's learned.
 
       * Emphasising that measurement is for learning and improving, not for individual performance evaluation in a way that undermines trust.
+
+    * **Leading vs. Lagging Indicators:** Briefly distinguish between these in the context of outcome metrics, and how they inform proactive adjustments.
+
+    * **Feedback Loop from Measurement:** How measured outcomes directly feed back into the product roadmap and future iterations, driving continuous discovery and adaptation.
 
 * **16.2 Estimation in Keystone: Navigating Uncertainty in Integrated Products**
 
@@ -1039,6 +1063,10 @@ This approach exists to be adapted. What matters most is not following this docu
     * **The Role of Architectural Runway:** Ensuring the architecture can support continuous evolution and new functionality without requiring major re-architecting.
 
     * **Examples:** SaaS products, long-lived IoT platforms, continuous hardware revisions with software updates, digital services.
+
+* **18.6 Emerging Technologies and Keystone's Adaptability:** How Keystone's principles (Adaptive Planning, Evolutionary Approach, Continuous Improvement) enable teams to integrate and leverage new technologies (e.g., Quantum Computing, Advanced Robotics, Bio-engineering) beyond just AI/ML, maintaining its future relevance.
+
+* **18.7 Ethical and Environmental Sustainability in Product Development:** Beyond team wellbeing, how Keystone implicitly or explicitly supports broader ethical considerations and environmental sustainability throughout the product lifecycle (e.g., design for recyclability, responsible sourcing, ethical AI development).
 
 ### Chapter 19: Conclusion: The Path Forward 🌟
 
