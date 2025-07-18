@@ -1,4 +1,4 @@
-# Vagile: A Hybrid Delivery Framework for Product Development
+# Keystone: A Hybrid Delivery Framework for Product Development
 
 ## Book Outline
 
@@ -300,7 +300,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 This approach exists to be adapted. What matters most is not following this document to the letter, but using it to ask better questions, create better environments, and deliver more meaningful outcomes.
 
-### Chapter 2: Introduction to Vagile: Bridging the Divide 🌉
+### Chapter 2: Introduction to Keystone: Bridging the Divide 🌉
 
 * **2.1 The Modern Product Development Landscape:**
 
@@ -310,13 +310,13 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Limitations of pure Agile for highly regulated or safety-critical products, or those with long hardware lead times.
 
-* **2.2 Introducing "Vagile": The Best of Both Worlds:**
+* **2.2 Introducing "Keystone": The Best of Both Worlds:**
 
-  * Vagile is a comprehensive framework and approach designed to navigate the complexities *and simplicities* of modern product development.
+  * Keystone is a comprehensive framework and approach designed to navigate the complexities *and simplicities* of modern product development.
 
-  * Defining Vagile: A pragmatic synthesis of the V-model's rigor and Agile's adaptability, *scalable and tailorable to fit any product's unique needs and context, not a one-size-fits-all "safe" solution*.
+  * Defining Keystone: A pragmatic synthesis of the V-model's rigor and Agile's adaptability, *scalable and tailorable to fit any product's unique needs and context, not a one-size-fits-all "safe" solution*.
 
-  * Why Vagile? Addressing the needs of integrated product development *across the spectrum of complexity, emphasizing pragmatic adaptation over rigid adherence*.
+  * Why Keystone? Addressing the needs of integrated product development *across the spectrum of complexity, emphasizing pragmatic adaptation over rigid adherence*.
 
   * Target Audience: Software, firmware, hardware engineers, project managers, solution architects, and product owners in industries like IoT, medical devices, automotive, and defence, *as well as startups and teams developing simpler products*.
 
@@ -348,13 +348,13 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Weaknesses: Challenges with long lead times, hardware dependencies, comprehensive documentation.
 
-* **3.3 The Inherent Tension: Why Hybrids Emerge:**
+* **3.3 The Inherent Tension: Why Hybrids Emerges:**
 
   * The need for structure and traceability alongside agility and responsiveness.
 
   * Identifying the "sweet spot" for integrated product development.
 
-### Chapter 4: Core Principles of Vagile 🔄
+### Chapter 4: Core Principles of Keystone 🔄
 
 * **4.1 Iterative Product Evolution:** Embracing an overall iterative approach to product development, with a highly iterative core for implementation and detailed verification.
 
@@ -368,7 +368,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **4.6 Risk-Driven Development:** Prioritising and mitigating risks early and often.
 
-### Chapter 5: The Vagile Lifecycle: The "V with a Wavy Iterative Point" 〰️
+### Chapter 5: The Keystone Lifecycle: The "V with a Wavy Iterative Point" 〰️
 
 * **5.1 The Outer V:**
 
@@ -420,9 +420,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Test Plans (Detailed) & Test Reports (Integrated):** Detailed test cases developed and executed continuously (unit, integration, HIL testing), with automated reports providing immediate feedback.
 
-* *Diagram: Vagile lifecycle showing a V-model with a distinct, wavy, iterative section at its base, representing the Agile core within the structured V, with artifact placements indicated.*
+* *Diagram: Keystone lifecycle showing a V-model with a distinct, wavy, iterative section at its base, representing the Agile core within the structured V, with artifact placements indicated.*
 
-### Chapter 6: Culture and Leadership for Vagile Success 🧑‍🤝‍🧑🚀
+### Chapter 6: Culture and Leadership for Keystone Success 🧑‍🤝‍🧑🚀
 
 * **6.1 Building a Culture of Trust and Empowerment:**
 
@@ -458,9 +458,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Quality Assurance & Testing.
 
-* **7.2 Vagile Artifacts: Living Documents for Product Storytelling (Docs as Code Deep Dive):**
+* **7.2 Keystone Artifacts: Living Documents for Product Storytelling (Docs as Code Deep Dive):**
 
-  * In Vagile, artifacts are dynamic, evolving narratives that guide the project, capture critical decisions, and ensure traceability from concept to delivery. Embracing a "Docs as Code" approach is fundamental to keeping these artifacts living and integrated into your development workflow.
+  * In Keystone, artifacts are dynamic, evolving narratives that guide the project, capture critical decisions, and ensure traceability from concept to delivery. Embracing a "Docs as Code" approach is fundamental to keeping these artifacts living and integrated into your development workflow.
 
   * **Vision Brief / Product Vision Document:**
 
@@ -468,7 +468,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Reviewed periodically, lives in version control (Git), updated via pull requests.
 
-    * **Vagile Fit:** Primarily part of the **Left Arm (V-Model Descent)**.
+    * **Keystone Fit:** Primarily part of the **Left Arm (V-Model Descent)**.
 
   * **arc42 Inception Canvas / Project Canvas:**
 
@@ -476,7 +476,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Used during initial discovery, can be a living markdown document, informs ADRs.
 
-    * **Vagile Fit:** Crucial at the very top of the **Left Arm (V-Model Descent)**.
+    * **Keystone Fit:** Crucial at the very top of the **Left Arm (V-Model Descent)**.
 
   * **Requirements (System, Software, Firmware, Hardware):**
 
@@ -484,7 +484,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** System requirements version-controlled; lower-level requirements highly iterative, managed within the **"Wavy Iterative Point."** Evolve with feedback. Requirements Traceability Matrix (RTM) is a living artifact linking these.
 
-    * **Vagile Fit:** System requirements on **Left Arm (V-Model Descent)**; detailed requirements are the **entry point to the "Wavy Iterative Point."**
+    * **Keystone Fit:** System requirements on **Left Arm (V-Model Descent)**; detailed requirements are the **entry point to the "Wavy Iterative Point."**
 
   * **Architecture Decision Records (ADRs):**
 
@@ -492,7 +492,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Immutable once recorded, but part of a living "decision log." Lives as markdown files in the repository.
 
-    * **Vagile Fit:** Generated during the **Left Arm (V-Model Descent)** for high-level choices, and continuously throughout the **"Wavy Iterative Point"** for detailed design decisions.
+    * **Keystone Fit:** Generated during the **Left Arm (V-Model Descent)** for high-level choices, and continuously throughout the **"Wavy Iterative Point"** for detailed design decisions.
 
   * **Requests for Comments (RFCs) / Design Proposals:**
 
@@ -500,7 +500,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Living documents during review, starting as markdown, circulated for comments, leading to ADRs or design document updates.
 
-    * **Vagile Fit:** Used extensively within the **"Wavy Iterative Point"** for significant design iterations, and potentially on the **Left Arm (V-Model Descent)** for major system design proposals.
+    * **Keystone Fit:** Used extensively within the **"Wavy Iterative Point"** for significant design iterations, and potentially on the **Left Arm (V-Model Descent)** for major system design proposals.
 
   * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):**
 
@@ -508,7 +508,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Epitome of "Docs as Code." Lives alongside code in markdown (with embedded Mermaid/PlantUML diagrams). Continuously updated as design evolves during the **"Wavy Iterative Point."**
 
-    * **Vagile Fit:** Initial high-level C4 diagrams (Context, Container) are part of the **Left Arm (V-Model Descent)**. Detailed Component and Code diagrams are refined within the **"Wavy Iterative Point."**
+    * **Keystone Fit:** Initial high-level C4 diagrams (Context, Container) are part of the **Left Arm (V-Model Descent)**. Detailed Component and Code diagrams are refined within the **"Wavy Iterative Point."**
 
   * **arc42 Architecture Communication Canvas:**
 
@@ -516,7 +516,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Strategic document, lives as markdown, updated if communication needs change.
 
-    * **Vagile Fit:** Primarily informs the **Left Arm (V-Model Descent)**, guiding communication throughout the lifecycle.
+    * **Keystone Fit:** Primarily informs the **Left Arm (V-Model Descent)**, guiding communication throughout the lifecycle.
 
   * **Test Plans & Reports (Integrated):**
 
@@ -524,11 +524,11 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Living Aspect:** Test plans evolve with requirements/design, live in version control. Test reports generated continuously by CI/CD pipelines, providing real-time feedback within the **"Wavy Iterative Point."**
 
-    * **Vagile Fit:** Test plans defined on **Left Arm (V-Model Descent)** (high-level) and refined within the **"Wavy Iterative Point"** (detailed test cases). Execution and reporting primarily within the **"Wavy Iterative Point"** and culminate in system validation on the **Right Arm (V-Model Ascent)**.
+    * **Keystone Fit:** Test plans defined on **Left Arm (V-Model Descent)** (high-level) and refined within the **"Wavy Iterative Point"** (detailed test cases). Execution and reporting primarily within the **"Wavy Iterative Point"** and culminate in system validation on the **Right Arm (V-Model Ascent)**.
 
-### Chapter 8: Practical Risk Management in Vagile ⚠️
+### Chapter 8: Practical Risk Management in Keystone ⚠️
 
-* **8.1 Why Risk Management is Critical in Vagile:** To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Vagile lifecycle, ensuring proactive decision-making.
+* **8.1 Why Risk Management is Critical in Keystone:** To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Keystone lifecycle, ensuring proactive decision-making.
 
 * **8.2 Risk Identification Techniques:**
 
@@ -548,7 +548,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Risk Register: A living artifact for tracking identified risks, their owners, mitigation strategies, and current status.
 
-* **8.4 Risk Mitigation Strategies (and how they align with Vagile):**
+* **8.4 Risk Mitigation Strategies (and how they align with Keystone):**
 
   * **Prototyping & Spikes:** Using the "wavy iterative point" to quickly build and test high-risk areas (e.g., new hardware interfaces, complex algorithms).
 
@@ -582,9 +582,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Market/Business Risks:** Changing customer needs, competitive landscape.
 
-* **8.7 Vagile Fit:** This section would demonstrate how proactive risk management is embedded into the iterative cycles, leveraging the agility to address risks early, while maintaining a formal register for traceability (V-model aspect).
+* **8.7 Keystone Fit:** This section would demonstrate how proactive risk management is embedded into the iterative cycles, leveraging the agility to address risks early, while maintaining a formal register for traceability (V-model aspect).
 
-### Chapter 9: Vagile in Practice: Software & Firmware Development 💻⚙️
+### Chapter 9: Keystone in Practice: Software & Firmware Development 💻⚙️
 
 * **9.1 Robust Requirements Gathering & Analysis:**
 
@@ -638,7 +638,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Automating test execution and reporting.
 
-### Chapter 10: Vagile for Integrated Products: Hardware & Mechanical Considerations 🔩🔌
+### Chapter 10: Keystone for Integrated Products: Hardware & Mechanical Considerations 🔩🔌
 
 * **10.1 The Unique Challenges of Hardware Integration:**
 
@@ -650,7 +650,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Regulatory compliance for physical products.
 
-* **10.2 Concurrent Engineering in a Vagile Context:**
+* **10.2 Concurrent Engineering in a Keystone Context:**
 
   * Overlapping design, development, and testing phases.
 
@@ -662,7 +662,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Decoupling & Synchronization:** Strategies for managing different iteration speeds.
 
-  * "Hardware Milestones" or "Hardware Design Loops" within the Vagile framework.
+  * "Hardware Milestones" or "Hardware Design Loops" within the Keystone framework.
 
   * Using mock-ups, emulators, and simulation to de-risk hardware dependencies.
 
@@ -694,7 +694,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Dependency Mapping Techniques:** Visualising dependencies between software modules, firmware components, hardware revisions, and mechanical parts.
 
-  * **Interface Control Documents (ICDs):** How these are managed as living artifacts within Vagile.
+  * **Interface Control Documents (ICDs):** How these are managed as living artifacts within Keystone.
 
   * **Staged Integration Strategies:** Planning incremental integration points across disciplines.
 
@@ -722,7 +722,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Integration with Enterprise Systems:** Connecting PLM with ERP, CRM, and service management systems.
 
-### Chapter 12: Tools and Technologies for Vagile Success 🛠️
+### Chapter 12: Tools and Technologies for Keystone Success 🛠️
 
 * **12.1 Project & Lifecycle Management Tools:**
 
@@ -772,15 +772,15 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Digital Twins for complex system modeling.
 
-### Chapter 13: Implementing and Sustaining Vagile 🚀
+### Chapter 13: Implementing and Sustaining Keystone 🚀
 
-* **13.1 Tailoring Vagile: Adapting to Business Context and Scale**
+* **13.1 Tailoring Keystone: Adapting to Business Context and Scale**
 
-  * **Why:** The "right" level of Vagile implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Vagile is about pragmatic adaptation, not a rigid or "safe" template*.
+  * **Why:** The "right" level of Keystone implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Keystone is about pragmatic adaptation, not a rigid or "safe" template*.
 
-  * **The Spectrum of Vagile Implementation:**
+  * **The Spectrum of Keystone Implementation:**
 
-    * **Lightweight Vagile (e.g., Startups, Small Teams):**
+    * **Lightweight Keystone (e.g., Startups, Small Teams):**
 
       * Emphasis on highly informal processes, minimal documentation (only essential artifacts), rapid iteration, and direct communication.
 
@@ -792,25 +792,25 @@ This approach exists to be adapted. What matters most is not following this docu
 
       * **Tooling:** Lightweight project management tools, strong Git usage, simple CI/CD.
 
-    * **Balanced Vagile (e.g., Mid-Sized Companies, Less Regulated Products):**
+    * **Balanced Keystone (e.g., Mid-Sized Companies, Less Regulated Products):**
 
       * A more structured approach to requirements and design, but still highly iterative in development.
 
       * More formalized artifacts and processes than lightweight, but less than heavyweight.
 
-      * **Artifacts:** All core Vagile artifacts are used, but with a focus on efficiency and "just enough" detail.
+      * **Artifacts:** All core Keystone artifacts are used, but with a focus on efficiency and "just enough" detail.
 
       * **Processes:** Regular iterative cycles, scheduled reviews, and dedicated risk management sessions.
 
       * **Tooling:** Integrated project management suites, robust CI/CD, dedicated documentation platforms.
 
-    * **Heavyweight Vagile (e.g., Large Enterprises, Highly Regulated Environments):**
+    * **Heavyweight Keystone (e.g., Large Enterprises, Highly Regulated Environments):**
 
       * Emphasis on formal traceability, comprehensive documentation, rigorous verification and validation, and robust governance.
 
       * Compliance and auditability are paramount, leveraging the V-model aspects more strongly.
 
-      * **Artifacts:** All Vagile artifacts are used with high fidelity, formal baselining, and strict version control. Detailed RTM, formal test plans, and comprehensive design specifications.
+      * **Artifacts:** All Keystone artifacts are used with high fidelity, formal baselining, and strict version control. Detailed RTM, formal test plans, and comprehensive design specifications.
 
       * **Processes:** Structured gates, formal reviews, detailed change control, and extensive audit trails.
 
@@ -822,13 +822,13 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Conway's Law:** "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."
 
-    * **Adapting Process to Fit Company Structure:** Recognizing existing organizational silos and communication patterns, and designing Vagile processes to work within (or around) them initially. This is often the pragmatic starting point for large, established companies.
+    * **Adapting Process to Fit Company Structure:** Recognizing existing organizational silos and communication patterns, and designing Keystone processes to work within (or around) them initially. This is often the pragmatic starting point for large, established companies.
 
-    * **Adapting Company Structure to Fit a Better Process:** Over time, strategically evolving organizational structures (e.g., forming truly cross-functional teams, breaking down departmental barriers) to better align with the desired Vagile framework. This is the long-term goal for optimal efficiency and product quality.
+    * **Adapting Company Structure to Fit a Better Process:** Over time, strategically evolving organizational structures (e.g., forming truly cross-functional teams, breaking down departmental barriers) to better align with the desired Keystone framework. This is the long-term goal for optimal efficiency and product quality.
 
-    * **Navigating the Tension:** How to manage the tension between existing structures and the ideal Vagile organization, using pilot projects and continuous improvement to drive change.
+    * **Navigating the Tension:** How to manage the tension between existing structures and the ideal Keystone organization, using pilot projects and continuous improvement to drive change.
 
-* **13.2 Adopting Vagile: A Phased Approach:**
+* **13.2 Adopting Keystone: A Phased Approach:**
 
   * Assessing current methodologies and identifying gaps.
 
@@ -850,7 +850,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Resistance to change (and how culture/leadership can mitigate it).
 
-* **13.4 Measuring Success: Focusing on Outcomes and Value in Vagile**
+* **13.4 Measuring Success: Focusing on Outcomes and Value in Keystone**
 
   * **Why:** To ensure that measurement drives the delivery of tangible value and desired product outcomes, rather than simply tracking activities or outputs. This reinforces a culture of trust and empowerment.
 
@@ -892,13 +892,13 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Continuous Learning and Adaptation:**
 
-      * Using measurement results to inform continuous improvement cycles, adjusting the Vagile process itself based on what's learned.
+      * Using measurement results to inform continuous improvement cycles, adjusting the Keystone process itself based on what's learned.
 
       * Emphasising that measurement is for learning and improving, not for individual performance evaluation in a way that undermines trust.
 
-* **13.5 Estimation in Vagile: Navigating Uncertainty in Integrated Products**
+* **13.5 Estimation in Keystone: Navigating Uncertainty in Integrated Products**
 
-  * **Why:** To provide practical strategies for estimating work across diverse disciplines (software, firmware, hardware, mechanical) within the Vagile framework, acknowledging inherent uncertainties and long lead times.
+  * **Why:** To provide practical strategies for estimating work across diverse disciplines (software, firmware, hardware, mechanical) within the Keystone framework, acknowledging inherent uncertainties and long lead times.
 
   * **Content Ideas:**
 
@@ -948,29 +948,29 @@ This approach exists to be adapted. What matters most is not following this docu
 
       * Using actuals to refine future estimates and improve predictability.
 
-* **13.6 Case Studies: Real-World Applications of Vagile 🌍💡**
+* **13.6 Case Studies: Real-World Applications of Keystone 🌍💡**
 
   * **Why:** Detailed, narrative case studies illustrate the challenges and successes of applying the framework.
 
-  * **Content:** Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Vagile, highlighting specific artifact usage, challenges, and lessons learned.
+  * **Content:** Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Keystone, highlighting specific artifact usage, challenges, and lessons learned.
 
-### Chapter 14: Advanced Topics & The Future of Vagile 🔮
+### Chapter 14: Advanced Topics & The Future of Keystone 🔮
 
-* **14.1 Scaling Vagile:**
+* **14.1 Scaling Keystone:**
 
-  * Applying Vagile principles to large programs (e.g., adapting SAFe or LeSS concepts for coordination).
+  * Applying Keystone principles to large programs (e.g., adapting SAFe or LeSS concepts for coordination).
 
   * Program-level planning and synchronization.
 
-* **14.2 Vagile in Regulated & Safety-Critical Environments 🛡️📜:**
+* **14.2 Keystone in Regulated & Safety-Critical Environments 🛡️📜:**
 
   * **Why:** Leveraging the V-model's strength in traceability and formal V\&V for compliance.
 
   * **Content:**
 
-    * **Compliance Mapping:** How Vagile artifacts and processes map to standards like ISO 26262 (automotive), IEC 62304 (medical), DO-178C (avionics), or industry-specific defence standards.
+    * **Compliance Mapping:** How Keystone artifacts and processes map to standards like ISO 26262 (automotive), IEC 62304 (medical), DO-178C (avionics), or industry-specific defence standards.
 
-    * **Formal Verification & Validation:** Adapting formal methods within the Vagile framework.
+    * **Formal Verification & Validation:** Adapting formal methods within the Keystone framework.
 
     * **Audit Trails & Evidence Generation:** Ensuring that the "living" artifacts provide sufficient evidence for audits.
 
@@ -978,17 +978,17 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **14.3 AI/ML in Product Development:**
 
-  * Integrating AI/ML components into Vagile products.
+  * Integrating AI/ML components into Keystone products.
 
   * Data management and model deployment considerations.
 
 * **14.4 Continuous Improvement & Evolution:**
 
-  * Adapting Vagile to new technologies and market demands.
+  * Adapting Keystone to new technologies and market demands.
 
   * The role of feedback loops in refining the process.
 
-* **14.5 Vagile for Continuous Product Development & Open-Ended Projects:**
+* **14.5 Keystone for Continuous Product Development & Open-Ended Projects:**
 
   * **Why:** To address scenarios where product development is ongoing, with no fixed end date, and continuous feature delivery is the norm.
 
@@ -1012,9 +1012,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Examples:** SaaS products, long-lived IoT platforms, continuous hardware revisions with software updates, digital services.
 
-### 15: Conclusion: The Path Forward 🌟
+### Chapter 15: Conclusion: The Path Forward 🌟
 
-* **15.1 Recap of Vagile's Benefits:**
+* **15.1 Recap of Keystone's Benefits:**
 
   * Enhanced predictability and traceability.
 
@@ -1024,7 +1024,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Reduced risk in complex projects.
 
-* **15.2 Your Journey to Vagile Mastery:**
+* **15.2 Your Journey to Keystone Mastery:**
 
   * Encouragement and next steps for readers.
 
