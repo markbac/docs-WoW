@@ -418,19 +418,19 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Keystone provides a **flexible, people-centered, outcome-driven framework** that systematically integrates the necessary structure and traceability for complex, multi-disciplinary products with the agility required for continuous adaptation and delivery. It's about finding the *optimal balance* for a given context, not just applying a generic hybrid. This ensures that organizations can achieve both the predictability required for robust products and the responsiveness needed to thrive in dynamic markets.
 
-### Chapter 5: Core Principles of Keystone 🔄
+### Chapter 5: Core Principles of Keystone: Operationalizing the Philosophy 🔄
 
-* **5.1 Iterative Product Evolution:** Embracing an overall iterative approach to product development, with a highly iterative core for implementation and detailed verification.
+* **5.1 Iterative Product Evolution:** Embracing an overall iterative approach to product development, with a highly iterative core for implementation and detailed verification. This operationalizes the "Evolutionary Approach" and "Iterative Delivery" from Chapter 1.
 
-* **5.2 Continuous Verification & Validation:** Shifting testing left and integrating it throughout.
+* **5.2 Continuous Verification & Validation:** Shifting testing left and integrating it throughout. This operationalizes "Operational Resilience" and "Fast Feedback Loops" from Chapter 1.
 
-* **5.3 Cross-Functional Collaboration:** Breaking down silos between software, firmware, hardware, and mechanical teams.
+* **5.3 Cross-Functional Collaboration:** Breaking down silos between software, firmware, hardware, and mechanical teams. This operationalizes "Teams as Systems: Organising for Flow" from Chapter 1.
 
-* **5.4 Adaptive Planning:** Balancing long-term vision with short-term flexibility.
+* **5.4 Adaptive Planning:** Balancing long-term vision with short-term flexibility. This operationalizes "Process: Structure Without Bureaucracy" and "Evolutionary Approach" from Chapter 1.
 
-* **5.5 Documentation as an Enabler:** Embracing "Docs as Code" for living, traceable artifacts.
+* **5.5 Documentation as an Enabler:** Embracing "Docs as Code" for living, traceable artifacts. This operationalizes "Lightweight Documentation" and "Decision Transparency" from Chapter 1.
 
-* **5.6 Risk-Driven Development:** Prioritising and mitigating risks early and often.
+* **5.6 Risk-Driven Development:** Prioritising and mitigating risks early and often. This operationalizes "Operational Resilience" and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
 
 ### Chapter 6: The Keystone Lifecycle: The "V with a Wavy Iterative Point" 〰️
 
@@ -486,9 +486,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * *Diagram: Keystone lifecycle showing a V-model with a distinct, wavy, iterative section at its base, representing the Agile core within the structured V, with artifact placements indicated.*
 
-### Chapter 7: Culture and Leadership for Keystone Success 🧑‍🤝‍🧑🚀
+### Chapter 7: Culture and Leadership for Keystone Success: Operationalizing the Philosophy 🧑‍🤝‍🧑🚀
 
-* **7.1 Building a Culture of Trust and Empowerment:**
+* **7.1 Building a Culture of Trust and Empowerment:** This section details how to operationalize the "Psychological Safety" and "Autonomy" principles from Chapter 1.
 
   * **Fostering a Collaborative Mindset:** How to break down departmental silos and encourage true cross-functional ownership.
 
@@ -496,7 +496,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Empowerment and Autonomy:** Trusting teams to make decisions and self-organise within the defined framework, focusing on enabling them rather than micro-managing.
 
-* **7.2 Outcome-Driven Leadership:**
+* **7.2 Outcome-Driven Leadership:** This section details how to operationalize the "Purpose" and "Outcomes, Not Outputs" principles from Chapter 1.
 
   * **Shifting from Metrics to Value:** Focusing on delivering tangible outcomes and business value rather than solely on process metrics (e.g., velocity, lines of code).
 
@@ -504,13 +504,13 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Adaptive Leadership in a Hybrid Environment:** How leaders (managers, architects) adapt their style to support both structured planning (V-arms) and iterative development (wavy core).
 
-* **7.3 Mentoring and Skill Development:** Building capabilities within teams for hybrid ways of working.
+* **7.3 Mentoring and Skill Development:** Building capabilities within teams for hybrid ways of working. This operationalizes the "Mastery" principle from Chapter 1.
 
-* **7.4 Championing Continuous Improvement:** Encouraging a mindset of learning and adaptation.
+* **7.4 Championing Continuous Improvement:** Encouraging a mindset of learning and adaptation. This operationalizes the "Continuous Improvement Culture" principle from Chapter 1.
 
-### Chapter 8: Key Functions and Living Artifacts 📚✨
+### Chapter 8: Key Functions and Managing Living Artifacts 📚✨
 
-* **8.1 Key Functions and Responsibilities:**
+* **8.1 Key Functions and Responsibilities:** This section details the practical roles and responsibilities within the Keystone framework, operationalizing the "Teams as Systems" principles from Chapter 1.
 
   * **Product Vision & Prioritisation:** Ensuring a clear product direction and prioritised backlog (often a Product Owner *function*).
 
@@ -522,77 +522,39 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Quality Assurance & Testing.
 
-* **8.2 Keystone Artifacts: Living Documents for Product Storytelling (Docs as Code Deep Dive):**
+* **8.2 Keystone Artifacts: Practical "Docs as Code" Implementation and Management:** This section provides a deep dive into the practical creation, maintenance, and governance of Keystone's living artifacts, operationalizing the "Lightweight Documentation" and "Decision Transparency" principles from Chapter 1.
 
-  * In Keystone, artifacts are dynamic, evolving narratives that guide the project, capture critical decisions, and ensure traceability from concept to delivery. Embracing a "Docs as Code" approach is fundamental to keeping these artifacts living and integrated into your development workflow.
+  * **Vision Brief / Product Vision Document:** How to create and manage this foundational artifact.
 
-  * **Vision Brief / Product Vision Document:**
+  * **arc42 Inception Canvas / Project Canvas:** Practical application and evolution.
 
-    * **Purpose:** Captures the high-level "why" and "what" of the product (problem, users, value, goals). The **opening chapter** of the project's story.
+  * **Requirements (System, Software, Firmware, Hardware):** Techniques for defining, linking, and evolving requirements in a living system, including the **Requirements Traceability Matrix (RTM)**.
 
-    * **Living Aspect:** Reviewed periodically, lives in version control (Git), updated via pull requests.
+  * **Architecture Decision Records (ADRs):** Best practices for capturing and leveraging architectural decisions.
 
-    * **Keystone Fit:** Primarily part of the **Left Arm (V-Model Descent)**.
+  * **Requests for Comments (RFCs) / Design Proposals:** Facilitating collaborative design and decision-making.
 
-  * **arc42 Inception Canvas / Project Canvas:**
+  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Strategies for keeping design documentation current and integrated with code.
 
-    * **Purpose:** Quickly defines project scope, stakeholders, high-level architecture, risks, and initial plan. The **project's pitch deck**.
+  * **arc42 Architecture Communication Canvas:** Practical application of communication strategies.
 
-    * **Living Aspect:** Used during initial discovery, can be a living markdown document, informs ADRs.
+  * **Test Plans & Reports (Integrated):** How to integrate testing documentation and reporting into the continuous flow.
 
-    * **Keystone Fit:** Crucial at the very top of the **Left Arm (V-Model Descent)**.
+  * **Toolchain Setup for Docs as Code:** Detailed guidance on setting up Git repositories for documentation, integrating static site generators (e.g., MkDocs, Sphinx), and automated publishing via CI/CD pipelines.
 
-  * **Requirements (System, Software, Firmware, Hardware):**
+  * **Markdown/AsciiDoc Best Practices:** Standards for writing clear, concise, and consistent documentation.
 
-    * **Purpose:** Detailed specifications (functional, non-functional, safety, compliance). Tiered from high-level system requirements to granular user stories and hardware specs. The **plot points and character descriptions**.
+  * **Diagramming Workflows:** How to effectively use embedded diagrams (Mermaid, PlantUML) within markdown for living diagrams.
 
-    * **Living Aspect:** System requirements version-controlled; lower-level requirements highly iterative, managed within the **"Wavy Iterative Point."** Evolve with feedback. Requirements Traceability Matrix (RTM) is a living artifact linking these.
+  * **Review & Approval Workflows:** Using pull requests for documentation changes, just like code.
 
-    * **Keystone Fit:** System requirements on **Left Arm (V-Model Descent)**; detailed requirements are the **entry point to the "Wavy Iterative Point."**
+  * **Information Architecture:** Organizing documentation for discoverability and maintainability across large projects.
 
-  * **Architecture Decision Records (ADRs):**
-
-    * **Purpose:** Captures significant architectural decisions, context, options, decision, and consequences. Explains *why* a path was chosen. The **critical turning points and strategic choices**.
-
-    * **Living Aspect:** Immutable once recorded, but part of a living "decision log." Lives as markdown files in the repository.
-
-    * **Keystone Fit:** Generated during the **Left Arm (V-Model Descent)** for high-level choices, and continuously throughout the **"Wavy Iterative Point"** for detailed design decisions.
-
-  * **Requests for Comments (RFCs) / Design Proposals:**
-
-    * **Purpose:** Formal (or semi-formal) proposals for significant changes, new features, or architectural patterns. Solicits feedback. **Draft chapters or proposed plot twists**.
-
-    * **Living Aspect:** Living documents during review, starting as markdown, circulated for comments, leading to ADRs or design document updates.
-
-    * **Keystone Fit:** Used extensively within the **"Wavy Iterative Point"** for significant design iterations, and potentially on the **Left Arm (V-Model Descent)** for major system design proposals.
-
-  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):**
-
-    * **Purpose:** Details technical design of system, components, interfaces, interactions (using C4 model levels). The **blueprints and detailed scene descriptions**.
-
-    * **Living Aspect:** Epitome of "Docs as Code." Lives alongside code in markdown (with embedded Mermaid/PlantUML diagrams). Continuously updated as design evolves during the **"Wavy Iterative Point."**
-
-    * **Keystone Fit:** Initial high-level C4 diagrams (Context, Container) are part of the **Left Arm (V-Model Descent)**. Detailed Component and Code diagrams are refined within the **"Wavy Iterative Point."**
-
-  * **arc42 Architecture Communication Canvas:**
-
-    * **Purpose:** Defines *how* the architecture will be communicated to different stakeholders (views, detail, tools). The **publishing strategy** for the architecture's narrative.
-
-    * **Living Aspect:** Strategic document, lives as markdown, updated if communication needs change.
-
-    * **Keystone Fit:** Primarily informs the **Left Arm (V-Model Descent)**, guiding communication throughout the lifecycle.
-
-  * **Test Plans & Reports (Integrated):**
-
-    * **Purpose:** Documents strategy for verification and validation (test cases, procedures, results). The **quality assurance checks and proofreading**.
-
-    * **Living Aspect:** Test plans evolve with requirements/design, live in version control. Test reports generated continuously by CI/CD pipelines, providing real-time feedback within the **"Wavy Iterative Point."**
-
-    * **Keystone Fit:** Test plans defined on **Left Arm (V-Model Descent)** (high-level) and refined within the **"Wavy Iterative Point"** (detailed test cases). Execution and reporting primarily within the **"Wavy Iterative Point"** and culminate in system validation on the **Right Arm (V-Model Ascent)**.
+  * **Governance & Quality:** How to ensure documentation remains high quality and relevant over time.
 
 ### Chapter 9: Practical Risk Management in Keystone ⚠️
 
-* **9.1 Why Risk Management is Critical in Keystone:** To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Keystone lifecycle, ensuring proactive decision-making.
+* **9.1 Why Risk Management is Critical in Keystone:** To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Keystone lifecycle, ensuring proactive decision-making. This operationalizes the "Risk-Driven Development" principle from Chapter 4 and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
 
 * **9.2 Risk Identification Techniques:**
 
@@ -836,63 +798,63 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Digital Twins for complex system modeling.
 
-### Chapter 14: Implementing and Sustaining Keystone 🚀
+### Chapter 14: Tailoring Keystone: Adapting to Business Context and Scale 🚀
 
-* **14.1 Tailoring Keystone: Adapting to Business Context and Scale**
+* **14.1 The Importance of Tailoring:** The "right" level of Keystone implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Keystone is about pragmatic adaptation, not a rigid or "safe" template*.
 
-  * **Why:** The "right" level of Keystone implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Keystone is about pragmatic adaptation, not a rigid or "safe" template*.
+* **14.2 The Spectrum of Keystone Implementation:**
 
-  * **The Spectrum of Keystone Implementation:**
+  * **Lightweight Keystone (e.g., Startups, Small Teams):**
 
-    * **Lightweight Keystone (e.g., Startups, Small Teams):**
+    * Emphasis on highly informal processes, minimal documentation (only essential artifacts), rapid iteration, and direct communication.
 
-      * Emphasis on highly informal processes, minimal documentation (only essential artifacts), rapid iteration, and direct communication.
+    * Focus on speed, learning, and immediate value delivery.
 
-      * Focus on speed, learning, and immediate value delivery.
+    * **Streamlined Artifacts:** Minimal Viable Documentation (e.g., concise Vision Brief, simple ADRs, C4 Context/Container only, automated test reports).
 
-      * **Streamlined Artifacts:** Minimal Viable Documentation (e.g., concise Vision Brief, simple ADRs, C4 Context/Container only, automated test reports).
+    * **Lean Processes:** Very short iterative cycles, informal daily syncs, rapid feedback loops.
 
-      * **Lean Processes:** Very short iterative cycles, informal daily syncs, rapid feedback loops.
+    * **Tooling:** Lightweight project management tools, strong Git usage, simple CI/CD.
 
-      * **Tooling:** Lightweight project management tools, strong Git usage, simple CI/CD.
+  * **Balanced Keystone (e.g., Mid-Sized Companies, Less Regulated Products):**
 
-    * **Balanced Keystone (e.g., Mid-Sized Companies, Less Regulated Products):**
+    * A more structured approach to requirements and design, but still highly iterative in development.
 
-      * A more structured approach to requirements and design, but still highly iterative in development.
+    * More formalized artifacts and processes than lightweight, but less than heavyweight.
 
-      * More formalized artifacts and processes than lightweight, but less than heavyweight.
+    * **Artifacts:** All core Keystone artifacts are used, but with a focus on efficiency and "just enough" detail.
 
-      * **Artifacts:** All core Keystone artifacts are used, but with a focus on efficiency and "just enough" detail.
+    * **Processes:** Regular iterative cycles, scheduled reviews, and dedicated risk management sessions.
 
-      * **Processes:** Regular iterative cycles, scheduled reviews, and dedicated risk management sessions.
+    * **Tooling:** Integrated project management suites, robust CI/CD, dedicated documentation platforms.
 
-      * **Tooling:** Integrated project management suites, robust CI/CD, dedicated documentation platforms.
+  * **Heavyweight Keystone (e.g., Large Enterprises, Highly Regulated Environments):**
 
-    * **Heavyweight Keystone (e.g., Large Enterprises, Highly Regulated Environments):**
+    * Emphasis on formal traceability, comprehensive documentation, rigorous verification and validation, and robust governance.
 
-      * Emphasis on formal traceability, comprehensive documentation, rigorous verification and validation, and robust governance.
+    * Compliance and auditability are paramount, leveraging the V-model aspects more strongly.
 
-      * Compliance and auditability are paramount, leveraging the V-model aspects more strongly.
+    * **Artifacts:** All Keystone artifacts are used with high fidelity, formal baselining, and strict version control. Detailed RTM, formal test plans, and comprehensive design specifications.
 
-      * **Artifacts:** All Keystone artifacts are used with high fidelity, formal baselining, and strict version control. Detailed RTM, formal test plans, and comprehensive design specifications.
+    * **Processes:** Structured gates, formal reviews, detailed change control, and extensive audit trails.
 
-      * **Processes:** Structured gates, formal reviews, detailed change control, and extensive audit trails.
+    * **Tooling:** Enterprise-grade ALM/PLM systems, advanced traceability tools, sophisticated CI/CD with compliance reporting.
 
-      * **Tooling:** Enterprise-grade ALM/PLM systems, advanced traceability tools, sophisticated CI/CD with compliance reporting.
+* **14.3 The Importance of Context:** Choosing what works for the type of business, product, and regulatory landscape. A "one-size-fits-all" approach leads to inefficiency or non-compliance.
 
-  * **The Importance of Context:** Choosing what works for the type of business, product, and regulatory landscape. A "one-size-fits-all" approach leads to inefficiency or non-compliance.
+* **14.4 Conway's Law and Organizational Alignment:**
 
-  * **Conway's Law and Organizational Alignment:**
+  * **Conway's Law:** "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."
 
-    * **Conway's Law:** "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."
+  * **Adapting Process to Fit Company Structure:** Recognizing existing organizational silos and communication patterns, and designing Keystone processes to work within (or around) them initially. This is often the pragmatic starting point for large, established companies.
 
-    * **Adapting Process to Fit Company Structure:** Recognizing existing organizational silos and communication patterns, and designing Keystone processes to work within (or around) them initially. This is often the pragmatic starting point for large, established companies.
+  * **Adapting Company Structure to Fit a Better Process:** Over time, strategically evolving organizational structures (e.g., forming truly cross-functional teams, breaking down departmental barriers) to better align with the desired Keystone framework. This is the long-term goal for optimal efficiency and product quality.
 
-    * **Adapting Company Structure to Fit a Better Process:** Over time, strategically evolving organizational structures (e.g., forming truly cross-functional teams, breaking down departmental barriers) to better align with the desired Keystone framework. This is the long-term goal for optimal efficiency and product quality.
+  * **Navigating the Tension:** How to manage the tension between existing structures and the ideal Keystone organization, using pilot projects and continuous improvement to drive change.
 
-    * **Navigating the Tension:** How to manage the tension between existing structures and the ideal Keystone organization, using pilot projects and continuous improvement to drive change.
+### Chapter 15: Adopting Keystone: Strategy, Pitfalls, and Phased Rollout 🚀
 
-* **14.2 Adopting Keystone: A Phased Approach:**
+* **15.1 Adopting Keystone: A Phased Approach:**
 
   * Assessing current methodologies and identifying gaps.
 
@@ -902,7 +864,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Addressing initial resistance and building early wins.
 
-* **14.3 Common Pitfalls and How to Avoid Them:**
+* **15.2 Common Pitfalls and How to Avoid Them:**
 
   * Lack of clear functional ownership.
 
@@ -914,7 +876,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Resistance to change (and how culture/leadership can mitigate it).
 
-* **14.4 Measuring Success: Focusing on Outcomes and Value in Keystone**
+### Chapter 16: Measuring Outcomes and Estimation in Keystone ✅📊
+
+* **16.1 Measuring Success: Focusing on Outcomes and Value in Keystone**
 
   * **Why:** To ensure that measurement drives the delivery of tangible value and desired product outcomes, rather than simply tracking activities or outputs. This reinforces a culture of trust and empowerment.
 
@@ -960,7 +924,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
       * Emphasising that measurement is for learning and improving, not for individual performance evaluation in a way that undermines trust.
 
-* **14.5 Estimation in Keystone: Navigating Uncertainty in Integrated Products**
+* **16.2 Estimation in Keystone: Navigating Uncertainty in Integrated Products**
 
   * **Why:** To provide practical strategies for estimating work across diverse disciplines (software, firmware, hardware, mechanical) within the Keystone framework, acknowledging inherent uncertainties and long lead times.
 
@@ -1012,21 +976,21 @@ This approach exists to be adapted. What matters most is not following this docu
 
       * Using actuals to refine future estimates and improve predictability.
 
-* **14.6 Case Studies: Real-World Applications of Keystone 🌍💡**
+### Chapter 17: Case Studies: Real-World Applications of Keystone 🌍💡
 
-  * **Why:** Detailed, narrative case studies illustrate the challenges and successes of applying the framework.
+* **17.1 Why:** Detailed, narrative case studies illustrate the challenges and successes of applying the framework.
 
-  * **Content:** Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Keystone, highlighting specific artifact usage, challenges, and lessons learned.
+* **17.2 Content:** Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Keystone, highlighting specific artifact usage, challenges, and lessons learned.
 
-### Chapter 15: Advanced Topics & The Future of Keystone 🔮
+### Chapter 18: Advanced Topics & The Future of Keystone 🔮
 
-* **15.1 Scaling Keystone:**
+* **18.1 Scaling Keystone:**
 
   * Applying Keystone principles to large programs (e.g., adapting SAFe or LeSS concepts for coordination).
 
   * Program-level planning and synchronization.
 
-* **15.2 Keystone in Regulated & Safety-Critical Environments 🛡️📜:**
+* **18.2 Keystone in Regulated & Safety-Critical Environments 🛡️📜:**
 
   * **Why:** Leveraging the V-model's strength in traceability and formal V\&V for compliance.
 
@@ -1040,19 +1004,19 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Risk Management for Safety:** Deep dive into hazard analysis and risk mitigation in a hybrid context.
 
-* **15.3 AI/ML in Product Development:**
+* **18.3 AI/ML in Product Development:**
 
   * Integrating AI/ML components into Keystone products.
 
   * Data management and model deployment considerations.
 
-* **15.4 Continuous Improvement & Evolution:**
+* **18.4 Continuous Improvement & Evolution:**
 
   * Adapting Keystone to new technologies and market demands.
 
   * The role of feedback loops in refining the process.
 
-* **15.5 Keystone for Continuous Product Development & Open-Ended Projects:**
+* **18.5 Keystone for Continuous Product Development & Open-Ended Projects:**
 
   * **Why:** To address scenarios where product development is ongoing, with no fixed end date, and continuous feature delivery is the norm.
 
@@ -1076,9 +1040,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Examples:** SaaS products, long-lived IoT platforms, continuous hardware revisions with software updates, digital services.
 
-### Chapter 16: Conclusion: The Path Forward 🌟
+### Chapter 19: Conclusion: The Path Forward 🌟
 
-* **16.1 Recap of Keystone's Benefits:**
+* **19.1 Recap of Keystone's Benefits:**
 
   * Enhanced predictability and traceability.
 
@@ -1088,7 +1052,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Reduced risk in complex projects.
 
-* **16.2 Your Journey to Keystone Mastery:**
+* **19.2 Your Journey to Keystone Mastery:**
 
   * Encouragement and next steps for readers.
 
