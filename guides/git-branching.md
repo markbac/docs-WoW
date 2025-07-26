@@ -44,7 +44,7 @@ Originally introduced by Vincent Driessen in 2010, GitFlow is a highly structure
     
 -   `hotfix/*`: For urgent fixes on production. Created from `main`, then merged back into both `main` and `develop`.
     
-
+```mermaid
     gitGraph
         commit id: "Initial"
         branch develop
@@ -73,7 +73,7 @@ Originally introduced by Vincent Driessen in 2010, GitFlow is a highly structure
         checkout develop
         merge hotfix/critical
         commit id: "Post-Hotfix"
-    
+```    
     
 
 **When to Use GitFlow:**
@@ -132,7 +132,7 @@ GitHub Flow is the minimalist cousin of GitFlow, designed for teams that ship fa
     
 5.  Deploy immediately (optional but encouraged). Everything in `main` should always be production-ready.
     
-
+```mermaid
     gitGraph
         commit id: "v1.0"
         branch feature/login
@@ -146,7 +146,7 @@ GitHub Flow is the minimalist cousin of GitFlow, designed for teams that ship fa
         checkout main
         merge feature/dashboard
         commit id: "v1.2"
-    
+```    
     
 
 **When to Use GitHub Flow:**
@@ -199,7 +199,7 @@ GitLab Flow is a hybrid strategy that builds on GitFlow and GitHub Flow, integra
     
 -   **Environment-Based Model**: Each environment (e.g., `pre-prod`, `staging`, `production`) has a dedicated branch. Merges promote changes from lower to higher environments.
     
-
+```mermaid
     gitGraph
         commit id: "Initial"
         branch develop
@@ -218,7 +218,7 @@ GitLab Flow is a hybrid strategy that builds on GitFlow and GitHub Flow, integra
         checkout main
         merge staging
         commit id: "Prod Deploy"
-    
+```    
     
 
 **When to Use GitLab Flow:**
@@ -256,7 +256,7 @@ In this strategy, each deployment environment (like `dev`, `qa`, `staging`, `pro
     
 -   **Use Cases/Who Used It**: Primarily found in legacy systems or environments with very manual deployment processes, where strict control over environment progression is needed, or in highly regulated environments with specific audit requirements.
     
-
+```mermaid
     gitGraph
         commit id: "Initial"
         branch dev
@@ -274,7 +274,7 @@ In this strategy, each deployment environment (like `dev`, `qa`, `staging`, `pro
         checkout staging
         merge prod
         commit id: "Prod Release"
-    
+```    
     
 
 **When to Use Environment Branching:**
@@ -325,7 +325,7 @@ Trunk-Based Development is the go-to for high-performing teams that deploy multi
     
 -   Incomplete features are hidden behind feature flags, allowing code to ship without being user-visible.
     
-
+```mermaid
     gitGraph
         commit id: "C1"
         commit id: "C2"
@@ -334,7 +334,7 @@ Trunk-Based Development is the go-to for high-performing teams that deploy multi
         commit id: "C5"
         commit id: "C6 (Feature B Flagged)"
         commit id: "C7"
-    
+```    
     
 
 **When to Use Trunk-Based Development:**
@@ -391,7 +391,7 @@ If your product has long-term users, multiple versions in the wild, and strict r
     
 -   Once finalised, the release branch is tagged and deployed. Hotfixes can be applied directly to this release branch if needed.
     
-
+```mermaid
     gitGraph
         commit id: "Initial Main"
         commit id: "Feature 1"
@@ -407,7 +407,7 @@ If your product has long-term users, multiple versions in the wild, and strict r
         checkout main
         merge release/v1.0
         commit id: "Post-Release Merge"
-    
+```    
     
 
 **When to Use Release Branching:**
@@ -568,7 +568,7 @@ One Flow is a simplified alternative to GitFlow, aiming to reduce its complexity
     
 -   Releases are created by tagging `main` at a stable point. Hotfixes are typically done on a new branch from `main` and then merged back.
     
-
+```mermaid
     gitGraph
         commit id: "Initial"
         branch feature/alpha
@@ -582,7 +582,7 @@ One Flow is a simplified alternative to GitFlow, aiming to reduce its complexity
         checkout main
         merge feature/beta
         tag "v1.1"
-    
+ ```   
     
 
 **When to Use One Flow:**
@@ -629,7 +629,7 @@ This is less of a strict branching model and more of a philosophy for merging fe
     
 -   **Ask**: For larger, riskier, or more complex changes, a formal PR is opened, requiring explicit review and approval from one or more teammates before merging.
     
-
+```mermaid
     gitGraph
         commit id: "Initial"
         branch feature/small-change
@@ -647,7 +647,7 @@ This is less of a strict branching model and more of a philosophy for merging fe
         checkout main
         merge feature/ask-approval
         note on commit "Ask: Merge after formal review and approval"
-    
+ ```   
     
 
 **When to Use Ship / Show / Ask:**
@@ -698,7 +698,7 @@ This approach is an evolution of Trunk-Based Development, particularly suited fo
     
 -   **Merge Back**: Critical bug fixes from the release train are merged back into `main`.
     
-
+```mermaid
     gitGraph
         commit id: "C1"
         commit id: "C2"
@@ -717,7 +717,7 @@ This approach is an evolution of Trunk-Based Development, particularly suited fo
         commit id: "RT 2 Bugfix 1"
         checkout main
         commit id: "C6"
-    
+ ```   
     
 
 **When to Use Mainline Development with Release Trains:**
