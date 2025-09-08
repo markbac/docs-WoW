@@ -1,71 +1,67 @@
 # Cornerstone framework flow
 
-```puml
-@startuml
-!theme cerulean
-skinparam activityFontSize 14
-skinparam activityArrowFontSize 12
-skinparam defaultFontName "Arial"
-
-title Cornerstone Lifecycle - Simplified View
-
-start
-
-|Product Owner|
-:Define product vision and goals;
-:Gather and refine high-level requirements;
-:Prioritise program backlog;
-
-|Solution Architect|
-:Create system architecture (C4 Context/Container);
-:Document architectural guardrails and key decisions (ADRs);
-:Review high-level requirements;
-
-|All Disciplines (Dev, QA)|
-:Conduct trade-off analysis on technologies;
-:Approve initial project scope and design;
-note right
-  **Transition Gate 1:**
-  A "check-in" to confirm a solid
-  foundation before development starts.
-end note
-
-|Development Teams|
-repeat
-  :Break down features into stories;
-  :Detailed design & implementation;
-  :Build, test & integrate increment;
-  :Refine detailed requirements;
-  :Provide continuous feedback;
-  note right
-    The Iterative Core:
-    This is where agile principles live,
-    with continuous feedback loops and
-    lightweight documentation.
-end note
-repeat while (Are features delivered and integrated?) is (no)
-
-|Quality Assurance|
-:Execute formal system-level tests;
-:Conduct user acceptance testing;
-
-|Product Owner|
-:Validate product against vision;
-:Accept final deliverables;
-note right
-  **Transition Gate 2:**
-  Final readiness check before release.
-end note
-
-|Program Management|
-:Prepare for product release;
-:Launch and monitor product in the market;
-
-|All Disciplines|
-:Gather feedback from production;
-:Use data to inform next iteration;
-
-stop
-
-@enduml
+```mermaid
+graph TD
+    subgraph "Structured Foundation"
+        subgraph "Product Owner"
+            A[Define vision and goals];
+        end
+        subgraph "Solution Architect"
+            B[Create system architecture];
+            C[Document architectural decisions <br>(ADRs/RFCs)];
+        end
+        subgraph "All Teams"
+            D[Conduct trade-off analysis];
+        end
+        A --> E[Define high-level requirements];
+        E --> B;
+        B --> C;
+        C --> D;
+    end
+    
+    D --> F{Transition Gate 1: <br>Requirements Baseline};
+    
+    subgraph "Iterative Development Core"
+        direction LR
+        subgraph "Development Team"
+            G[Breakdown features into stories];
+            H[Implement and build increment];
+            I[Perform continuous V&V];
+        end
+        F --> G;
+        G --> H;
+        H --> I;
+        I --> G;
+        I -.-> J{Are all features integrated?};
+    end
+    
+    J --> K{Transition Gate 2: <br>Final Build Complete};
+    
+    subgraph "Rigorous Validation Arm"
+        subgraph "Quality Assurance"
+            L[Perform formal system testing];
+        end
+        subgraph "Product Owner"
+            M[Accept final deliverables];
+        end
+        K --> L;
+        L --> M;
+    end
+    
+    M --> N[Release Product];
+    
+    style A fill:#D8E2DC
+    style B fill:#D8E2DC
+    style C fill:#D8E2DC
+    style D fill:#D8E2DC
+    style E fill:#D8E2DC
+    style F fill:#FEEAFA,stroke:#9F348E
+    style G fill:#E8E8FF
+    style H fill:#E8E8FF
+    style I fill:#E8E8FF
+    style J fill:#FEEAFA,stroke:#9F348E
+    style K fill:#FEEAFA,stroke:#9F348E
+    style L fill:#D8E2DC
+    style M fill:#D8E2DC
+    style N fill:#CEE5D3
 ```
