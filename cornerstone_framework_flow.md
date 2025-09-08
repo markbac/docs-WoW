@@ -8,7 +8,7 @@ graph TD
         end
         subgraph "Solution Architect"
             B[Create system architecture];
-            C[Document architectural decisions <br>(ADRs/RFCs)];
+            C[Document architectural decisions];
         end
         subgraph "All Teams"
             D[Conduct trade-off analysis];
@@ -19,7 +19,7 @@ graph TD
         C --> D;
     end
     
-    D --> F{Transition Gate 1: <br>Requirements Baseline};
+    D --> F{Transition Gate 1: Requirements Baseline};
     
     subgraph "Iterative Development Core"
         direction LR
@@ -35,7 +35,7 @@ graph TD
         I -.-> J{Are all features integrated?};
     end
     
-    J --> K{Transition Gate 2: <br>Final Build Complete};
+    J --> K{Transition Gate 2: Final Build Complete};
     
     subgraph "Rigorous Validation Arm"
         subgraph "Quality Assurance"
