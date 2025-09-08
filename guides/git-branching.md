@@ -45,34 +45,25 @@ Originally introduced by Vincent Driessen in 2010, GitFlow is a highly structure
 -   `hotfix/*`: For urgent fixes on production. Created from `main`, then merged back into both `main` and `develop`.
     
 ```mermaid
-    gitGraph
-        commit id: "Initial"
-        branch develop
-        commit id: "Dev Init"
-        checkout main
-        merge develop
-        branch feature/A
-        commit id: "Feat A 1"
-        commit id: "Feat A 2"
-        checkout develop
-        merge feature/A
-        branch feature/B
-        commit id: "Feat B 1"
-        checkout develop
-        merge feature/B
-        branch release/1.0
-        commit id: "Release Prep"
-        checkout main
-        merge release/1.0
-        checkout develop
-        merge release/1.0
-        branch hotfix/critical
-        commit id: "Hotfix"
-        checkout main
-        merge hotfix/critical
-        checkout develop
-        merge hotfix/critical
-        commit id: "Post-Hotfix"
+gitGraph
+    commit id: "Initial"
+    branch develop
+    commit id: "Dev Init"
+    checkout main
+    merge develop
+    branch feature/X
+    commit id: "Feat X 1"
+    commit id: "Feat X 2"
+    checkout develop
+    merge feature/X
+    branch staging
+    checkout staging
+    commit id: "Staging Test"
+    checkout develop
+    merge staging
+    checkout main
+    merge staging
+    commit id: "Prod Deploy"
 ```    
     
 
