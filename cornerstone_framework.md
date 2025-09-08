@@ -2,7 +2,7 @@
 
 ## Book Outline
 
-### Chapter 1: An Approach to Engineering Leadership and Delivery: An Integrative Philosophy for Modern Engineering Leadership 🌟
+### Chapter 1: An Approach to Engineering Leadership and Delivery- An Integrative Philosophy for Modern Engineering Leadership
 
 Modern engineering leadership demands more than managing tasks or enforcing methodologies. It is about creating a system in which engineers can think clearly, build effectively, and deliver outcomes that matter. This approach presents an **integrative philosophy**, synthesizing insights from leading thinkers in leadership, systems engineering, and software architecture. It offers a **pragmatic, people-centred framework** designed to be adaptable across diverse organisational contexts.
 
@@ -22,7 +22,7 @@ At its core, engineering leadership focuses on establishing context, enabling au
 
 Leadership exists to remove obstacles, cultivate team health, and provide clear direction without unnecessary interference. While leaders act primarily as facilitators, this role inherently includes the responsibility to set clear boundaries, make difficult decisions when necessary, and ensure alignment with the broader organisational purpose.
 
-#### Architectural Thinking: Delivery Through Design
+#### Architectural Thinking- Delivery Through Design
 
 * **Simplicity and Modularity:** Prefer simple, modular systems that evolve incrementally. Avoid over-engineering and aim for designs that are understandable, maintainable, and reduce cognitive load for development teams, thereby accelerating delivery and reducing error.
 
@@ -38,7 +38,7 @@ Leadership exists to remove obstacles, cultivate team health, and provide clear 
 
 Architecture must support resilience and learning from failure, not just upfront design and delivery.
 
-#### Process: Structure Without Bureaucracy
+#### Process- Structure Without Bureaucracy
 
 * **Lightweight Documentation:** Employ **Docs-as-Code** to keep documentation practical, version-controlled, and integrated with engineering workflows. Documentation should be just enough to serve its purpose and no more, avoiding the overhead of excessive or outdated artifacts that impede flow.
 
@@ -46,13 +46,13 @@ Architecture must support resilience and learning from failure, not just upfront
 
 * **Iterative Delivery Underpinned by Systems Thinking:** Balance agility with structured thinking for complex, multidisciplinary products. Use iterative cycles to deliver value early and often while maintaining a focus on long-term system health and understanding interconnectedness, ensuring local optimisations contribute to global goals.
 
-* **Prioritise Process and Framework Consistency Over Tool Uniformity:** Focus on aligning teams around common approaches, shared frameworks, and consistent processes. Recognise that a shared mindset and way of working are far more impactful than mandating specific tools. While some tool standardization can offer valid benefits (e.g., security, onboarding efficiency, consolidated licensing), the **philosophical imperative is to make informed, value-driven decisions about tools**, ensuring they serve the desired process and outcome, rather than becoming ends in themselves. Optimal tool alignment is about deliberate choice, not blind conformity.
+* **Prioritise Process and Framework Consistency Over Tool uniformity:** Focus on aligning teams around common approaches, shared frameworks, and consistent processes. Recognise that a shared mindset and way of working are far more impactful than mandating specific tools. While some tool standardization can offer valid benefits (e.g., security, onboarding efficiency, consolidated licensing), the philosophical imperative is to make informed, value-driven decisions about tools, ensuring they serve the desired process and outcome, rather than becoming ends in themselves. Optimal tool alignment is about deliberate choice, not blind conformity.
 
 * **Regulatory Compliance Without Overhead:** In regulated environments, adapt documentation and processes to meet compliance needs while retaining delivery focus. Avoid letting compliance become a bottleneck that stifles innovation or agility, by integrating it seamlessly into the flow of work.
 
 Processes should enable engineers, not encumber them.
 
-#### Teams as Systems: Organising for Flow
+#### Teams as Systems- Organising for Flow
 
 * **Stream-Aligned Teams:** Focused on delivering features or services end-to-end. These teams own their work from concept to production, optimising for rapid, continuous delivery of value by minimising handoffs and external dependencies.
 
@@ -90,7 +90,7 @@ Strong partnerships between engineering and business functions drive coherent, e
 
 * **Sustainable Pace:** Protect team wellbeing by managing workloads, encouraging rest, and avoiding burnout cycles. Make sustainable delivery a leadership priority, understanding it's essential for long-term productivity, talent retention, and the ability to innovate.
 
-* **Operational Resilience:** Build systems to fail safely and recover quickly. Invest in monitoring, alerting, and incident response capabilities, accepting that complex systems will inevitably experience failures and designing for graceful degradation and rapid recovery.
+* **Operational Resilience:** Build systems that fail safely and recover quickly. Invest in monitoring, alerting, and incident response capabilities, accepting that complex systems will inevitably experience failures and designing for graceful degradation and rapid recovery.
 
 * **Incident Management as Learning:** Encourage blameless postmortems and continuous learning from failure. Treat incidents as opportunities for systemic and process improvement, fostering a culture of curiosity over blame, which is critical for continuous adaptation and resilience building.
 
@@ -112,7 +112,7 @@ Resilience is as much about people and processes as it is about technology.
 
 Strategic leadership ensures engineering efforts scale sustainably and align with organisational goals.
 
-#### Interplay and Resolution of Principles: Navigating Inherent Tensions
+#### Interplay and Resolution of Principles- Navigating Inherent Tensions
 
 * **Autonomy vs. Architectural Coherence:** While autonomy empowers teams, unchecked freedom can lead to fragmented architectures, increased cognitive load across the system, and technical debt. The resolution lies in **Lightweight Governance** and **Decision Transparency**, where autonomy operates within clearly communicated architectural guardrails and decisions are made transparently with their broader systemic impact considered. The overarching principle for resolution is **Systemic Health and Long-Term Value Creation**, ensuring local autonomy contributes positively to the overall system's integrity and future adaptability.
 
@@ -122,17 +122,17 @@ Strategic leadership ensures engineering efforts scale sustainably and align wit
 
 * **The "Tool Trap" vs. Optimal Alignment:** The tension between mandated uniformity and team-specific tool choice is resolved by grounding decisions in **value-driven outcomes**. Uniformity is justified only when it demonstrably reduces systemic friction (e.g., security, onboarding efficiency, consolidated licensing), or significantly improves efficiency, while diversity is embraced when it clearly enhances a team's effectiveness without compromising overall coherence. The philosophical approach is one of **deliberate, informed choice based on empirical evidence and a clear understanding of trade-offs**, rather than dogmatic adherence to either extreme.
 
-The resolution of these tensions is not about choosing one principle over another in isolation, but about finding a dynamic balance guided by the ultimate purpose: **creating high-performing, resilient engineering organisations that consistently deliver meaningful outcomes for the business and its customers, sustainably and ethically.** This requires continuous dialogue, transparent decision-making, and a leadership mindset that embraces complexity and trade-offs.
+The resolution of these tensions is not about choosing one principle over another in isolation, but about finding a dynamic balance guided by the ultimate purpose- **creating high-performing, resilient engineering organisations that consistently deliver meaningful outcomes for the business and its customers, sustainably and ethically.** This requires continuous dialogue, transparent decision-making, and a leadership mindset that embraces complexity and trade-offs.
 
 #### Framing Model and Progressive Adoption
 
-* **Level 1: Establish Foundations**
+* **Level 1- Establish Foundations**
 
-* **Level 2: Enable Flow and Delivery Discipline**
+* **Level 2- Enable Flow and Delivery Discipline**
 
-* **Level 3: Strategic Optimisation**
+* **Level 3- Strategic Optimisation**
 
-* **Level 4: Continuous Evolution**
+* **Level 4- Continuous Evolution**
 
 Each level builds upon the previous, allowing for organic, sustainable adoption.
 
@@ -150,7 +150,7 @@ Each level builds upon the previous, allowing for organic, sustainable adoption.
 
 * **Acknowledging organisational dysfunctions is critical.** Many organisations will require incremental, cultural shifts and dedicated effort to address existing technical debt, silos, or trust deficits before fully realising this model. Adoption is a journey of continuous improvement, not a one-time implementation, and progress may be slow in deeply entrenched cultures.
 
-* **Optimal Tool Alignment is a Deliberate Choice, Not a Simple Avoidance:** Be wary of organisational tendencies to obsess over common tools rather than focusing on the consistency of underlying approaches. While tool standardization can offer valid benefits (e.g., security, onboarding efficiency, consolidated licensing), the philosophical imperative is to make informed, value-driven decisions about tools, ensuring they serve the desired process and outcome. This requires a proactive, analytical approach to tool selection, balancing the benefits of uniformity against the gains from team-specific optimisation. In resource-limited or highly specialized contexts, tool diversity might be a necessity rather than a choice.
+* **Optimal Tool Alignment is a Deliberate Choice, Not a Simple Avoidance-** Be wary of organisational tendencies to obsess over common tools rather than focusing on the consistency of underlying approaches. While tool standardization can offer valid benefits (e.g., security, onboarding efficiency, consolidated licensing), the philosophical imperative is to make informed, value-driven decisions about tools, ensuring they serve the desired process and outcome, rather than becoming ends in themselves. This requires a proactive, analytical approach to tool selection, balancing the benefits of uniformity against the gains from team-specific optimisation. In resource-limited or highly specialized contexts, tool diversity might be a necessity rather than a choice.
 
 #### Emphasising Business Outcomes
 
@@ -190,11 +190,11 @@ This approach to engineering leadership and delivery combines structured archite
 
 * **Navigate inherent tensions between principles with deliberate intent, guided by the pursuit of systemic health and long-term value.**
 
-This is not a rigid framework, but a philosophy — a way of working that can be adapted and evolved to suit different industries, products, and teams. Its successful adoption hinges on a commitment to continuous improvement, cultural evolution, and pragmatic application within an organisation's unique context, navigating inherent tensions with deliberate intent.
+This is not a rigid framework, but a philosophy - a way of working that can be adapted and evolved to suit different industries, products, and teams. Its successful adoption hinges on a commitment to continuous improvement, cultural evolution, and pragmatic application within an organisation's unique context, navigating inherent tensions with deliberate intent.
 
-### Chapter 2: Introduction to Cornerstone: Bridging the Divide 🌉
+### Chapter 2- Introduction to Cornerstone- Bridging the Divide
 
-* **2.1 The Modern Product Development Landscape:**
+* **2.1 The Modern Product Development Landscape-**
 
   * The increasing complexity of products (software, firmware, hardware, mechanical) *and the critical need for adaptable approaches for all product types, from simple to highly complex*.
 
@@ -202,59 +202,59 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * Limitations of pure Agile for highly regulated or safety-critical products, or those with long hardware lead times.
 
-* **2.2 Introducing "Cornerstone": The Best of All Approaches:**
+* **2.2 Introducing "Cornerstone"- The Best of All Approaches-**
 
   * Cornerstone is a comprehensive philosophy that systematically integrates the best of structured, disciplined methodologies with the agility of iterative development.
 
-  * Defining Cornerstone: A pragmatic philosophy that is *scalable and tailorable to fit any product's unique needs and context, not a one-size-fits-all "safe" solution*.
+  * Defining Cornerstone- A pragmatic philosophy that is *scalable and tailorable to fit any product's unique needs and context, not a one-size-fits-all "safe" solution*.
 
-  * Why Cornerstone? Addressing the needs of integrated product development *across the spectrum of complexity, emphasizing pragmatic adaptation over rigid adherence*.
+  * Why Cornerstone- Addressing the needs of integrated product development *across the spectrum of complexity, emphasizing pragmatic adaptation over rigid adherence*.
 
-  * Target Audience: Software, firmware, hardware engineers, project managers, solution architects, and product owners in industries like IoT, medical devices, automotive, and defence, *as well as startups and teams developing simpler products*.
+  * Target Audience- Software, firmware, hardware engineers, project managers, solution architects, and product owners in industries like IoT, medical devices, automotive, and defence, *as well as startups and teams developing simpler products*.
 
-* **2.3 How This Book Will Guide You:**
+* **2.3 How This Book Will Guide You-**
 
   * Practical insights, real-world considerations, and actionable strategies.
 
   * Emphasis on lightweight, meaningful documentation and "Docs as Code."
 
-### Chapter 3: Foundations of Hybrid Development 🏗️
+### Chapter 3- Foundations of Hybrid Development
 
-* **3.1 The V-Model Revisited:**
+* **3.1 The V-Model Revisited-**
 
-  * Core phases: Requirements, Design, Implementation, Verification, Validation.
+  * Core phases- Requirements, Design, Implementation, Verification, Validation.
 
-  * Strengths: Traceability, predictability, suitability for regulated environments.
+  * Strengths- Traceability, predictability, suitability for regulated environments.
 
-  * Weaknesses: Rigidity, late feedback, difficulty with change.
+  * Weaknesses- Rigidity, late feedback, difficulty with change.
 
-  * *Diagram: Standard V-model with phases.*
+  * *Diagram- Standard V-model with phases.*
 
-* **3.2 The Agile Manifesto & Principles:**
+* **3.2 The Agile Manifesto & Principles-**
 
-  * Key values: Individuals and interactions, working software, customer collaboration, responding to change.
+  * Key values- Individuals and interactions, working software, customer collaboration, responding to change.
 
-  * Common Agile frameworks: Scrum, Kanban (brief overview).
+  * Common Agile frameworks- Scrum, Kanban (brief overview).
 
-  * Strengths: Flexibility, rapid iteration, continuous feedback.
+  * Strengths- Flexibility, rapid iteration, continuous feedback.
 
-  * Weaknesses: Challenges with long lead times, hardware dependencies, comprehensive documentation.
+  * Weaknesses- Challenges with long lead times, hardware dependencies, comprehensive documentation.
 
-* **3.3 The Inherent Tension: Why Hybrids Emerge:**
+* **3.3 The Inherent Tension- Why Hybrids Emerge-**
 
   * The need for structure and traceability alongside agility and responsiveness.
 
   * Identifying the "sweet spot" for integrated product development.
 
-### Chapter 4: How Cornerstone Differentiates from Existing Frameworks 🧭
+### Chapter 4- How Cornerstone Differentiates from Existing Frameworks
 
-#### 4.1 The Need for a Tailored Approach:
+#### 4.1 The Need for a Tailored Approach-
 
 * No single framework (traditional, agile, or hybrid) is a perfect fit for all contexts, especially for integrated products across varying complexities and regulatory needs.
 
 * Cornerstone is explicitly designed to be *adaptable* rather than prescriptive, drawing on the strengths of others while addressing their common limitations for multi-disciplinary development.
 
-#### 4.2 How Cornerstone Incorporates the Strengths of Traditional Approaches (e.g., V-Model, Waterfall, Spiral, RUP):
+#### 4.2 How Cornerstone Incorporates the Strengths of Traditional Approaches (e.g., V-Model, Waterfall, Spiral, RUP)-
 
 * **Shared Strengths:** Cornerstone incorporates the crucial traceability, structured requirements definition, and rigorous verification/validation that are strong points of V-Model, Spiral, and RUP, which are essential for predictability and compliance.
 
@@ -262,13 +262,13 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Suitability:** Cornerstone provides the **necessary dynamism and feedback loops** for projects where requirements evolve, or where physical hardware iterations demand faster feedback pure Waterfall/V-Model allows, leading to more efficient and adaptable product development.
 
-#### 4.3 How Cornerstone Incorporates the Strengths of Agile/Iterative Frameworks (e.g., Scrum, Kanban, XP, DSDM, Crystal, FDD):
+#### 4.3 How Cornerstone Incorporates the Strengths of Agile/Iterative Frameworks (e.g., Scrum, Kanban, XP, DSDM, Crystal, FDD)-
 
 * **Shared Strengths:** Cornerstone fully embraces iterative delivery, cross-functional teams, continuous improvement, and rapid feedback loops, which are core to Agile methodologies.
 
-* **Key Differentiator (Structure & Traceability for Integrated Products):** Cornerstone explicitly addresses Agile's common challenges when dealing with complex, integrated products:
+* **Key Differentiator (Structure & Traceability for Integrated Products):** Cornerstone explicitly addresses Agile's common challenges when dealing with complex, integrated products-
 
-  * **Hardware/Mechanical Dependencies:** While Agile excels at rapid software iteration, it often struggles to provide the necessary predictability and integration points for physical hardware with long lead times and high iteration costs. Cornerstone’s structured approach explicitly integrates these considerations.
+  * **Hardware/Mechanical Dependencies:** While Agile excels at rapid software iteration, it often struggles to provide the necessary predictability and integration points for physical hardware with long lead times and high iteration costs. Cornerstone's structured approach explicitly integrates these considerations.
 
   * **Formal Documentation/Compliance:** Pure Agile can be too lightweight for regulated or safety-critical environments that demand extensive audit trails and formal evidence. Cornerstone provides a structured approach and promotes "Docs as Code" for necessary rigor without introducing excessive bureaucracy.
 
@@ -276,7 +276,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Suitability:** Cornerstone provides the **optimal balance of structure and agility** for multi-disciplinary products where pure Agile might fall short on governance, long-term architectural integrity, or hardware integration needs.
 
-#### 4.4 How Cornerstone Differentiates from Scaling Agile Frameworks (e.g., SAFe, LeSS, Nexus, Spotify Model):
+#### 4.4 How Cornerstone Differentiates from Scaling Agile Frameworks (e.g., SAFe, LeSS, Nexus, Spotify Model)-
 
 * **Shared Goals:** Acknowledge the shared objective of coordinating multiple teams and delivering value at scale across an enterprise.
 
@@ -290,7 +290,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Suitability:** Cornerstone offers a **more flexible, less dogmatic path to scaling**, particularly for organizations with integrated product challenges that require a highly customized hybrid approach.
 
-#### 4.5 How Cornerstone Differentiates from Lean/Continuous Improvement Approaches (e.g., Lean Software Development, TPS, Six Sigma):
+#### 4.5 How Cornerstone Differentiates from Lean/Continuous Improvement Approaches (e.g., Lean Software Development, TPS, Six Sigma)-
 
 * **Shared Strengths:** Cornerstone deeply aligns with Lean principles of eliminating waste, amplifying learning, and continuous flow. This is evident in its "Iterative Development Core," "Docs as Code" philosophy, and "Outcome-Driven" focus.
 
@@ -298,7 +298,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Suitability:** Cornerstone is **optimally suited** for products that require both the efficiency and continuous improvement of Lean, alongside the structured assurance and traceability of a more formal development lifecycle.
 
-#### 4.6 How Cornerstone Differentiates from Other Hybrid Frameworks (e.g., DAD, PRINCE2 Agile, Wagile):
+#### 4.6 How Cornerstone Differentiates from Other Hybrid Frameworks (e.g., DAD, PRINCE2 Agile, Wagile)-
 
 * **Shared Strengths:** Acknowledge the common ground of blending methodologies to achieve a balance between structure and agility.
 
@@ -306,87 +306,159 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Suitability:** Cornerstone is the **ideal framework** for organizations building complex, multi-disciplinary products that demand a truly integrated and adaptable development approach.
 
-#### 4.7 The Unique Value Proposition of Cornerstone:
+#### 4.7 The Unique Value Proposition of Cornerstone-
 
-* Cornerstone provides a **flexible, people-centered, outcome-driven framework** that systematically integrates the necessary structure and traceability for complex, multi-disciplinary products with the agility required for continuous adaptation and delivery. It's about finding the *optimal balance* for a given context, not just applying a generic hybrid. This ensures that organizations can achieve both the predictability required for robust products and the responsiveness needed to thrive in dynamic markets.
+* Cornerstone provides a **flexible, people-centred, outcome-driven framework** that systematically integrates the necessary structure and traceability for complex, multi-disciplinary products with the agility required for continuous adaptation and delivery. It's about finding the *optimal balance* for a given context, not just applying a generic hybrid. This ensures that organizations can achieve both the predictability required for robust products and the responsiveness needed to thrive in dynamic markets.
 
-### Chapter 5: Core Principles of Cornerstone: Operationalizing the Philosophy 🔄
+### Chapter 5- Core Principles of Cornerstone- Operationalizing the Philosophy
 
-* **5.1 Iterative Product Evolution:** Embracing an overall iterative approach to product development, with a highly iterative core for implementation and detailed verification. This operationalizes the "Evolutionary Approach" and "Iterative Delivery" from Chapter 1.
+* **5.1 Iterative Product Evolution-** Embracing an overall iterative approach to product development, with a highly iterative core for implementation and detailed verification. This operationalizes the "Evolutionary Approach" and "Iterative Delivery" from Chapter 1.
 
-* **5.2 Continuous Verification & Validation:** Shifting testing left and integrating it throughout. This operationalizes "Operational Resilience" and "Fast Feedback Loops" from Chapter 1.
+* **5.2 Continuous Verification & Validation-** Shifting testing left and integrating it throughout. This operationalizes "Operational Resilience" and "Fast Feedback Loops" from Chapter 1.
 
-* **5.3 Cross-Functional Collaboration:** Breaking down silos between software, firmware, hardware, and mechanical teams. This operationalizes "Teams as Systems: Organising for Flow" from Chapter 1.
+* **5.3 Cross-Functional Collaboration-** Breaking down silos between software, firmware, hardware, and mechanical teams. This operationalizes "Teams as Systems- Organising for Flow" from Chapter 1.
 
-* **5.4 Adaptive Planning:** Balancing long-term vision with short-term flexibility. This operationalizes "Process: Structure Without Bureaucracy" and "Evolutionary Approach" from Chapter 1.
+* **5.4 Adaptive Planning-** Balancing long-term vision with short-term flexibility. This operationalizes "Process- Structure Without Bureaucracy" and "Evolutionary Approach" from Chapter 1.
 
-* **5.5 Documentation as an Enabler:** Embracing "Docs as Code" for living, traceable artifacts. This operationalizes "Lightweight Documentation" and "Decision Transparency" from Chapter 1.
+* **5.5 Documentation as an Enabler-** Embracing "Docs as Code" for living, traceable artifacts. This operationalizes "Lightweight Documentation" and "Decision Transparency" from Chapter 1.
 
-* **5.6 Risk-Driven Development:** Prioritising and mitigating risks early and often. This operationalizes "Operational Resilience" and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
+* **5.6 Risk-Driven Development-** Prioritising and mitigating risks early and often. This operationalizes "Operational Resilience" and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
 
-### Chapter 6: The Cornerstone Lifecycle: A Fusion of Discipline and Agility 〰️
+### Chapter 6- The Cornerstone Lifecycle- A Fusion of Discipline and Agility
 
-#### 6.1 The Structured Foundation:
+#### 6.1 The Structured Foundation-
 
 * This foundational phase of the lifecycle focuses on structured, comprehensive requirements gathering and high-level system architecture and design. This ensures a clear, traceable foundation for the entire product.
 
-  * **Key Artifacts Aligned Here:**
+* **Core Goal:** Define the problem space and high-level solution to ensure a stable, agreed-upon starting point.
 
-    * **Vision Brief / Product Vision Document:** Strategic starting point, defining the "why" and "what."
+* **Activities:**
 
-    * **arc42 Inception Canvas / Project Canvas:** Crystallises initial scope, stakeholders, and high-level architectural considerations.
+  * **Requirements Elicitation:** Working with stakeholders to capture system-level functional, non-functional, safety, and compliance requirements. This is where we create our initial **Requirements Traceability Matrix (RTM)**.
 
-    * **Requirements (System Level):** High-level functional, non-functional, safety, and compliance requirements.
+  * **System Architecture:** Designing the overall system, defining major components, interfaces, and dependencies. We use the **C4 model's Context and Container levels** here to provide a clear, high-level view that is easily understood by all stakeholders, not just engineers.
 
-    * **Architecture Decision Records (ADRs - High-Level):** Capturing foundational architectural choices.
+  * **Trade-off Analysis:** Evaluating key architectural decisions and documenting them as **high-level ADRs** to capture the "why" behind choices like protocol selection (e.g., MQTT vs. CoAP for an IoT device) or component selection.
 
-    * **Living Design Documents (C4 Model - Context & Container Levels):** Visualising system boundaries and major internal components.
+* **Key Artifacts Aligned Here:**
 
-    * **arc42 Architecture Communication Canvas:** Defining how architectural information will be communicated.
+  * **Vision Brief / Product Vision Document:** Strategic starting point, defining the "why" and "what."
 
-    * **Test Plans (High-Level):** Outlining the strategy for system-level verification and validation.
+  * **arc42 Inception Canvas / Project Canvas:** Crystallises initial scope, stakeholders, and high-level architectural considerations.
 
-* **6.2 The Iterative Development Core (Agile Core):**
+  * **Requirements (System Level):** High-level functional, non-functional, safety, and compliance requirements.
+
+  * **Architecture Decision Records (ADRs - High-Level):** Capturing foundational architectural choices.
+
+  * **Living Design Documents (C4 Model - Context & Container Levels):** Visualising system boundaries and major internal components.
+
+  * **arc42 Architecture Communication Canvas:** Defining how architectural information will be communicated.
+
+  * **Test Plans (High-Level):** Outlining the strategy for system-level verification and validation.
+
+#### 6.2 The Iterative Development Core (Agile Core)-
 
 * At the heart of the lifecycle, where implementation, detailed design, and component-level verification occur, Agile principles drive iterative cycles. This allows for rapid feedback, adaptation, and continuous refinement of software, firmware, and even hardware prototypes.
 
-* This is where cross-functional teams work in short iterations, building and testing increments.
+* **Core Goal:** Incrementally build the product, manage change, and learn quickly.
 
-  * **Key Artifacts Aligned Here:**
+* **Activities:**
 
-    * **Requirements (Detailed Software, Firmware, Hardware):** Granular requirements (user stories, detailed component specs) driving each iteration, continuously refined. The **Requirements Traceability Matrix (RTM)** is actively maintained.
+  * **Detailed Requirements:** System-level requirements are broken down into granular, actionable items (e.g., user stories, detailed component specs) that drive each iteration. The RTM is continuously updated to maintain end-to-end traceability.
 
-    * **Architecture Decision Records (ADRs - Detailed):** Continuously generated for detailed design decisions within iterations.
+  * **Detailed Design:** Individual components and their interactions are designed. We use the **C4 model's Component and Code levels** and other detailed design documentation, which are kept as living documents.
 
-    * **Requests for Comments (RFCs) / Design Proposals:** Used frequently for proposing and discussing significant changes or new features within iterations.
+  * **Continuous Integration (CI):** For embedded systems, this means automating the build and a full suite of unit and integration tests (both on-host and on-target) with every code change.
 
-    * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Highly active, continuously updated as components are designed, built, and integrated.
+  * **Cross-Functional Collaboration:** Daily syncs and frequent collaboration between software, firmware, hardware, and mechanical teams to manage dependencies and solve integration issues as they arise.
 
-    * **Test Plans (Detailed) & Test Reports (Integrated):** Detailed test cases developed and executed continuously (unit, integration, HIL testing), with automated reports providing immediate feedback.
+* **Key Artifacts Aligned Here:**
 
-* **6.3 The Rigorous Validation Arm:**
+  * **Requirements (Detailed Software, Firmware, Hardware):** Granular requirements (user stories, detailed component specs) driving each iteration, continuously refined. The **Requirements Traceability Matrix (RTM)** is actively maintained.
+
+  * **Architecture Decision Records (ADRs - Detailed):** Continuously generated for detailed design decisions within iterations.
+
+  * **Requests for Comments (RFCs) / Design Proposals:** Used frequently for proposing and discussing significant changes or new features within iterations.
+
+  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Highly active, continuously updated as components are designed, built, and integrated.
+
+  * **Test Plans (Detailed) & Test Reports (Integrated):** Detailed test cases developed and executed continuously (unit, integration, HIL testing), with automated reports providing immediate feedback.
+
+#### 6.3 The Rigorous Validation Arm-
 
 * This phase of the lifecycle focuses on structured integration, system-level verification, and final product validation against initial requirements.
 
-  * **Key Artifacts Aligned Here:**
+* **Core Goal:** Formally confirm that the final product meets all high-level requirements and is ready for release.
 
-    * **Living Design Documents (Integrated System View):** Comprehensive, up-to-date view of the entire assembled system.
+* **Activities:**
 
-    * **Test Plans & Reports (System & Acceptance):** Execution of high-level test plans and final acceptance testing against system requirements.
+  * **System Integration:** Integrating all disciplines (software, firmware, hardware) into the final product. This phase focuses on debugging and validating the full system.
 
-    * **Requirements (System Level - Final Validation):** Used as the benchmark for final product validation, confirmed via the RTM.
+  * **Formal System Testing:** Executing the high-level test plans defined in the structured foundation to verify all requirements are met. This includes environmental, stress, and regulatory compliance testing.
 
-    * **Architecture Decision Records (ADRs - Key Integration Decisions):** Capturing any final critical decisions made during system integration or validation.
+  * **Acceptance Testing:** The final step, where stakeholders confirm the product's readiness for release based on the initial vision and requirements. The RTM provides the audit trail.
 
-* \*Diagram: Cornerstone lifecycle showing a structured foundation, an iterative development core at its heart, and a rigorous validation arm, representing the fusion of disciplined and agile approaches. \*
+* **Key Artifacts Aligned Here:**
 
-* **6.4 Transition Points and Gates:**
+  * **Living Design Documents (Integrated System View):** Comprehensive, up-to-date view of the entire assembled system.
 
-* Briefly explain what happens at the transition points between the structured and agile parts of the lifecycle (e.g., system requirements baselined before detailed design starts, integrated build before system test). This highlights how the formal and iterative aspects connect.
+  * **Test Plans & Reports (System & Acceptance):** Execution of high-level test plans and final acceptance testing against system requirements.
 
-### Chapter 7: Culture and Leadership for Cornerstone Success: Operationalizing the Philosophy 🧑‍🤝‍🧑🚀
+  * **Requirements (System Level - Final Validation):** Used as the benchmark for final product validation, confirmed via the RTM.
 
-#### 7.1 Building a Culture of Trust and Empowerment:
+  * **Architecture Decision Records (ADRs - Key Integration Decisions):** Capturing any final critical decisions made during system integration or validation.
+
+```
+graph TD
+    A[Structured Foundation:
+    - Requirements
+    - High-Level Architecture
+    - High-Level Planning] --> B[Transition Gate 1:
+    - Requirements Baselined
+    - High-Level Design Approved]
+    B --> C{Iterative Development Core:
+    - Detailed Design
+    - Build & Implement
+    - Component Test
+    - Continuous Integration & Feedback}
+    C --> D{Iterative Development Core:
+    - Detailed Design
+    - Build & Implement
+    - Component Test
+    - Continuous Integration & Feedback}
+    D --> E{Iterative Development Core:
+    - Detailed Design
+    - Build & Implement
+    - Component Test
+    - Continuous Integration & Feedback}
+    E --> F[Transition Gate 2:
+    - Final Build
+    - System Integrated]
+    F --> G[Rigorous Validation Arm:
+    - System-Level Testing
+    - Final V&V
+    - Acceptance Testing]
+    G --> H[Product Release]
+
+    style A fill:#D2EBF8,stroke:#007BFF,stroke-width:2px;
+    style B fill:#C2F0C2,stroke:#28A745,stroke-width:2px;
+    style C fill:#FFF9C4,stroke:#FFC107,stroke-width:2px;
+    style D fill:#FFF9C4,stroke:#FFC107,stroke-width:2px;
+    style E fill:#FFF9C4,stroke:#FFC107,stroke-width:2px;
+    style F fill:#C2F0C2,stroke:#28A745,stroke-width:2px;
+    style G fill:#D2EBF8,stroke:#007BFF,stroke-width:2px;
+    style H fill:#E6D2F8,stroke:#8B008B,stroke-width:2px;
+```
+
+* **6.4 Transition Points and Gates-**
+
+  * **Transition Gate 1 (Concept-to-Core):** This is where the product is deemed "ready for development." It's not a rigid waterfall gate but a check-in to confirm that the team has a clear, agreed-upon problem statement, a solid architectural vision, and a high-level plan.
+
+  * **Transition Gate 2 (Core-to-Validation):** This is the point at which the product is feature-complete and integrated. This is a critical milestone where formal system-level testing begins. It's a key point where disciplines must sync to ensure the full system is ready for rigorous validation.
+
+### Chapter 7- Culture and Leadership for Cornerstone Success- Operationalizing the Philosophy
+
+#### 7.1 Building a Culture of Trust and Empowerment-
 
 * This section details how to operationalize the "Psychological Safety" and "Autonomy" principles from Chapter 1.
 
@@ -398,7 +470,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Specific Leadership Behaviors:** Examples include active listening, delegating decision-making, providing clear boundaries without dictating methods, and celebrating initiative.
 
-#### 7.2 Outcome-Driven Leadership:
+#### 7.2 Outcome-Driven Leadership-
 
 * This section details how to operationalize the "Purpose" and "Outcomes, Not Outputs" principles from Chapter 1.
 
@@ -408,19 +480,19 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Adaptive Leadership in a Hybrid Environment:** How leaders (managers, architects) adapt their style to support both structured planning and iterative development. This includes being comfortable with emergent solutions and managing uncertainty.
 
-#### 7.3 Mentoring and Skill Development:
+#### 7.3 Mentoring and Skill Development-
 
 * Building capabilities within teams for hybrid ways of working. This operationalizes the "Mastery" principle from Chapter 1.
 
-#### 7.4 Championing Continuous Improvement:
+#### 7.4 Championing Continuous Improvement-
 
 * Encouraging a mindset of learning and adaptation. This operationalizes the "Continuous Improvement Culture" principle from Chapter 1.
 
-  * **Assessing Team Health:** Beyond performance metrics, how leaders assess team well-being and collaboration (e.g., regular 1:1s, informal pulse checks, psychological safety surveys, observation of communication patterns).
+  * **Assessing Team Health:** Beyond performance metrics, how leaders assess team well-being and collaboration (e.g., regular 1-1s, informal pulse checks, psychological safety surveys, observation of communication patterns).
 
-### Chapter 8: Key Functions and Managing Living Artifacts 📚✨
+### Chapter 8- Key Functions and Managing Living Artifacts
 
-#### 8.1 Key Functions and Responsibilities:
+#### 8.1 Key Functions and Responsibilities-
 
 * This section details the practical roles and responsibilities within the Cornerstone framework, operationalizing the "Teams as Systems" principles from Chapter 1.
 
@@ -436,7 +508,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Interplay of Functions:** How these functions collaborate effectively (e.g., Product Vision and Architectural Guidance co-create high-level requirements; Process Facilitation supports cross-functional team syncs).
 
-#### 8.2 Cornerstone Artifacts: Practical "Docs as Code" Implementation and Management:
+#### 8.2 Cornerstone Artifacts- Practical "Docs as Code" Implementation and Management-
 
 * This section provides a deep dive into the practical creation, maintenance, and governance of Cornerstone's living artifacts, operationalizing the "Lightweight Documentation" and "Decision Transparency" principles from Chapter 1.
 
@@ -468,75 +540,65 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Governance & Quality:** How to ensure documentation remains high quality and relevant over time, potentially through automated linting and periodic reviews.
 
-### Chapter 9: Practical Risk Management in Cornerstone ⚠️
+### Chapter 9- Practical Risk Management in Cornerstone
 
-#### 9.1 Why Risk Management is Critical in Cornerstone:
+#### 9.1 Why Risk Management is Critical in Cornerstone-
 
 * To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Cornerstone lifecycle, ensuring proactive decision-making. This operationalizes the "Risk-Driven Development" principle from Chapter 4 and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
 
   * **Risk Culture:** How a culture of psychological safety (from Chapter 7) enables honest and early risk reporting without fear of blame.
 
-#### 9.2 Risk Identification Techniques:
+#### 9.2 Risk Identification & Analysis-
 
-* Brainstorming sessions with cross-functional teams.
+* **Risk Identification Techniques:**
 
-* Checklists (e.g., common hardware risks, software security risks).
+  * **Cross-Functional Brainstorming:** Hosting sessions with all disciplines to identify risks at the intersection of domains (e.g., "What happens if we can't get the specified memory chip?").
 
-* Historical data analysis.
+  * **Checklists & Historical Data:** Using past projects to inform potential risks.
 
-* SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) applied to project and product.
+  * **SWOT Analysis:** Applying it to project, product, and technology choices.
 
-#### 9.3 Risk Analysis and Prioritisation:
+* **Risk Analysis and Prioritisation:**
 
-* Qualitative vs. Quantitative Risk Analysis.
+  * **Probability and Impact Matrix:** A simple but effective tool for prioritising risks by their likelihood and potential impact.
 
-* Probability and Impact Matrix (Risk Matrix) for prioritising risks.
+  * **Risk Register:** A living artifact for tracking identified risks, their owners, mitigation strategies, and current status. This is a crucial document for a regulated environment, providing a clear audit trail.
 
-* Risk Register: A living artifact for tracking identified risks, their owners, mitigation strategies, and current status.
+#### 9.3 Risk Mitigation Strategies-
 
-#### 9.4 Risk Mitigation Strategies (and how they align with Cornerstone):
-
-* **Prototyping & Spikes:** Using the "iterative development core" to quickly build and test high-risk areas (e.g., new hardware interfaces, complex algorithms).
+* **Prototyping & Spikes:** Using the "iterative development core" to quickly build and test high-risk areas (e.g., a software spike to test a new protocol stack on a prototype board). This is far more efficient than a formal design review.
 
 * **Simulation & Modeling:** De-risking through virtual environments before committing to physical builds (e.g., HIL, FEA, circuit simulation).
 
 * **Modular Design:** Reducing coupling to contain the impact of failures.
 
-* **Redundancy & Fault Tolerance:** Design patterns for critical systems.
-
 * **Contingency Planning:** What to do if a risk materializes.
 
-* **Risk-Driven Prioritization:** How identified risks influence planning and prioritization in the "iterative development core" (e.g., high-risk items often tackled in early iterations as spikes or dedicated de-risking activities).
+* **Risk-Driven Prioritization:** How identified risks influence planning in the "iterative development core." High-risk items should be tackled in early iterations as dedicated de-risking activities.
 
-#### 9.5 Continuous Risk Monitoring & Review:
+#### 9.4 Specific Risk Types for Integrated Products-
 
-* Integrating risk reviews into regular team synchronization points (not formal ceremonies, but part of iterative check-ins).
+* **Technical Risks:** Interoperability, performance, complexity, new technology. For example, will our new real-time scheduler work with the existing drivers?
 
-* Updating the Risk Register as new risks emerge or existing ones change status.
+* **Hardware-Specific Risks:** Component obsolescence, manufacturing defects, supply chain disruptions, physical integration challenges. What if the selected CPU has a 50-week lead time?
 
-* Escalation paths for critical risks.
+* **Firmware/Software Risks:** Race conditions, memory leaks, security vulnerabilities, real-time performance. A classic embedded systems concern.
 
-#### 9.6 Specific Risk Types for Integrated Products:
-
-* **Technical Risks:** Interoperability, performance, complexity, new technology.
-
-* **Hardware-Specific Risks:** Component availability, manufacturing defects, supply chain disruptions, physical integration challenges.
-
-* **Firmware/Software Risks:** Race conditions, memory leaks, security vulnerabilities, real-time performance.
-
-* **Mechanical Risks:** Material properties, structural integrity, thermal management, form/fit issues.
-
-* **Regulatory & Compliance Risks:** Failure to meet standards (linking to Section 8.2).
+* **Regulatory & Compliance Risks:** Failure to meet standards (linking to Section 8.2). Will our documentation be sufficient for a formal audit?
 
 * **Market/Business Risks:** Changing customer needs, competitive landscape.
 
-#### 9.7 Cornerstone Fit:
+#### 9.5 Continuous Risk Monitoring & Review-
 
-* This section would demonstrate how proactive risk management is embedded into the iterative cycles, leveraging the agility to address risks early, while maintaining a formal register for traceability (the lifecycle's structured aspects).
+* Integrating risk reviews into regular team synchronization points (not formal ceremonies, but part of iterative check-ins).
 
-### Chapter 10: Cornerstone in Practice: Software & Firmware Development 💻⚙️
+* Updating the Risk Register as new risks emerge or existing ones changes status.
 
-#### 10.1 Robust Requirements Gathering & Analysis:
+* Escalation paths for critical risks.
+
+### Chapter 10- Cornerstone in Practice- Software & Firmware Development
+
+#### 10.1 Robust Requirements Gathering & Analysis-
 
 * From high-level product requirements to actionable user stories and detailed functional/non-functional specifications.
 
@@ -548,7 +610,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Defining clear acceptance criteria for firmware features.
 
-#### 10.2 Architectural & Detailed Design:
+#### 10.2 Architectural & Detailed Design-
 
 * Applying the C4 model for software/firmware architecture, focusing on interfaces and dependencies (referencing **Living Design Documents**).
 
@@ -560,7 +622,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Leveraging **RFCs/Design Proposals** for significant design iterations.
 
-#### 10.3 Iterative Development Cycles:
+#### 10.3 Iterative Development Cycles-
 
 * Planning work for short, iterative cycles, focusing on delivering demonstrable increments.
 
@@ -576,7 +638,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Version Control Strategies:** Common branching strategies relevant to embedded/firmware development (e.g., feature branches, release branches, Gitflow adaptations).
 
-#### 10.4 Verification & Validation:
+#### 10.4 Verification & Validation-
 
 * **Unit Testing:** For individual functions and modules.
 
@@ -592,9 +654,9 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Tooling Integration:** Brief mention of how specific tools (e.g., specific IDEs, debuggers, static analysis tools, test harnesses) are used in these practices.
 
-### Chapter 11: Cornerstone for Integrated Products: Hardware & Mechanical Considerations 🔩🔌
+### Chapter 11- Cornerstone for Integrated Products- Hardware & Mechanical Considerations
 
-#### 11.1 The Unique Challenges of Hardware Integration:
+#### 11.1 The Unique Challenges of Hardware Integration-
 
 * Long lead times for components and manufacturing.
 
@@ -604,7 +666,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Regulatory compliance for physical products.
 
-#### 11.2 Concurrent Engineering in a Cornerstone Context:
+#### 11.2 Concurrent Engineering in a Cornerstone Context-
 
 * Overlapping design, development, and testing phases.
 
@@ -612,7 +674,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Managing dependencies and critical paths across domains.
 
-#### 11.3 Hardware Iteration Cycles & Software Iterations:
+#### 11.3 Hardware Iteration Cycles & Software Iterations-
 
 * **Decoupling & Synchronization:** Strategies for managing different iteration speeds.
 
@@ -620,7 +682,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Using mock-ups, emulators, and simulation to de-risk hardware dependencies.
 
-#### 11.4 Design & Development for Hardware/Mechanical:
+#### 11.4 Design & Development for Hardware/Mechanical-
 
 * Requirements capture for physical attributes (form, fit, function) (referencing **Requirements** artifact).
 
@@ -636,7 +698,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Physical Prototyping Stages:** Briefly outline common hardware prototyping stages (e.g., breadboard, PCB rev 1, pre-production prototypes).
 
-#### 11.5 Integrated Verification & Validation:
+#### 11.5 Integrated Verification & Validation-
 
 * **Physical Testing:** Environmental, stress, durability testing.
 
@@ -648,55 +710,51 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Supply Chain Risks:** Briefly cross-reference with Chapter 9 on how supply chain vulnerabilities for hardware components are managed as risks.
 
-### Chapter 12: Managing Complex Dependencies and PLM Integration 🔗🏗️
+### Chapter 12- Managing Complex Dependencies and PLM Integration
 
-#### 12.1 Managing Complex Dependencies & Integration Points:
+#### 12.1 Managing Complex Dependencies & Integration Points-
 
-* **Dependency Mapping Techniques:** Visualising dependencies between software modules, firmware components, hardware revisions, and mechanical parts.
+* **Dependency Mapping Techniques:** Visualising dependencies between software modules, firmware components, hardware revisions, and mechanical parts. This can be done using dedicated tools or by simply mapping them out in a collaborative artifact.
 
-* **Interface Control Documents (ICDs):** How these are managed as living artifacts within Cornerstone, ensuring clear communication between interconnected components.
+* **Interface Control Documents (ICDs):** How these are managed as living artifacts within Cornerstone, ensuring clear communication between interconnected components. The ICD isn't a static Word document; it's a version-controlled, living Markdown file that is updated as designs evolve, with pull requests for changes.
 
-* **Staged Integration Strategies:** Planning incremental integration points across disciplines to reduce risk and enable earlier feedback.
+* **Staged Integration Strategies:** Planning incremental integration points across disciplines to reduce risk and enable earlier feedback. For example, getting the firmware team a simple prototype board for sensor integration testing, long before the final production hardware is ready.
 
 * **Managing Long Lead Times:** Specific strategies for hardware procurement and prototyping within iterative cycles, including buffer management and parallel development.
 
 * **Backward/Forward Compatibility:** Strategies for managing changes across different component versions to ensure system integrity over time.
 
-#### 12.2 Product Lifecycle Management (PLM) Integration:
+#### 12.2 Product Lifecycle Management (PLM) Integration-
 
-* **Why:** For complex physical products, PLM systems are crucial for managing the entire product's lifecycle beyond development, including maintenance, upgrades, and end-of-life.
+* **Why PLM-** For complex physical products, PLM systems are crucial for managing the entire product's lifecycle beyond development, including maintenance, upgrades, and end-of-life. It serves as the single source of truth for the entire product, from its digital design to its physical form.
 
-* **Content Ideas:**
-
-  * **PLM's Role in Integrated Product Development:** From concept to retirement, managing the complete digital thread of the product.
+* **PLM's Role in Integrated Product Development-**
 
   * **Configuration Management:** Managing baselines and versions of the *entire* product (hardware, software, firmware, documentation) within a PLM system, ensuring consistency and control.
 
-  * **Change Control & Impact Analysis:** How changes originating from the "iterative development core" are formally managed and propagated across all product components within PLM, including impact analysis across disciplines.
+  * **Change Control & Impact Analysis:** How changes originating from the "iterative development core" are formally managed and propagated across all product components within PLM, including impact analysis across disciplines. A software change might require a new firmware revision and a hardware change might require a new software version. PLM tracks this.
 
   * **Traceability Across Disciplines:** Leveraging PLM to maintain end-to-end traceability from high-level requirements through design, manufacturing, and service data.
 
-  * **Data Handover from Development to PLM:** Strategies for seamlessly transferring living artifacts and design data from development repositories into the formal PLM system at appropriate milestones.
-
-  * **Version Management of the Complete Product:** How PLM helps manage different product variants and revisions over time, supporting product evolution.
+  * **Data Handover from Development to PLM:** Strategies for seamlessly transferring living artifacts and design data from development repositories into the formal PLM system at appropriate milestones. This isn't about moving all living docs, but about formalising baselines (e.g., at a production release).
 
   * **Integration with Enterprise Systems:** Connecting PLM with ERP, CRM, and service management systems for a holistic business view.
 
-### Chapter 13: Tools and Technologies for Cornerstone Success 🛠️
+### Chapter 13- Tools and Technologies for Cornerstone Success
 
-#### 13.1 Project & Lifecycle Management Tools:
+#### 13.1 Project & Lifecycle Management Tools-
 
 * Jira, Azure DevOps, GitLab Issues (for backlog management, work tracking, traceability).
 
 * Requirements management modules/plugins.
 
-#### 13.2 Version Control Systems:
+#### 13.2 Version Control Systems-
 
-* Git (for all artifacts: code, documentation, design files, CAD models) – the backbone of "Docs as Code."
+* Git (for all artifacts- code, documentation, design files, CAD models) - the backbone of "Docs as Code."
 
 * Branching strategies for multi-disciplinary teams.
 
-#### 13.3 Continuous Integration/Continuous Delivery (CI/CD):
+#### 13.3 Continuous Integration/Continuous Delivery (CI/CD)-
 
 * Jenkins, GitLab CI/CD, GitHub Actions, Azure Pipelines.
 
@@ -704,17 +762,17 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Integrating hardware test automation into CI.
 
-#### 13.4 Documentation & Modeling Tools (Practical "Docs as Code" Implementation):
+#### 13.4 Documentation & Modeling Tools (Practical "Docs as Code" Implementation)-
 
-* Markdown editors, Static Site Generators (e.g., MkDocs, Sphinx) – for creating and publishing **Living Design Documents**, **ADRs**, **RFCs**, etc.
+* Markdown editors, Static Site Generators (e.g., MkDocs, Sphinx) - for creating and publishing **Living Design Documents**, **ADRs**, **RFCs**, etc.
 
-* Diagramming tools: Mermaid, PlantUML, draw\.io (for embedding diagrams in **Living Design Documents**).
+* Diagramming tools- Mermaid, PlantUML, draw\.io (for embedding diagrams in **Living Design Documents**).
 
 * **Toolchain Integration:** Beyond listing tools, briefly discuss how these tools are *integrated* to support the seamless flow (e.g., "Git as the central source of truth, integrated with CI/CD for automated builds and documentation publishing").
 
 * **Tool Selection Criteria:** Briefly mention factors for choosing tools (cost, scalability, ease of integration, team familiarity, vendor support, regulatory compliance features).
 
-#### 13.5 Simulation & Emulation:
+#### 13.5 Simulation & Emulation-
 
 * Software simulators for embedded systems.
 
@@ -724,13 +782,13 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Digital Twins for complex system modeling.
 
-### Chapter 14: Tailoring Cornerstone: Adapting to Business Context and Scale 🚀
+### Chapter 14- Tailoring Cornerstone- Adapting to Business Context and Scale
 
-#### 14.1 The Importance of Tailoring:
+#### 14.1 The Importance of Tailoring-
 
 * The "right" level of Cornerstone implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Cornerstone is about pragmatic adaptation, not a rigid or "safe" template*.
 
-#### 14.2 The Spectrum of Cornerstone Implementation:
+#### 14.2 The Spectrum of Cornerstone Implementation-
 
 * **Lightweight Cornerstone (e.g., Startups, Small Teams):**
 
@@ -768,11 +826,11 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Tooling:** Enterprise-grade ALM/PLM systems, advanced traceability tools, sophisticated CI/CD with compliance reporting.
 
-#### 14.3 The Importance of Context:
+#### 14.3 The Importance of Context-
 
 * Choosing what works for the type of business, product, and regulatory landscape. A "one-size-fits-all" approach leads to inefficiency or non-compliance.
 
-#### 14.4 Conway's Law and Organizational Alignment:
+#### 14.4 Conway's Law and Organizational Alignment-
 
 * **Conway's Law:** "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."
 
@@ -782,13 +840,13 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Navigating the Tension:** How to manage the tension between existing structures and the ideal Cornerstone organization, using pilot projects and continuous improvement to drive change.
 
-#### 14.5 Organizational Maturity Model:
+#### 14.5 Organizational Maturity Model-
 
 * Briefly introduce the idea of an organizational maturity model (e.g., CMMI levels, Agile Fluency Model) and how it relates to the progressive adoption of Cornerstone, emphasizing that full implementation is a journey, not a switch.
 
-### Chapter 15: Adopting Cornerstone: Strategy, Pitfalls, and Phased Rollout 🚀
+### Chapter 15- Adopting Cornerstone- Strategy, Pitfalls, and Phased Rollout
 
-#### 15.1 Adopting Cornerstone: A Phased Approach:
+#### 15.1 Adopting Cornerstone- A Phased Approach-
 
 * Assessing current methodologies and identifying gaps.
 
@@ -802,7 +860,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Communication Strategy for Adoption:** How to effectively communicate the "why" and benefits of adopting Cornerstone to the organization to build buy-in and manage expectations.
 
-#### 15.2 Common Pitfalls and How to Avoid Them:
+#### 15.2 Common Pitfalls and How to Avoid Them-
 
 * Lack of clear functional ownership.
 
@@ -814,19 +872,19 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Resistance to change (and how culture/leadership can mitigate it).
 
-### Chapter 16: Measuring Outcomes and Estimation in Cornerstone ✅📊
+### Chapter 16- Measuring Outcomes and Estimation in Cornerstone
 
-#### 16.1 Measuring Success: Focusing on Outcomes and Value in Cornerstone
+#### 16.1 Measuring Success- Focusing on Outcomes and Value
 
 * **Why:** To ensure that measurement drives the delivery of tangible value and desired product outcomes, rather than simply tracking activities or outputs. This reinforces a culture of trust and empowerment.
 
-##### 16.1.1 The Shift from Output Metrics to Outcome Metrics:
+##### 16.1.1 The Shift from Output Metrics to Outcome Metrics-
 
-* **Output Metrics (Cautionary):** Briefly discuss traditional metrics like Lines of Code, individual velocity, number of bugs found (as standalone metrics) and why focusing solely on these can be counterproductive and erode trust.
+* **Output Metrics (Cautionary):** Traditional metrics like Lines of Code, individual velocity, and number of bugs can be misleading. Focusing solely on these can be counterproductive and erode trust.
 
-* **Outcome Metrics (Focus):** Emphasise measures that reflect actual value delivered to the customer or business goals.
+* **Outcome Metrics (Focus):** We emphasise measures that reflect actual value delivered to the customer or business goals.
 
-##### 16.1.2 Key Outcome-Based Measures for Integrated Products:
+##### 16.1.2 Key Outcome-Based Measures for Integrated Products-
 
 * **Customer Satisfaction:** Surveys, Net Promoter Score (NPS), direct feedback from users.
 
@@ -838,107 +896,93 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * **Return on Investment (ROI) / Business Impact:** For specific features or the overall product.
 
-* **Team Health & Engagement:** Surveys, retention rates, qualitative feedback on collaboration and psychological safety (directly linking to 3.3).
+* **Team Health & Engagement:** Surveys, retention rates, and qualitative feedback on collaboration and psychological safety.
 
 * **Regulatory Compliance Success:** Successful audits, minimal findings.
 
-##### 16.1.3 Balancing Qualitative and Quantitative Feedback:
+##### 16.1.3 Balancing Qualitative and Quantitative Feedback-
 
 * The importance of direct customer/stakeholder feedback, retrospectives, and informal observations alongside numerical data.
 
 * Using data to inform decisions and learn, not to control or blame.
 
-##### 16.1.4 Visualising Progress Towards Outcomes:
+### Chapter 17- Case Studies- Real-World Applications of Cornerstone
 
-* Dashboards that highlight progress against strategic goals and outcomes, rather than just task completion.
-
-* Burn-down/burn-up charts focused on value delivery.
-
-##### 16.1.5 Continuous Learning and Adaptation:
-
-* Using measurement results to inform continuous improvement cycles, adjusting the Cornerstone process itself based on what's learned.
-
-* Emphasising that measurement is for learning and improving, not for individual performance evaluation in a way that undermines trust.
-
-##### 16.1.6 Leading vs. Lagging Indicators:
-
-* Briefly distinguish between these in the context of outcome metrics, and how they inform proactive adjustments.
-
-##### 16.1.7 Feedback Loop from Measurement:
-
-* How measured outcomes directly feed back into the product roadmap and future iterations, driving continuous discovery and adaptation.
-
-#### 16.2 Estimation in Cornerstone: Navigating Uncertainty in Integrated Products
-
-* **Why:** To provide practical strategies for estimating work across diverse disciplines (software, firmware, hardware, mechanical) within the Cornerstone framework, acknowledging inherent uncertainties and long lead times.
-
-* **Content Ideas:**
-
-  * **Challenges of Estimation in Integrated Projects:**
-
-    * Difficulty in estimating hardware design and manufacturing lead times.
-
-    * Interdependencies between disciplines affecting predictability.
-
-    * Uncertainty in new technology adoption.
-
-    * The "Cone of Uncertainty" applied to multi-disciplinary development.
-
-  * **Estimation Techniques for the "Outer V" (High-Level):**
-
-    * **Analogous Estimation:** Leveraging historical data from similar past projects for initial high-level estimates.
-
-    * **Parametric Estimation:** Using mathematical models based on project parameters (e.g., cost per feature, complexity factors).
-
-    * **Three-Point Estimation (PERT):** Optimistic, pessimistic, and most likely scenarios for a more realistic range.
-
-    * **Expert Judgment / Delphi Technique:** Leveraging collective experience for early, high-level sizing.
-
-  * **Estimation Techniques for the "Iterative Development Core" (Detailed & Iterative):**
-
-    * **Relative Sizing (e.g., Story Points):** Estimating complexity relative to other tasks, rather than in absolute time, particularly for software/firmware.
-
-    * **Throughput/Velocity Forecasting:** Using historical team throughput to predict future delivery capacity for software/firmware increments.
-
-    * **Capacity-Based Planning:** Aligning work to the actual capacity of cross-functional teams, recognising hardware constraints.
-
-    * **Rolling Wave Planning:** Detailed estimation only for immediate iterations, with high-level estimates for future work, refining as more is known.
-
-    * **Spikes and Prototypes for De-risking Estimates:** Using short, time-boxed investigations to reduce uncertainty in complex or new areas, especially for hardware/firmware.
-
-  * **Communicating Estimates Effectively:**
-
-    * Emphasising ranges and confidence levels rather than single-point estimates.
-
-    * Transparency about assumptions and dependencies.
-
-    * Estimates as forecasts for planning, not commitments for blame.
-
-  * **Continuous Re-estimation and Adaptation:**
-
-    * Integrating re-estimation into regular review cycles.
-
-    * Using actuals to refine future estimates and improve predictability.
-
-### Chapter 17: Case Studies: Real-World Applications of Cornerstone 🌍💡
-
-#### 17.1 Why:
+#### 17.1 Why-
 
 * Detailed, narrative case studies illustrate the challenges and successes of applying the framework.
 
-#### 17.2 Content:
+* Case studies ground the philosophy in practical reality, providing tangible examples of how abstract principles translate into daily work and business outcomes. They also highlight common pitfalls and how to overcome them.
+
+#### 17.2 Content-
 
 * Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Cornerstone, highlighting specific artifact usage, challenges, and lessons learned.
 
-### Chapter 18: Advanced Topics & The Future of Cornerstone 🔮
+### Chapter 18- Scaling Cornerstone for Large-Scale Product Development
 
-#### 18.1 Scaling Cornerstone:
+#### 18.1 The Need for a Holistic Scaling Philosophy
 
-* Applying Cornerstone principles to large programs (e.g., adapting SAFe or LeSS concepts for coordination).
+Scaling a product development organisation isn't about simply copying a rigid framework like SAFe or LeSS. It's about maintaining the principles of flow, autonomy, and architectural coherence across a larger, more complex system of teams. Cornerstone's philosophy provides a foundation for this, allowing organisations to adopt and adapt scaling practices that work for them, rather than being constrained by a one-size-fits-all solution. The goal is to scale the philosophy of Cornerstone, not just the process.
 
-* Program-level planning and synchronization.
+#### 18.2 Planning, Alignment, and Work Breakdown at Scale
 
-#### 18.2 Cornerstone in Regulated & Safety-Critical Environments 🛡️📜:
+* **Strategic Planning and Work Breakdown**
+
+  * **High-Level Planning:** This process translates business goals and customer needs into a strategic backlog of high-level features or epics for the entire program. It is the program-level 'Structured Foundation.'
+
+  * **Work Breakdown Structure (WBS):** At this stage, the WBS is a logical decomposition of the product into its major components (e.g., 'firmware subsystem,' 'cloud platform,' 'mobile application,' 'mechanical enclosure'). This is not yet a detailed task list, but a way to logically allocate work to different teams.
+
+  * **Program-Level Backlog:** This shared artifact provides transparency and a single source of truth, ensuring every team understands the program's priorities and the larger context of their work.
+
+* **Aligning Team Plans with the Global Plan**
+
+  * **Shared Cadence:** Establish a regular, time-boxed synchronisation event (e.g., quarterly) where all teams and stakeholders align on priorities, dependencies, and a high-level plan for the upcoming period. The goal is to balance local team autonomy with program-wide alignment, not to create a rigid, top-down plan.
+
+  * **The Requirements Traceability Matrix (RTM):** This critical tool is the 'single source of truth' for the program. It provides an end-to-end audit trail, linking high-level business goals to detailed team-level requirements and test cases. This ensures that what each team is building is directly tied to a strategic need.
+
+  * **Capacity Planning:** Teams communicate their projected capacity for the upcoming period, and work is allocated based on this capacity, preventing overload and ensuring a sustainable pace.
+
+* **Managing Distributed and Global Teams**
+
+  * The challenges of time zones and distance can disrupt flow and communication. Cornerstone addresses this by doubling down on transparency and asynchronous communication.
+
+  * **Asynchronous Communication:** Use shared communication tools (e.g., Slack, Microsoft Teams, internal wikis) and a **Docs-as-Code** approach to ensure information is always available, reducing the need for synchronous meetings across time zones.
+
+  * **Standardized Artifacts:** By standardizing the format of key artifacts like ADRs, RFCs, and design documents, a team in Manchester can easily understand the rationale behind a decision made by a team in Bangalore, even if they never meet face-to-face.
+
+#### 18.3 Managing Dependencies and Maintaining Flow Across the Project
+
+* **Identifying and Visualising Interdependencies**
+
+  * **Dependency Mapping:** As part of the planning cadence, teams explicitly map out their dependencies on other teams. This can be done with simple dependency boards or specialised tools.
+
+  * **Interface Control Documents (ICDs):** For complex hardware/software/firmware projects, ICDs are living artifacts that define the interface between components. By treating them as **Docs-as-Code** and managing them in version control with pull requests, teams are forced to collaborate on interface changes before they become a problem.
+
+* **Maintaining Flow Through Integration**
+
+  * **Shared Integration Cadence:** Just as teams have a planning cadence, the program should have a shared cadence for integration and verification. This ensures that the work of software, hardware, and mechanical teams is integrated and tested regularly, catching issues early and preventing costly surprises down the line. This can be as simple as a regular 'integration day' or 'system build.'
+
+  * **Decoupling and Team Autonomy:** Following the **Team Topologies** model (from Chapter 1), we aim to structure teams in a way that minimises inter-team dependencies. Stream-aligned teams own their work end-to-end, reducing handoffs and ensuring a smoother flow of value. Enabling and platform teams act as force multipliers, reducing the cognitive load on stream-aligned teams and further improving flow.
+
+#### 18.4 Scaling the Documentation and Artifacts
+
+* **The Docs-as-Code Philosophy at Scale**
+
+  * Cornerstone's Docs-as-Code philosophy becomes a powerful enabler for large projects.
+
+  * By keeping documentation in version control, you ensure a single source of truth that is accessible to all teams.
+
+* **Standardising Key Artifacts**
+
+  * A large organisation can benefit from standardising the format of key artifacts like ADRs and high-level design documents.
+
+  * This makes it easier for teams to understand each other's work, fosters knowledge sharing, and provides a consistent audit trail.
+
+  * The focus should be on "just enough" documentation to enable collaboration, not on creating bureaucracy.
+
+### Chapter 19- Advanced Topics & The Future of Cornerstone
+
+#### 19.1 Cornerstone in Regulated & Safety-Critical Environments-
 
 * **Why:** Leveraging the lifecycle's structured aspects for traceability and formal V\&V for compliance.
 
@@ -952,33 +996,29 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Risk Management for Safety:** Deep dive into hazard analysis and risk mitigation in a hybrid context.
 
-#### 18.3 AI/ML in Product Development:
+#### 19.2 AI/ML in Product Development-
 
 * Integrating AI/ML components into Cornerstone products.
 
 * Data management and model deployment considerations.
 
-#### 18.4 Continuous Improvement & Evolution:
+#### 19.3 Continuous Improvement & Evolution-
 
 * Adapting Cornerstone to new technologies and market demands.
 
 * The role of feedback loops in refining the process.
 
-#### 18.5 Cornerstone for Continuous Product Development & Open-Ended Projects:
+#### 19.4 Cornerstone for Continuous Product Development & Open-Ended Projects-
 
 * **Why:** To address scenarios where product development is ongoing, with no fixed end date, and continuous feature delivery is the norm.
 
 * **Content Ideas:**
 
-  * **Adapting the "Outer V" for Continuous Development:**
+  * **Adapting the "Outer V" for Continuous Development:** The Structured Foundation becomes a living, evolving "Product Roadmap" and "System Architecture Vision" that is continuously refined. The Rigorous Validation Arm becomes continuous release and deployment with ongoing monitoring and feedback loops from production.
 
-    * The Structured Foundation: Becomes a living, evolving "Product Roadmap" and "System Architecture Vision" that is continuously refined rather than a one-time, fixed definition.
+  * **The "Iterative Development Core" as the Default Mode:** This is where the bulk of the work happens.
 
-    * The Rigorous Validation Arm: Becomes continuous release and deployment, with ongoing monitoring and feedback loops from production (e.g., A/B testing, telemetry analysis, user feedback).
-
-  * **The "Iterative Development Core" as the Default Mode:** This is where the bulk of the work happens, with continuous discovery, development, and delivery cycles driving incremental value.
-
-  * **Continuous Discovery & Evolving Vision:** How product vision and requirements are constantly refined based on market feedback, user data, and technological advancements, feeding directly into the iterative cycles.
+  * **Continuous Discovery & Evolving Vision:** How product vision and requirements are constantly refined based on market feedback, user data, and technological advancements.
 
   * **Managing Technical Debt:** Strategies for addressing technical debt in a continuous development model to maintain agility and long-term product health.
 
@@ -988,17 +1028,17 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
   * **Examples:** SaaS products, long-lived IoT platforms, continuous hardware revisions with software updates, digital services.
 
-#### 18.6 Emerging Technologies and Cornerstone's Adaptability:
+#### 19.5 Emerging Technologies and Cornerstone's Adaptability-
 
 * How Cornerstone's principles (Adaptive Planning, Evolutionary Approach, Continuous Improvement) enable teams to integrate and leverage new technologies (e.g., Quantum Computing, Advanced Robotics, Bio-engineering) beyond just AI/ML, maintaining its future relevance.
 
-#### 18.7 Ethical and Environmental Sustainability in Product Development:
+#### 19.6 Ethical and Environmental Sustainability in Product Development-
 
 * Beyond team wellbeing, how Cornerstone implicitly or explicitly supports broader ethical considerations and environmental sustainability throughout the product lifecycle (e.g., design for recyclability, responsible sourcing, ethical AI development).
 
-### Chapter 19: Conclusion: The Path Forward 🌟
+### Chapter 20- Conclusion- The Path Forward
 
-#### 19.1 Recap of Cornerstone's Benefits:
+#### 20.1 Recap of Cornerstone's Benefits-
 
 * Enhanced Predictability and Traceability
 
@@ -1008,7 +1048,7 @@ This is not a rigid framework, but a philosophy — a way of working that can be
 
 * Reduced Risk in Complex Projects
 
-#### 19.2 Your Journey to Cornerstone Mastery:
+#### 20.2 Your Journey to Cornerstone Mastery-
 
 * Encouragement and next steps for readers.
 
