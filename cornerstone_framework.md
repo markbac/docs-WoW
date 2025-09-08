@@ -1,4 +1,4 @@
-# Keystone: A Hybrid Delivery Framework for Product Development
+# Cornerstone: A Hybrid Delivery Framework for Product Development
 
 ## Book Outline
 
@@ -6,7 +6,7 @@
 
 Modern engineering leadership demands more than managing tasks or enforcing methodologies. It is about creating a system in which engineers can think clearly, build effectively, and deliver outcomes that matter. This approach presents an **integrative philosophy**, synthesizing insights from leading thinkers in leadership, systems engineering, and software architecture. It offers a **pragmatic, people-centred framework** designed to be adaptable across diverse organisational contexts.
 
-At its core, engineering leadership focuses on establishing context, enabling autonomy, fostering purposeful delivery, ensuring sustainable and resilient operations, and guiding teams towards long-term strategic outcomes. **This document serves as a foundational set of principles, clearly defining&#x20;*******what*******&#x20;matters and&#x20;*******why*******&#x20;these elements are critical for effective engineering. It deliberately leaves the tactical 'how' to be addressed in subsequent, more detailed frameworks, operating models, and delivery methodologies, recognising that practical implementation will vary significantly based on an organisation's unique culture, maturity, and specific constraints.**
+At its core, engineering leadership focuses on establishing context, enabling autonomy, fostering purposeful delivery, ensuring sustainable and resilient operations, and guiding teams towards long-term strategic outcomes. **This document serves as a foundational set of principles, clearly defining&#x20;*****what*****&#x20;matters and&#x20;*****why*****&#x20;these elements are critical for effective engineering. It deliberately leaves the tactical 'how' to be addressed in subsequent, more detailed frameworks, operating models, and delivery methodologies, recognising that practical implementation will vary significantly based on an organisation's unique culture, maturity, and specific constraints.**
 
 #### Leading with Context, Not Control
 
@@ -192,83 +192,7 @@ This approach to engineering leadership and delivery combines structured archite
 
 This is not a rigid framework, but a philosophy — a way of working that can be adapted and evolved to suit different industries, products, and teams. Its successful adoption hinges on a commitment to continuous improvement, cultural evolution, and pragmatic application within an organisation's unique context, navigating inherent tensions with deliberate intent.
 
-#### Supporting Bibliography
-
-* The Deadline: A Novel About Project Management – Tom DeMarco
-
-* How to Measure Anything – Douglas W. Hubbard
-
-* Thinking in Systems – Donella Meadows
-
-* Why Motivating People Doesn’t Work... and What Does – Susan Fowler
-
-* Turn the Ship Around! – L. David Marquet
-
-* Extreme Ownership – Jocko Willink & Leif Babin
-
-* Reinventing Organizations – Frederic Laloux
-
-* Team of Teams – General Stanley McChrystal
-
-* Drive – Dan Pink
-
-* Start With Why – Simon Sinek
-
-* Leaders Eat Last – Simon Sinek
-
-* The Infinite Game – Simon Sinek
-
-* The Mythical Man-Month – Frederick Brooks
-
-* Peopleware – Tom DeMarco & Timothy Lister
-
-* Waltzing with Bears: Managing Risk on Software Projects – Tom DeMarco & Timothy Lister
-
-* Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency – Tom DeMarco
-
-* Software Architecture: The Hard Parts – Mark Richards & Neal Ford
-
-* Building Evolutionary Architectures – Ford, Parsons, Kua
-
-* Fundamentals of Software Architecture – Mark Richards & Neal Ford
-
-* A Philosophy of Software Design – John Ousterhout
-
-* Software Systems Architecture – Rozanski & Woods
-
-* Team Topologies – Matthew Skelton & Manuel Pais
-
-* Accelerate: The Science of Lean Software and DevOps – Nicole Forsgren, Jez Humble, Gene Kim
-
-* The DevOps Handbook – Gene Kim, Patrick Debois, John Willis, Jez Humble
-
-* The Art of Scalability – Martin Abbott & Michael Fisher
-
-* Managing the Design Factory – Donald G. Reinertsen
-
-* Principles of Product Development Flow – Donald G. Reinertsen
-
-* Docs as Code – Anne Gentle
-
-* Communication Patterns – Brandenburg & Strohschneider
-
-* The Agile Manifesto
-
-* The Five Dysfunctions of a Team – Patrick Lencioni
-
-* Radical Candor – Kim Scott
-
-* The Manager's Path – Camille Fournier
-
-* An Elegant Puzzle: Systems of Engineering Management – Will Larson
-
-* Team Geek – Ben Collins-Sussman, Brian Fitzpatrick, and Dan Pilone
-
-* Managing Humans – Michael Lopp
-
-This approach exists to be adapted. What matters most is not following this document to the letter, but using it to ask better questions, create better environments, and deliver more meaningful outcomes.
-
-### Chapter 2: Introduction to Keystone: Bridging the Divide 🌉
+### Chapter 2: Introduction to Cornerstone: Bridging the Divide 🌉
 
 * **2.1 The Modern Product Development Landscape:**
 
@@ -278,13 +202,13 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Limitations of pure Agile for highly regulated or safety-critical products, or those with long hardware lead times.
 
-* **2.2 Introducing "Keystone": The Best of Both Worlds:**
+* **2.2 Introducing "Cornerstone": The Best of All Approaches:**
 
-  * Keystone is a comprehensive framework and approach designed to navigate the complexities *and simplicities* of modern product development.
+  * Cornerstone is a comprehensive philosophy that systematically integrates the best of structured, disciplined methodologies with the agility of iterative development.
 
-  * Defining Keystone: A pragmatic synthesis of the V-model's rigor and Agile's adaptability, *scalable and tailorable to fit any product's unique needs and context, not a one-size-fits-all "safe" solution*.
+  * Defining Cornerstone: A pragmatic philosophy that is *scalable and tailorable to fit any product's unique needs and context, not a one-size-fits-all "safe" solution*.
 
-  * Why Keystone? Addressing the needs of integrated product development *across the spectrum of complexity, emphasizing pragmatic adaptation over rigid adherence*.
+  * Why Cornerstone? Addressing the needs of integrated product development *across the spectrum of complexity, emphasizing pragmatic adaptation over rigid adherence*.
 
   * Target Audience: Software, firmware, hardware engineers, project managers, solution architects, and product owners in industries like IoT, medical devices, automotive, and defence, *as well as startups and teams developing simpler products*.
 
@@ -322,71 +246,71 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * Identifying the "sweet spot" for integrated product development.
 
-### Chapter 4: Why Keystone? Differentiating from Existing Frameworks 🧭
+### Chapter 4: How Cornerstone Differentiates from Existing Frameworks 🧭
 
 #### 4.1 The Need for a Tailored Approach:
 
 * No single framework (traditional, agile, or hybrid) is a perfect fit for all contexts, especially for integrated products across varying complexities and regulatory needs.
 
-* Keystone is explicitly designed to be *adaptable* rather than prescriptive, drawing on the strengths of others while addressing their common limitations for multi-disciplinary development.
+* Cornerstone is explicitly designed to be *adaptable* rather than prescriptive, drawing on the strengths of others while addressing their common limitations for multi-disciplinary development.
 
-#### 4.2 Keystone vs. Traditional/Predictive Frameworks (e.g., V-Model, Waterfall, Spiral, RUP):
+#### 4.2 How Cornerstone Incorporates the Strengths of Traditional Approaches (e.g., V-Model, Waterfall, Spiral, RUP):
 
-* **Shared Strengths:** Keystone retains the crucial traceability, structured requirements definition, and rigorous verification/validation (the "Outer V") that are strong points of V-Model, Spiral, and RUP, which are essential for predictability and compliance.
+* **Shared Strengths:** Cornerstone incorporates the crucial traceability, structured requirements definition, and rigorous verification/validation that are strong points of V-Model, Spiral, and RUP, which are essential for predictability and compliance.
 
-* **Key Differentiator (Agility & Early Feedback):** Keystone overcomes the inherent rigidity, late feedback cycles, and slow adaptation of these models. By introducing the "Wavy Iterative Point" for continuous development and rapid learning, Keystone prevents costly rework and delayed delivery often associated with purely sequential approaches.
+* **Key Differentiator (Agility & Early Feedback):** Cornerstone overcomes the inherent rigidity, late feedback cycles, and slow adaptation of these models. By introducing the "Iterative Development Core" for continuous development and rapid learning, Cornerstone prevents costly rework and delayed delivery often associated with purely sequential approaches.
 
-* **Suitability:** Keystone provides the **necessary dynamism and feedback loops** for projects where requirements evolve, or where physical hardware iterations demand faster feedback pure Waterfall/V-Model allows, leading to more efficient and adaptable product development.
+* **Suitability:** Cornerstone provides the **necessary dynamism and feedback loops** for projects where requirements evolve, or where physical hardware iterations demand faster feedback pure Waterfall/V-Model allows, leading to more efficient and adaptable product development.
 
-#### 4.3 Keystone vs. Agile/Iterative Frameworks (e.g., Scrum, Kanban, XP, DSDM, Crystal, FDD):
+#### 4.3 How Cornerstone Incorporates the Strengths of Agile/Iterative Frameworks (e.g., Scrum, Kanban, XP, DSDM, Crystal, FDD):
 
-* **Shared Strengths:** Keystone fully embraces iterative delivery, cross-functional teams, continuous improvement, and rapid feedback loops, which are core to Agile methodologies.
+* **Shared Strengths:** Cornerstone fully embraces iterative delivery, cross-functional teams, continuous improvement, and rapid feedback loops, which are core to Agile methodologies.
 
-* **Key Differentiator (Structure & Traceability for Integrated Products):** Keystone explicitly addresses Agile's common challenges when dealing with complex, integrated products:
+* **Key Differentiator (Structure & Traceability for Integrated Products):** Cornerstone explicitly addresses Agile's common challenges when dealing with complex, integrated products:
 
-  * **Hardware/Mechanical Dependencies:** While Agile excels at rapid software iteration, it often struggles to provide the necessary predictability and integration points for physical hardware with long lead times and high iteration costs. Keystone's "Outer V" explicitly integrates these considerations.
+  * **Hardware/Mechanical Dependencies:** While Agile excels at rapid software iteration, it often struggles to provide the necessary predictability and integration points for physical hardware with long lead times and high iteration costs. Cornerstone’s structured approach explicitly integrates these considerations.
 
-  * **Formal Documentation/Compliance:** Pure Agile can be too lightweight for regulated or safety-critical environments that demand extensive audit trails and formal evidence. Keystone provides the "Outer V" structure and promotes "Docs as Code" for necessary rigor without introducing excessive bureaucracy.
+  * **Formal Documentation/Compliance:** Pure Agile can be too lightweight for regulated or safety-critical environments that demand extensive audit trails and formal evidence. Cornerstone provides a structured approach and promotes "Docs as Code" for necessary rigor without introducing excessive bureaucracy.
 
-  * **System-Level Thinking:** Keystone's structured V-model arms ensure high-level architectural coherence and end-to-end systems thinking, which can sometimes be overlooked or lost in purely team-level Agile implementations.
+  * **System-Level Thinking:** Cornerstone's structured phases ensure high-level architectural coherence and end-to-end systems thinking, which can sometimes be overlooked or lost in purely team-level Agile implementations.
 
-* **Suitability:** Keystone provides the **optimal balance of structure and agility** for multi-disciplinary products where pure Agile might fall short on governance, long-term architectural integrity, or hardware integration needs.
+* **Suitability:** Cornerstone provides the **optimal balance of structure and agility** for multi-disciplinary products where pure Agile might fall short on governance, long-term architectural integrity, or hardware integration needs.
 
-#### 4.4 Keystone vs. Scaling Agile Frameworks (e.g., SAFe, LeSS, Nexus, Spotify Model):
+#### 4.4 How Cornerstone Differentiates from Scaling Agile Frameworks (e.g., SAFe, LeSS, Nexus, Spotify Model):
 
 * **Shared Goals:** Acknowledge the shared objective of coordinating multiple teams and delivering value at scale across an enterprise.
 
 * **Key Differentiator (Pragmatic Adaptability & Less Prescriptive):**
 
-  * Keystone is a *framework* that provides *principles and adaptable patterns* for scaling (e.g., it can incorporate concepts like PI planning or team structures from Team Topologies), but it is not a prescriptive, "out-of-the-box" scaling solution itself.
+  * Cornerstone is a *framework* that provides *principles and adaptable patterns* for scaling (e.g., it can incorporate concepts like PI planning or team structures from Team Topologies), but it is not a prescriptive, "out-of-the-box" scaling solution itself.
 
   * It offers **greater flexibility** to adapt to existing organizational structures and cultures (referencing Conway's Law) rather than imposing a rigid, specific scaled model that might not fit.
 
-  * Keystone is designed to be tailored from lightweight to heavyweight, allowing organizations to adopt *only what they need*, thereby avoiding the overhead and complexity of larger, more prescriptive frameworks if unnecessary. This makes it suitable for organizations of *any size*, from startups to large enterprises.
+  * Cornerstone is designed to be tailored from lightweight to heavyweight, allowing organizations to adopt *only what they need*, thereby avoiding the overhead and complexity of larger, more prescriptive frameworks if unnecessary. This makes it suitable for organizations of *any size*, from startups to large enterprises.
 
-* **Suitability:** Keystone offers a **more flexible, less dogmatic path to scaling**, particularly for organizations with integrated product challenges that require a highly customized hybrid approach.
+* **Suitability:** Cornerstone offers a **more flexible, less dogmatic path to scaling**, particularly for organizations with integrated product challenges that require a highly customized hybrid approach.
 
-#### 4.5 Keystone vs. Lean/Continuous Improvement Approaches (e.g., Lean Software Development, TPS, Six Sigma):
+#### 4.5 How Cornerstone Differentiates from Lean/Continuous Improvement Approaches (e.g., Lean Software Development, TPS, Six Sigma):
 
-* **Shared Strengths:** Keystone deeply aligns with Lean principles of eliminating waste, amplifying learning, and continuous flow. This is evident in its "Wavy Iterative Point," "Docs as Code" philosophy, and "Outcome-Driven" focus.
+* **Shared Strengths:** Cornerstone deeply aligns with Lean principles of eliminating waste, amplifying learning, and continuous flow. This is evident in its "Iterative Development Core," "Docs as Code" philosophy, and "Outcome-Driven" focus.
 
-* **Key Differentiator (Integrated Lifecycle & Formal V\&V):** While Lean focuses on flow, Keystone provides a more explicit, integrated lifecycle structure (the V-model arms) and formal verification and validation points that might be less emphasized in pure Lean approaches. This structured V\&V is critical for regulated industries or products with significant safety/quality requirements.
+* **Key Differentiator (Integrated Lifecycle & Formal V\&V):** While Lean focuses on flow, Cornerstone provides a more explicit, integrated lifecycle structure and formal verification and validation points that might be less emphasized in pure Lean approaches. This structured V\&V is critical for regulated industries or products with significant safety/quality requirements.
 
-* **Suitability:** Keystone is **optimally suited** for products that require both the efficiency and continuous improvement of Lean, alongside the structured assurance and traceability of a more formal development lifecycle.
+* **Suitability:** Cornerstone is **optimally suited** for products that require both the efficiency and continuous improvement of Lean, alongside the structured assurance and traceability of a more formal development lifecycle.
 
-#### 4.6 Keystone vs. Other Hybrid Frameworks (e.g., DAD, PRINCE2 Agile, Wagile):
+#### 4.6 How Cornerstone Differentiates from Other Hybrid Frameworks (e.g., DAD, PRINCE2 Agile, Wagile):
 
 * **Shared Strengths:** Acknowledge the common ground of blending methodologies to achieve a balance between structure and agility.
 
-* **Key Differentiator:** Keystone is uniquely optimized for **integrated product development** involving software, firmware, hardware, and mechanical components. Its "V with a wavy iterative point" metaphor and explicit guidance on managing cross-disciplinary challenges, dependencies, and artifacts (like ICDs and PLM integration) provide a level of detail and specificity often missing in more generic hybrid models. Furthermore, Keystone's strong emphasis on a **people-centered, outcome-driven philosophy** sets it apart from hybrids that might focus more on process mechanics.
+* **Key Differentiator:** Cornerstone is uniquely optimized for **integrated product development** involving software, firmware, hardware, and mechanical components. Its "Discipline-Agility Continuum" metaphor and explicit guidance on managing cross-disciplinary challenges, dependencies, and artifacts (like ICDs and PLM integration) provide a level of detail and specificity often missing in more generic hybrid models. Furthermore, Cornerstone's strong emphasis on a **people-centered, outcome-driven philosophy** sets it apart from hybrids that might focus more on process mechanics.
 
-* **Suitability:** Keystone is the **ideal framework** for organizations building complex, multi-disciplinary products that demand a truly integrated and adaptable development approach.
+* **Suitability:** Cornerstone is the **ideal framework** for organizations building complex, multi-disciplinary products that demand a truly integrated and adaptable development approach.
 
-#### 4.7 The Unique Value Proposition of Keystone:
+#### 4.7 The Unique Value Proposition of Cornerstone:
 
-* Keystone provides a **flexible, people-centered, outcome-driven framework** that systematically integrates the necessary structure and traceability for complex, multi-disciplinary products with the agility required for continuous adaptation and delivery. It's about finding the *optimal balance* for a given context, not just applying a generic hybrid. This ensures that organizations can achieve both the predictability required for robust products and the responsiveness needed to thrive in dynamic markets.
+* Cornerstone provides a **flexible, people-centered, outcome-driven framework** that systematically integrates the necessary structure and traceability for complex, multi-disciplinary products with the agility required for continuous adaptation and delivery. It's about finding the *optimal balance* for a given context, not just applying a generic hybrid. This ensures that organizations can achieve both the predictability required for robust products and the responsiveness needed to thrive in dynamic markets.
 
-### Chapter 5: Core Principles of Keystone: Operationalizing the Philosophy 🔄
+### Chapter 5: Core Principles of Cornerstone: Operationalizing the Philosophy 🔄
 
 * **5.1 Iterative Product Evolution:** Embracing an overall iterative approach to product development, with a highly iterative core for implementation and detailed verification. This operationalizes the "Evolutionary Approach" and "Iterative Delivery" from Chapter 1.
 
@@ -400,11 +324,11 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **5.6 Risk-Driven Development:** Prioritising and mitigating risks early and often. This operationalizes "Operational Resilience" and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
 
-### Chapter 6: The Keystone Lifecycle: The "V with a Wavy Iterative Point" 〰️
+### Chapter 6: The Cornerstone Lifecycle: A Fusion of Discipline and Agility 〰️
 
-#### 6.1 The Outer V:
+#### 6.1 The Structured Foundation:
 
-* **Left Arm (V-Model Descent):** Focus on structured, comprehensive requirements gathering and high-level system architecture and design. This ensures a clear, traceable foundation for the entire product.
+* This foundational phase of the lifecycle focuses on structured, comprehensive requirements gathering and high-level system architecture and design. This ensures a clear, traceable foundation for the entire product.
 
   * **Key Artifacts Aligned Here:**
 
@@ -422,21 +346,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Test Plans (High-Level):** Outlining the strategy for system-level verification and validation.
 
-* **Right Arm (V-Model Ascent):** Focus on structured integration, system-level verification, and final product validation against initial requirements.
+* **6.2 The Iterative Development Core (Agile Core):**
 
-  * **Key Artifacts Aligned Here:**
-
-    * **Living Design Documents (Integrated System View):** Comprehensive, up-to-date view of the entire assembled system.
-
-    * **Test Plans & Reports (System & Acceptance):** Execution of high-level test plans and final acceptance testing against system requirements.
-
-    * **Requirements (System Level - Final Validation):** Used as the benchmark for final product validation, confirmed via the RTM.
-
-    * **Architecture Decision Records (ADRs - Key Integration Decisions):** Capturing any final critical decisions made during system integration or validation.
-
-#### 6.2 The "Wavy Iterative Point" (Agile Core):
-
-* At the bottom of the V, where implementation, detailed design, and component-level verification occur, Agile principles drive iterative cycles. This allows for rapid feedback, adaptation, and continuous refinement of software, firmware, and even hardware prototypes.
+* At the heart of the lifecycle, where implementation, detailed design, and component-level verification occur, Agile principles drive iterative cycles. This allows for rapid feedback, adaptation, and continuous refinement of software, firmware, and even hardware prototypes.
 
 * This is where cross-functional teams work in short iterations, building and testing increments.
 
@@ -452,13 +364,27 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Test Plans (Detailed) & Test Reports (Integrated):** Detailed test cases developed and executed continuously (unit, integration, HIL testing), with automated reports providing immediate feedback.
 
-* *Diagram: Keystone lifecycle showing a V-model with a distinct, wavy, iterative section at its base, representing the Agile core within the structured V, with artifact placements indicated.*
+* **6.3 The Rigorous Validation Arm:**
 
-#### 6.3 Transition Points and Gates:
+* This phase of the lifecycle focuses on structured integration, system-level verification, and final product validation against initial requirements.
 
-* Briefly explain what happens at the transition points between the V-arms and the wavy point (e.g., system requirements baselined before detailed design starts, integrated build before system test). This highlights how the structured and agile parts connect.
+  * **Key Artifacts Aligned Here:**
 
-### Chapter 7: Culture and Leadership for Keystone Success: Operationalizing the Philosophy 🧑‍🤝‍🧑🚀
+    * **Living Design Documents (Integrated System View):** Comprehensive, up-to-date view of the entire assembled system.
+
+    * **Test Plans & Reports (System & Acceptance):** Execution of high-level test plans and final acceptance testing against system requirements.
+
+    * **Requirements (System Level - Final Validation):** Used as the benchmark for final product validation, confirmed via the RTM.
+
+    * **Architecture Decision Records (ADRs - Key Integration Decisions):** Capturing any final critical decisions made during system integration or validation.
+
+* \*Diagram: Cornerstone lifecycle showing a structured foundation, an iterative development core at its heart, and a rigorous validation arm, representing the fusion of disciplined and agile approaches. \*
+
+* **6.4 Transition Points and Gates:**
+
+* Briefly explain what happens at the transition points between the structured and agile parts of the lifecycle (e.g., system requirements baselined before detailed design starts, integrated build before system test). This highlights how the formal and iterative aspects connect.
+
+### Chapter 7: Culture and Leadership for Cornerstone Success: Operationalizing the Philosophy 🧑‍🤝‍🧑🚀
 
 #### 7.1 Building a Culture of Trust and Empowerment:
 
@@ -480,7 +406,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Clear Vision and Goals:** Leaders articulate a compelling product vision and clear, measurable outcomes, allowing teams to align their work effectively.
 
-  * **Adaptive Leadership in a Hybrid Environment:** How leaders (managers, architects) adapt their style to support both structured planning (V-arms) and iterative development (wavy core). This includes being comfortable with emergent solutions and managing uncertainty.
+  * **Adaptive Leadership in a Hybrid Environment:** How leaders (managers, architects) adapt their style to support both structured planning and iterative development. This includes being comfortable with emergent solutions and managing uncertainty.
 
 #### 7.3 Mentoring and Skill Development:
 
@@ -496,11 +422,11 @@ This approach exists to be adapted. What matters most is not following this docu
 
 #### 8.1 Key Functions and Responsibilities:
 
-* This section details the practical roles and responsibilities within the Keystone framework, operationalizing the "Teams as Systems" principles from Chapter 1.
+* This section details the practical roles and responsibilities within the Cornerstone framework, operationalizing the "Teams as Systems" principles from Chapter 1.
 
   * **Product Vision & Prioritisation:** Ensuring a clear product direction and prioritised backlog (often a Product Owner *function*).
 
-  * **Architectural Guidance:** Driving the outer V and guiding inner V designs (often a Solution Architect *function*).
+  * **Architectural Guidance:** Driving the lifecycle's structured phases and guiding the design of the iterative core (often a Solution Architect *function*).
 
   * **Process Facilitation & Impediment Removal:** Supporting the team's flow and removing blockers (often a Scrum Master *function*).
 
@@ -510,9 +436,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Interplay of Functions:** How these functions collaborate effectively (e.g., Product Vision and Architectural Guidance co-create high-level requirements; Process Facilitation supports cross-functional team syncs).
 
-#### 8.2 Keystone Artifacts: Practical "Docs as Code" Implementation and Management:
+#### 8.2 Cornerstone Artifacts: Practical "Docs as Code" Implementation and Management:
 
-* This section provides a deep dive into the practical creation, maintenance, and governance of Keystone's living artifacts, operationalizing the "Lightweight Documentation" and "Decision Transparency" principles from Chapter 1.
+* This section provides a deep dive into the practical creation, maintenance, and governance of Cornerstone's living artifacts, operationalizing the "Lightweight Documentation" and "Decision Transparency" principles from Chapter 1.
 
   * **Vision Brief / Product Vision Document:** How to create and manage this foundational artifact, emphasizing conciseness and clarity.
 
@@ -524,7 +450,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Requests for Comments (RFCs) / Design Proposals:** Facilitating collaborative design and decision-making through lightweight proposal and feedback mechanisms.
 
-  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Strategies for keeping design documentation current and integrated with code, emphasizing automated updates where possible.
+  * **Living Design Documents (e.g., C4 Model Diagrams, Component Specifications):** Highly active, continuously updated as components are designed, built, and integrated.
 
   * **arc42 Architecture Communication Canvas:** Practical application of communication strategies to ensure the right information reaches the right audience.
 
@@ -542,11 +468,11 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Governance & Quality:** How to ensure documentation remains high quality and relevant over time, potentially through automated linting and periodic reviews.
 
-### Chapter 9: Practical Risk Management in Keystone ⚠️
+### Chapter 9: Practical Risk Management in Cornerstone ⚠️
 
-#### 9.1 Why Risk Management is Critical in Keystone:
+#### 9.1 Why Risk Management is Critical in Cornerstone:
 
-* To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Keystone lifecycle, ensuring proactive decision-making. This operationalizes the "Risk-Driven Development" principle from Chapter 4 and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
+* To systematically identify, assess, mitigate, and monitor risks across all disciplines (software, firmware, hardware, mechanical) throughout the Cornerstone lifecycle, ensuring proactive decision-making. This operationalizes the "Risk-Driven Development" principle from Chapter 4 and "Tech Debt and Operational Risks Integrated Into Delivery" from Chapter 1.
 
   * **Risk Culture:** How a culture of psychological safety (from Chapter 7) enables honest and early risk reporting without fear of blame.
 
@@ -568,9 +494,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * Risk Register: A living artifact for tracking identified risks, their owners, mitigation strategies, and current status.
 
-#### 9.4 Risk Mitigation Strategies (and how they align with Keystone):
+#### 9.4 Risk Mitigation Strategies (and how they align with Cornerstone):
 
-* **Prototyping & Spikes:** Using the "wavy iterative point" to quickly build and test high-risk areas (e.g., new hardware interfaces, complex algorithms).
+* **Prototyping & Spikes:** Using the "iterative development core" to quickly build and test high-risk areas (e.g., new hardware interfaces, complex algorithms).
 
 * **Simulation & Modeling:** De-risking through virtual environments before committing to physical builds (e.g., HIL, FEA, circuit simulation).
 
@@ -580,7 +506,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **Contingency Planning:** What to do if a risk materializes.
 
-* **Risk-Driven Prioritization:** How identified risks influence planning and prioritization in the "wavy iterative point" (e.g., high-risk items often tackled in early iterations as spikes or dedicated de-risking activities).
+* **Risk-Driven Prioritization:** How identified risks influence planning and prioritization in the "iterative development core" (e.g., high-risk items often tackled in early iterations as spikes or dedicated de-risking activities).
 
 #### 9.5 Continuous Risk Monitoring & Review:
 
@@ -604,11 +530,11 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **Market/Business Risks:** Changing customer needs, competitive landscape.
 
-#### 9.7 Keystone Fit:
+#### 9.7 Cornerstone Fit:
 
-* This section would demonstrate how proactive risk management is embedded into the iterative cycles, leveraging the agility to address risks early, while maintaining a formal register for traceability (V-model aspect).
+* This section would demonstrate how proactive risk management is embedded into the iterative cycles, leveraging the agility to address risks early, while maintaining a formal register for traceability (the lifecycle's structured aspects).
 
-### Chapter 10: Keystone in Practice: Software & Firmware Development 💻⚙️
+### Chapter 10: Cornerstone in Practice: Software & Firmware Development 💻⚙️
 
 #### 10.1 Robust Requirements Gathering & Analysis:
 
@@ -666,7 +592,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **Tooling Integration:** Brief mention of how specific tools (e.g., specific IDEs, debuggers, static analysis tools, test harnesses) are used in these practices.
 
-### Chapter 11: Keystone for Integrated Products: Hardware & Mechanical Considerations 🔩🔌
+### Chapter 11: Cornerstone for Integrated Products: Hardware & Mechanical Considerations 🔩🔌
 
 #### 11.1 The Unique Challenges of Hardware Integration:
 
@@ -678,7 +604,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * Regulatory compliance for physical products.
 
-#### 11.2 Concurrent Engineering in a Keystone Context:
+#### 11.2 Concurrent Engineering in a Cornerstone Context:
 
 * Overlapping design, development, and testing phases.
 
@@ -690,7 +616,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **Decoupling & Synchronization:** Strategies for managing different iteration speeds.
 
-* "Hardware Milestones" or "Hardware Design Loops" within the Keystone framework.
+* "Hardware Milestones" or "Hardware Design Loops" within the Cornerstone framework.
 
 * Using mock-ups, emulators, and simulation to de-risk hardware dependencies.
 
@@ -728,7 +654,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **Dependency Mapping Techniques:** Visualising dependencies between software modules, firmware components, hardware revisions, and mechanical parts.
 
-* **Interface Control Documents (ICDs):** How these are managed as living artifacts within Keystone, ensuring clear communication between interconnected components.
+* **Interface Control Documents (ICDs):** How these are managed as living artifacts within Cornerstone, ensuring clear communication between interconnected components.
 
 * **Staged Integration Strategies:** Planning incremental integration points across disciplines to reduce risk and enable earlier feedback.
 
@@ -746,7 +672,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Configuration Management:** Managing baselines and versions of the *entire* product (hardware, software, firmware, documentation) within a PLM system, ensuring consistency and control.
 
-  * **Change Control & Impact Analysis:** How changes originating from the "wavy iterative point" are formally managed and propagated across all product components within PLM, including impact analysis across disciplines.
+  * **Change Control & Impact Analysis:** How changes originating from the "iterative development core" are formally managed and propagated across all product components within PLM, including impact analysis across disciplines.
 
   * **Traceability Across Disciplines:** Leveraging PLM to maintain end-to-end traceability from high-level requirements through design, manufacturing, and service data.
 
@@ -756,7 +682,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Integration with Enterprise Systems:** Connecting PLM with ERP, CRM, and service management systems for a holistic business view.
 
-### Chapter 13: Tools and Technologies for Keystone Success 🛠️
+### Chapter 13: Tools and Technologies for Cornerstone Success 🛠️
 
 #### 13.1 Project & Lifecycle Management Tools:
 
@@ -798,15 +724,15 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * Digital Twins for complex system modeling.
 
-### Chapter 14: Tailoring Keystone: Adapting to Business Context and Scale 🚀
+### Chapter 14: Tailoring Cornerstone: Adapting to Business Context and Scale 🚀
 
 #### 14.1 The Importance of Tailoring:
 
-* The "right" level of Keystone implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Keystone is about pragmatic adaptation, not a rigid or "safe" template*.
+* The "right" level of Cornerstone implementation varies significantly based on business size, industry, product complexity, and regulatory environment. This section guides the reader in choosing and adapting the framework appropriately, *emphasizing that Cornerstone is about pragmatic adaptation, not a rigid or "safe" template*.
 
-#### 14.2 The Spectrum of Keystone Implementation:
+#### 14.2 The Spectrum of Cornerstone Implementation:
 
-* **Lightweight Keystone (e.g., Startups, Small Teams):**
+* **Lightweight Cornerstone (e.g., Startups, Small Teams):**
 
   * Emphasis on highly informal processes, minimal documentation (only essential artifacts), rapid iteration, and direct communication.
 
@@ -818,25 +744,25 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Tooling:** Lightweight project management tools, strong Git usage, simple CI/CD.
 
-* **Balanced Keystone (e.g., Mid-Sized Companies, Less Regulated Products):**
+* **Balanced Cornerstone (e.g., Mid-Sized Companies, Less Regulated Products):**
 
   * A more structured approach to requirements and design, but still highly iterative in development.
 
   * More formalized artifacts and processes than lightweight, but less than heavyweight.
 
-  * **Artifacts:** All core Keystone artifacts are used, but with a focus on efficiency and "just enough" detail.
+  * **Artifacts:** All core Cornerstone artifacts are used, but with a focus on efficiency and "just enough" detail.
 
   * **Processes:** Regular iterative cycles, scheduled reviews, and dedicated risk management sessions.
 
   * **Tooling:** Integrated project management suites, robust CI/CD, dedicated documentation platforms.
 
-* **Heavyweight Keystone (e.g., Large Enterprises, Highly Regulated Environments):**
+* **Heavyweight Cornerstone (e.g., Large Enterprises, Highly Regulated Environments):**
 
   * Emphasis on formal traceability, comprehensive documentation, rigorous verification and validation, and robust governance.
 
-  * Compliance and auditability are paramount, leveraging the V-model aspects more strongly.
+  * Compliance and auditability are paramount, leveraging the lifecycle's structured aspects more strongly.
 
-  * **Artifacts:** All Keystone artifacts are used with high fidelity, formal baselining, and strict version control. Detailed RTM, formal test plans, and comprehensive design specifications.
+  * **Artifacts:** All Cornerstone artifacts are used with high fidelity, formal baselining, and strict version control. Detailed RTM, formal test plans, and comprehensive design specifications.
 
   * **Processes:** Structured gates, formal reviews, detailed change control, and extensive audit trails.
 
@@ -850,19 +776,19 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * **Conway's Law:** "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."
 
-* **Adapting Process to Fit Company Structure:** Recognizing existing organizational silos and communication patterns, and designing Keystone processes to work within (or around) them initially. This is often the pragmatic starting point for large, established companies.
+* **Adapting Process to Fit Company Structure:** Recognizing existing organizational silos and communication patterns, and designing Cornerstone processes to work within (or around) them initially. This is often the pragmatic starting point for large, established companies.
 
-* **Adapting Company Structure to Fit a Better Process:** Over time, strategically evolving organizational structures (e.g., forming truly cross-functional teams, breaking down departmental barriers) to better align with the desired Keystone framework. This is the long-term goal for optimal efficiency and product quality.
+* **Adapting Company Structure to Fit a Better Process:** Over time, strategically evolving organizational structures (e.g., forming truly cross-functional teams, breaking down departmental barriers) to better align with the desired Cornerstone framework. This is the long-term goal for optimal efficiency and product quality.
 
-* **Navigating the Tension:** How to manage the tension between existing structures and the ideal Keystone organization, using pilot projects and continuous improvement to drive change.
+* **Navigating the Tension:** How to manage the tension between existing structures and the ideal Cornerstone organization, using pilot projects and continuous improvement to drive change.
 
 #### 14.5 Organizational Maturity Model:
 
-* Briefly introduce the idea of an organizational maturity model (e.g., CMMI levels, Agile Fluency Model) and how it relates to the progressive adoption of Keystone, emphasizing that full implementation is a journey, not a switch.
+* Briefly introduce the idea of an organizational maturity model (e.g., CMMI levels, Agile Fluency Model) and how it relates to the progressive adoption of Cornerstone, emphasizing that full implementation is a journey, not a switch.
 
-### Chapter 15: Adopting Keystone: Strategy, Pitfalls, and Phased Rollout 🚀
+### Chapter 15: Adopting Cornerstone: Strategy, Pitfalls, and Phased Rollout 🚀
 
-#### 15.1 Adopting Keystone: A Phased Approach:
+#### 15.1 Adopting Cornerstone: A Phased Approach:
 
 * Assessing current methodologies and identifying gaps.
 
@@ -872,9 +798,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * Addressing initial resistance and building early wins.
 
-* **Pilot Project Selection Criteria:** Guidance on choosing the right initial project for a successful Keystone pilot (e.g., manageable scope, supportive stakeholders, engaged team).
+* **Pilot Project Selection Criteria:** Guidance on choosing the right initial project for a successful Cornerstone pilot (e.g., manageable scope, supportive stakeholders, engaged team).
 
-* **Communication Strategy for Adoption:** How to effectively communicate the "why" and benefits of adopting Keystone to the organization to build buy-in and manage expectations.
+* **Communication Strategy for Adoption:** How to effectively communicate the "why" and benefits of adopting Cornerstone to the organization to build buy-in and manage expectations.
 
 #### 15.2 Common Pitfalls and How to Avoid Them:
 
@@ -888,9 +814,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * Resistance to change (and how culture/leadership can mitigate it).
 
-### Chapter 16: Measuring Outcomes and Estimation in Keystone ✅📊
+### Chapter 16: Measuring Outcomes and Estimation in Cornerstone ✅📊
 
-#### 16.1 Measuring Success: Focusing on Outcomes and Value in Keystone
+#### 16.1 Measuring Success: Focusing on Outcomes and Value in Cornerstone
 
 * **Why:** To ensure that measurement drives the delivery of tangible value and desired product outcomes, rather than simply tracking activities or outputs. This reinforces a culture of trust and empowerment.
 
@@ -930,7 +856,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 ##### 16.1.5 Continuous Learning and Adaptation:
 
-* Using measurement results to inform continuous improvement cycles, adjusting the Keystone process itself based on what's learned.
+* Using measurement results to inform continuous improvement cycles, adjusting the Cornerstone process itself based on what's learned.
 
 * Emphasising that measurement is for learning and improving, not for individual performance evaluation in a way that undermines trust.
 
@@ -942,9 +868,9 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * How measured outcomes directly feed back into the product roadmap and future iterations, driving continuous discovery and adaptation.
 
-#### 16.2 Estimation in Keystone: Navigating Uncertainty in Integrated Products
+#### 16.2 Estimation in Cornerstone: Navigating Uncertainty in Integrated Products
 
-* **Why:** To provide practical strategies for estimating work across diverse disciplines (software, firmware, hardware, mechanical) within the Keystone framework, acknowledging inherent uncertainties and long lead times.
+* **Why:** To provide practical strategies for estimating work across diverse disciplines (software, firmware, hardware, mechanical) within the Cornerstone framework, acknowledging inherent uncertainties and long lead times.
 
 * **Content Ideas:**
 
@@ -968,7 +894,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * **Expert Judgment / Delphi Technique:** Leveraging collective experience for early, high-level sizing.
 
-  * **Estimation Techniques for the "Wavy Iterative Point" (Detailed & Iterative):**
+  * **Estimation Techniques for the "Iterative Development Core" (Detailed & Iterative):**
 
     * **Relative Sizing (e.g., Story Points):** Estimating complexity relative to other tasks, rather than in absolute time, particularly for software/firmware.
 
@@ -994,7 +920,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
     * Using actuals to refine future estimates and improve predictability.
 
-### Chapter 17: Case Studies: Real-World Applications of Keystone 🌍💡
+### Chapter 17: Case Studies: Real-World Applications of Cornerstone 🌍💡
 
 #### 17.1 Why:
 
@@ -1002,25 +928,25 @@ This approach exists to be adapted. What matters most is not following this docu
 
 #### 17.2 Content:
 
-* Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Keystone, highlighting specific artifact usage, challenges, and lessons learned.
+* Pick 2-3 diverse examples (e.g., an IoT device, a defence system, a consumer electronic product) and walk through their journey using Cornerstone, highlighting specific artifact usage, challenges, and lessons learned.
 
-### Chapter 18: Advanced Topics & The Future of Keystone 🔮
+### Chapter 18: Advanced Topics & The Future of Cornerstone 🔮
 
-#### 18.1 Scaling Keystone:
+#### 18.1 Scaling Cornerstone:
 
-* Applying Keystone principles to large programs (e.g., adapting SAFe or LeSS concepts for coordination).
+* Applying Cornerstone principles to large programs (e.g., adapting SAFe or LeSS concepts for coordination).
 
 * Program-level planning and synchronization.
 
-#### 18.2 Keystone in Regulated & Safety-Critical Environments 🛡️📜:
+#### 18.2 Cornerstone in Regulated & Safety-Critical Environments 🛡️📜:
 
-* **Why:** Leveraging the V-model's strength in traceability and formal V\&V for compliance.
+* **Why:** Leveraging the lifecycle's structured aspects for traceability and formal V\&V for compliance.
 
 * **Content:**
 
-  * **Compliance Mapping:** How Keystone artifacts and processes map to standards like ISO 26262 (automotive), IEC 62304 (medical), DO-178C (avionics), or industry-specific defence standards.
+  * **Compliance Mapping:** How Cornerstone artifacts and processes map to standards like ISO 26262 (automotive), IEC 62304 (medical), DO-178C (avionics), or industry-specific defence standards.
 
-  * **Formal Verification & Validation:** Adapting formal methods within the Keystone framework.
+  * **Formal Verification & Validation:** Adapting formal methods within the Cornerstone framework.
 
   * **Audit Trails & Evidence Generation:** Ensuring that the "living" artifacts provide sufficient evidence for audits.
 
@@ -1028,17 +954,17 @@ This approach exists to be adapted. What matters most is not following this docu
 
 #### 18.3 AI/ML in Product Development:
 
-* Integrating AI/ML components into Keystone products.
+* Integrating AI/ML components into Cornerstone products.
 
 * Data management and model deployment considerations.
 
 #### 18.4 Continuous Improvement & Evolution:
 
-* Adapting Keystone to new technologies and market demands.
+* Adapting Cornerstone to new technologies and market demands.
 
 * The role of feedback loops in refining the process.
 
-#### 18.5 Keystone for Continuous Product Development & Open-Ended Projects:
+#### 18.5 Cornerstone for Continuous Product Development & Open-Ended Projects:
 
 * **Why:** To address scenarios where product development is ongoing, with no fixed end date, and continuous feature delivery is the norm.
 
@@ -1046,11 +972,11 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Adapting the "Outer V" for Continuous Development:**
 
-    * The Left Arm (Requirements & High-Level Design): Becomes a living, evolving "Product Roadmap" and "System Architecture Vision" that is continuously refined rather than a one-time, fixed definition.
+    * The Structured Foundation: Becomes a living, evolving "Product Roadmap" and "System Architecture Vision" that is continuously refined rather than a one-time, fixed definition.
 
-    * The Right Arm (System Validation): Becomes continuous release and deployment, with ongoing monitoring and feedback loops from production (e.g., A/B testing, telemetry analysis, user feedback).
+    * The Rigorous Validation Arm: Becomes continuous release and deployment, with ongoing monitoring and feedback loops from production (e.g., A/B testing, telemetry analysis, user feedback).
 
-  * **The "Wavy Iterative Point" as the Default Mode:** This is where the bulk of the work happens, with continuous discovery, development, and delivery cycles driving incremental value.
+  * **The "Iterative Development Core" as the Default Mode:** This is where the bulk of the work happens, with continuous discovery, development, and delivery cycles driving incremental value.
 
   * **Continuous Discovery & Evolving Vision:** How product vision and requirements are constantly refined based on market feedback, user data, and technological advancements, feeding directly into the iterative cycles.
 
@@ -1062,17 +988,17 @@ This approach exists to be adapted. What matters most is not following this docu
 
   * **Examples:** SaaS products, long-lived IoT platforms, continuous hardware revisions with software updates, digital services.
 
-#### 18.6 Emerging Technologies and Keystone's Adaptability:
+#### 18.6 Emerging Technologies and Cornerstone's Adaptability:
 
-* How Keystone's principles (Adaptive Planning, Evolutionary Approach, Continuous Improvement) enable teams to integrate and leverage new technologies (e.g., Quantum Computing, Advanced Robotics, Bio-engineering) beyond just AI/ML, maintaining its future relevance.
+* How Cornerstone's principles (Adaptive Planning, Evolutionary Approach, Continuous Improvement) enable teams to integrate and leverage new technologies (e.g., Quantum Computing, Advanced Robotics, Bio-engineering) beyond just AI/ML, maintaining its future relevance.
 
 #### 18.7 Ethical and Environmental Sustainability in Product Development:
 
-* Beyond team wellbeing, how Keystone implicitly or explicitly supports broader ethical considerations and environmental sustainability throughout the product lifecycle (e.g., design for recyclability, responsible sourcing, ethical AI development).
+* Beyond team wellbeing, how Cornerstone implicitly or explicitly supports broader ethical considerations and environmental sustainability throughout the product lifecycle (e.g., design for recyclability, responsible sourcing, ethical AI development).
 
 ### Chapter 19: Conclusion: The Path Forward 🌟
 
-#### 19.1 Recap of Keystone's Benefits:
+#### 19.1 Recap of Cornerstone's Benefits:
 
 * Enhanced Predictability and Traceability
 
@@ -1082,7 +1008,7 @@ This approach exists to be adapted. What matters most is not following this docu
 
 * Reduced Risk in Complex Projects
 
-#### 19.2 Your Journey to Keystone Mastery:
+#### 19.2 Your Journey to Cornerstone Mastery:
 
 * Encouragement and next steps for readers.
 
