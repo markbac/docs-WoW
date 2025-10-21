@@ -1,139 +1,265 @@
-# 🚀 Our Ways of Working: Engineering Leadership & Product Delivery
+# 📘 MkDocs Framework — Cerulean Theme + Local Diagrams + Auto Nav + PDF Export
 
-Welcome to the "Ways of Working" repository! This space is dedicated to documenting our evolving philosophy and frameworks for effective engineering leadership and product development. Here, you'll find principles, guidelines, and practical approaches designed to help our teams think clearly, build effectively, and deliver meaningful outcomes.
+This repository provides a **ready-to-use MkDocs documentation framework** with the following key features:
 
-We believe in lightweight, meaningful documentation and embrace the **"Docs as Code"** approach, ensuring our practices are living, version-controlled, and integrated into our workflows.
+- 🧭 **Auto-generated navigation** from folder structure using `mkdocs-gen-nav` (no `nav:` section needed).
+- 🖼️ **Local-only diagram generation** for:
+  - **PlantUML** (via `plantuml-markdown` (Markdown extension) + `tools/plantuml.jar` + Graphviz).
+  - **Mermaid** (pre-rendered at build time via `mkdocs-mermaid2-plugin` + `@mermaid-js/mermaid-cli`).
+- ✨ **Bootswatch – Cerulean** theme for a clean, classic UI.
+- 📝 **PDF export** (per-page PDFs).
+- 🪶 Additional useful plugins:
+  - `mkdocs-minify-plugin` — reduces HTML size.
+  - `mkdocs-git-revision-date-localized-plugin` — shows “last updated” date.
+  - `mkdocs-glightbox` — modern lightbox for images.
+- 🛠️ **GitHub Actions workflow** that installs dependencies, generates diagrams locally, builds the site, exports PDFs, and deploys to GitHub Pages.
 
-### The Philosophy and The Framework 🧠➡️🛠️
+> ⚠️ **No Kroki or external PlantUML servers are used.** All diagrams are rendered during the build, locally or in CI.
 
-It can seem a bit strange to have two documents covering what appears to be the same topic. From a solution architect's perspective, this split is intentional and crucial:
+---
 
-* [**An Approach to Engineering Leadership and Delivery**](https://www.google.com/search?q=An-Approach-to-Engineering-Leadership-and-Delivery.md "null") is our **Foundational Philosophy**. It’s the "what" and the "why." This document sets the high-level principles and vision. It's our guiding map, ensuring everyone understands the values that drive our decisions, regardless of the specific project or technology. Without this shared philosophy, any framework we adopt would just be a list of rules without purpose.
+## 🚀 Quick Start (Local)
 
-* [**Cornerstone**](https://www.google.com/search?q=cornerstone_framework.md "null") is our **Practical Framework**. It’s the "how." This is the detailed, actionable blueprint that puts the philosophy into practice. It provides the specific processes, team structures, and artifacts (like ADRs and RTMs) needed to build complex products. It's the detailed itinerary that helps us navigate the real world, complete with clear steps and contingency plans.
+### 1. Install prerequisites
 
-Together, they create a powerful combination: a clear strategic direction grounded in core values, with a flexible, pragmatic approach for real-world delivery.
+**Required**: Python (3.10+), Node.js (18+), Java (JDK 17+), Graphviz.
 
-## 🌟 Our Core Philosophy: An Integrative Approach to Engineering Leadership and Delivery
+- **Ubuntu/Debian**
+  ```bash
+  sudo apt-get update
+  sudo apt-get install -y python3 python3-venv python3-pip nodejs npm openjdk-17-jre graphviz
+  ```
 
-At the heart of our "Ways of Working" is an **integrative philosophy** that synthesizes insights from leading thinkers in leadership, systems engineering, and software architecture. This foundational document, [An Approach to Engineering Leadership and Delivery](https://www.google.com/search?q=An-Approach-to-Engineering-and-Delivery.md "null"), outlines *what* matters and *why* these elements are critical for effective engineering.
+- **macOS (Homebrew)**
+  ```bash
+  brew install python@3.11 node openjdk graphviz
+  ```
 
-It focuses on key tenets like:
+- **Windows (PowerShell + Chocolatey)**
+  ```powershell
+  choco install -y python nodejs.install openjdk graphviz
+  ```
 
-* **Leading with Context, Not Control:** Emphasising purpose, autonomy, mastery, psychological safety, and sustainability.
+---
 
-* **Architectural Thinking:** Promoting simplicity, modularity, lightweight governance, and an evolutionary approach.
-
-* **Process: Structure Without Bureaucracy:** Advocating for Docs-as-Code, data-informed decisions, and iterative delivery.
-
-* **Teams as Systems:** Organising for flow with stream-aligned, enabling, and platform teams.
-
-* **Outcomes, Not Outputs:** Shifting focus to delivering tangible value for users and the business.
-
-* **Partnering with the Business:** Fostering transparent roadmapping and strategic collaboration.
-
-* **Sustainability, Resilience, and Incident Management:** Building systems and cultures that learn and adapt.
-
-* **Strategy and Portfolio-Level Thinking:** Ensuring engineering efforts scale sustainably.
-
-* **Navigating Inherent Tensions:** Understanding and resolving conflicts between principles for systemic health.
-
-This document serves as our guiding star, providing the philosophical underpinning for all our practical frameworks.
-
-## 🌉 Cornerstone: A Hybrid Delivery Framework for Product Development
-
-[Cornerstone](https://www.google.com/search?q=cornerstone_framework.md "null") introduces "Cornerstone," our comprehensive framework designed to navigate the complexities of modern product development, especially for integrated products involving software, firmware, hardware, and mechanical components.
-
-Cornerstone is a pragmatic synthesis, blending the rigour of the V-model with the adaptability of Agile. It's about finding the "sweet spot" for integrated product development, ensuring predictability and traceability while maintaining agility and responsiveness.
-
-### How We Organise for Flow in Cornerstone
-
-Cornerstone champions the use of different team types to optimise for value delivery and reduce cognitive load. Here's a visual of how these teams interact:
-
-```
-graph TD
-    A[Product Manager] --> B(Stream-Aligned Team A)
-    A --> C(Stream-Aligned Team B)
-    B --> D[Platform Team]
-    C --> D
-    D --> E[Shared Tooling/Services]
-    B --> F[Customer]
-    C --> F
-    
-    subgraph Stream-Aligned Teams
-        B
-        C
-    end
-    
-    subgraph Enabling/Platform Teams
-        D
-    end
+### 2. Create and activate a virtual environment
+```bash
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 ```
 
-* **Core Principles:** Operationalising concepts like iterative product evolution, continuous verification, cross-functional collaboration, and adaptive planning.
+---
 
-* **Living Artifacts:** Practical guidance on implementing **"Docs as Code"** for key documents like Architecture Decision Records (ADRs), Interface Control Documents (ICDs), and Requirements Traceability Matrices (RTMs).
+### 3. Install dependencies
 
-**Note:** The `cornerstone_framework.md` file is currently a comprehensive outline. As this repository develops, this content will be split into multiple, more focused markdown files for better organisation and maintainability.
+Install Python packages:
+```bash
+pip install -r requirements.txt
+```
 
-## 🔮 Our Roadmap: What's Next?
+Install Mermaid CLI (Node):
+```bash
+npm install -g @mermaid-js/mermaid-cli
+```
 
-Our "Ways of Working" are continuously evolving. Here's what's on the horizon for this repository.
+Download PlantUML jar:
+```bash
+bash scripts/get_plantuml.sh
+```
 
-### Practical Guides & Templates 📝
+---
 
-We will break down the `cornerstone_framework.md` outline into detailed, focused guides for specific topics and provide ready-to-use templates for key artifacts. This will make it easier for teams to adopt our practices and maintain consistent, lightweight documentation.
+### 4. Run locally
+```bash
+mkdocs serve
+```
+Visit [http://localhost:8000](http://localhost:8000).
 
-Some of the guides we'll be adding include:
+---
 
-* **Iterative Product Evolution:** Guides on structuring and executing iterative cycles for multi-disciplinary teams.
+### 5. Build the site + generate PDFs
+```bash
+mkdocs build
+```
+The output will be in `site/` with page PDFs under `site/pdf/`.
 
-* **Continuous Verification & Validation:** Strategies for shifting testing left and integrating it throughout the lifecycle.
+---
 
-* **Docs as Code Implementation:** Detailed workflows for version-controlling, generating, and publishing documentation.
+## 🧭 Navigation (mkdocs-gen-nav)
 
-* **Managing Complex Dependencies:** Strategies for mapping and tracking dependencies, especially with long hardware lead times.
+The **`mkdocs-gen-nav`** plugin auto-generates the sidebar navigation based on your `docs/` folder structure.
 
-* **Tailoring Cornerstone:** How to adapt the framework for different business contexts, product complexities, and regulatory environments (Lightweight, Balanced, Heavyweight).
+- No `nav:` section is required in `mkdocs.yml`.
+- You **must** keep a `docs/index.md` file for the homepage.
+- Control ordering using filename prefixes (e.g. `01-intro.md`, `02-architecture.md`).
+- Nested folders become nested sections automatically.
 
-We'll also create templates for:
+Example structure:
+```
+docs/
+├── index.md
+└── diagrams/
+    ├── mermaid.md
+    └── plantuml.md
+```
+Produces:
+```
+Home
+└── Diagrams
+    ├── Mermaid
+    └── PlantUML
+```
 
-* **Architecture Decision Records (ADRs):** To capture and communicate critical architectural choices.
+---
 
-* **C4 Model Diagrams:** Guidelines for creating Context, Container, Component, and Code diagrams.
+## 🖼️ Local Diagram Rendering
 
-* **Requirements Traceability Matrix (RTM) Snippets:** To ensure end-to-end traceability.
+### Mermaid
+- Uses `mkdocs-mermaid2-plugin`.
+- Rendered to SVG during `mkdocs build` via `@mermaid-js/mermaid-cli` (mmdc).
+- No runtime dependency on a CDN or external services.
 
-* **Interface Control Documents (ICDs):** For defining clear interfaces between interconnected components.
+Example:
+```markdown
+```mermaid
+flowchart TD
+  A[Start] --> B{Choice?}
+  B -->|Yes| C[Do the thing]
+  B -->|No| D[Abort]
+  C --> E[Finish]
+  D --> E[Finish]
+```
+```
 
-* **Risk Register:** A living document for tracking identified risks and mitigation strategies.
+### PlantUML
+- Uses `plantuml-markdown` (Markdown extension) with `tools/plantuml.jar`.
+- Renders SVG using local Java + Graphviz.
+- Fully offline.
 
-### Tooling & Ecosystem Guides 🛠️
+Example:
+```markdown
+```plantuml
+@startuml
+actor User
+participant "System" as S
+User -> S: Request
+S --> User: Response
+@enduml
+```
+```
 
-We'll provide recommendations and setup guides for the tools that support our ways of working. These guides will focus on how to integrate the tools within the Cornerstone framework to create a seamless development ecosystem.
+---
 
-We'll cover:
+## 📝 PDF Export
 
-* **Version Control Systems (Git):** Advanced branching strategies for managing all artifacts (code, documentation, design files).
+Each page is exported as a PDF using `mkdocs-pdf-export-plugin`.
+- Output folder: `site/pdf/`
+- PDF file name mirrors page slug.
+- To combine PDFs into one file, set `combined: true` in `mkdocs.yml` (optional).
 
-* **CI/CD:** Setting up pipelines for automated builds, tests (software, firmware, hardware), and documentation publishing.
+---
 
-* **Documentation & Modeling Toolchain:** How to use Markdown editors, Static Site Generators (e.g., MkDocs), and diagramming tools (Mermaid, PlantUML) for living documentation.
+## 🧰 Plugins Overview
 
-We aim for this repository to be a continuously evolving resource, reflecting our commitment to learning and improvement.
+| Plugin                                 | Purpose                                                | Notes                                                  |
+|----------------------------------------|---------------------------------------------------------|---------------------------------------------------------|
+| `mkdocs-gen-nav`                       | Auto nav from folder structure                         | Removes need for `nav:` in config                       |
+| `mkdocs-mermaid2-plugin`              | Pre-renders Mermaid diagrams                           | Requires Mermaid CLI                                   |
+| `plantuml-markdown` (Markdown extension)             | Local PlantUML rendering                               | Uses tools/plantuml.jar                                |
+| `mkdocs-pdf-export-plugin`          | Page PDFs                                              | Optional combined export                               |
+| `mkdocs-minify-plugin`               | Smaller HTML                                          | Reduces page weight                                    |
+| `mkdocs-git-revision-date-localized-plugin` | Shows last updated                                | Timeago format                                         |
+| `mkdocs-glightbox`                   | Lightbox for images                                   | Good UX for diagrams, screenshots                       |
 
-## 📂 Repository Contents
+---
 
-* [An Approach to Engineering Leadership and Delivery](https://www.google.com/search?q=An-Approach-to-Engineering-Leadership-and-Delivery.md "null"): Our foundational philosophy on engineering leadership and delivery.
+## 🏗️ CI/CD with GitHub Actions
 
-* [Cornerstone](https://www.google.com/search?q=cornerstone_framework.md "null"): The detailed outline for the Cornerstone hybrid delivery framework.
+A ready-to-use workflow is included in `.github/workflows/build.yml`. It:
+1. Checks out the repo
+2. Installs Python, Node, Java, and Graphviz
+3. Installs Python and Node dependencies
+4. Downloads PlantUML jar
+5. Builds MkDocs site and generates PDFs
+6. Uploads PDFs as an artefact
+7. Deploys to GitHub Pages (gh-pages branch)
 
-* [LICENSE](https://www.google.com/search?q=LICENSE.txt "null"): The licensing information for this repository.
+It also uses **caching** to speed up builds:
+- pip cache
+- npm cache
+- PlantUML diagram cache (`.plantuml-cache`)
 
-## 🤝 Contributions & Feedback
+To enable deployment:
+1. Go to **Settings → Pages**.
+2. Set “Deploy from branch” to `gh-pages` and folder `/`.
+3. Merge or push to `main` or `master`.
 
-This repository is a living document! We welcome feedback, suggestions, and contributions to refine and expand our "Ways of Working." If you have ideas or insights, please feel free to open an issue or submit a pull request.
+---
 
-## 📄 License
+## 🗂️ Repo Structure
 
-This repository is licensed under the MIT License. See the [LICENSE](https://www.google.com/search?q=LICENSE.txt "null") file for full details.
+```
+.
+├── .github/workflows/build.yml     # CI/CD workflow
+├── docs/                           # Documentation content
+│   ├── index.md
+│   └── diagrams/
+│       ├── mermaid.md
+│       └── plantuml.md
+├── mkdocs.yml                       # MkDocs configuration
+├── requirements.txt                # Python dependencies
+├── scripts/get_plantuml.sh         # Helper to fetch PlantUML jar
+├── tools/                          # PlantUML jar stored here
+└── README.md
+```
+
+---
+
+## 🧭 Version Pinning (optional but recommended)
+
+For deterministic builds, you can pin versions of:
+- `plantuml.jar` (download a specific version instead of `latest`)
+- `@mermaid-js/mermaid-cli`
+- Graphviz via package manager
+- MkDocs plugins in `requirements.txt`
+
+Also consider committing `tools/plantuml.jar` if allowed, to avoid fetching in CI.
+
+---
+
+## 🧼 Maintenance Tips
+
+- Keep `.plantuml-cache` — it speeds up diagram rendering on repeated builds.
+- Run `mkdocs build --clean` occasionally to clear stale files.
+- Use `pre-commit` hooks (optional) to enforce linting and check diagram syntax.
+
+---
+
+## 🏁 Next Steps
+
+- Start adding content under `docs/`.
+- Use diagrams freely — everything renders locally.
+- Optionally add a `CNAME` file if hosting on a custom domain.
+- Review MkDocs plugins for further enhancements (e.g. tags, search boosting, blog support).
+
+---
+
+## 🧪 Tested With
+
+- Python 3.11
+- Node 20
+- Graphviz 2.43+
+- Java 17
+- MkDocs 1.6
+
+---
+
+**Author:** *Generated base structure with GPT automation*  
+**License:** MIT (edit as needed)
+
+
+
+### Environment variables (used by plantuml-markdown)
+- `PLANTUML_JAR` — path to your PlantUML jar (this repo uses `tools/plantuml.jar`).
+- `PLANTUML_OUTPUT_FORMAT` — set to `svg` (optional; we configure `format: svg` in `mkdocs.yml`).
+

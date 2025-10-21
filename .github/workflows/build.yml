@@ -1,0 +1,84 @@
+name: Build MkDocs site and PDFs
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PLANTUML_JAR: tools/plantuml.jar
+      PLANTUML_OUTPUT_FORMAT: svg
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Install Python dependencies
+        run: pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Download PlantUML jar
+        run: bash scripts/get_plantuml.sh
+
+      - name: Build MkDocs site (with PDFs)
+
+      - name: Cache PlantUML renders
+        uses: actions/cache@v4
+        with:
+          path: .plantuml-cache
+          key: ${{ runner.os }}-plantuml-${{ hashFiles('**/*.puml', '**/*.plantuml') }}
+          restore-keys: |
+            ${{ runner.os }}-plantuml-
+
+        run: mkdocs build --clean
+
+      - name: Upload PDF artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: site/pdf/*.pdf
+          if-no-files-found: warn
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

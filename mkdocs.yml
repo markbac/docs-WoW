@@ -1,0 +1,44 @@
+site_name: Cerulean Docs
+site_description: 'MkDocs with Cerulean theme, local Mermaid & PlantUML, and PDF export'
+site_url: ""
+
+theme:
+  name: cerulean  # from mkdocs-bootswatch
+  locale: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+
+plugins:
+  - gen_nav:
+      enabled: true
+  - search
+  - mermaid2:
+      arguments:
+        theme: default
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      enable_creation_date: false
+      type: timeago
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - plantuml_markdown:
+      format: svg
+      cachedir: .plantuml-cache
+      # Uses PLANTUML_JAR env var
+

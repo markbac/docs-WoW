@@ -1,0 +1,287 @@
+📦 Installing dependencies from requirements.txt ...
+Requirement already satisfied: mkdocs>=1.6 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (1.6.1)
+Requirement already satisfied: mkdocs-bootswatch>=1.1 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (1.1)
+Requirement already satisfied: mkdocs-mermaid2-plugin>=1.2.1 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 3)) (1.2.3)
+Requirement already satisfied: plantuml-markdown>=3.9.0 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 4)) (3.11.1)
+Requirement already satisfied: mkdocs-minify-plugin>=0.8.0 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 5)) (0.8.0)
+Requirement already satisfied: mkdocs-git-revision-date-localized-plugin>=1.2.4 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 6)) (1.4.7)
+Requirement already satisfied: mkdocs-glightbox>=0.4.0 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 7)) (0.5.1)
+Requirement already satisfied: pymdown-extensions>=10.7 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 8)) (10.16.1)
+Requirement already satisfied: mkdocs-gen-nav-plugin>=0.2.0 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 9)) (0.2.0)
+Requirement already satisfied: PyYAML>=6.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 10)) (6.0.3)
+Requirement already satisfied: mkdocs-material>=9.5 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 11)) (9.6.22)
+Requirement already satisfied: mkdocs-to-pdf>=0.9.3 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 12)) (0.10.1)
+Requirement already satisfied: click>=7.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (8.3.0)
+Requirement already satisfied: ghp-import>=1.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: jinja2>=2.11.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: markdown>=3.3.6 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (3.9)
+Requirement already satisfied: markupsafe>=2.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (3.0.3)
+Requirement already satisfied: mergedeep>=1.3.4 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (1.3.4)
+Requirement already satisfied: mkdocs-get-deps>=0.2.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (0.2.0)
+Requirement already satisfied: packaging>=20.5 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (25.0)
+Requirement already satisfied: pathspec>=0.11.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (0.12.1)
+Requirement already satisfied: pyyaml-env-tag>=0.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (1.1)
+Requirement already satisfied: watchdog>=2.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (6.0.0)
+Requirement already satisfied: beautifulsoup4>=4.6.3 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (4.14.2)
+Requirement already satisfied: jsbeautifier in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (1.15.4)
+Requirement already satisfied: requests in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (2.32.5)
+Requirement already satisfied: setuptools>=18.5 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (80.9.0)
+Requirement already satisfied: six in ./.venv-pdf/lib/python3.13/site-packages (from plantuml-markdown>=3.9.0->-r requirements.txt (line 4)) (1.17.0)
+Requirement already satisfied: htmlmin2>=0.1.13 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-minify-plugin>=0.8.0->-r requirements.txt (line 5)) (0.1.13)
+Requirement already satisfied: jsmin>=3.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-minify-plugin>=0.8.0->-r requirements.txt (line 5)) (3.0.1)
+Requirement already satisfied: csscompressor>=0.9.5 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-minify-plugin>=0.8.0->-r requirements.txt (line 5)) (0.9.5)
+Requirement already satisfied: babel>=2.7.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (2.17.0)
+Requirement already satisfied: gitpython>=3.1.44 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (3.1.45)
+Requirement already satisfied: pytz>=2025.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (2025.2)
+Requirement already satisfied: selectolax==0.3.29 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-glightbox>=0.4.0->-r requirements.txt (line 7)) (0.3.29)
+Requirement already satisfied: backrefs~=5.7.post1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-material>=9.5->-r requirements.txt (line 11)) (5.9)
+Requirement already satisfied: colorama~=0.4 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-material>=9.5->-r requirements.txt (line 11)) (0.4.6)
+Requirement already satisfied: mkdocs-material-extensions~=1.3 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-material>=9.5->-r requirements.txt (line 11)) (1.3.1)
+Requirement already satisfied: paginate~=0.5 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-material>=9.5->-r requirements.txt (line 11)) (0.5.7)
+Requirement already satisfied: pygments~=2.16 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-material>=9.5->-r requirements.txt (line 11)) (2.19.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv-pdf/lib/python3.13/site-packages (from requests->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv-pdf/lib/python3.13/site-packages (from requests->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./.venv-pdf/lib/python3.13/site-packages (from requests->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./.venv-pdf/lib/python3.13/site-packages (from requests->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (2025.10.5)
+Requirement already satisfied: libsass>=0.23.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.23.0)
+Requirement already satisfied: pydyf==0.10.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.10.0)
+Requirement already satisfied: weasyprint==62.3 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (62.3)
+Requirement already satisfied: cffi>=0.6 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (2.0.0)
+Requirement already satisfied: html5lib>=1.1 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (1.1)
+Requirement already satisfied: tinycss2>=1.3.0 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (1.4.0)
+Requirement already satisfied: cssselect2>=0.1 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.8.0)
+Requirement already satisfied: Pyphen>=0.9.1 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.17.2)
+Requirement already satisfied: Pillow>=9.1.0 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (12.0.0)
+Requirement already satisfied: fonttools>=4.0.0 in ./.venv-pdf/lib/python3.13/site-packages (from fonttools[woff]>=4.0.0->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (4.60.1)
+Requirement already satisfied: soupsieve>1.2 in ./.venv-pdf/lib/python3.13/site-packages (from beautifulsoup4>=4.6.3->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (2.8)
+Requirement already satisfied: typing-extensions>=4.0.0 in ./.venv-pdf/lib/python3.13/site-packages (from beautifulsoup4>=4.6.3->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (4.15.0)
+Requirement already satisfied: pycparser in ./.venv-pdf/lib/python3.13/site-packages (from cffi>=0.6->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (2.23)
+Requirement already satisfied: webencodings in ./.venv-pdf/lib/python3.13/site-packages (from cssselect2>=0.1->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.5.1)
+Requirement already satisfied: brotli>=1.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from fonttools[woff]>=4.0.0->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (1.1.0)
+Requirement already satisfied: zopfli>=0.1.4 in ./.venv-pdf/lib/python3.13/site-packages (from fonttools[woff]>=4.0.0->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.2.3.post1)
+Requirement already satisfied: python-dateutil>=2.8.1 in ./.venv-pdf/lib/python3.13/site-packages (from ghp-import>=1.0->mkdocs>=1.6->-r requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from gitpython>=3.1.44->mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->gitpython>=3.1.44->mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (5.0.2)
+Requirement already satisfied: platformdirs>=2.2.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-get-deps>=0.2.0->mkdocs>=1.6->-r requirements.txt (line 1)) (4.5.0)
+Requirement already satisfied: editorconfig>=0.12.2 in ./.venv-pdf/lib/python3.13/site-packages (from jsbeautifier->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (0.17.1)
+ENABLE_PDF_EXPORT=1
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+Generating single mermaid chart
+INFO    -  MERMAID2  - Initialization arguments: {'theme': 'default'}
+INFO    -  MERMAID2  - Using javascript library (10.4.0):
+   https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /mnt/c/Users/baconm/MyRepos/docs-WoW/site
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+INFO    -  A reference to 'templates/01_Vision-planning/Inception-canvas.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/01_Vision-planning/Project-vision.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/02_Architecture/Architecture-principles.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/02_Architecture/Architetcure-vision.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/02_Architecture/C4-model-diagrams.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/02_Architecture/Crosscutting-concerns.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/02_Architecture/adr.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/02_Architecture/arc42-Architecture-Communication-Canvas.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/03_Requirements/Detailed-requirements.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/03_Requirements/RTM.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/03_Requirements/System-Level-Requirements.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/04_Design/ICD.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/04_Design/PoC-Report.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/04_Design/Software-design-specification.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/04_Design/rfc.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/05_Quality_Testing/Test-plan.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Decision-log.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Incident-review.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Lessons-learned.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Meeting-minutes.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Release-plan.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Risk-register.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/SBOM.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/System-engineering-managment-plan.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Team-working-agreement.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  A reference to 'templates/06_Management_Operations/Technical-debt-regsiter.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - index.md
+WARNING -  Doc file 'diagrams/mermaid.md' contains a link 'assets/mermaid/mermaid_75461979.svg', but the target 'diagrams/assets/mermaid/mermaid_75461979.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_35039387.svg', but the target 'guides/assets/mermaid/git-branching_35039387.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_77623961.svg', but the target 'guides/assets/mermaid/git-branching_77623961.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_55750548.svg', but the target 'guides/assets/mermaid/git-branching_55750548.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_54194915.svg', but the target 'guides/assets/mermaid/git-branching_54194915.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_86147769.svg', but the target 'guides/assets/mermaid/git-branching_86147769.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_17189891.svg', but the target 'guides/assets/mermaid/git-branching_17189891.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_11263232.svg', but the target 'guides/assets/mermaid/git-branching_11263232.svg' is not found among documentation files.
+INFO    -  Number headings up to level 3.
+INFO    -  Generate a table of contents up to heading level 3.
+INFO    -  Generate a cover page with "default_cover.html.j2".
+INFO    -  Converting <img> alignment(workaround).
+INFO    -  Rendering for PDF.
+INFO    -  Output a PDF to "/mnt/c/Users/baconm/MyRepos/docs-WoW/site/pdf/document.pdf".
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/diagrams/mermaid/assets/mermaid/mermaid_75461979.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/diagrams/mermaid/assets/mermaid/mermaid_75461979.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_35039387.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_35039387.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_77623961.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_77623961.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_55750548.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_55750548.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_54194915.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_54194915.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_86147769.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_86147769.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_17189891.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_17189891.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_11263232.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_11263232.svg'>
+ERROR:weasyprint:No anchor #IRUWCZ3SMFWXG/ for internal URI reference
+ERROR:weasyprint:No anchor #IRUWCZ3SMFWXG/ for internal URI reference
+ERROR:weasyprint:No anchor #IRUWCZ3SMFWXG/ for internal URI reference
+ERROR:weasyprint:No anchor #diagrams/mermaid/:mermaid-examples for internal URI reference
+ERROR:weasyprint:No anchor #diagrams/mermaid/:mermaid-examples for internal URI reference
+ERROR:weasyprint:No anchor #diagrams/mermaid/:mermaid-examples for internal URI reference
+ERROR:weasyprint:No anchor #diagrams/plantuml/:plantuml-examples for internal URI reference
+ERROR:weasyprint:No anchor #diagrams/plantuml/:plantuml-examples for internal URI reference
+ERROR:weasyprint:No anchor #diagrams/plantuml/:plantuml-examples for internal URI reference
+ERROR:weasyprint:No anchor #I52WSZDFOM/ for internal URI reference
+ERROR:weasyprint:No anchor #I52WSZDFOM/ for internal URI reference
+ERROR:weasyprint:No anchor #I52WSZDFOM/ for internal URI reference
+ERROR:weasyprint:No anchor #guides/cicd/:continuous-integration-continuous-delivery-cicd for internal URI reference
+ERROR:weasyprint:No anchor #guides/cicd/:continuous-integration-continuous-delivery-cicd for internal URI reference
+ERROR:weasyprint:No anchor #guides/cicd/:continuous-integration-continuous-delivery-cicd for internal URI reference
+ERROR:weasyprint:No anchor #guides/documentation_-26_modeling_toolchain/:documentation-modeling-toolchain for internal URI reference
+ERROR:weasyprint:No anchor #guides/documentation_-26_modeling_toolchain/:documentation-modeling-toolchain for internal URI reference
+ERROR:weasyprint:No anchor #guides/documentation_-26_modeling_toolchain/:documentation-modeling-toolchain for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:the-ultimate-guide-to-git-branching-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:the-ultimate-guide-to-git-branching-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:the-ultimate-guide-to-git-branching-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:why-your-team-needs-a-branching-strategy for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:why-your-team-needs-a-branching-strategy for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:why-your-team-needs-a-branching-strategy for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:popular-git-branching-strategies-explained for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:popular-git-branching-strategies-explained for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:popular-git-branching-strategies-explained for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:automated-backporting-cherry-picking for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:automated-backporting-cherry-picking for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:automated-backporting-cherry-picking for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:advanced-merge-strategies-rebase-vs-merge-squash for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:advanced-merge-strategies-rebase-vs-merge-squash for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:advanced-merge-strategies-rebase-vs-merge-squash for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:how-to-select-your-strategy for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:how-to-select-your-strategy for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:how-to-select-your-strategy for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:git-branching-anti-patterns-to-avoid for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:git-branching-anti-patterns-to-avoid for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:git-branching-anti-patterns-to-avoid for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:monorepo-specific-considerations for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:monorepo-specific-considerations for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:monorepo-specific-considerations for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:managing-external-dependencies-with-git-submodules-eg-rtos-ip-stack for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:managing-external-dependencies-with-git-submodules-eg-rtos-ip-stack for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:managing-external-dependencies-with-git-submodules-eg-rtos-ip-stack for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:metrics-for-success for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:metrics-for-success for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:metrics-for-success for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:the-power-of-communication-in-git-workflows for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:the-power-of-communication-in-git-workflows for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:the-power-of-communication-in-git-workflows for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:common-migration-paths-between-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:common-migration-paths-between-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:common-migration-paths-between-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:comparison-table for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:comparison-table for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:comparison-table for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:evolution-of-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:evolution-of-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:evolution-of-strategies for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:final-thoughts for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:final-thoughts for internal URI reference
+ERROR:weasyprint:No anchor #guides/git-branching/:final-thoughts for internal URI reference
+ERROR:weasyprint:No anchor #guides/version-control-systems/:version-control-systems-key-considerations for internal URI reference
+ERROR:weasyprint:No anchor #guides/version-control-systems/:version-control-systems-key-considerations for internal URI reference
+ERROR:weasyprint:No anchor #guides/version-control-systems/:version-control-systems-key-considerations for internal URI reference
+ERROR:weasyprint:No anchor #assets/mermaid/cornerstone_framework_flow_91860531.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #assets/mermaid/cornerstone_framework_flow_91860531.svg/: for internal URI reference
+INFO    -  Converting 10 articles to PDF took 8.7s
+INFO    -  Documentation built in 19.81 seconds
+▶ Building PDF with mkdocs-to-pdf.generated.yml …
+✓ Copied 1 PDF(s) → /mnt/c/Users/baconm/MyRepos/docs-WoW/dist/pdf
+✅ Done.
+✅ PDF build complete. Files are in dist/pdf/

@@ -1,0 +1,55 @@
+# ------------------------------------
+# MkDocs build output
+# ------------------------------------
+site/
+dist/
+
+# PDF exports
+*.pdf
+pdf/
+
+# ------------------------------------
+# Python virtual environments
+# ------------------------------------
+.venv/
+.venv-pdf/
+venv/
+env/
+ENV/
+
+# Pyenv local version file
+.python-version
+
+# Pipenv / Poetry
+Pipfile.lock
+poetry.lock
+
+# ------------------------------------
+# Python cache & build artefacts
+# ------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+develop-eggs/
+dist/
+*.log
+
+# ------------------------------------
+# OS / IDE specific cruft
+# ------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ------------------------------------
+# PlantUML / diagram cache
+# ------------------------------------
+.plantuml-cache/
