@@ -46,24 +46,24 @@ Originally introduced by Vincent Driessen in 2010, GitFlow is a highly structure
     
 ```mermaid
 gitGraph
-    commit id: "Initial"
-    branch develop
-    commit id: "Dev Init"
-    checkout main
-    merge develop
-    branch feature/X
-    commit id: "Feat X 1"
-    commit id: "Feat X 2"
-    checkout develop
-    merge feature/X
-    branch staging
-    checkout staging
-    commit id: "Staging Test"
-    checkout develop
-    merge staging
-    checkout main
-    merge staging
-    commit id: "Prod Deploy"
+commit msg: "Initial"
+branch develop
+commit msg: "Dev Init"
+checkout main
+merge develop
+branch feature/X
+commit msg: "Feat X 1"
+commit msg: "Feat X 2"
+checkout develop
+merge feature/X
+branch staging
+checkout staging
+commit msg: "Staging Test"
+checkout develop
+merge staging
+checkout main
+merge staging
+commit msg: "Prod Deploy"
 ```    
     
 
@@ -125,18 +125,18 @@ GitHub Flow is the minimalist cousin of GitFlow, designed for teams that ship fa
     
 ```mermaid
     gitGraph
-        commit id: "v1.0"
+        commit msg: "v1.0"
         branch feature/login
-        commit id: "Login 1"
-        commit id: "Login 2"
+        commit msg: "Login 1"
+        commit msg: "Login 2"
         checkout main
         merge feature/login
-        commit id: "v1.1"
+        commit msg: "v1.1"
         branch feature/dashboard
-        commit id: "Dash 1"
+        commit msg: "Dash 1"
         checkout main
         merge feature/dashboard
-        commit id: "v1.2"
+        commit msg: "v1.2"
 ```    
     
 
@@ -192,31 +192,31 @@ GitLab Flow is a hybrid strategy that builds on GitFlow and GitHub Flow, integra
     
 ```mermaid
 gitGraph
-  commit id: "Initial"
+  commit msg: "Initial"
 
   branch develop
-  commit id: "Dev Init"
+  commit msg: "Dev Init"
 
   checkout main
   merge develop
 
   branch feature/X
-  commit id: "Feat X 1"
-  commit id: "Feat X 2"
+  commit msg: "Feat X 1"
+  commit msg: "Feat X 2"
 
   checkout develop
   merge feature/X
 
   branch staging
   checkout staging
-  commit id: "Staging Test"
+  commit msg: "Staging Test"
 
   checkout develop
   merge staging
 
   checkout main
   merge staging
-  commit id: "Prod Deploy"
+  commit msg: "Prod Deploy"
 
 ```    
     
@@ -258,29 +258,29 @@ In this strategy, each deployment environment (like `dev`, `qa`, `staging`, `pro
     
 ```mermaid
 gitGraph
-  commit id: "Initial"
+  commit msg: "Initial"
 
   %% Development
   branch dev
-  commit id: "Dev A"
-  commit id: "Dev B"
+  commit msg: "Dev A"
+  commit msg: "Dev B"
 
   %% QA – branch from dev, diverge first, then merge dev in
   branch qa
   checkout qa
-  commit id: "QA Test"          %% diverge qa
+  commit msg: "QA Test"          %% diverge qa
   merge dev                     %% bring latest dev into qa
 
   %% Staging – branch from qa, diverge first, then merge qa in
   branch staging
   checkout staging
-  commit id: "Staging Test"     %% diverge staging
+  commit msg: "Staging Test"     %% diverge staging
   merge qa                      %% bring qa into staging
 
   %% Prod – branch from staging, diverge first, then merge staging in
   branch prod
   checkout prod
-  commit id: "Prod Release"     %% diverge prod
+  commit msg: "Prod Release"     %% diverge prod
   merge staging                 %% promote to prod
 
 ```    
@@ -336,13 +336,13 @@ Trunk-Based Development is the go-to for high-performing teams that deploy multi
     
 ```mermaid
     gitGraph
-        commit id: "C1"
-        commit id: "C2"
-        commit id: "C3"
-        commit id: "C4 (Feature A Flagged)"
-        commit id: "C5"
-        commit id: "C6 (Feature B Flagged)"
-        commit id: "C7"
+        commit msg: "C1"
+        commit msg: "C2"
+        commit msg: "C3"
+        commit msg: "C4 (Feature A Flagged)"
+        commit msg: "C5"
+        commit msg: "C6 (Feature B Flagged)"
+        commit msg: "C7"
 ```    
     
 
@@ -402,20 +402,20 @@ If your product has long-term users, multiple versions in the wild, and strict r
     
 ```mermaid
     gitGraph
-        commit id: "Initial Main"
-        commit id: "Feature 1"
-        commit id: "Feature 2"
+        commit msg: "Initial Main"
+        commit msg: "Feature 1"
+        commit msg: "Feature 2"
         branch release/v1.0
-        commit id: "Release Prep 1.0"
-        commit id: "Bugfix 1.0"
+        commit msg: "Release Prep 1.0"
+        commit msg: "Bugfix 1.0"
         checkout main
-        commit id: "Feature 3"
-        commit id: "Feature 4"
+        commit msg: "Feature 3"
+        commit msg: "Feature 4"
         checkout release/v1.0
-        commit id: "Final Test 1.0"
+        commit msg: "Final Test 1.0"
         checkout main
         merge release/v1.0
-        commit id: "Post-Release Merge"
+        commit msg: "Post-Release Merge"
 ```    
     
 
@@ -579,13 +579,13 @@ One Flow is a simplified alternative to GitFlow, aiming to reduce its complexity
     
 ```mermaid
 gitGraph
-  commit id: "Initial"
+  commit msg: "Initial"
 
   %% feature/alpha off main
   branch feature/alpha
   checkout feature/alpha
-  commit id: "Alpha 1"
-  commit id: "Alpha 2"
+  commit msg: "Alpha 1"
+  commit msg: "Alpha 2"
 
   %% release Alpha
   checkout main
@@ -594,7 +594,7 @@ gitGraph
   %% feature/beta off post-v1.0 main
   branch feature/beta
   checkout feature/beta
-  commit id: "Beta 1"
+  commit msg: "Beta 1"
 
   %% release Beta
   checkout main
@@ -650,23 +650,23 @@ This is less of a strict branching model and more of a philosophy for merging fe
     
 ```mermaid
 gitGraph
-  commit id: "Initial"
+  commit msg: "Initial"
 
   %% Ship: quick change, merge straight back
   branch feature/small-change
-  commit id: "Small Change"
+  commit msg: "Small Change"
   checkout main
   merge feature/small-change tag: "Ship: direct merge or quick PR"
 
   %% Show: get feedback first, then merge
   branch feature/show-feedback
-  commit id: "Show Change"
+  commit msg: "Show Change"
   checkout main
   merge feature/show-feedback tag: "Show: merge after feedback"
 
   %% Ask: formal approval required
   branch feature/ask-approval
-  commit id: "Big Change"
+  commit msg: "Big Change"
   checkout main
   merge feature/ask-approval tag: "Ask: merge after review & approval"
 
@@ -723,23 +723,23 @@ This approach is an evolution of Trunk-Based Development, particularly suited fo
     
 ```mermaid
     gitGraph
-        commit id: "C1"
-        commit id: "C2"
-        commit id: "C3"
+        commit msg: "C1"
+        commit msg: "C2"
+        commit msg: "C3"
         branch release-train/2025.07
-        commit id: "RT Bugfix 1"
-        commit id: "RT Bugfix 2"
+        commit msg: "RT Bugfix 1"
+        commit msg: "RT Bugfix 2"
         checkout main
-        commit id: "C4"
-        commit id: "C5"
+        commit msg: "C4"
+        commit msg: "C5"
         checkout release-train/2025.07
-        commit id: "RT Final Test"
+        commit msg: "RT Final Test"
         checkout main
         merge release-train/2025.07
         branch release-train/2025.08
-        commit id: "RT 2 Bugfix 1"
+        commit msg: "RT 2 Bugfix 1"
         checkout main
-        commit id: "C6"
+        commit msg: "C6"
  ```   
     
 

@@ -1,5 +1,5 @@
-site_name: Cerulean Docs
-site_description: 'MkDocs with Cerulean theme, local Mermaid & PlantUML, and PDF export'
+site_name: Engineering Way of Working (WoW) 🛠️
+site_description: 'Standardised guides, templates, and architectural process documentation (ADRs, C4, arc42) for our engineering and delivery lifecycle.'
 site_url: ""
 
 theme:
@@ -8,6 +8,11 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+
+docs_dir: docs
+site_dir: site
+
+exclude_docs: ""
 
 plugins:
   - gen_nav:
@@ -28,7 +33,12 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          # This tells SuperFences to hand off the code block to the mermaid2 plugin for rendering.
+          format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.details
   - pymdownx.tabbed
   - pymdownx.highlight
@@ -41,4 +51,3 @@ markdown_extensions:
       format: svg
       cachedir: .plantuml-cache
       # Uses PLANTUML_JAR env var
-
