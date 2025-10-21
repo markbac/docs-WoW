@@ -576,33 +576,23 @@ One Flow is a simplified alternative to GitFlow, aiming to reduce its complexity
 -   `main` is always deployable.
     
 -   Releases are created by tagging `main` at a stable point. Hotfixes are typically done on a new branch from `main` and then merged back.
-    
+
 ```mermaid
-gitGraph
-  commit msg: "Initial"
+    gitGraph
+        commit msg: "Initial"
+        branch feature/alpha
+        checkout feature/alpha
+        commit msg: "Alpha 1"
+        commit msg: "Alpha 2"
+        checkout main
+        merge feature/alpha tag: "v1.0"
+        branch feature/beta
+        checkout feature/beta
+        commit msg: "Beta 1"
+        checkout main
+        merge feature/beta tag: "v1.1"
+```
 
-  %% feature/alpha off main
-  branch feature/alpha
-  checkout feature/alpha
-  commit msg: "Alpha 1"
-  commit msg: "Alpha 2"
-
-  %% release Alpha
-  checkout main
-  merge feature/alpha tag: "v1.0"
-
-  %% feature/beta off post-v1.0 main
-  branch feature/beta
-  checkout feature/beta
-  commit msg: "Beta 1"
-
-  %% release Beta
-  checkout main
-  merge feature/beta tag: "v1.1"
-
-
- ```   
-    
 
 **When to Use One Flow:**
 
@@ -648,30 +638,26 @@ This is less of a strict branching model and more of a philosophy for merging fe
     
 -   **Ask**: For larger, riskier, or more complex changes, a formal PR is opened, requiring explicit review and approval from one or more teammates before merging.
     
+
 ```mermaid
 gitGraph
   commit msg: "Initial"
 
-  %% Ship: quick change, merge straight back
   branch feature/small-change
   commit msg: "Small Change"
   checkout main
   merge feature/small-change tag: "Ship: direct merge or quick PR"
 
-  %% Show: get feedback first, then merge
   branch feature/show-feedback
   commit msg: "Show Change"
   checkout main
   merge feature/show-feedback tag: "Show: merge after feedback"
 
-  %% Ask: formal approval required
   branch feature/ask-approval
   commit msg: "Big Change"
   checkout main
   merge feature/ask-approval tag: "Ask: merge after review & approval"
-
- ```   
-    
+```  
 
 **When to Use Ship / Show / Ask:**
 
@@ -721,27 +707,27 @@ This approach is an evolution of Trunk-Based Development, particularly suited fo
     
 -   **Merge Back**: Critical bug fixes from the release train are merged back into `main`.
     
+
 ```mermaid
-    gitGraph
-        commit msg: "C1"
-        commit msg: "C2"
-        commit msg: "C3"
-        branch release-train/2025.07
-        commit msg: "RT Bugfix 1"
-        commit msg: "RT Bugfix 2"
-        checkout main
-        commit msg: "C4"
-        commit msg: "C5"
-        checkout release-train/2025.07
-        commit msg: "RT Final Test"
-        checkout main
-        merge release-train/2025.07
-        branch release-train/2025.08
-        commit msg: "RT 2 Bugfix 1"
-        checkout main
-        commit msg: "C6"
- ```   
-    
+gitGraph
+    commit msg: "C1"
+    commit msg: "C2"
+    commit msg: "C3"
+    branch release-train/2025.07
+    commit msg: "RT Bugfix 1"
+    commit msg: "RT Bugfix 2"
+    checkout main
+    commit msg: "C4"
+    commit msg: "C5"
+    checkout release-train/2025.07
+    commit msg: "RT Final Test"
+    checkout main
+    merge release-train/2025.07
+    branch release-train/2025.08
+    commit msg: "RT 2 Bugfix 1"
+    checkout main
+    commit msg: "C6"
+```
 
 **When to Use Mainline Development with Release Trains:**
 
