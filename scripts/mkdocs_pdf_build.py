@@ -76,6 +76,28 @@ def copy_docs_tree(src_docs: Path, dst_docs: Path) -> None:
         shutil.rmtree(dst_docs)
     shutil.copytree(src_docs, dst_docs)
 
+def create_ephemeral_section_indexes(work_docs: Path) -> None:
+    """
+    For each directory under docs/ that contains Markdown files but no index.md,
+    create a temporary index.md with a single heading so the PDF has content
+    for section entries. These files exist only in the temp copy used for PDF.
+    """
+    for d in sorted(work_docs.rglob("*")):
+        if not d.is_dir():
+            continue
+        # skip special folders like assets
+        if d.name.startswith("."):
+            continue
+        md_files = list(d.glob("*.md"))
+        if not md_files:
+            continue
+        index_md = d / "index.md"
+        if index_md.exists():
+            continue
+        # Derive a nice title from the folder name
+        title = d.name.replace("-", " ").replace("_", " ").title()
+        index_md.write_text(f"# {title}\n\n", encoding="utf-8")
+
 
 def preprocess_mermaid(work_docs: Path, assets_dir: Path) -> None:
     """
@@ -160,6 +182,8 @@ def main() -> int:
     work_docs = tmp_root / "docs"
     assets_dir = work_docs / "assets" / "mermaid"
     copy_docs_tree(src_docs, work_docs)
+
+    create_ephemeral_section_indexes(work_docs)
 
     # pre-render Mermaid
     try:
