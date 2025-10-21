@@ -3,11 +3,14 @@ site_description: 'Standardised guides, templates, and architectural process doc
 site_url: ""
 
 theme:
-  name: cerulean  # from mkdocs-bootswatch
+  name: material  
   locale: en
   features:
     - navigation.instant
     - navigation.tracking
+    - toc.integrate 
+    - navigation.expand
+    - content.width.full
 
 docs_dir: docs
 site_dir: site
@@ -18,6 +21,7 @@ plugins:
   - gen_nav:
       enabled: true
   - search
+  - awesome-pages
   - mermaid2:
       arguments:
         theme: default
@@ -33,6 +37,7 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+      toc_depth: 3
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
