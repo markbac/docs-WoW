@@ -44,8 +44,6 @@ jobs:
       - name: Download PlantUML jar
         run: bash scripts/get_plantuml.sh
 
-      - name: Build MkDocs site (with PDFs)
-
       - name: Cache PlantUML renders
         uses: actions/cache@v4
         with:
@@ -54,7 +52,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-plantuml-
 
+      # --- START OF CORRECTIONS ---
+      - name: Build MkDocs Site (HTML)
         run: mkdocs build --clean
+        
+      - name: Build PDFs
+        # Assumes the 'scripts/build_pdfs.sh' script handles the PDF generation
+        run: bash scripts/build_pdfs.sh
+      # --- END OF CORRECTIONS ---
 
       - name: Upload PDF artefacts
         uses: actions/upload-artifact@v4
