@@ -21,8 +21,10 @@ import yaml
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:
+    # Using yaml.full_load instead of safe_load to properly parse !!python/name tags
+    # used by extensions like pymdownx.superfences.
     with path.open("r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+        return yaml.full_load(f) or {}
 
 
 def dump_yaml(data: Dict[str, Any], path: Path) -> None:
