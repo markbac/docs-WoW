@@ -18,11 +18,12 @@ import tempfile
 from pathlib import Path
 from typing import Dict, Any
 import yaml
+# FIX 1: Explicitly import the module needed by the YAML constructor
+import pymdownx.superfences 
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:
-    # Using yaml.full_load instead of safe_load to properly parse !!python/name tags
-    # used by extensions like pymdownx.superfences.
+    # FIX 1: Using yaml.full_load instead of safe_load to properly parse !!python/name tags
     with path.open("r", encoding="utf-8") as f:
         return yaml.full_load(f) or {}
 
@@ -30,6 +31,25 @@ def load_yaml(path: Path) -> Dict[str, Any]:
 def dump_yaml(data: Dict[str, Any], path: Path) -> None:
     with path.open("w", encoding="utf-8") as f:
         yaml.safe_dump(data, f, sort_keys=False, allow_unicode=True)
+
+
+# FIX 2: New function to revert the python object to a string before dumping
+def restore_pymdownx_tags(config: Dict[str, Any]) -> None:
+    """Restores the Python object in the markdown_extensions list back to the YAML tag string
+    so that yaml.safe_dump can write it without error.
+    """
+    me = list(config.get("markdown_extensions", []))
+    
+    for i, item in enumerate(me):
+        if isinstance(item, dict) and 'pymdownx.superfences' in item:
+            sf_config = item['pymdownx.superfences']
+            custom_fences = sf_config.get('custom_fences', [])
+            
+            for fence in custom_fences:
+                # Check if the 'format' value is the function object loaded by full_load
+                if 'format' in fence and fence['format'] is pymdownx.superfences.fence_code_format:
+                    # Replace the function object with the original YAML tag string
+                    fence['format'] = '!!python/name:pymdownx.superfences.fence_code_format'
 
 
 def ensure_to_pdf_plugin(config: Dict[str, Any]) -> None:
@@ -198,6 +218,10 @@ def main() -> int:
     ensure_markdown_extensions(pdf_cfg)
     if not args.no_theme_switch:
         switch_theme_to_material(pdf_cfg)
+        
+    # FIX 2: Restore the Python function object to its string representation for dumping
+    restore_pymdownx_tags(pdf_cfg)
+
     pdf_cfg["docs_dir"] = str(work_docs)
     # ensure site output lands in the repo root, not under the temp dir
     pdf_cfg["site_dir"] = str(repo_root / "site")
