@@ -11,6 +11,7 @@ Requirement already satisfied: mkdocs-gen-nav-plugin>=0.2.0 in ./.venv-pdf/lib/p
 Requirement already satisfied: PyYAML>=6.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 10)) (6.0.3)
 Requirement already satisfied: mkdocs-material>=9.5 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 11)) (9.6.22)
 Requirement already satisfied: mkdocs-to-pdf>=0.9.3 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 12)) (0.10.1)
+Requirement already satisfied: mkdocs-awesome-pages-plugin>=2.7.1 in ./.venv-pdf/lib/python3.13/site-packages (from -r requirements.txt (line 13)) (2.10.1)
 Requirement already satisfied: click>=7.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (8.3.0)
 Requirement already satisfied: ghp-import>=1.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (2.1.0)
 Requirement already satisfied: jinja2>=2.11.1 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs>=1.6->-r requirements.txt (line 1)) (3.1.6)
@@ -53,6 +54,8 @@ Requirement already satisfied: cssselect2>=0.1 in ./.venv-pdf/lib/python3.13/sit
 Requirement already satisfied: Pyphen>=0.9.1 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (0.17.2)
 Requirement already satisfied: Pillow>=9.1.0 in ./.venv-pdf/lib/python3.13/site-packages (from weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (12.0.0)
 Requirement already satisfied: fonttools>=4.0.0 in ./.venv-pdf/lib/python3.13/site-packages (from fonttools[woff]>=4.0.0->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (4.60.1)
+Requirement already satisfied: natsort>=8.1.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-awesome-pages-plugin>=2.7.1->-r requirements.txt (line 13)) (8.4.0)
+Requirement already satisfied: wcmatch>=7 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-awesome-pages-plugin>=2.7.1->-r requirements.txt (line 13)) (10.1)
 Requirement already satisfied: soupsieve>1.2 in ./.venv-pdf/lib/python3.13/site-packages (from beautifulsoup4>=4.6.3->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (2.8)
 Requirement already satisfied: typing-extensions>=4.0.0 in ./.venv-pdf/lib/python3.13/site-packages (from beautifulsoup4>=4.6.3->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (4.15.0)
 Requirement already satisfied: pycparser in ./.venv-pdf/lib/python3.13/site-packages (from cffi>=0.6->weasyprint==62.3->mkdocs-to-pdf>=0.9.3->-r requirements.txt (line 12)) (2.23)
@@ -63,29 +66,9 @@ Requirement already satisfied: python-dateutil>=2.8.1 in ./.venv-pdf/lib/python3
 Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from gitpython>=3.1.44->mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (4.0.12)
 Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv-pdf/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->gitpython>=3.1.44->mkdocs-git-revision-date-localized-plugin>=1.2.4->-r requirements.txt (line 6)) (5.0.2)
 Requirement already satisfied: platformdirs>=2.2.0 in ./.venv-pdf/lib/python3.13/site-packages (from mkdocs-get-deps>=0.2.0->mkdocs>=1.6->-r requirements.txt (line 1)) (4.5.0)
+Requirement already satisfied: bracex>=2.1.1 in ./.venv-pdf/lib/python3.13/site-packages (from wcmatch>=7->mkdocs-awesome-pages-plugin>=2.7.1->-r requirements.txt (line 13)) (2.6)
 Requirement already satisfied: editorconfig>=0.12.2 in ./.venv-pdf/lib/python3.13/site-packages (from jsbeautifier->mkdocs-mermaid2-plugin>=1.2.1->-r requirements.txt (line 3)) (0.17.1)
 ENABLE_PDF_EXPORT=1
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-Generating single mermaid chart
-INFO    -  MERMAID2  - Initialization arguments: {'theme': 'default'}
-INFO    -  MERMAID2  - Using javascript library (10.4.0):
-   https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs
 WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
 INFO    -  Cleaning site directory
 INFO    -  Building documentation to directory: /mnt/c/Users/baconm/MyRepos/docs-WoW/site
@@ -161,126 +144,106 @@ WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory a
 WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
 WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
 WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
-INFO    -  A reference to 'templates/01_Vision-planning/Inception-canvas.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/01_Vision-planning/Project-vision.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/02_Architecture/Architecture-principles.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/02_Architecture/Architetcure-vision.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/02_Architecture/C4-model-diagrams.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/02_Architecture/Crosscutting-concerns.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/02_Architecture/adr.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/02_Architecture/arc42-Architecture-Communication-Canvas.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/03_Requirements/Detailed-requirements.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/03_Requirements/RTM.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/03_Requirements/System-Level-Requirements.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/04_Design/ICD.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/04_Design/PoC-Report.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/04_Design/Software-design-specification.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/04_Design/rfc.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/05_Quality_Testing/Test-plan.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Decision-log.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Incident-review.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Lessons-learned.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Meeting-minutes.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Release-plan.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Risk-register.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/SBOM.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/System-engineering-managment-plan.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Team-working-agreement.md' is included in the 'nav' configuration, but this file is excluded from the built site.
-INFO    -  A reference to 'templates/06_Management_Operations/Technical-debt-regsiter.md' is included in the 'nav' configuration, but this file is excluded from the built site.
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
+WARNING -  [git-revision-date-localized-plugin] Unable to find a git directory and/or git is not installed. Option 'fallback_to_build_date' set to 'true': Falling back to build date
 INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
   - index.md
-WARNING -  Doc file 'diagrams/mermaid.md' contains a link 'assets/mermaid/mermaid_75461979.svg', but the target 'diagrams/assets/mermaid/mermaid_75461979.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_35039387.svg', but the target 'guides/assets/mermaid/git-branching_35039387.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_77623961.svg', but the target 'guides/assets/mermaid/git-branching_77623961.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_55750548.svg', but the target 'guides/assets/mermaid/git-branching_55750548.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_54194915.svg', but the target 'guides/assets/mermaid/git-branching_54194915.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_86147769.svg', but the target 'guides/assets/mermaid/git-branching_86147769.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_17189891.svg', but the target 'guides/assets/mermaid/git-branching_17189891.svg' is not found among documentation files.
-WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_11263232.svg', but the target 'guides/assets/mermaid/git-branching_11263232.svg' is not found among documentation files.
+WARNING -  Doc file 'index.md' contains a link 'diagrams/mermaid.md', but the target is not found among documentation files.
+WARNING -  Doc file 'index.md' contains a link 'diagrams/plantuml.md', but the target is not found among documentation files.
+WARNING -  Doc file 'Ways of Working/cornerstone_framework_flow.md' contains a link 'assets/mermaid/cornerstone_framework_flow_45779852.svg', but the target 'Ways of Working/assets/mermaid/cornerstone_framework_flow_45779852.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_44420132.svg', but the target 'guides/assets/mermaid/git-branching_44420132.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_72327607.svg', but the target 'guides/assets/mermaid/git-branching_72327607.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_80301579.svg', but the target 'guides/assets/mermaid/git-branching_80301579.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_36615900.svg', but the target 'guides/assets/mermaid/git-branching_36615900.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_15590456.svg', but the target 'guides/assets/mermaid/git-branching_15590456.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_57003332.svg', but the target 'guides/assets/mermaid/git-branching_57003332.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_78499165.svg', but the target 'guides/assets/mermaid/git-branching_78499165.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_66590366.svg', but the target 'guides/assets/mermaid/git-branching_66590366.svg' is not found among documentation files.
+WARNING -  Doc file 'guides/git-branching.md' contains a link 'assets/mermaid/git-branching_55673683.svg', but the target 'guides/assets/mermaid/git-branching_55673683.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/02_Architecture/C4-model-diagrams.md' contains a link 'assets/mermaid/C4-model-diagrams_81158083.svg', but the target 'wow-templates/02_Architecture/assets/mermaid/C4-model-diagrams_81158083.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/02_Architecture/C4-model-diagrams.md' contains a link 'assets/mermaid/C4-model-diagrams_52001623.svg', but the target 'wow-templates/02_Architecture/assets/mermaid/C4-model-diagrams_52001623.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/02_Architecture/C4-model-diagrams.md' contains a link 'assets/mermaid/C4-model-diagrams_60232678.svg', but the target 'wow-templates/02_Architecture/assets/mermaid/C4-model-diagrams_60232678.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/02_Architecture/C4-model-diagrams.md' contains a link 'assets/mermaid/C4-model-diagrams_13177448.svg', but the target 'wow-templates/02_Architecture/assets/mermaid/C4-model-diagrams_13177448.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/04_Design/ICD.md' contains a link 'assets/mermaid/ICD_73167210.svg', but the target 'wow-templates/04_Design/assets/mermaid/ICD_73167210.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/04_Design/ICD.md' contains a link 'assets/mermaid/ICD_32569944.svg', but the target 'wow-templates/04_Design/assets/mermaid/ICD_32569944.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/04_Design/Software-design-specification.md' contains a link 'assets/mermaid/Software-design-specification_48336680.svg', but the target 'wow-templates/04_Design/assets/mermaid/Software-design-specification_48336680.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/04_Design/Software-design-specification.md' contains a link 'assets/mermaid/Software-design-specification_28211027.svg', but the target 'wow-templates/04_Design/assets/mermaid/Software-design-specification_28211027.svg' is not found among documentation files.
+WARNING -  Doc file 'wow-templates/04_Design/rfc.md' contains a link 'assets/mermaid/rfc_84255189.svg', but the target 'wow-templates/04_Design/assets/mermaid/rfc_84255189.svg' is not found among documentation files.
 INFO    -  Number headings up to level 3.
 INFO    -  Generate a table of contents up to heading level 3.
 INFO    -  Generate a cover page with "default_cover.html.j2".
 INFO    -  Converting <img> alignment(workaround).
 INFO    -  Rendering for PDF.
 INFO    -  Output a PDF to "/mnt/c/Users/baconm/MyRepos/docs-WoW/site/pdf/document.pdf".
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/diagrams/mermaid/assets/mermaid/mermaid_75461979.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/diagrams/mermaid/assets/mermaid/mermaid_75461979.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_35039387.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_35039387.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_77623961.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_77623961.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_55750548.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_55750548.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_54194915.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_54194915.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_86147769.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_86147769.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_17189891.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_17189891.svg'>
-ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_11263232.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_11263232.svg'>
-ERROR:weasyprint:No anchor #IRUWCZ3SMFWXG/ for internal URI reference
-ERROR:weasyprint:No anchor #IRUWCZ3SMFWXG/ for internal URI reference
-ERROR:weasyprint:No anchor #IRUWCZ3SMFWXG/ for internal URI reference
-ERROR:weasyprint:No anchor #diagrams/mermaid/:mermaid-examples for internal URI reference
-ERROR:weasyprint:No anchor #diagrams/mermaid/:mermaid-examples for internal URI reference
-ERROR:weasyprint:No anchor #diagrams/mermaid/:mermaid-examples for internal URI reference
-ERROR:weasyprint:No anchor #diagrams/plantuml/:plantuml-examples for internal URI reference
-ERROR:weasyprint:No anchor #diagrams/plantuml/:plantuml-examples for internal URI reference
-ERROR:weasyprint:No anchor #diagrams/plantuml/:plantuml-examples for internal URI reference
-ERROR:weasyprint:No anchor #I52WSZDFOM/ for internal URI reference
-ERROR:weasyprint:No anchor #I52WSZDFOM/ for internal URI reference
-ERROR:weasyprint:No anchor #I52WSZDFOM/ for internal URI reference
-ERROR:weasyprint:No anchor #guides/cicd/:continuous-integration-continuous-delivery-cicd for internal URI reference
-ERROR:weasyprint:No anchor #guides/cicd/:continuous-integration-continuous-delivery-cicd for internal URI reference
-ERROR:weasyprint:No anchor #guides/cicd/:continuous-integration-continuous-delivery-cicd for internal URI reference
-ERROR:weasyprint:No anchor #guides/documentation_-26_modeling_toolchain/:documentation-modeling-toolchain for internal URI reference
-ERROR:weasyprint:No anchor #guides/documentation_-26_modeling_toolchain/:documentation-modeling-toolchain for internal URI reference
-ERROR:weasyprint:No anchor #guides/documentation_-26_modeling_toolchain/:documentation-modeling-toolchain for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:the-ultimate-guide-to-git-branching-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:the-ultimate-guide-to-git-branching-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:the-ultimate-guide-to-git-branching-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:why-your-team-needs-a-branching-strategy for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:why-your-team-needs-a-branching-strategy for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:why-your-team-needs-a-branching-strategy for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:popular-git-branching-strategies-explained for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:popular-git-branching-strategies-explained for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:popular-git-branching-strategies-explained for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:automated-backporting-cherry-picking for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:automated-backporting-cherry-picking for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:automated-backporting-cherry-picking for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:advanced-merge-strategies-rebase-vs-merge-squash for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:advanced-merge-strategies-rebase-vs-merge-squash for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:advanced-merge-strategies-rebase-vs-merge-squash for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:how-to-select-your-strategy for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:how-to-select-your-strategy for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:how-to-select-your-strategy for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:git-branching-anti-patterns-to-avoid for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:git-branching-anti-patterns-to-avoid for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:git-branching-anti-patterns-to-avoid for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:monorepo-specific-considerations for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:monorepo-specific-considerations for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:monorepo-specific-considerations for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:managing-external-dependencies-with-git-submodules-eg-rtos-ip-stack for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:managing-external-dependencies-with-git-submodules-eg-rtos-ip-stack for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:managing-external-dependencies-with-git-submodules-eg-rtos-ip-stack for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:metrics-for-success for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:metrics-for-success for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:metrics-for-success for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:the-power-of-communication-in-git-workflows for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:the-power-of-communication-in-git-workflows for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:the-power-of-communication-in-git-workflows for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:common-migration-paths-between-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:common-migration-paths-between-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:common-migration-paths-between-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:comparison-table for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:comparison-table for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:comparison-table for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:evolution-of-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:evolution-of-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:evolution-of-strategies for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:final-thoughts for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:final-thoughts for internal URI reference
-ERROR:weasyprint:No anchor #guides/git-branching/:final-thoughts for internal URI reference
-ERROR:weasyprint:No anchor #guides/version-control-systems/:version-control-systems-key-considerations for internal URI reference
-ERROR:weasyprint:No anchor #guides/version-control-systems/:version-control-systems-key-considerations for internal URI reference
-ERROR:weasyprint:No anchor #guides/version-control-systems/:version-control-systems-key-considerations for internal URI reference
-ERROR:weasyprint:No anchor #assets/mermaid/cornerstone_framework_flow_91860531.svg/: for internal URI reference
-ERROR:weasyprint:No anchor #assets/mermaid/cornerstone_framework_flow_91860531.svg/: for internal URI reference
-INFO    -  Converting 10 articles to PDF took 8.7s
-INFO    -  Documentation built in 19.81 seconds
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/Ways%20of%20Working/cornerstone_framework_flow/assets/mermaid/cornerstone_framework_flow_45779852.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/Ways of Working/cornerstone_framework_flow/assets/mermaid/cornerstone_framework_flow_45779852.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_44420132.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_44420132.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_72327607.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_72327607.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_80301579.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_80301579.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_36615900.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_36615900.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_15590456.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_15590456.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_57003332.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_57003332.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_78499165.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_78499165.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_66590366.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_66590366.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_55673683.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/guides/git-branching/assets/mermaid/git-branching_55673683.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_81158083.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_81158083.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_52001623.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_52001623.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_60232678.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_60232678.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_13177448.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Architecture/C4-model-diagrams/assets/mermaid/C4-model-diagrams_13177448.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/ICD/assets/mermaid/ICD_73167210.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/ICD/assets/mermaid/ICD_73167210.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/ICD/assets/mermaid/ICD_32569944.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/ICD/assets/mermaid/ICD_32569944.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/Software-design-specification/assets/mermaid/Software-design-specification_48336680.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/Software-design-specification/assets/mermaid/Software-design-specification_48336680.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/Software-design-specification/assets/mermaid/Software-design-specification_28211027.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/Software-design-specification/assets/mermaid/Software-design-specification_28211027.svg'>
+ERROR:weasyprint:Failed to load image at 'file:///mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/rfc/assets/mermaid/rfc_84255189.svg': URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/c/Users/baconm/MyRepos/docs-WoW/site/wow-templates/Design/rfc/assets/mermaid/rfc_84255189.svg'>
+ERROR:weasyprint:No anchor #Ways-20of-20Working/assets/mermaid/cornerstone_framework_flow_45779852.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #Ways-20of-20Working/assets/mermaid/cornerstone_framework_flow_45779852.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_44420132.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_44420132.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_72327607.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_72327607.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_80301579.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_80301579.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_36615900.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_36615900.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_15590456.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_15590456.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_57003332.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_57003332.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_78499165.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_78499165.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_66590366.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_66590366.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_55673683.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #guides/assets/mermaid/git-branching_55673683.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_81158083.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_81158083.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_52001623.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_52001623.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_60232678.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_60232678.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_13177448.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Architecture/assets/mermaid/C4-model-diagrams_13177448.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/ICD_73167210.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/ICD_73167210.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/ICD_32569944.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/ICD_32569944.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/Software-design-specification_48336680.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/Software-design-specification_48336680.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/Software-design-specification_28211027.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/Software-design-specification_28211027.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/rfc_84255189.svg/: for internal URI reference
+ERROR:weasyprint:No anchor #wow-templates/Design/assets/mermaid/rfc_84255189.svg/: for internal URI reference
+INFO    -  Converting 42 articles to PDF took 18.9s
+INFO    -  Documentation built in 37.09 seconds
 ▶ Building PDF with mkdocs-to-pdf.generated.yml …
 ✓ Copied 1 PDF(s) → /mnt/c/Users/baconm/MyRepos/docs-WoW/dist/pdf
 ✅ Done.
