@@ -6,19 +6,23 @@ Python script to prepare and build a single PDF from an MkDocs project
 using the mkdocs-to-pdf plugin.
 
 This script manages necessary configuration changes for a successful PDF build:
+- It fetches Git metadata (hash, dirty status, date) for traceability.
 - It uses yaml.full_load to correctly parse custom Python tags (like those
   used by Pymdownx SuperFences) from the mkdocs.yml file.
 - It restores these Python function objects back to their YAML string tags
   before dumping the temporary config file for the MkDocs build.
-- It ensures 'mkdocs-to-pdf' is present and configured for a single combined PDF.
-- It switches the theme to 'material' for crisper print CSS.
+- It ensures 'to-pdf' is present and configured for a single combined PDF,
+  injecting the traceability metadata into its configuration.
 - It pre-renders Mermaid fences to SVG so they render in the PDF.
 - It works on a temporary copy of the documentation to avoid side-effects.
 
 Libraries to install (via requirements.txt): pyyaml, mkdocs, mkdocs-to-pdf, etc.
-Unit tests: ToDo in a future iteration.
+Command-line options:
+    --src (default: mkdocs.yml): Path to source mkdocs.yml
+    --outdir (default: dist/pdf): Destination directory for the generated PDF
+    --keep-site: Keep 'site/' after build
+    --no-theme-switch: Do not override theme to Material for PDF
 """
-
 from __future__ import annotations
 import argparse
 import os
@@ -28,13 +32,43 @@ import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, Any, List
+import datetime
 import yaml
 # Explicit import needed for yaml.full_load to resolve custom tags from mkdocs.yml
 import pymdownx.superfences
 
 # Constant for the Python tag used by pymdownx.superfences.
-# Using a constant improves robustness and maintainability (Comment 1).
 FENCE_CODE_FORMAT_TAG = '!!python/name:pymdownx.superfences.fence_code_format'
+
+
+def get_git_metadata() -> tuple[str, str, str]:
+    """
+    Fetches Git commit hash, checks for uncommitted changes (dirty status),
+    and gets the current timestamp.
+
+    :returns: A tuple (git_hash, dirty_status, generated_on).
+    """
+    try:
+        # Get short hash
+        git_hash = subprocess.check_output(
+            ['git', 'rev-parse', '--short', 'HEAD'], stderr=subprocess.STDOUT
+        ).decode('utf-8').strip()
+
+        # Check for uncommitted changes
+        git_status = subprocess.check_output(
+            ['git', 'status', '--porcelain'], stderr=subprocess.STDOUT
+        ).decode('utf-8').strip()
+
+        dirty_status = "YES (Uncommitted Changes)" if git_status else "NO (Clean)"
+
+    except subprocess.CalledProcessError:
+        git_hash = "N/A (Git not found or not a repo)"
+        dirty_status = "N/A"
+
+    # Get the current time in UTC
+    now_utc = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    return git_hash, dirty_status, now_utc
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:
@@ -66,13 +100,12 @@ def restore_pymdownx_tags(config: Dict[str, Any]) -> Dict[str, Any]:
     'pymdownx.superfences' custom fences back to its YAML tag string.
 
     This is necessary because yaml.safe_dump (used for writing the temporary
-    config) cannot serialize Python function objects (Comment 3).
+    config) cannot serialize Python function objects.
 
     :param config: The loaded MkDocs configuration dictionary.
-    :returns: A new configuration dictionary with the custom fence tags restored
-              (Comment 4: Returns a modified copy instead of in-place change).
+    :returns: A new configuration dictionary with the custom fence tags restored.
     """
-    # Clone the config to prevent side effects on the original object (Comment 4)
+    # Clone the config to prevent side effects on the original object
     new_config = config.copy()
 
     markdown_extensions = new_config.get("markdown_extensions", [])
@@ -90,19 +123,19 @@ def restore_pymdownx_tags(config: Dict[str, Any]) -> Dict[str, Any]:
             sf_config = cloned_item['pymdownx.superfences']
             custom_fences = sf_config.get('custom_fences', [])
 
-            # Comment 2: Create a new list for custom_fences to safely replace the list.
+            # Create a new list for custom_fences to safely replace the list.
             new_custom_fences = []
 
             for fence in custom_fences:
-                # Use .copy() on nested dict before potential modification (Comment 2).
+                # Use .copy() on nested dict before potential modification.
                 fence_copy = fence.copy() if isinstance(fence, dict) else fence
 
-                # Check for object identity (Comment 3: necessary because yaml.full_load
+                # Check for object identity (necessary because yaml.full_load
                 # converts the tag string into the actual function object).
                 if isinstance(fence_copy, dict) and 'format' in fence_copy and \
                    fence_copy['format'] is pymdownx.superfences.fence_code_format:
 
-                    # Comment 1: Replace the function object with the constant string.
+                    # Replace the function object with the constant string.
                     fence_copy['format'] = FENCE_CODE_FORMAT_TAG
 
                 new_custom_fences.append(fence_copy)
@@ -115,12 +148,14 @@ def restore_pymdownx_tags(config: Dict[str, Any]) -> Dict[str, Any]:
     return new_config
 
 
-def ensure_to_pdf_plugin(config: Dict[str, Any]) -> None:
+def ensure_to_pdf_plugin(config: Dict[str, Any], subtitle_text: str) -> None:
     """
-    Ensures the 'to-pdf' plugin is present and configured for a single combined PDF.
+    Ensures the 'to-pdf' plugin is present and configured for a single combined PDF,
+    injecting the traceability subtitle.
 
     Modifies the configuration dictionary *in place*.
     :param config: The configuration dictionary.
+    :param subtitle_text: The traceability string to inject for the cover page.
     """
     plugins = list(config.get("plugins", []))
     idx = None
@@ -143,6 +178,13 @@ def ensure_to_pdf_plugin(config: Dict[str, Any]) -> None:
     block.setdefault("toc_level", 3)
     # write one combined PDF here:
     block.setdefault("output_path", "pdf/document.pdf")
+    
+    # --- INJECT TRACEABILITY DATA ---
+    # Injecting the subtitle text as a custom config key. The user must configure
+    # their PDF template (cover.html) to render this key.
+    block["cover_subtitle_traceability"] = subtitle_text
+    # Overriding the default PDF Title to include site name
+    block.setdefault("cover_title", config.get("site_name", "Documentation"))
 
     config["plugins"] = plugins
 
@@ -267,6 +309,7 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path) -> None:
                         '</svg>',
                         encoding="utf-8",
                     )
+                changed = True
             changed = True
             relative_path = svg_path.relative_to(work_docs)
             return f'![diagram]({relative_path.as_posix()})'
@@ -299,24 +342,35 @@ def main() -> int:
         print(f"ERROR: {src_cfg_path} not found", file=sys.stderr)
         return 2
 
-    # Step 1: Load and Fix Configuration Tags
+    # 1. Fetch metadata and generate subtitle string for the PDF cover
+    git_hash, dirty_status, generated_on = get_git_metadata()
+
+    pdf_subtitle = (
+        f"Generated: {generated_on}. "
+        f"Commit: {git_hash} (Dirty: {dirty_status})"
+    )
+
+    print(f"--- PDF Build Traceability ---")
+    print(f"Git Hash: {git_hash}")
+    print(f"Dirty Status: {dirty_status}")
+    print(f"Generated On: {generated_on}")
+    print(f"------------------------------")
+
+    # Step 2: Load and Fix Configuration Tags
     cfg = load_yaml(src_cfg_path)
     # The initial call to load_yaml returns an object loaded with Python functions.
     # restore_pymdownx_tags reverts those functions to strings and returns a copy,
     # which becomes our mutable config for the PDF build.
     pdf_cfg = restore_pymdownx_tags(cfg)
-    
-    # Comment 5: 'restore_pymdownx_tags' must be called first to fix the raw configuration
-    # loaded from disk. Subsequent mutation functions modify this already-fixed object.
 
-    # Step 2: Validate docs directory
+    # Step 3: Validate docs directory
     docs_dir_name = pdf_cfg.get("docs_dir", "docs")
     src_docs = repo_root / docs_dir_name
     if not src_docs.exists():
         print(f"ERROR: docs directory '{docs_dir_name}' not found", file=sys.stderr)
         return 3
 
-    # Step 3: Prepare temporary docs workspace
+    # Step 4: Prepare temporary docs workspace
     tmp_root = Path(tempfile.mkdtemp(prefix=".mkdocs-to-pdf-"))
     work_docs = tmp_root / "docs"
     assets_dir = work_docs / "assets" / "mermaid"
@@ -324,14 +378,14 @@ def main() -> int:
 
     create_ephemeral_section_indexes(work_docs)
 
-    # Step 4: Pre-render Mermaid diagrams
+    # Step 5: Pre-render Mermaid diagrams
     try:
         preprocess_mermaid(work_docs, assets_dir)
     except FileNotFoundError as error:
         print(f"WARNING: Mermaid CLI not found (mmdc/npx). Mermaid diagrams will NOT render in PDFs. ({error})")
 
-    # Step 5: Mutate configuration for PDF run (in-place modifications on pdf_cfg copy)
-    ensure_to_pdf_plugin(pdf_cfg)
+    # Step 6: Mutate configuration for PDF run (in-place modifications on pdf_cfg copy)
+    ensure_to_pdf_plugin(pdf_cfg, pdf_subtitle)
     ensure_markdown_extensions(pdf_cfg)
     if not args.no_theme_switch:
         switch_theme_to_material(pdf_cfg)
@@ -341,18 +395,18 @@ def main() -> int:
     # ensure site output lands in the repo root, not under the temp dir
     pdf_cfg["site_dir"] = str(repo_root / "site")
 
-    # Step 6: Write generated config
+    # Step 7: Write generated config
     tmp_cfg_path = tmp_root / "mkdocs-to-pdf.generated.yml"
     dump_yaml(pdf_cfg, tmp_cfg_path)
 
-    # Step 7: Build (enable plugin via env)
+    # Step 8: Build (enable plugin via env)
     env = os.environ.copy()
-    env["ENABLE_PDF_EXPORT"] = "1"
+    env["ENABLE_PDF_EXPORT"] = "1" # Environment variable used by the 'to-pdf' plugin
 
     print("▶ Building PDF with mkdocs-to-pdf.generated.yml …")
     subprocess.run(["mkdocs", "build", "--config-file", str(tmp_cfg_path), "--clean"], check=True, env=env)
 
-    # Step 8: Collect result
+    # Step 9: Collect result
     produced = repo_root / "site" / "pdf"
     pdfs = list(produced.rglob("*.pdf"))
     if not pdfs:
@@ -365,13 +419,14 @@ def main() -> int:
         shutil.copy2(pdf, outdir / pdf.name)
     print(f"✓ Copied {len(pdfs)} PDF(s) → {outdir}")
 
-    # Step 9: Cleanup
+    # Step 10: Cleanup
     if not args.keep_site and (repo_root / "site").exists():
         shutil.rmtree(repo_root / "site")
     shutil.rmtree(tmp_root, ignore_errors=True)
-    print("✅ Done.")
+    print("✅ Done. Traceability data injected into PDF configuration.")
     return 0
 
 
 if __name__ == "__main__":
+
     raise SystemExit(main())
