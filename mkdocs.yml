@@ -1,54 +1,166 @@
-site_name: Engineering Way of Working (WoW) 🛠️
-site_description: 'Standardised guides, templates, and architectural process documentation (ADRs, C4, arc42) for our engineering and delivery lifecycle.'
-site_url: ""
+site_name: Ways of Working Documentation
+site_url: https://markbac.github.io/docs-WoW/
+repo_url: https://github.com/markbac/docs-WoW
+repo_name: markbac/docs-WoW
 
 theme:
-  name: material  
-  locale: en
+  name: material
+  font:
+    text: Inter
+    code: Roboto Mono
+  custom_dir: theme
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
-    - navigation.instant
-    - navigation.tracking
-    - toc.integrate 
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
     - navigation.expand
-    - content.width.full
-
-docs_dir: docs
-site_dir: site
-
-exclude_docs: ""
-
-plugins:
-  - gen_nav:
-      enabled: true
-  - search
-  - awesome-pages
-  - minify:
-      minify_html: true
-  - git-revision-date-localized:
-      fallback_to_build_date: true
-      enable_creation_date: false
-      type: timeago
-  - glightbox
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
 
 markdown_extensions:
-  - admonition
-  - toc:
-      permalink: true
-      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.details
-  - pymdownx.tabbed
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
+        - name: plantuml
+          class: plantuml
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.critic
-  - plantuml_markdown:
-      format: svg
-      cachedir: .plantuml-cache
-      # Uses PLANTUML_JAR env var
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+  # This is the new hook that runs during standard MkDocs builds 
+  # (serve and build) to inject build metadata into the 'extra' config.
+  - python:
+      module: scripts.mkdocs_hooks
+  # Configuration option for Awesome Pages plugin if you decide to switch
+  # Uncomment the following plugin and remove the 'nav' section below
+  # if you wish to switch to automated navigation based on folder
+  # structure using the .pages file control (less rigid order).
+  # - awesome-pages
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/markbac
+
+# -----------------------------------------------------------------------------
+# NAVIGATION (nav)
+# -----------------------------------------------------------------------------
+# We are currently using EXPLICIT NAVIGATION here (listing every link) because this
+# documentation is PROCESS-DRIVEN (Vision must precede Architecture, etc.).
+# This ensures a rigid, sequential flow that cannot be broken by file structure
+# changes.
+#
+# To switch to AUTOMATIC NAVIGATION (e.g., using awesome-pages):
+# 1. Comment out or delete this entire 'nav' block.
+# 2. Uncomment the 'awesome-pages' plugin entry in the 'plugins' section above.
+# 3. Use '.pages' files in the 'docs/' directory to control titles/order.
+nav:
+  - Home: index.md
+  - Ways of Working:
+    - An Approach to Engineering Leadership and Delivery: Ways of Working/An-Approach-to-Engineering-Leadership-and-Delivery.md
+    - The Cornerstone Framework: Ways of Working/cornerstone_framework.md
+    - The Cornerstone Framework Flow: Ways of Working/cornerstone_framework_flow.md
+  - Guides:
+    - CI/CD: guides/cicd.md
+    - Git Branching: guides/git-branching.md
+    - Documentation & Modeling Toolchain: guides/documentation_&_modeling_toolchain.md
+    - Version Control Systems: guides/version-control-systems.md
+  - Templates:
+    - Vision & Planning:
+      - Inception Canvas: wow-templates/01_Vision-planning/Inception-canvas.md
+      - Project Vision: wow-templates/01_Vision-planning/Project-vision.md
+    - Architecture:
+      - arc42 Architecture Communication Canvas: wow-templates/02_Architecture/arc42-Architecture-Communication-Canvas.md
+      - Architecture Decision Record (ADR): wow-templates/02_Architecture/adr.md
+      - Architecture Principles: wow-templates/02_Architecture/Architecture-principles.md
+      - Architecture Vision: wow-templates/02_Architecture/Architetcure-vision.md
+      - C4 Model Diagrams: wow-templates/02_Architecture/C4-model-diagrams.md
+      - Crosscutting Concerns: wow-templates/02_Architecture/Crosscutting-concerns.md
+    - Requirements:
+      - Detailed Requirements: wow-templates/03_Requirements/Detailed-requirements.md
+      - Requirements Traceability Matrix (RTM): wow-templates/03_Requirements/RTM.md
+      - System Level Requirements: wow-templates/03_Requirements/System-Level-Requirements.md
+    - Design:
+      - Interface Control Document (ICD): wow-templates/04_Design/ICD.md
+      - Proof of Concept (PoC) Report: wow-templates/04_Design/PoC-Report.md
+      - Request for Comments (RFC): wow-templates/04_Design/rfc.md
+      - Software Design Specification (SDS): wow-templates/04_Design/Software-design-specification.md
+    - Quality & Testing:
+      - Test Plan: wow-templates/05_Quality_Testing/Test-plan.md
+    - Management & Operations:
+      - Decision Log: wow-templates/06_Management_Operations/Decision-log.md
+      - Incident Review: wow-templates/06_Management_Operations/Incident-review.md
+      - Lessons Learned: wow-templates/06_Management_Operations/Lessons-learned.md
+      - Meeting Minutes: wow-templates/06_Management_Operations/Meeting-minutes.md
+      - Release Plan: wow-templates/06_Management_Operations/Release-plan.md
+      - Risk Register: wow-templates/06_Management_Operations/Risk-register.md
+      - Software Bill of Materials (SBOM): wow-templates/06_Management_Operations/SBOM.md
+      - System Engineering Management Plan (SEMP): wow-templates/06_Management_Operations/System-engineering-managment-plan.md
+      - Team Working Agreement: wow-templates/06_Management_Operations/Team-working-agreement.md
+      - Technical Debt Register: wow-templates/06_Management_Operations/Technical-debt-regsiter.md
+  - About: about.md
