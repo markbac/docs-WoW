@@ -6,7 +6,4 @@ This is a starter MkDocs site using the **Bootswatch – Cerulean** theme with *
 - PlantUML uses a local `plantuml.jar` plus Graphviz `dot` to render to SVG.
 - PDF artefacts are generated per page using the `mkdocs-pdf-export-plugin` and saved under `site/pdf/`.
 
-## Links
 
-- [Mermaid examples](diagrams/mermaid.md)
-- [PlantUML examples](diagrams/plantuml.md)

@@ -1,4 +1,5 @@
 site_name: Ways of Working Documentation
+site_description: 'Standardised guides, templates, and architectural process documentation (ADRs, C4, arc42) for our engineering and delivery lifecycle.'
 site_url: https://markbac.github.io/docs-WoW/
 repo_url: https://github.com/markbac/docs-WoW
 repo_name: markbac/docs-WoW
@@ -8,7 +9,6 @@ theme:
   font:
     text: Inter
     code: Roboto Mono
-  custom_dir: theme
   palette:
     # Palette toggle for light mode
     - scheme: default
@@ -61,6 +61,7 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.blocks.admonition
   - pymdownx.keys
   - pymdownx.magiclink
   - pymdownx.mark
@@ -87,15 +88,21 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
+      toc_depth: 3
+
+hooks: 
+  - scripts/mkdocs_hooks.py
+
 
 plugins:
   - search
+  - macros
   - git-revision-date-localized:
+      fallback_to_build_date: true
+      enable_creation_date: false
       type: timeago
-  # This is the new hook that runs during standard MkDocs builds 
-  # (serve and build) to inject build metadata into the 'extra' config.
-  - python:
-      module: scripts.mkdocs_hooks
+  - glightbox
+
   # Configuration option for Awesome Pages plugin if you decide to switch
   # Uncomment the following plugin and remove the 'nav' section below
   # if you wish to switch to automated navigation based on folder

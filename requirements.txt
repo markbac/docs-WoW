@@ -11,3 +11,4 @@ PyYAML>=6.0.1
 mkdocs-material>=9.5
 mkdocs-to-pdf>=0.9.3
 mkdocs-awesome-pages-plugin>=2.7.1
+mkdocs-macros-plugin>=1.2.1
