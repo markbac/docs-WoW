@@ -57,6 +57,7 @@ FENCE_CODE_FORMAT_TAG = "!!python/name:pymdownx.superfences.fence_code_format"
 EMOJI_TWEMOJI_TAG = "!!python/name:material.extensions.emoji.twemoji"
 EMOJI_TO_SVG_TAG = "!!python/name:material.extensions.emoji.to_svg"
 
+#
 
 def _slugify(text: str) -> str:
     import re, unicodedata
@@ -100,7 +101,7 @@ def prefix_heading_ids(work_docs: Path) -> None:
             if m:
                 text = m.group("Text").strip()
                 slug = _slugify(text)
-                full_id = f"{base}:{slug}"
+                full_id = f"{base}--{slug}"
                 out.append(f'<a id="{full_id}"></a>')
                 changed = True
             out.append(line)
@@ -230,44 +231,45 @@ def restore_pymdownx_tags(config: Dict[str, Any]) -> Dict[str, Any]:
     return new_config
 
 
-def ensure_to_pdf_plugin(config: Dict[str, Any], subtitle_text: str) -> None:
+def ensure_with_pdf_plugin(config: Dict[str, Any], subtitle_text: str) -> None:
     """
-    Ensure 'to-pdf' plugin exists and is configured for one combined PDF.
-    Also set a dynamic cover_subtitle with traceability info, and mirror it
-    into config.extra.pdf_build for optional page rendering.
+    Ensure 'with-pdf' plugin exists and is configured for a single combined PDF.
+    Adds traceability text to the cover and exposes the same in extra.pdf_build.
     """
     plugins = list(config.get("plugins", []))
     idx = None
     for i, item in enumerate(plugins):
-        if isinstance(item, str) and item.strip() == "to-pdf":
-            plugins[i] = {"to-pdf": {}}
+        if isinstance(item, str) and item.strip() == "with-pdf":
+            plugins[i] = {"with-pdf": {}}
             idx = i
             break
-        if isinstance(item, dict) and "to-pdf" in item:
+        if isinstance(item, dict) and "with-pdf" in item:
             idx = i
             break
     if idx is None:
-        plugins.append({"to-pdf": {}})
+        plugins.append({"with-pdf": {}})
         idx = len(plugins) - 1
 
-    block = plugins[idx]["to-pdf"]
-    block.setdefault("enabled_if_env", "ENABLE_PDF_EXPORT")
-    block.setdefault("toc_title", "Table of Contents")
-    block.setdefault("toc_level", 3)
+    block = plugins[idx]["with-pdf"]
     block.setdefault("output_path", "pdf/document.pdf")
+    block.setdefault("cover", True)
     block.setdefault("cover_title", config.get("site_name", "Documentation"))
-
-    # Dynamic subtitle on the built-in cover (plugin expects a string here).
-    block["cover_subtitle"] = subtitle_text
+    block.setdefault("cover_subtitle", subtitle_text)
+    block.setdefault("enabled_if_env", "ENABLE_PDF_EXPORT")
+    block.setdefault("verbose", True)
+    block.setdefault("toc_level", 3)
+    block.setdefault("debug", True)
+    block.setdefault("debug_html", True)
+    block.setdefault("single_html", True)
 
     config["plugins"] = plugins
 
-    # Also expose data for page templates if needed
     extra = dict(config.get("extra") or {})
     pdf_build = dict(extra.get("pdf_build") or {})
     pdf_build["subtitle_traceability"] = subtitle_text
     extra["pdf_build"] = pdf_build
     config["extra"] = extra
+
 
 
 def ensure_markdown_extensions(config: Dict[str, Any]) -> None:
@@ -314,6 +316,34 @@ def create_ephemeral_section_indexes(work_docs: Path) -> None:
             continue
         title = directory.name.replace("-", " ").replace("_", " ").title()
         index_md.write_text(f"# {title}\n\n", encoding="utf-8")
+
+def limit_image_heights(work_docs: Path, max_height_px: int = 900):
+    """
+    Inject style attributes limiting image height directly into Markdown HTML tags.
+    """
+    import re
+    pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
+    for md in work_docs.rglob("*.md"):
+        text = md.read_text(encoding="utf-8")
+        # Inject a CSS inline style hint for oversized images
+        text = pattern.sub(r'![\1](\2){style="max-height:%dpx; height:auto;"}' % max_height_px, text)
+        md.write_text(text, encoding="utf-8")
+
+def limit_image_heights(work_docs: Path, max_height_px: int = 900):
+    """
+    Inject style attributes limiting image height directly into Markdown image tags.
+    This prevents oversized images from causing WeasyPrint to stop rendering.
+    """
+    import re
+    pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
+    for md in work_docs.rglob("*.md"):
+        text = md.read_text(encoding="utf-8")
+        # Inject inline style limiting height
+        text = pattern.sub(
+            r'![\1](\2){style="max-height:%dpx; height:auto;"}' % max_height_px,
+            text
+        )
+        md.write_text(text, encoding="utf-8")
 
 
 def normalise_image_links(work_docs: Path) -> None:
@@ -375,17 +405,32 @@ def normalise_image_links(work_docs: Path) -> None:
         if changed:
             md.write_text(text, encoding="utf-8")
 
+def resize_large_images(work_docs: Path, max_height_px: int = 900):
+    """
+    Resize any existing PNG/JPEG images over a given height limit.
+    Uses Pillow to safely scale down while keeping aspect ratio.
+    """
+    from PIL import Image
+    for img_path in work_docs.rglob("*.[pjP][pnP][gG]*"):
+        try:
+            with Image.open(img_path) as im:
+                w, h = im.size
+                if h > max_height_px:
+                    scale = max_height_px / h
+                    new_size = (int(w * scale), int(h * scale))
+                    im = im.resize(new_size, Image.Resampling.LANCZOS)
+                    im.save(img_path)
+                    print(f"Resized {img_path.name} → {new_size}")
+        except Exception as e:
+            print(f"WARNING: failed to resize {img_path}: {e}", file=sys.stderr)
+
 
 def preprocess_mermaid(work_docs: Path, assets_dir: Path) -> None:
     """
-    Render Mermaid blocks to SVG (via mermaid-cli) and replace with Markdown image links.
-    Supports:
-      - ```mermaid
-      - ``` mermaid
-      - ```mermaid {...attrs}
-      - ~~~mermaid
-      - :::mermaid blocks
-    If Mermaid CLI is missing or rendering fails, inserts a placeholder SVG and warns.
+    Render Mermaid blocks to PNG (via mermaid-cli) and replace them with Markdown image links.
+    - Filenames are predictable: <relative_path>_<n>.png (incremental within each file)
+    - Supports ```mermaid, ~~~mermaid, and :::mermaid blocks
+    - Logs detailed counts
     """
     import re
     import tempfile as _tmp
@@ -394,85 +439,78 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path) -> None:
     mmdc = shutil.which("mmdc")
     use_npx = mmdc is None
 
-    # Backtick/tildes fences with optional attributes after 'mermaid'
     fence_re = re.compile(
         r"(?P<fence>```|~~~)\s*mermaid[^\n]*\n(?P<code>.*?)(?:\n)(?P=fence)",
         re.DOTALL | re.IGNORECASE,
     )
-    # MkDocs / admonition style blocks:
     colon_re = re.compile(
         r"^:::\s*mermaid[^\n]*\n(?P<code>.*?)(?:\n):::\s*$",
         re.DOTALL | re.IGNORECASE | re.MULTILINE,
     )
 
-    def render_svg(code: str, svg_path: Path) -> None:
+    def render_png(code: str, out_path: Path) -> None:
+        """Render Mermaid code to PNG using CLI."""
         with _tmp.NamedTemporaryFile("w", delete=False, suffix=".mmd") as temp_file:
             temp_file.write(code)
             mmd_in = temp_file.name
 
         if use_npx:
-            cmd = ["npx", "@mermaid-js/mermaid-cli@10.4.0", "-i", mmd_in, "-o", str(svg_path)]
+            cmd = ["npx", "@mermaid-js/mermaid-cli@10.4.0", "-i", mmd_in, "-o", str(out_path), "-H", "900"]
         else:
-            cmd = [mmdc, "-i", mmd_in, "-o", str(svg_path)]
+            cmd = [mmdc, "-i", mmd_in, "-o", str(out_path), "-H", "900"]
 
         try:
             subprocess.run(cmd, check=True, capture_output=True)
         except Exception as exc:
-            # Fallback on render error with a placeholder SVG
-            svg_path.write_text(
+            # Write a fallback SVG so the PDF build doesn’t crash
+            out_path.write_text(
                 '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120">'
                 '<rect width="100%" height="100%" fill="#f7f7f7" />'
                 f'<text x="12" y="32" font-family="sans-serif" font-size="18" fill="#d00">'
-                f"Mermaid render error: {type(exc).__name__}</text>"
-                "</svg>",
+                f"Mermaid render error: {type(exc).__name__}</text></svg>",
                 encoding="utf-8",
             )
             print(
-                "WARNING: Mermaid render failed; inserted placeholder SVG. "
-                f"Command: {' '.join(cmd)} | Error: {exc}",
+                f"WARNING: Mermaid render failed; inserted placeholder. "
+                f"Cmd: {' '.join(cmd)} | Error: {exc}",
                 file=sys.stderr,
             )
 
     total_found = 0
     total_replaced = 0
-    for markdown_file in work_docs.rglob("*.md"):
-        text = markdown_file.read_text(encoding="utf-8")
-        found_here = 0
-        replaced_here = 0
 
-        def sub_fence(m):
+    for markdown_file in sorted(work_docs.rglob("*.md")):
+        text = markdown_file.read_text(encoding="utf-8")
+        replaced_here = 0
+        found_here = 0
+
+        # Create a base name based on relative path (safe for filesystem)
+        rel_stem = markdown_file.relative_to(work_docs).with_suffix("").as_posix()
+        safe_base = rel_stem.replace("/", "_").replace("\\", "_")
+
+        def sub_mermaid(m, counter=[0]):  # mutable default to increment per file
             nonlocal replaced_here, found_here
             found_here += 1
+            counter[0] += 1
             code = m.group("code").strip()
-            safe_name = markdown_file.stem + "_" + str(abs(hash(code)))[:8] + ".svg"
-            svg_path = assets_dir / safe_name
-            if not svg_path.exists():
-                render_svg(code, svg_path)
+            fname = f"{safe_base}_{counter[0]:02d}.png"
+            out_path = assets_dir / fname
+            if not out_path.exists():
+                render_png(code, out_path)
+            rel = os.path.relpath(out_path, markdown_file.parent).replace(os.sep, "/")
             replaced_here += 1
-            rel = os.path.relpath(svg_path, markdown_file.parent).replace(os.sep, "/")
             return f"![diagram]({rel})"
 
-        def sub_colon(m):
-            nonlocal replaced_here, found_here
-            found_here += 1
-            code = m.group("code").strip()
-            safe_name = markdown_file.stem + "_" + str(abs(hash(code)))[:8] + ".svg"
-            svg_path = assets_dir / safe_name
-            if not svg_path.exists():
-                render_svg(code, svg_path)
-            replaced_here += 1
-            rel = os.path.relpath(svg_path, markdown_file.parent).replace(os.sep, "/")
-            return f"![diagram]({rel})\n"
-
-        text = fence_re.sub(sub_fence, text)
-        text = colon_re.sub(sub_colon, text)
+        text = fence_re.sub(sub_mermaid, text)
+        text = colon_re.sub(sub_mermaid, text)
 
         if replaced_here:
             markdown_file.write_text(text, encoding="utf-8")
+
         total_found += found_here
         total_replaced += replaced_here
 
-    print(f"Mermaid: found {total_found} blocks, replaced {total_replaced} with SVGs.")
+    print(f"Mermaid: found {total_found} blocks, replaced {total_replaced} with PNGs.")
 
 
 def normalise_hooks_paths(config: Dict[str, Any], base_dir: Path) -> None:
@@ -577,8 +615,9 @@ def main() -> int:
     assets_dir = work_docs / "assets" / "mermaid"
     copy_docs_tree(src_docs, work_docs)
     create_ephemeral_section_indexes(work_docs)
-    prefix_heading_ids(work_docs)    
+    #prefix_heading_ids(work_docs)    
     normalise_image_links(work_docs)
+    limit_image_heights(work_docs, max_height_px=900)
 
     # 5) Pre-render Mermaid
     try:
@@ -590,8 +629,10 @@ def main() -> int:
             file=sys.stderr,
         )
 
+    resize_large_images(work_docs, max_height_px=900)
+
     # 6) Mutate cfg for PDF run
-    ensure_to_pdf_plugin(pdf_cfg, pdf_subtitle)
+    ensure_with_pdf_plugin(pdf_cfg, pdf_subtitle)
     ensure_markdown_extensions(pdf_cfg)
     if not args.no_theme_switch:
         switch_theme_to_material(pdf_cfg)
@@ -608,6 +649,11 @@ def main() -> int:
     env = os.environ.copy()
     env["ENABLE_PDF_EXPORT"] = "1"
     env["REPO_ROOT"] = str(repo_root)  # for hooks to find LICENSE and repo_url correctly
+    #env["WEASYPRINT_DEBUG"] = "1"
+    #env["WEASYPRINT_LOG_LEVEL"] = "DEBUG"
+    #env["WEASYPRINT_VERBOSE"] = "1"
+    #env["MKDOCS_TO_PDF_DEBUG_HTML"] = "1"
+
     print("▶ Building PDF with mkdocs-to-pdf.generated.yml …")
     try:
         subprocess.run(

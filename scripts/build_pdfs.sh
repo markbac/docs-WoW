@@ -32,10 +32,13 @@ source "$VENV_DIR/bin/activate"
 
 
 # --- 2. Install Dependencies ---
-echo "📦 Installing dependencies from $REQ_FILE ..."
+
 # Upgrade pip first for best compatibility
-python -m pip install --upgrade pip >/dev/null
+
+echo "📦 upgrade pip ..."
+#python -m pip install --upgrade pip >/dev/null
 # Install all project dependencies (including mkdocs, mkdocs-to-pdf, etc.)
+echo "📦 Installing dependencies from $REQ_FILE ..."
 python -m pip install -r "$REQ_FILE"
 
 
@@ -48,6 +51,10 @@ export PLANTUML_OUTPUT_FORMAT="${PLANTUML_OUTPUT_FORMAT:-svg}"
 # --- 4. Run PDF Build Script ---
 # Set environment flag to enable the 'to-pdf' plugin within the Python script.
 export ENABLE_PDF_EXPORT=1
+#export MKDOCS_STRICT=1
+export ENABLE_PDF_EXPORT=1
+#export WEASYPRINT_LOG_LEVEL=DEBUG
+
 echo "ENABLE_PDF_EXPORT=$ENABLE_PDF_EXPORT"
 
 # Execute the custom Python build script.

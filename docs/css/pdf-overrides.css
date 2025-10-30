@@ -1,0 +1,89 @@
+/* ==========================================================================
+   PDF Overrides – Image and Figure Sizing for WeasyPrint
+   Prevents oversized images or diagrams from breaking the PDF rendering.
+   ========================================================================== */
+
+/* ==========================================================================
+   PRINT STYLES — WeasyPrint / MkDocs-to-PDF
+   Purpose:
+   - Prevent images, figures, diagrams, tables and code blocks
+     from exceeding A4 height/width limits.
+   - Avoid page breaks inside complex blocks.
+   - Maintain layout consistency with Material theme.
+   ========================================================================== */
+
+@media print {
+
+  /* === IMAGES & DIAGRAMS (Mermaid / PlantUML / inline images) === */
+  img,
+  svg,
+  object,
+  embed {
+    max-width: 100% !important;
+    max-height: 1050px !important; /* ≈A4 height at 96 dpi, allows for margins */
+    height: auto !important;
+    display: block;
+    margin: 1em auto;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Explicit class targets for consistency */
+  .mermaid img,
+  .mermaid svg,
+  .plantuml img,
+  .plantuml svg {
+    max-width: 100% !important;
+    max-height: 900px !important; /* Slightly stricter for generated diagrams */
+    height: auto !important;
+    display: block;
+    margin: 1em auto;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* === FIGURES === */
+  figure {
+    max-width: 100% !important;
+    max-height: 900px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin: 1em auto;
+  }
+
+  /* === CODE BLOCKS === */
+  pre, code {
+    white-space: pre-wrap !important;  /* Wrap long lines */
+    word-break: break-word !important; /* Prevent cutoff */
+    overflow-wrap: anywhere !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* === TABLES === */
+  table {
+    width: auto !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+    word-wrap: break-word !important;
+    border-collapse: collapse !important;
+    page-break-inside: avoid !important;
+  }
+
+  th, td {
+    vertical-align: top;
+    padding: 4px 8px;
+  }
+
+  /* === HEADINGS === */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* === OPTIONAL — Improve paragraph readability in PDF === */
+  p {
+    orphans: 2;
+    widows: 2;
+  }
+
+}

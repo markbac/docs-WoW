@@ -25,15 +25,16 @@ Every commit holds a complete snapshot of the project state via its root tree po
 
 Code snippet
 ```mermaid
-    graph TD
-        subgraph Repository (.git/objects)
-            C[Commit Object] --> T(Tree Object: root directory snapshot)
-            T --> B1(Blob Object: file1 content)
-            T --> B2(Blob Object: file2 content)
-            T --> T2(Tree Object: subdirectory)
-            T2 --> B3(Blob Object: file3 content)
-            C --> P1(Parent Commit SHA)
-        end
+graph TD
+    subgraph "Repository (.git/objects)"
+        C[Commit Object] --> T[Tree Object: root directory snapshot]
+        T --> B1[Blob Object: file1 content]
+        T --> B2[Blob Object: file2 content]
+        T --> T2[Tree Object: subdirectory]
+        T2 --> B3[Blob Object: file3 content]
+        C --> P1[Parent Commit SHA]
+    end
+
 ```
 
 ### 1.1 The Tri-State Model: Working Directory, Staging Index, and Local Repository
@@ -271,30 +272,33 @@ The decision between a recursive merge and a rebase/squash is a fundamental trad
 
 Code snippet
 ```mermaid
-    gitGraph
-        commit id: "C1"
-        commit id: "C2"
-        branch Feature_Recursive
-        checkout Feature_Recursive
-        commit id: "F3"
-        commit id: "F4"
-        checkout Main
-        commit id: "C3"
-        merge Feature_Recursive tag: "Merge Commit (M)"
-        
-        commit id: "C4"
-        branch Feature_Rebase
-        checkout Feature_Rebase
-        commit id: "F5"
-        commit id: "F6"
-        checkout Main
-        commit id: "C5"
-        checkout Feature_Rebase
-        sequence: Rebase F5, F6 onto C5
-        commit id: "F5'"
-        commit id: "F6'"
-        checkout Main
-        merge Feature_Rebase tag: "Fast-Forward" type: HIGHLIGHT
+gitGraph
+    branch Main
+    checkout Main
+    commit id: "C1"
+    commit id: "C2"
+    branch Feature_Recursive
+    checkout Feature_Recursive
+    commit id: "F3"
+    commit id: "F4"
+    checkout Main
+    commit id: "C3"
+    merge Feature_Recursive tag: "Merge Commit (M)"
+
+    commit id: "C4"
+    branch Feature_Rebase
+    checkout Feature_Rebase
+    commit id: "F5"
+    commit id: "F6"
+    checkout Main
+    commit id: "C5"
+    %% Rebase F5, F6 onto C5 (simulated)
+    checkout Feature_Rebase
+    commit id: "F5'" tag: "Rebased F5"
+    commit id: "F6'" tag: "Rebased F6"
+    checkout Main
+    merge Feature_Rebase tag: "Fast-Forward"
+
 ```
 -   **Recursive Merge (Top):** Creates a non-linear history line where the merge commit (M) explicitly shows the simultaneous development and integration of Feature\_Recursive and Main.
     
@@ -427,16 +431,16 @@ Code snippet
     gitGraph
         commit id: "C1"
         commit id: "C2"
-        commit id: "C3 (Bug)"
-        
-        subgraph Public History (main branch)
-            commit id: "C4 (Revert C3)" tag: "git revert C3"
-        end
-        
-        subgraph Private History (feature branch)
-            checkout C3
-            commit id: "C5 (Reset to C2)" tag: "git reset --hard C2" type: HIGHLIGHT
-        end
+        commit id: "C3" tag: "Bug Introduced"
+
+        %% Public history - revert the bad commit
+        commit id: "C4" tag: "git revert C3 (Public History)"
+
+        %% Private branch - reset back to before the bug
+        branch feature_reset
+        checkout feature_reset
+        commit id: "C5" tag: "git reset --hard C2 (Private History)"
+
 ```
 Rollback Strategies: Reset vs. Revert
 

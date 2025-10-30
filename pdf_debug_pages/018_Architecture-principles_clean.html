@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Standardised guides, templates, and architectural process documentation (ADRs, C4, arc42) for our engineering and delivery lifecycle." name="description"/>
+<meta content="['Name or Role of Lead Architect']" name="author"/>
+<link href="https://markbac.github.io/docs-WoW/wow-templates/02_Architecture/Architecture-principles/" rel="canonical"/>
+<link href="../adr/" rel="prev"/>
+<link href="../Architetcure-vision/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Architecture Principles - [System/Product/Organization Name] - Ways of Working Documentation</title>
+<link href="../../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../css/timeago.css" rel="stylesheet"/>
+<link href="../../../css/pdf-overrides.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#architecture-principles-systemproductorganization-name">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+
+
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="architecture-principles-systemproductorganization-name">📐 Architecture Principles: [System/Product/Organization Name]<a class="headerlink" href="#architecture-principles-systemproductorganization-name" title="Permanent link">¶</a></h1>
+<p>This document defines the core architectural principles that guide the design and evolution of the [System/Product/Organization Name]'s architecture. These principles serve as a shared understanding and decision-making framework for architects, developers, and other stakeholders, ensuring consistency, quality, and alignment with our strategic goals.</p>
+<hr/>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">¶</a></h2>
+<h3 id="11-purpose">1.1 Purpose<a class="headerlink" href="#11-purpose" title="Permanent link">¶</a></h3>
+<p>The purpose of this document is to establish a set of clear and actionable architectural principles that:
+* Provide a foundation for architectural decisions.
+* Promote consistency and coherence across different parts of the system.
+* Guide technology selection and design patterns.
+* Facilitate communication and alignment among teams.
+* Support the long-term evolvability and sustainability of the architecture.</p>
+<h3 id="12-scope">1.2 Scope<a class="headerlink" href="#12-scope" title="Permanent link">¶</a></h3>
+<p>These principles apply to the design and development of all software, firmware, and relevant hardware components within the [System/Product/Organization Name]. They are intended to be high-level guiding statements, not detailed design rules.</p>
+<h3 id="13-definitions-and-acronyms">1.3 Definitions and Acronyms<a class="headerlink" href="#13-definitions-and-acronyms" title="Permanent link">¶</a></h3>
+<p>[List any architecture-specific terms, definitions, or acronyms used in this document.]</p>
+<h2 id="2-core-architectural-principles">2. Core Architectural Principles<a class="headerlink" href="#2-core-architectural-principles" title="Permanent link">¶</a></h2>
+<p>For each principle, provide a clear statement, its rationale (why it's important), and its implications (how it affects decisions).</p>
+<h3 id="21-principle-1-concise-principle-name">2.1 Principle 1: [Concise Principle Name]<a class="headerlink" href="#21-principle-1-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [Clear, concise statement of the principle. e.g., "Design for Change and Evolution."]</li>
+<li><strong>Rationale:</strong> [Why is this principle important? What problem does it solve or what value does it bring? e.g., "Software systems operate in dynamic environments; anticipating and accommodating change reduces future cost and risk."]</li>
+<li><strong>Implications:</strong> [How does this principle affect architectural and design decisions? e.g., "Favor modular, loosely coupled designs. Use evolutionary architecture patterns. Prioritize clear interfaces over tight coupling."]</li>
+</ul>
+<h3 id="22-principle-2-concise-principle-name">2.2 Principle 2: [Concise Principle Name]<a class="headerlink" href="#22-principle-2-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [e.g., "Prioritize Operational Excellence."]</li>
+<li><strong>Rationale:</strong> [e.g., "A system's value is limited by its ability to be reliably operated, monitored, and maintained in production."]</li>
+<li><strong>Implications:</strong> [e.g., "Embed observability (logging, metrics, tracing) from the outset. Design for automated deployment and recovery. Implement robust alerting and incident response mechanisms."]</li>
+</ul>
+<h3 id="23-principle-3-concise-principle-name">2.3 Principle 3: [Concise Principle Name]<a class="headerlink" href="#23-principle-3-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [e.g., "Embrace Security by Design."]</li>
+<li><strong>Rationale:</strong> [e.g., "Security must be an inherent property of the system, not an afterthought, to protect data, users, and business reputation."]</li>
+<li><strong>Implications:</strong> [e.g., "Conduct threat modeling early in the design phase. Implement least privilege access. Encrypt sensitive data at rest and in transit. Automate security testing."]</li>
+</ul>
+<h3 id="24-principle-4-concise-principle-name">2.4 Principle 4: [Concise Principle Name]<a class="headerlink" href="#24-principle-4-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [e.g., "Optimize for Cost-Effectiveness."]</li>
+<li><strong>Rationale:</strong> [e.g., "Architectural decisions have significant long-term financial implications for both development and operations."]</li>
+<li><strong>Implications:</strong> [e.g., "Regularly review cloud resource utilization. Choose technologies with appropriate licensing models. Balance performance needs with infrastructure costs."]</li>
+</ul>
+<h3 id="25-principle-5-concise-principle-name">2.5 Principle 5: [Concise Principle Name]<a class="headerlink" href="#25-principle-5-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [e.g., "Promote Simplicity and Clarity."]</li>
+<li><strong>Rationale:</strong> [e.g., "Simple designs are easier to understand, build, test, and maintain, reducing cognitive load and accelerating delivery."]</li>
+<li><strong>Implications:</strong> [e.g., "Avoid unnecessary complexity or over-engineering. Favor well-understood patterns. Document design decisions clearly and concisely."]</li>
+</ul>
+<h3 id="26-principle-6-concise-principle-name">2.6 Principle 6: [Concise Principle Name]<a class="headerlink" href="#26-principle-6-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [e.g., "Ensure Scalability and Performance."]</li>
+<li><strong>Rationale:</strong> [e.g., "The system must be able to handle anticipated growth in users, data, and load while maintaining acceptable performance levels."]</li>
+<li><strong>Implications:</strong> [e.g., "Design for horizontal scaling. Identify and optimize performance bottlenecks. Utilize appropriate caching strategies."]</li>
+</ul>
+<h3 id="27-principle-7-concise-principle-name">2.7 Principle 7: [Concise Principle Name]<a class="headerlink" href="#27-principle-7-concise-principle-name" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Statement:</strong> [e.g., "Foster Reusability and Standardization."]</li>
+<li><strong>Rationale:</strong> [e.g., "Leveraging existing components and adhering to standards reduces duplication, improves consistency, and accelerates development."]</li>
+<li><strong>Implications:</strong> [e.g., "Identify common services and components for reuse. Define and adhere to coding and architectural standards. Utilize shared libraries and platforms."]</li>
+</ul>
+<h2 id="3-applying-and-maintaining-principles">3. Applying and Maintaining Principles<a class="headerlink" href="#3-applying-and-maintaining-principles" title="Permanent link">¶</a></h2>
+<h3 id="31-application">3.1 Application<a class="headerlink" href="#31-application" title="Permanent link">¶</a></h3>
+<ul>
+<li>These principles should be considered during all architectural design discussions and decision-making processes.</li>
+<li>They serve as criteria for evaluating architectural alternatives.</li>
+<li>Deviations from principles should be explicitly justified and documented (e.g., in an ADR).</li>
+</ul>
+<h3 id="32-review-and-evolution">3.2 Review and Evolution<a class="headerlink" href="#32-review-and-evolution" title="Permanent link">¶</a></h3>
+<ul>
+<li>These principles are living guidelines and should be reviewed periodically (e.g., annually or as part of major strategic shifts) to ensure their continued relevance and effectiveness.</li>
+<li>Feedback from development teams and stakeholders is crucial for their evolution.</li>
+</ul>
+<h2 id="4-references">4. References<a class="headerlink" href="#4-references" title="Permanent link">¶</a></h2>
+<p>[List any other documents (e.g., Architecture Vision, ADRs, relevant standards) referenced in this document.]</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 30, 2025 17:30:10 UTC"><span class="timeago" datetime="2025-10-30T17:30:10+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 30, 2025 17:30:10 UTC">2025-10-30</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/markbac" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="../../../js/timeago.min.js"></script>
+<script src="../../../js/timeago_mkdocs_material.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

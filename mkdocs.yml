@@ -89,6 +89,10 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+ # - plantuml_markdown:
+ #     format: png
+ #     cachedir: assets/plantuml
+ #     plantuml_cmd: "java -jar /usr/share/plantuml/plantuml.jar -DPLANTUML_LIMIT_SIZE=900"
 
 hooks: 
   - scripts/mkdocs_hooks.py
@@ -114,6 +118,10 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/markbac
 
+extra_css:
+  - css/pdf-overrides.css
+
+
 # -----------------------------------------------------------------------------
 # NAVIGATION (nav)
 # -----------------------------------------------------------------------------
@@ -134,6 +142,8 @@ nav:
     - The Cornerstone Framework Flow: Ways of Working/cornerstone_framework_flow.md
   - Guides:
     - CI/CD: guides/cicd.md
+    - Git: guides/git.md
+    - Process: guides/process.md
     - Git Branching: guides/git-branching.md
     - Documentation & Modeling Toolchain: guides/documentation_&_modeling_toolchain.md
     - Version Control Systems: guides/version-control-systems.md

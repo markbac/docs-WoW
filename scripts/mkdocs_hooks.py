@@ -37,10 +37,144 @@ import shlex
 import subprocess
 from datetime import datetime, UTC
 from typing import Optional
+import sys
 
 from mkdocs.config.base import Config
 from mkdocs.utils import log
 import importlib.metadata
+# mkdocs_hooks.py
+from pathlib import Path
+from bs4 import BeautifulSoup
+
+
+# Directory for per-page debug dumps
+DEBUG_DUMP_DIR = Path("pdf_debug_pages")
+DEBUG_DUMP_DIR.mkdir(exist_ok=True)
+
+PAGE_COUNTER = 0
+
+
+def on_post_page(output_content, page, config):
+    """
+    Hook: called after each page is rendered to HTML (before mkdocs-to-pdf/with-pdf combines them).
+    Use it to log which page is processed and optionally save its HTML.
+    """
+    global PAGE_COUNTER
+    PAGE_COUNTER += 1
+
+    relpath = page.file.src_path
+    html_len = len(output_content)
+    print(f"[pdf-debug] Page {PAGE_COUNTER:03d}: {relpath} ({html_len/1024:.1f} KB)", file=sys.stderr)
+
+    # Save each page HTML for inspection (optional but useful)
+    dump_path = DEBUG_DUMP_DIR / f"{PAGE_COUNTER:03d}_{Path(relpath).stem}.html"
+    dump_path.write_text(output_content, encoding="utf-8")
+
+    # Optionally strip Material UI elements if you want to see what’s left
+    soup = BeautifulSoup(output_content, "html.parser")
+    for sel in [".md-sidebar", ".md-header", ".md-tabs", "nav.md-nav--secondary"]:
+        for el in soup.select(sel):
+            el.decompose()
+
+    cleaned_html = str(soup)
+    cleaned_path = DEBUG_DUMP_DIR / f"{PAGE_COUNTER:03d}_{Path(relpath).stem}_clean.html"
+    cleaned_path.write_text(cleaned_html, encoding="utf-8")
+
+    # Return unmodified HTML so the normal PDF plugin still works
+    return output_content
+
+
+def old_on_post_page(output_content, page, config):
+    """
+    Hook: Runs after each page is rendered but before mkdocs-to-pdf plugin executes.
+
+    Purpose:
+        Clean MkDocs Material dynamic elements (sidebars, JS, ToCs, wrappers)
+        from the in-memory HTML before WeasyPrint sees them.
+        This ensures the entire article content is visible to the renderer.
+
+    Debug:
+        - Logs filename and approximate original vs. cleaned HTML length
+        - Lists which selectors actually matched and how many elements removed
+        - Prints one summary per page
+    """
+    try:
+        relpath = page.file.src_path
+        soup = BeautifulSoup(output_content, "html.parser")
+        before_len = len(output_content)
+
+        # Elements to strip completely (sidebars, JS, headers, search, etc.)
+        selectors = [
+            ".md-sidebar",
+            ".md-sidebar--secondary",
+            "nav.md-nav--secondary",
+            "header.md-header",
+            "div.md-search",
+            "div.md-tabs",
+            "div.md-footer",
+            "label.md-overlay",
+            "input.md-toggle",
+            '[data-md-component="announce"]',
+            '[data-md-component="palette"]',
+        ]
+        removed_counts = {}
+        total_removed = 0
+
+        for sel in selectors:
+            els = soup.select(sel)
+            if els:
+                removed_counts[sel] = len(els)
+                for el in els:
+                    el.decompose()
+                    total_removed += 1
+
+        # --- NEW: flatten Material layout wrappers ---
+        # These wrappers use flex/contain/sticky styles that break WeasyPrint’s flow.
+        wrappers = soup.select("div.md-main, div.md-content, div.md-content__inner, div.md-main__inner")
+        for w in wrappers:
+            # unwrap keeps inner HTML, discards the wrapper tag
+            w.unwrap()
+
+        # Also remove Material-specific flex attributes that confuse layout
+        for el in soup.find_all(True):
+            for attr in ["data-md-component", "class", "style"]:
+                if el.has_attr(attr) and "md-" in str(el.get(attr)):
+                    # Clean up Material-only attributes/styles
+                    if attr == "class":
+                        el["class"] = [c for c in el.get("class", []) if not c.startswith("md-")]
+                        if not el["class"]:
+                            del el["class"]
+                    elif attr == "style":
+                        del el["style"]
+                    elif attr == "data-md-component":
+                        del el["data-md-component"]
+
+        # Strip all <script> tags
+        scripts = soup.find_all("script")
+        if scripts:
+            removed_counts["<script>"] = len(scripts)
+            for el in scripts:
+                el.decompose()
+                total_removed += len(scripts)
+
+        after_len = len(str(soup))
+        if total_removed:
+            print(
+                f"[hook] Cleaned '{relpath}' "
+                f"({before_len/1024:.1f} KB→{after_len/1024:.1f} KB) "
+                f"removed {total_removed} elements: "
+                f"{', '.join(f'{k}:{v}' for k,v in removed_counts.items())}",
+                file=sys.stderr,
+            )
+        else:
+            print(f"[hook] No Material UI elements removed from '{relpath}'", file=sys.stderr)
+
+        return str(soup)
+
+    except Exception as e:
+        print(f"[hook:ERROR] Failed cleaning {page.file.src_path}: {e}", file=sys.stderr)
+        return output_content
+
 
 
 def get_tool_versions() -> dict:
