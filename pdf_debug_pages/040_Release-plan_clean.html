@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Standardised guides, templates, and architectural process documentation (ADRs, C4, arc42) for our engineering and delivery lifecycle." name="description"/>
+<meta content="['Name or Role of Release Manager/Lead']" name="author"/>
+<link href="https://markbac.github.io/docs-WoW/wow-templates/06_Management_Operations/Release-plan/" rel="canonical"/>
+<link href="../Meeting-minutes/" rel="prev"/>
+<link href="../Risk-register/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Release Plan / Deployment Plan - [Product/System Name] v[Version Number] - Ways of Working Documentation</title>
+<link href="../../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../css/timeago.css" rel="stylesheet"/>
+<link href="../../../css/pdf-overrides.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#release-plan-deployment-plan-productsystem-name-vversion-number">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+
+
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="release-plan-deployment-plan-productsystem-name-vversion-number">🚀 Release Plan / Deployment Plan: [Product/System Name] v[Version Number]<a class="headerlink" href="#release-plan-deployment-plan-productsystem-name-vversion-number" title="Permanent link">¶</a></h1>
+<p>This document outlines the plan for releasing and deploying [Product/System Name] version [Version Number]. It details the scope, objectives, activities, responsibilities, and timeline for the release, ensuring a controlled and successful transition to the target environment.</p>
+<hr/>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">¶</a></h2>
+<h3 id="11-purpose">1.1 Purpose<a class="headerlink" href="#11-purpose" title="Permanent link">¶</a></h3>
+<p>The purpose of this Release Plan / Deployment Plan is to define the comprehensive strategy and detailed steps for delivering [Product/System Name] v[Version Number] to [target environment, e.g., "production," "customer sites," "app stores"]. It aims to:
+* Ensure all necessary activities are planned and executed.
+* Minimize risks and potential downtime during deployment.
+* Provide clear roles and responsibilities.
+* Facilitate effective communication among all stakeholders.</p>
+<h3 id="12-release-scope">1.2 Release Scope<a class="headerlink" href="#12-release-scope" title="Permanent link">¶</a></h3>
+<p>[Clearly define what is included in this release. List key features, bug fixes, or components.]</p>
+<ul>
+<li><strong>New Features:</strong><ul>
+<li>[Feature A]</li>
+<li>[Feature B]</li>
+</ul>
+</li>
+<li><strong>Bug Fixes:</strong><ul>
+<li>[Bug ID 1]</li>
+<li>[Bug ID 2]</li>
+</ul>
+</li>
+<li><strong>Improvements/Technical Debt:</strong><ul>
+<li>[Improvement X]</li>
+<li>[Technical Debt Item Y]</li>
+</ul>
+</li>
+<li><strong>Affected Components/Systems:</strong><ul>
+<li>[Component 1]</li>
+<li>[Component 2]</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-release-objectives">1.3 Release Objectives<a class="headerlink" href="#13-release-objectives" title="Permanent link">¶</a></h3>
+<p>What are the specific, measurable goals for this release?</p>
+<ul>
+<li>[e.g., "Successfully deploy all new features to production by YYYY-MM-DD."]</li>
+<li>[e.g., "Achieve 99.9% uptime during and after deployment."]</li>
+<li>[e.g., "Ensure zero data loss during database migration (if applicable)."]</li>
+<li>[e.g., "Roll out firmware update to all beta devices within 24 hours."]</li>
+</ul>
+<h3 id="14-target-environments">1.4 Target Environment(s)<a class="headerlink" href="#14-target-environments" title="Permanent link">¶</a></h3>
+<p>[Specify the environment(s) to which this release will be deployed.]</p>
+<ul>
+<li>[e.g., "Production Cloud Environment (AWS/Azure/GCP)"]</li>
+<li>[e.g., "Customer On-Premise Servers"]</li>
+<li>[e.g., "Mobile App Stores (iOS/Android)"]</li>
+<li>[e.g., "IoT Device Fleet"]</li>
+</ul>
+<h2 id="2-pre-release-activities">2. Pre-Release Activities<a class="headerlink" href="#2-pre-release-activities" title="Permanent link">¶</a></h2>
+<h3 id="21-code-freeze-branching-strategy">2.1 Code Freeze &amp; Branching Strategy<a class="headerlink" href="#21-code-freeze-branching-strategy" title="Permanent link">¶</a></h3>
+<p>[Define when the code freeze will occur and the branching strategy for release.]</p>
+<ul>
+<li><strong>Code Freeze Date:</strong> YYYY-MM-DD HH:MM</li>
+<li><strong>Release Branch:</strong> [e.g., <code>release/vX.Y.Z</code> created from <code>develop</code> or <code>main</code>]</li>
+</ul>
+<h3 id="22-final-testing-quality-gates">2.2 Final Testing &amp; Quality Gates<a class="headerlink" href="#22-final-testing-quality-gates" title="Permanent link">¶</a></h3>
+<p>[Describe the final testing activities required before release.]</p>
+<ul>
+<li><strong>Regression Testing:</strong> [e.g., "All automated regression suites must pass."]</li>
+<li><strong>Performance Testing:</strong> [e.g., "Load tests to simulate X concurrent users."]</li>
+<li><strong>Security Testing:</strong> [e.g., "Final vulnerability scan, penetration test (if applicable)."]</li>
+<li><strong>User Acceptance Testing (UAT):</strong> [e.g., "Business stakeholders sign-off on UAT results."]</li>
+<li><strong>Compliance Checks:</strong> [e.g., "Regulatory compliance review completed."]</li>
+</ul>
+<h3 id="23-documentation-preparation">2.3 Documentation Preparation<a class="headerlink" href="#23-documentation-preparation" title="Permanent link">¶</a></h3>
+<p>[List all documentation that needs to be prepared or updated for the release.]</p>
+<ul>
+<li><strong>Release Notes:</strong> [Summary of new features, bug fixes, known issues.]</li>
+<li><strong>User Manuals/Guides:</strong></li>
+<li><strong>API Documentation:</strong></li>
+<li><strong>Installation/Configuration Guides:</strong></li>
+<li><strong>Operational Runbooks:</strong></li>
+<li><strong>Rollback Procedures:</strong></li>
+</ul>
+<h3 id="24-stakeholder-communication-readiness">2.4 Stakeholder Communication &amp; Readiness<a class="headerlink" href="#24-stakeholder-communication-readiness" title="Permanent link">¶</a></h3>
+<p>[How will stakeholders be informed and prepared for the release?]</p>
+<ul>
+<li><strong>Internal Communication:</strong> [e.g., "Email to all-staff, Slack announcements."]</li>
+<li><strong>External Communication:</strong> [e.g., "Customer release notes, marketing announcements."]</li>
+<li><strong>Training:</strong> [e.g., "Support team training on new features."]</li>
+</ul>
+<h2 id="3-deployment-strategy">3. Deployment Strategy<a class="headerlink" href="#3-deployment-strategy" title="Permanent link">¶</a></h2>
+<h3 id="31-deployment-approach">3.1 Deployment Approach<a class="headerlink" href="#31-deployment-approach" title="Permanent link">¶</a></h3>
+<p>[Describe the chosen deployment method.]</p>
+<ul>
+<li><strong>Method:</strong> [e.g., "Blue/Green Deployment," "Canary Release," "Rolling Update," "Big Bang," "Phased Rollout"]</li>
+<li><strong>Automation:</strong> [e.g., "Fully automated CI/CD pipeline," "Manual steps with scripts."]</li>
+</ul>
+<h3 id="32-deployment-steps-detailed-checklist">3.2 Deployment Steps (Detailed Checklist)<a class="headerlink" href="#32-deployment-steps-detailed-checklist" title="Permanent link">¶</a></h3>
+<p>[Provide a step-by-step checklist for the deployment process. Assign owners and estimated times for each step.]</p>
+<table>
+<thead>
+<tr>
+<th>Step #</th>
+<th>Activity</th>
+<th>Owner</th>
+<th>Est. Time</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>Pre-deployment health check of current system.</td>
+<td>Ops Team</td>
+<td>15 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Backup critical databases.</td>
+<td>Ops Team</td>
+<td>30 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Deploy new application version to staging.</td>
+<td>DevOps</td>
+<td>10 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Run smoke tests on staging.</td>
+<td>QA Team</td>
+<td>20 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>Deploy new application version to production (Blue environment).</td>
+<td>DevOps</td>
+<td>15 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>Monitor production health metrics for 30 minutes.</td>
+<td>Ops Team</td>
+<td>30 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>Switch traffic to new version.</td>
+<td>DevOps</td>
+<td>5 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8.</td>
+<td>Post-deployment verification tests on production.</td>
+<td>QA Team</td>
+<td>15 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9.</td>
+<td>Decommission old environment (Green environment).</td>
+<td>DevOps</td>
+<td>30 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10.</td>
+<td>Announce successful deployment.</td>
+<td>Release Mgr</td>
+<td>5 min</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-rollback-plan">3.3 Rollback Plan<a class="headerlink" href="#33-rollback-plan" title="Permanent link">¶</a></h3>
+<p>[Detail the steps to revert to the previous stable version in case of critical issues during or after deployment.]</p>
+<ul>
+<li><strong>Rollback Trigger:</strong> [What conditions will trigger a rollback? e.g., "Critical error rate &gt; 5%," "Major functionality broken."]</li>
+<li><strong>Rollback Steps:</strong><ol>
+<li>[Step 1: e.g., "Switch traffic back to old environment."]</li>
+<li>[Step 2: e.g., "Restore database from pre-deployment backup (if necessary)."]</li>
+<li>[Step 3: e.g., "Analyze logs to understand failure."]</li>
+</ol>
+</li>
+</ul>
+<h2 id="4-post-release-activities">4. Post-Release Activities<a class="headerlink" href="#4-post-release-activities" title="Permanent link">¶</a></h2>
+<h3 id="41-monitoring-verification">4.1 Monitoring &amp; Verification<a class="headerlink" href="#41-monitoring-verification" title="Permanent link">¶</a></h3>
+<p>[How will the system be monitored immediately after release to ensure stability and performance?]</p>
+<ul>
+<li><strong>Key Metrics to Monitor:</strong> [e.g., "Error rates," "Latency," "CPU/Memory usage," "User login success."]</li>
+<li><strong>Monitoring Tools:</strong> [e.g., Prometheus, Grafana, ELK Stack.]</li>
+<li><strong>Alerting:</strong> [Define critical alerts and response procedures.]</li>
+</ul>
+<h3 id="42-incident-management">4.2 Incident Management<a class="headerlink" href="#42-incident-management" title="Permanent link">¶</a></h3>
+<p>[Reference the Post-Mortem / Incident Review Template for handling any issues that arise post-release.]</p>
+<h3 id="43-feedback-collection">4.3 Feedback Collection<a class="headerlink" href="#43-feedback-collection" title="Permanent link">¶</a></h3>
+<p>[How will feedback from users and stakeholders be collected post-release?]</p>
+<ul>
+<li>[e.g., "Customer support tickets," "User surveys," "Analytics data."]</li>
+</ul>
+<h3 id="44-lessons-learned">4.4 Lessons Learned<a class="headerlink" href="#44-lessons-learned" title="Permanent link">¶</a></h3>
+<p>[Plan for a Lessons Learned session after the release to capture insights for future improvements. Refer to the Lessons Learned Template.]</p>
+<h2 id="5-roles-and-responsibilities">5. Roles and Responsibilities<a class="headerlink" href="#5-roles-and-responsibilities" title="Permanent link">¶</a></h2>
+<p>[Identify the key roles and their responsibilities during the release and deployment.]</p>
+<ul>
+<li><strong>Release Manager:</strong> Overall coordination, communication, decision-making.</li>
+<li><strong>Development Leads:</strong> Code readiness, bug fixes.</li>
+<li><strong>DevOps/Operations Team:</strong> Deployment execution, infrastructure readiness, monitoring.</li>
+<li><strong>QA Team:</strong> Final testing, post-deployment verification.</li>
+<li><strong>Product Owner:</strong> Feature sign-off, stakeholder communication.</li>
+<li><strong>Support Team:</strong> Customer readiness, incident handling.</li>
+</ul>
+<h2 id="6-communication-plan-during-release">6. Communication Plan (During Release)<a class="headerlink" href="#6-communication-plan-during-release" title="Permanent link">¶</a></h2>
+<p>[How will internal and external stakeholders be communicated with during the release process?]</p>
+<ul>
+<li><strong>Pre-Release:</strong> [e.g., "Scheduled downtime notification."]</li>
+<li><strong>During Deployment:</strong> [e.g., "Live status updates in #release-status channel."]</li>
+<li><strong>Post-Deployment:</strong> [e.g., "Success notification, known issues update."]</li>
+<li><strong>Incident Communication:</strong> [Reference incident communication protocol.]</li>
+</ul>
+<h2 id="7-risks-and-contingencies">7. Risks and Contingencies<a class="headerlink" href="#7-risks-and-contingencies" title="Permanent link">¶</a></h2>
+<p>[Identify potential risks to the release and corresponding mitigation/contingency plans.]</p>
+<ul>
+<li><strong>Risk 1:</strong> [e.g., "Critical bug discovered during deployment."]<ul>
+<li><em>Mitigation:</em> [e.g., "Thorough pre-release testing."]</li>
+<li><em>Contingency:</em> [e.g., "Execute rollback plan."]</li>
+</ul>
+</li>
+<li><strong>Risk 2:</strong> [e.g., "Performance degradation after deployment."]<ul>
+<li><em>Mitigation:</em> [e.g., "Rigorous load testing."]</li>
+<li><em>Contingency:</em> [e.g., "Scale up resources, investigate bottlenecks, rollback if severe."]</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-approvals">8. Approvals<a class="headerlink" href="#8-approvals" title="Permanent link">¶</a></h2>
+<p>[Sign-off section for key stakeholders before release.]</p>
+<ul>
+<li><strong>[Role 1]:</strong> [Name, Date]</li>
+<li><strong>[Role 2]:</strong> [Name, Date]</li>
+<li>...</li>
+</ul>
+<h2 id="9-references">9. References<a class="headerlink" href="#9-references" title="Permanent link">¶</a></h2>
+<p>[List any other relevant documents (e.g., project plan, architectural diagrams, security reports) referenced in this plan.]</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 30, 2025 17:42:04 UTC"><span class="timeago" datetime="2025-10-30T17:42:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 30, 2025 17:42:04 UTC">2025-10-30</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/markbac" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="../../../js/timeago.min.js"></script>
+<script src="../../../js/timeago_mkdocs_material.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

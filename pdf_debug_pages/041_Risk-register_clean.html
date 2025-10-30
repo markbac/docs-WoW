@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Standardised guides, templates, and architectural process documentation (ADRs, C4, arc42) for our engineering and delivery lifecycle." name="description"/>
+<link href="https://markbac.github.io/docs-WoW/wow-templates/06_Management_Operations/Risk-register/" rel="canonical"/>
+<link href="../Release-plan/" rel="prev"/>
+<link href="../SBOM/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Risk Register - [Product/System/Project Name] - Ways of Working Documentation</title>
+<link href="../../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../css/timeago.css" rel="stylesheet"/>
+<link href="../../../css/pdf-overrides.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#risk-register-productsystemproject-name">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+
+
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="risk-register-productsystemproject-name">⚠️ Risk Register: [Product/System/Project Name]<a class="headerlink" href="#risk-register-productsystemproject-name" title="Permanent link">¶</a></h1>
+<p>This Risk Register serves as a central repository for identified risks related to the [Product/System/Project Name]. It provides a structured way to track, assess, and manage potential issues that could impact the project's objectives, scope, schedule, budget, or quality.</p>
+<hr/>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">¶</a></h2>
+<h3 id="11-purpose">1.1 Purpose<a class="headerlink" href="#11-purpose" title="Permanent link">¶</a></h3>
+<p>The purpose of this Risk Register is to:
+* Document all identified risks.
+* Assess the likelihood and impact of each risk.
+* Define clear mitigation strategies and contingency plans.
+* Assign ownership for risk management activities.
+* Facilitate continuous monitoring and review of risks.</p>
+<h3 id="12-scope">1.2 Scope<a class="headerlink" href="#12-scope" title="Permanent link">¶</a></h3>
+<p>This Risk Register covers risks associated with [briefly describe the scope, e.g., "the development and deployment of Product X," "the integration of System Y," "Project Z from inception to delivery"].</p>
+<h3 id="13-definitions-and-acronyms">1.3 Definitions and Acronyms<a class="headerlink" href="#13-definitions-and-acronyms" title="Permanent link">¶</a></h3>
+<p>[List any risk-specific terms, definitions, or acronyms.]</p>
+<h2 id="2-risk-assessment-criteria">2. Risk Assessment Criteria<a class="headerlink" href="#2-risk-assessment-criteria" title="Permanent link">¶</a></h2>
+<h3 id="21-likelihood-scale">2.1 Likelihood Scale<a class="headerlink" href="#21-likelihood-scale" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Description</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Very Low / Rare</td>
+<td>&lt; 10%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Low / Unlikely</td>
+<td>10-30%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Medium / Possible</td>
+<td>30-70%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>High / Likely</td>
+<td>70-90%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Very High / Almost Certain</td>
+<td>&gt; 90%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-impact-scale">2.2 Impact Scale<a class="headerlink" href="#22-impact-scale" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Description</th>
+<th>Impact on Schedule</th>
+<th>Impact on Budget</th>
+<th>Impact on Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Very Low</td>
+<td>Negligible</td>
+<td>Negligible</td>
+<td>Negligible</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Low</td>
+<td>Minor delay</td>
+<td>Minor cost</td>
+<td>Minor degradation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Medium</td>
+<td>Moderate delay</td>
+<td>Moderate cost</td>
+<td>Noticeable degradation</td>
+</tr>
+<tr>
+<td>4</td>
+<td>High</td>
+<td>Significant delay</td>
+<td>Significant cost</td>
+<td>Major degradation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Very High</td>
+<td>Project threatened</td>
+<td>Project threatened</td>
+<td>Unacceptable degradation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-risk-score-likelihood-x-impact">2.3 Risk Score (Likelihood x Impact)<a class="headerlink" href="#23-risk-score-likelihood-x-impact" title="Permanent link">¶</a></h3>
+<p>[Optional: Define how the risk score is calculated and what ranges mean (e.g., Low, Medium, High, Critical).]</p>
+<h2 id="3-risk-register-log">3. Risk Register Log<a class="headerlink" href="#3-risk-register-log" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk ID</th>
+<th>Description (Brief)</th>
+<th>Category</th>
+<th>Likelihood (Current)</th>
+<th>Impact (Current)</th>
+<th>Score (Current)</th>
+<th>Mitigation Strategy</th>
+<th>Contingency Plan</th>
+<th>Owner</th>
+<th>Status</th>
+<th>Date Raised</th>
+<th>Date Last Updated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R-001</strong></td>
+<td>Delay in critical hardware component delivery.</td>
+<td>Supply Chain</td>
+<td>4 (High)</td>
+<td>4 (High)</td>
+<td>16</td>
+<td>Identify alternative suppliers, pre-order long-lead items.</td>
+<td>Use simulation/emulation for software development.</td>
+<td>Jane Doe</td>
+<td>Open</td>
+<td>YYYY-MM-DD</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><strong>R-002</strong></td>
+<td>Unforeseen technical complexity in AI model integration.</td>
+<td>Technical</td>
+<td>3 (Medium)</td>
+<td>5 (Very High)</td>
+<td>15</td>
+<td>Conduct spike/PoC, bring in external expertise.</td>
+<td>Revert to simpler, non-AI solution.</td>
+<td>John Smith</td>
+<td>Open</td>
+<td>YYYY-MM-DD</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><strong>R-003</strong></td>
+<td>Scope creep due to evolving stakeholder requirements.</td>
+<td>Project</td>
+<td>3 (Medium)</td>
+<td>3 (Medium)</td>
+<td>9</td>
+<td>Implement strict change control process, clear scope definition.</td>
+<td>Prioritize ruthlessly, defer non-essential features.</td>
+<td>Alice Brown</td>
+<td>Open</td>
+<td>YYYY-MM-DD</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><strong>R-004</strong></td>
+<td>Cybersecurity vulnerability in third-party library.</td>
+<td>Security</td>
+<td>2 (Low)</td>
+<td>4 (High)</td>
+<td>8</td>
+<td>Regular security audits, use trusted libraries, keep dependencies updated.</td>
+<td>Isolate affected module, prepare emergency patch.</td>
+<td>Bob White</td>
+<td>Open</td>
+<td>YYYY-MM-DD</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><strong>R-005</strong></td>
+<td>Key team member leaves project unexpectedly.</td>
+<td>Resource</td>
+<td>2 (Low)</td>
+<td>3 (Medium)</td>
+<td>6</td>
+<td>Cross-training, comprehensive documentation.</td>
+<td>Reallocate tasks, hire contractor.</td>
+<td>Carol Green</td>
+<td>Open</td>
+<td>YYYY-MM-DD</td>
+<td>YYYY-MM-DD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-risk-categories">4. Risk Categories<a class="headerlink" href="#4-risk-categories" title="Permanent link">¶</a></h2>
+<p>[Define common categories for risks to help with analysis and reporting.]</p>
+<ul>
+<li><strong>Technical:</strong> (e.g., architecture, design, complexity, new technology, integration)</li>
+<li><strong>Project Management:</strong> (e.g., schedule, budget, scope, resources, planning)</li>
+<li><strong>External:</strong> (e.g., market changes, regulatory, supplier, economic)</li>
+<li><strong>Organisational:</strong> (e.g., culture, stakeholder engagement, internal politics)</li>
+<li><strong>Operational:</strong> (e.g., deployment, support, infrastructure, security)</li>
+<li><strong>Safety/Compliance:</strong> (e.g., regulatory adherence, hazard control)</li>
+</ul>
+<h2 id="5-risk-management-process">5. Risk Management Process<a class="headerlink" href="#5-risk-management-process" title="Permanent link">¶</a></h2>
+<h3 id="51-identification">5.1 Identification<a class="headerlink" href="#51-identification" title="Permanent link">¶</a></h3>
+<p>[How will risks be identified? (e.g., brainstorming, checklists, lessons learned, expert judgment).]</p>
+<h3 id="52-analysis">5.2 Analysis<a class="headerlink" href="#52-analysis" title="Permanent link">¶</a></h3>
+<p>[How will risks be assessed for likelihood, impact, and score?]</p>
+<h3 id="53-mitigation-response-planning">5.3 Mitigation &amp; Response Planning<a class="headerlink" href="#53-mitigation-response-planning" title="Permanent link">¶</a></h3>
+<p>[How will strategies be developed to reduce likelihood or impact? (e.g., avoid, reduce, transfer, accept).]</p>
+<h3 id="54-monitoring-control">5.4 Monitoring &amp; Control<a class="headerlink" href="#54-monitoring-control" title="Permanent link">¶</a></h3>
+<p>[How will risks be continuously tracked, reviewed, and reported? (e.g., regular risk reviews, dashboards).]</p>
+<h2 id="6-roles-and-responsibilities">6. Roles and Responsibilities<a class="headerlink" href="#6-roles-and-responsibilities" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Risk Owner:</strong> Responsible for monitoring assigned risks, implementing mitigation strategies, and reporting status.</li>
+<li><strong>Project Manager/Lead:</strong> Overall responsibility for the Risk Register, facilitating risk reviews, and escalating critical risks.</li>
+<li><strong>Team Members:</strong> Responsible for identifying and reporting new risks.</li>
+</ul>
+<h2 id="7-review-schedule">7. Review Schedule<a class="headerlink" href="#7-review-schedule" title="Permanent link">¶</a></h2>
+<p>[How often will the Risk Register be reviewed and by whom?]</p>
+<ul>
+<li><strong>Frequency:</strong> [e.g., "Weekly during team syncs," "Bi-weekly with Project Lead," "Monthly with Steering Committee."]</li>
+<li><strong>Attendees:</strong> [e.g., "Core team," "Project Lead &amp; Key Stakeholders."]</li>
+</ul>
+<h2 id="8-references">8. References<a class="headerlink" href="#8-references" title="Permanent link">¶</a></h2>
+<p>[List any other documents (e.g., project plan, requirements, ADRs) or standards referenced in this Risk Register.]</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 30, 2025 17:42:04 UTC"><span class="timeago" datetime="2025-10-30T17:42:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 30, 2025 17:42:04 UTC">2025-10-30</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/markbac" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="../../../js/timeago.min.js"></script>
+<script src="../../../js/timeago_mkdocs_material.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

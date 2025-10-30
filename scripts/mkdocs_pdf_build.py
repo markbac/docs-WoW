@@ -57,7 +57,12 @@ FENCE_CODE_FORMAT_TAG = "!!python/name:pymdownx.superfences.fence_code_format"
 EMOJI_TWEMOJI_TAG = "!!python/name:material.extensions.emoji.twemoji"
 EMOJI_TO_SVG_TAG = "!!python/name:material.extensions.emoji.to_svg"
 
-#
+# -----------------------------------------------------------------------------
+# CONFIGURATION CONSTANTS
+# -----------------------------------------------------------------------------
+# Maximum image height in pixels for all diagrams and embedded images.
+# Approx. A4 page height ≈ 1050–1100px @ 96 DPI
+MAX_IMAGE_HEIGHT_PX = 900
 
 def _slugify(text: str) -> str:
     import re, unicodedata
@@ -317,19 +322,8 @@ def create_ephemeral_section_indexes(work_docs: Path) -> None:
         title = directory.name.replace("-", " ").replace("_", " ").title()
         index_md.write_text(f"# {title}\n\n", encoding="utf-8")
 
-def limit_image_heights(work_docs: Path, max_height_px: int = 900):
-    """
-    Inject style attributes limiting image height directly into Markdown HTML tags.
-    """
-    import re
-    pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
-    for md in work_docs.rglob("*.md"):
-        text = md.read_text(encoding="utf-8")
-        # Inject a CSS inline style hint for oversized images
-        text = pattern.sub(r'![\1](\2){style="max-height:%dpx; height:auto;"}' % max_height_px, text)
-        md.write_text(text, encoding="utf-8")
 
-def limit_image_heights(work_docs: Path, max_height_px: int = 900):
+def limit_image_heights(work_docs: Path, max_height_px: int = MAX_IMAGE_HEIGHT_PX):
     """
     Inject style attributes limiting image height directly into Markdown image tags.
     This prevents oversized images from causing WeasyPrint to stop rendering.
@@ -405,7 +399,7 @@ def normalise_image_links(work_docs: Path) -> None:
         if changed:
             md.write_text(text, encoding="utf-8")
 
-def resize_large_images(work_docs: Path, max_height_px: int = 900):
+def resize_large_images(work_docs: Path, max_height_px: int = MAX_IMAGE_HEIGHT_PX):
     """
     Resize any existing PNG/JPEG images over a given height limit.
     Uses Pillow to safely scale down while keeping aspect ratio.
@@ -425,7 +419,7 @@ def resize_large_images(work_docs: Path, max_height_px: int = 900):
             print(f"WARNING: failed to resize {img_path}: {e}", file=sys.stderr)
 
 
-def preprocess_mermaid(work_docs: Path, assets_dir: Path) -> None:
+def preprocess_mermaid(work_docs: Path, assets_dir: Path, max_height_px: int = MAX_IMAGE_HEIGHT_PX) -> None:
     """
     Render Mermaid blocks to PNG (via mermaid-cli) and replace them with Markdown image links.
     - Filenames are predictable: <relative_path>_<n>.png (incremental within each file)
@@ -455,9 +449,9 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path) -> None:
             mmd_in = temp_file.name
 
         if use_npx:
-            cmd = ["npx", "@mermaid-js/mermaid-cli@10.4.0", "-i", mmd_in, "-o", str(out_path), "-H", "900"]
+            cmd = ["npx", "@mermaid-js/mermaid-cli@10.4.0", "-i", mmd_in, "-o", str(out_path), "-H", str(max_height_px)]
         else:
-            cmd = [mmdc, "-i", mmd_in, "-o", str(out_path), "-H", "900"]
+            cmd = [mmdc, "-i", mmd_in, "-o", str(out_path), "-H", str(max_height_px)]
 
         try:
             subprocess.run(cmd, check=True, capture_output=True)
@@ -577,6 +571,10 @@ def main() -> int:
     parser.add_argument(
         "--no-theme-switch", action="store_true", help="Do not override theme to Material for PDF"
     )
+    parser.add_argument(
+        "--max-image-height", type=int, default=MAX_IMAGE_HEIGHT_PX,
+        help="Maximum image height (in pixels) for diagrams and inline images."
+    )
     args = parser.parse_args()
 
     check_dependencies()
@@ -617,11 +615,11 @@ def main() -> int:
     create_ephemeral_section_indexes(work_docs)
     #prefix_heading_ids(work_docs)    
     normalise_image_links(work_docs)
-    limit_image_heights(work_docs, max_height_px=900)
+    limit_image_heights(work_docs, max_height_px=args.max_image_height)
 
     # 5) Pre-render Mermaid
     try:
-        preprocess_mermaid(work_docs, assets_dir)
+        preprocess_mermaid(work_docs, assets_dir, args.max_image_height)
     except FileNotFoundError as error:
         print(
             "WARNING: Mermaid CLI not found (mmdc/npx). Mermaid diagrams will NOT render in PDFs. "
@@ -629,7 +627,7 @@ def main() -> int:
             file=sys.stderr,
         )
 
-    resize_large_images(work_docs, max_height_px=900)
+    resize_large_images(work_docs, max_height_px=args.max_image_height)
 
     # 6) Mutate cfg for PDF run
     ensure_with_pdf_plugin(pdf_cfg, pdf_subtitle)
