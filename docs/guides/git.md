@@ -24,7 +24,7 @@ Every commit holds a complete snapshot of the project state via its root tree po
 **The Git Object Relationship (DAG Node)**
 
 Code snippet
-
+```mermaid
     graph TD
         subgraph Repository (.git/objects)
             C[Commit Object] --> T(Tree Object: root directory snapshot)
@@ -34,6 +34,7 @@ Code snippet
             T2 --> B3(Blob Object: file3 content)
             C --> P1(Parent Commit SHA)
         end
+```
 
 ### 1.1 The Tri-State Model: Working Directory, Staging Index, and Local Repository
 
@@ -158,7 +159,7 @@ TBD is characterized by developers merging small, frequent updates directly into
 TBD emphasizes a linear history with short-lived feature branches (`F1`, `F2`) merging frequently into `main`. These merges often use rebasing or squashing to keep the `main` branch clean and linear.
 
 Code snippet
-
+```mermaid
     gitGraph
         commit id: "C1"
         commit id: "C2"
@@ -179,6 +180,7 @@ Code snippet
         commit id: "F2b"
         checkout main
         merge feature_f2 tag: "Squash/FF Merge"
+```
 
 #### 2.2.2 Gitflow Development
 
@@ -189,7 +191,7 @@ Gitflow, popularized earlier, employs a stricter, multi-branch model involving l
 Gitflow relies on two long-lived branches (`main` and `develop`) and merge commits to preserve the exact context of parallel development.
 
 Code snippet
-
+```mermaid
     gitGraph
         commit id: "C1"
         commit id: "C2"
@@ -214,6 +216,7 @@ Code snippet
         merge hotfix/B tag: "Merge to Main"
         checkout develop
         merge hotfix/B tag: "Merge to Develop"
+```
 
 ### 2.3 Managing Remotes: Synchronization and Pushing Safety
 
@@ -267,7 +270,7 @@ The decision between a recursive merge and a rebase/squash is a fundamental trad
 **Visual Comparison of Merge Strategies (Feature branch F diverges from Main at C2)**
 
 Code snippet
-
+```mermaid
     gitGraph
         commit id: "C1"
         commit id: "C2"
@@ -292,7 +295,7 @@ Code snippet
         commit id: "F6'"
         checkout Main
         merge Feature_Rebase tag: "Fast-Forward" type: HIGHLIGHT
-
+```
 -   **Recursive Merge (Top):** Creates a non-linear history line where the merge commit (M) explicitly shows the simultaneous development and integration of Feature\_Recursive and Main.
     
 -   **Rebase (Bottom):** Creates a perfectly linear history. Feature commits (F5, F6) are _recreated_ as new commits (F5', F6') on top of the latest Main commit (C5), allowing for a clean Fast-Forward merge.
@@ -420,7 +423,7 @@ If a `reset` is executed on a shared branch and then force-pushed, Git creates p
 The diagram below illustrates the fundamental difference: `revert` creates new, undoing history (safe), while `reset --hard` destroys the history locally by moving the branch pointer (destructive).
 
 Code snippet
-
+```mermaid
     gitGraph
         commit id: "C1"
         commit id: "C2"
@@ -434,7 +437,7 @@ Code snippet
             checkout C3
             commit id: "C5 (Reset to C2)" tag: "git reset --hard C2" type: HIGHLIGHT
         end
-
+```
 Rollback Strategies: Reset vs. Revert
 
 **Command**
@@ -542,7 +545,7 @@ While `git stash` handles temporary storage of changes, complex scenarios often 
 A developer can create a new, isolated directory checked out to a separate branch using: `git worktree add -b <new-branch> <path> <base-branch>`. This allows the developer to keep their main working directory in a complex state (e.g., deep into a refactoring) while simultaneously switching to the linked worktree to handle an emergency hotfix, commit the fix, and remove the worktree when finished. This is an advanced context management strategy that prevents the limitations and risks associated with stashing highly complex or incomplete sets of changes.  
 
 Bash
-
+```bash
     # Example Git Worktree Workflow (Creating an isolated fix environment)
     git worktree add -b emergency-fix../temp master
     pushd../temp
@@ -550,6 +553,7 @@ Bash
     git commit -a -m 'fix: emergency fix for critical bug'
     popd
     git worktree remove../temp
+```
 
 ### 6.4 History Forensics: `git blame` and Advanced `git log`
 
@@ -577,9 +581,5 @@ The analysis leads to the following actionable recommendations:
     
 6.  **Leverage Advanced Context Management:** For complex or disruptive tasks, developers should utilize `git worktree` to create isolated, parallel working environments, ensuring that urgent hotfixes or maintenance tasks can be completed without destabilizing the current complex state of their primary working directory, a significant improvement over reliance solely on `git stash`.  
 
-Google Account
 
-Mark Bacon
-
-meadowheadmark@gmail.com
 
