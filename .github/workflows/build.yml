@@ -82,6 +82,12 @@ jobs:
         run: |
           which mmdc
           mmdc --version
+          
+      - name: Install Chromium browser
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          echo "PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser" >> $GITHUB_ENV
 
       - name: Install full Puppeteer (includes Chromium)
         run: |
