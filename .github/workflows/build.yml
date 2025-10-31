@@ -35,7 +35,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             graphviz \
-            libasound2 \
+            libasound2t64 \
             libatk1.0-0 \
             libc6 \
             libcairo2 \
@@ -64,7 +64,7 @@ jobs:
             libxss1 \
             libxtst6 \
             fonts-liberation \
-            libappindicator3-1 \
+            libayatana-appindicator3-1 \
             xdg-utils \
             wget
 
