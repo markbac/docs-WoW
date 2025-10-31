@@ -12,6 +12,9 @@ jobs:
     env:
       PLANTUML_JAR: tools/plantuml.jar
       PLANTUML_OUTPUT_FORMAT: svg
+      PUPPETEER_NO_SANDBOX: true
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: false
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,19 +30,63 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Graphviz
-        run: sudo apt-get update && sudo apt-get install -y graphviz
+      - name: Install system dependencies (Graphviz + Puppeteer deps)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            graphviz \
+            libasound2 \
+            libatk1.0-0 \
+            libc6 \
+            libcairo2 \
+            libcups2 \
+            libdbus-1-3 \
+            libexpat1 \
+            libfontconfig1 \
+            libglib2.0-0 \
+            libgdk-pixbuf2.0-0 \
+            libnspr4 \
+            libnss3 \
+            libpango-1.0-0 \
+            libpangocairo-1.0-0 \
+            libstdc++6 \
+            libx11-6 \
+            libx11-xcb1 \
+            libxcb1 \
+            libxcomposite1 \
+            libxcursor1 \
+            libxdamage1 \
+            libxext6 \
+            libxfixes3 \
+            libxi6 \
+            libxrandr2 \
+            libxrender1 \
+            libxss1 \
+            libxtst6 \
+            fonts-liberation \
+            libappindicator3-1 \
+            xdg-utils \
+            wget
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install Mermaid CLI
-        run: npm install -g @mermaid-js/mermaid-cli
+      - name: Install Mermaid CLI (global)
+        run: |
+          npm install -g @mermaid-js/mermaid-cli@10.4.0
+          echo "✅ Mermaid CLI installed"
+
+      - name: Verify mmdc
+        run: |
+          which mmdc
+          mmdc --version
 
       - name: Install Python dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Download PlantUML jar
         run: bash scripts/get_plantuml.sh
@@ -52,14 +99,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-plantuml-
 
-      # --- START OF CORRECTIONS ---
       - name: Build MkDocs Site (HTML)
         run: mkdocs build --clean
-        
+
       - name: Build PDFs
-        # Assumes the 'scripts/build_pdfs.sh' script handles the PDF generation
-        run: bash scripts/build_pdfs.sh
-      # --- END OF CORRECTIONS ---
+        env:
+          ENABLE_PDF_EXPORT: "1"
+        run: |
+          echo "Running PDF build with mkdocs_pdf_build.py"
+          python3 scripts/mkdocs_pdf_build.py || exit 1
 
       - name: Upload PDF artefacts
         uses: actions/upload-artifact@v4
