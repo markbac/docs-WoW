@@ -78,42 +78,6 @@ jobs:
           npm install -g @mermaid-js/mermaid-cli@10.4.0
           echo "✅ Mermaid CLI installed"
 
-      - name: Verify mmdc
-        run: |
-          which mmdc
-          mmdc --version
-          
-      - name: Install Chromium browser
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          echo "PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser" >> $GITHUB_ENV
-
-      - name: Install full Puppeteer (includes Chromium)
-        run: |
-          npm install -g puppeteer@22.15.0
-          echo "✅ Installed Puppeteer with bundled Chromium"
-
-      # ────────────────────────────────────────────────
-      # 🧪 Standalone Mermaid render test
-      # ────────────────────────────────────────────────
-      - name: Test Mermaid CLI rendering
-        run: |
-          echo "flowchart TD; A-->B; B-->C; C-->A;" > test.mmd
-          echo "Rendering simple Mermaid diagram..."
-          mmdc -i test.mmd -o test.png -b transparent -H 400 --scale 1.0 || true
-          echo "Render complete. Checking file..."
-          ls -lh test.*
-          file test.png || true
-          echo "If this fails, mmdc or Chromium cannot start correctly."
-
-      - name: Upload Mermaid test artefacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: mermaid-test
-          path: test*.png
-          if-no-files-found: warn
-
       # ────────────────────────────────────────────────
       # 🧩 Debug instrumentation
       # ────────────────────────────────────────────────
@@ -157,6 +121,11 @@ jobs:
       - name: Build MkDocs Site (HTML)
         run: mkdocs build --clean
 
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
       - name: Build PDFs (verbose)
         env:
           ENABLE_PDF_EXPORT: "1"
@@ -178,11 +147,6 @@ jobs:
           name: pdfs
           path: site/pdf/*.pdf
           if-no-files-found: warn
-
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
 
   deploy:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'

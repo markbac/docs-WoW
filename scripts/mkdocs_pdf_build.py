@@ -480,7 +480,7 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path, max_height_px: int = M
 
     assets_dir.mkdir(parents=True, exist_ok=True)
     mmdc = shutil.which("mmdc")
-    use_npx = mmdc is None
+    use_npx = True
 
     fence_re = re.compile(
         r"(?P<fence>```|~~~)\s*mermaid[^\n]*\n(?P<code>.*?)(?:\n)(?P=fence)",
