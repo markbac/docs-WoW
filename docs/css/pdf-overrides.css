@@ -42,6 +42,13 @@
     break-inside: avoid !important;
   }
 
+  img[src$=".svg"] {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    page-break-inside: avoid;
+  }
+
   /* === FIGURES === */
   figure {
     max-width: 100% !important;

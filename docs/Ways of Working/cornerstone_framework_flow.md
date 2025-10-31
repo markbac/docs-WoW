@@ -2,6 +2,10 @@
 
 ```mermaid
 graph TD
+    A --> B
+```
+```mermaid
+graph TD
     subgraph "Structured Foundation"
         subgraph "Product Owner"
             A[Define vision and goals];

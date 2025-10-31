@@ -45,6 +45,8 @@ import sys
 import tempfile
 from pathlib import Path
 from typing import Any, Dict, List
+from PIL import Image, ImageFilter, ImageOps
+from xml.etree import ElementTree as ET
 
 import yaml
 
@@ -399,35 +401,82 @@ def normalise_image_links(work_docs: Path) -> None:
         if changed:
             md.write_text(text, encoding="utf-8")
 
+
 def resize_large_images(work_docs: Path, max_height_px: int = MAX_IMAGE_HEIGHT_PX):
     """
-    Resize any existing PNG/JPEG images over a given height limit.
-    Uses Pillow to safely scale down while keeping aspect ratio.
+    Resize PNG/JPEG images exceeding the given height limit.
+    Keeps aspect ratio and minimises quality loss with LANCZOS + UnsharpMask.
+    SVGs are skipped (they're vector and scale cleanly).
     """
-    from PIL import Image
     for img_path in work_docs.rglob("*.[pjP][pnP][gG]*"):
         try:
             with Image.open(img_path) as im:
+                im = ImageOps.exif_transpose(im)  # handle orientation
                 w, h = im.size
                 if h > max_height_px:
                     scale = max_height_px / h
                     new_size = (int(w * scale), int(h * scale))
                     im = im.resize(new_size, Image.Resampling.LANCZOS)
-                    im.save(img_path)
+                    im = im.filter(ImageFilter.UnsharpMask(radius=1, percent=150, threshold=3))
+                    save_kwargs = {"optimize": True}
+                    if img_path.suffix.lower() in [".jpg", ".jpeg"]:
+                        save_kwargs["quality"] = 95
+                    elif img_path.suffix.lower() == ".png":
+                        save_kwargs["compress_level"] = 1
+                    im.save(img_path, **save_kwargs)
                     print(f"Resized {img_path.name} → {new_size}")
         except Exception as e:
             print(f"WARNING: failed to resize {img_path}: {e}", file=sys.stderr)
 
+def normalise_svg(svg_path: Path, width_px: int = 900) -> None:
+    """Force explicit width/height for WeasyPrint PDF builds."""
+    import xml.etree.ElementTree as ET
+    try:
+        tree = ET.parse(svg_path)
+        root = tree.getroot()
+
+        # Extract current viewBox or create one if missing
+        vb = root.attrib.get("viewBox")
+        if not vb:
+            vb = f"0 0 {width_px} {int(width_px * 0.6)}"
+            root.attrib["viewBox"] = vb
+
+        x, y, w, h = map(float, vb.split())
+
+        # Force replace any width/height attributes, ignore Mermaid’s defaults
+        scale = width_px / w
+        root.attrib["width"] = f"{width_px}px"
+        root.attrib["height"] = f"{int(h * scale)}px"
+
+        # Clean up “width=100%” or inline CSS if present
+        style = root.attrib.get("style", "")
+        if "width" in style or "max-width" in style:
+            style = ";".join([s for s in style.split(";") if "width" not in s])
+            root.attrib["style"] = style.strip(";")
+
+        tree.write(svg_path, encoding="utf-8")
+        print(f"✅ Fixed SVG: {svg_path.name} → width={width_px}px, height={int(h * scale)}px")
+    except Exception as e:
+        print(f"⚠️ Failed to normalise SVG {svg_path.name}: {e}")
+
 
 def preprocess_mermaid(work_docs: Path, assets_dir: Path, max_height_px: int = MAX_IMAGE_HEIGHT_PX) -> None:
     """
-    Render Mermaid blocks to PNG (via mermaid-cli) and replace them with Markdown image links.
-    - Filenames are predictable: <relative_path>_<n>.png (incremental within each file)
+    Render Mermaid blocks to PNG or SVG (via mermaid-cli) and replace them with Markdown image links.
+    - Toggle output format by changing OUTPUT_FORMAT ('png' or 'svg')
+    - Filenames are predictable: <relative_path>_<n>.<ext>
     - Supports ```mermaid, ~~~mermaid, and :::mermaid blocks
     - Logs detailed counts
     """
     import re
     import tempfile as _tmp
+    import subprocess
+    import shutil
+    import os
+    import sys
+
+    # 🔧 Toggle this variable to switch formats
+    OUTPUT_FORMAT = "png"  # change to "png" when raster output is needed or to "svg" for vector
 
     assets_dir.mkdir(parents=True, exist_ok=True)
     mmdc = shutil.which("mmdc")
@@ -442,21 +491,39 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path, max_height_px: int = M
         re.DOTALL | re.IGNORECASE | re.MULTILINE,
     )
 
-    def render_png(code: str, out_path: Path) -> None:
-        """Render Mermaid code to PNG using CLI."""
+    def render_diagram(code: str, out_path: Path) -> None:
+        """Render Mermaid code to PNG or SVG using mermaid-cli."""
         with _tmp.NamedTemporaryFile("w", delete=False, suffix=".mmd") as temp_file:
             temp_file.write(code)
             mmd_in = temp_file.name
 
         if use_npx:
-            cmd = ["npx", "@mermaid-js/mermaid-cli@10.4.0", "-i", mmd_in, "-o", str(out_path), "-H", str(max_height_px)]
+            base_cmd = ["npx", "@mermaid-js/mermaid-cli@10.4.0"]
         else:
-            cmd = [mmdc, "-i", mmd_in, "-o", str(out_path), "-H", str(max_height_px)]
+            base_cmd = [mmdc]
+
+        # Common CLI arguments
+        cmd = base_cmd + [
+            "-i", mmd_in,
+            "-o", str(out_path),
+            "-b", "transparent"
+        ]
+
+        # Apply format-specific options
+        if OUTPUT_FORMAT.lower() == "png":
+            cmd += ["-H", str(max_height_px), "--scale", "1.0"]
+        elif OUTPUT_FORMAT.lower() == "svg":
+            cmd += ["--height", str(max_height_px), "--scale", "1.0"]
+        else:
+            raise ValueError(f"Unsupported Mermaid output format: {OUTPUT_FORMAT}")
 
         try:
             subprocess.run(cmd, check=True, capture_output=True)
+
+            if OUTPUT_FORMAT.lower() == "svg" and out_path.exists():
+                normalise_svg(out_path, width_px=max_height_px)
         except Exception as exc:
-            # Write a fallback SVG so the PDF build doesn’t crash
+            # Always write a fallback SVG to prevent build breaks
             out_path.write_text(
                 '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120">'
                 '<rect width="100%" height="100%" fill="#f7f7f7" />'
@@ -478,19 +545,19 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path, max_height_px: int = M
         replaced_here = 0
         found_here = 0
 
-        # Create a base name based on relative path (safe for filesystem)
+        # Base name derived from relative path
         rel_stem = markdown_file.relative_to(work_docs).with_suffix("").as_posix()
         safe_base = rel_stem.replace("/", "_").replace("\\", "_")
 
-        def sub_mermaid(m, counter=[0]):  # mutable default to increment per file
+        def sub_mermaid(m, counter=[0]):
             nonlocal replaced_here, found_here
             found_here += 1
             counter[0] += 1
             code = m.group("code").strip()
-            fname = f"{safe_base}_{counter[0]:02d}.png"
+            fname = f"{safe_base}_{counter[0]:02d}.{OUTPUT_FORMAT.lower()}"
             out_path = assets_dir / fname
             if not out_path.exists():
-                render_png(code, out_path)
+                render_diagram(code, out_path)
             rel = os.path.relpath(out_path, markdown_file.parent).replace(os.sep, "/")
             replaced_here += 1
             return f"![diagram]({rel})"
@@ -504,7 +571,7 @@ def preprocess_mermaid(work_docs: Path, assets_dir: Path, max_height_px: int = M
         total_found += found_here
         total_replaced += replaced_here
 
-    print(f"Mermaid: found {total_found} blocks, replaced {total_replaced} with PNGs.")
+    print(f"Mermaid: found {total_found} blocks, replaced {total_replaced} with {OUTPUT_FORMAT.upper()}s.")
 
 
 def normalise_hooks_paths(config: Dict[str, Any], base_dir: Path) -> None:
@@ -619,7 +686,8 @@ def main() -> int:
 
     # 5) Pre-render Mermaid
     try:
-        preprocess_mermaid(work_docs, assets_dir, args.max_image_height)
+        preprocess_mermaid(work_docs, assets_dir, 1100)
+        #preprocess_mermaid(work_docs, assets_dir, args.max_image_height)
     except FileNotFoundError as error:
         print(
             "WARNING: Mermaid CLI not found (mmdc/npx). Mermaid diagrams will NOT render in PDFs. "
