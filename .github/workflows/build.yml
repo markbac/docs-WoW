@@ -83,6 +83,11 @@ jobs:
           which mmdc
           mmdc --version
 
+      - name: Install full Puppeteer (includes Chromium)
+        run: |
+          npm install -g puppeteer@22.15.0
+          echo "✅ Installed Puppeteer with bundled Chromium"
+
       # ────────────────────────────────────────────────
       # 🧪 Standalone Mermaid render test
       # ────────────────────────────────────────────────
