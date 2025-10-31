@@ -83,6 +83,39 @@ jobs:
           which mmdc
           mmdc --version
 
+      # ────────────────────────────────────────────────
+      # 🧪 Standalone Mermaid render test
+      # ────────────────────────────────────────────────
+      - name: Test Mermaid CLI rendering
+        run: |
+          echo "flowchart TD; A-->B; B-->C; C-->A;" > test.mmd
+          echo "Rendering simple Mermaid diagram..."
+          mmdc -i test.mmd -o test.png -b transparent -H 400 --scale 1.0 || true
+          echo "Render complete. Checking file..."
+          ls -lh test.*
+          file test.png || true
+          echo "If this fails, mmdc or Chromium cannot start correctly."
+
+      - name: Upload Mermaid test artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mermaid-test
+          path: test*.png
+          if-no-files-found: warn
+
+      # ────────────────────────────────────────────────
+      # 🧩 Debug instrumentation
+      # ────────────────────────────────────────────────
+      - name: Enable debug logging
+        run: |
+          echo "ACTIONS_STEP_DEBUG=true" >> $GITHUB_ENV
+          echo "PUPPETEER_NO_SANDBOX=false" >> $GITHUB_ENV
+          echo "DEBUG=puppeteer:*" >> $GITHUB_ENV
+          echo "MKDOCS_TO_PDF_DEBUG_HTML=1" >> $GITHUB_ENV
+          echo "WEASYPRINT_LOG_LEVEL=DEBUG" >> $GITHUB_ENV
+          echo "WEASYPRINT_DEBUG=1" >> $GITHUB_ENV
+          echo "MKDOCS_LOG_LEVEL=DEBUG" >> $GITHUB_ENV
+
       - name: Install Python dependencies
         run: |
           pip install --upgrade pip
@@ -99,15 +132,34 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-plantuml-
 
+      - name: Debug system info
+        run: |
+          uname -a
+          lsb_release -a
+          node --version
+          npm --version
+          which mmdc || echo "no mmdc"
+          which chromium || which google-chrome || echo "no chromium"
+          echo "Available Chrome binaries:"
+          find /opt -name "chrome*" 2>/dev/null | head -n 20
+
       - name: Build MkDocs Site (HTML)
         run: mkdocs build --clean
 
-      - name: Build PDFs
+      - name: Build PDFs (verbose)
         env:
           ENABLE_PDF_EXPORT: "1"
+          DEBUG: puppeteer:*
+          PUPPETEER_NO_SANDBOX: false
+          WEASYPRINT_LOG_LEVEL: DEBUG
         run: |
-          echo "Running PDF build with mkdocs_pdf_build.py"
-          python3 scripts/mkdocs_pdf_build.py || exit 1
+          echo "=== Environment check ==="
+          which mmdc || echo "mmdc not found"
+          mmdc --version || true
+          node --version
+          npm --version
+          echo "========================="
+          python3 scripts/mkdocs_pdf_build.py --src mkdocs.yml --keep-site --max-image-height 1100 || true
 
       - name: Upload PDF artefacts
         uses: actions/upload-artifact@v4
