@@ -8,15 +8,15 @@ We believe in lightweight, meaningful documentation and embrace the **"Docs as C
 
 It can seem a bit strange to have two documents covering what appears to be the same topic. From a solution architect's perspective, this split is intentional and crucial:
 
-* [**An Approach to Engineering Leadership and Delivery**](docs/Ways of Working/An-Approach-to-Engineering-Leadership-and-Delivery.md) is our **Foundational Philosophy**. It’s the "what" and the "why." This document sets the high-level principles and vision. It's our guiding map, ensuring everyone understands the values that drive our decisions, regardless of the specific project or technology. Without this shared philosophy, any framework we adopt would just be a list of rules without purpose.
+* [**An Approach to Engineering Leadership and Delivery**](docs/ways-of-working/An-Approach-to-Engineering-Leadership-and-Delivery.md) is our **Foundational Philosophy**. It’s the "what" and the "why." This document sets the high-level principles and vision. It's our guiding map, ensuring everyone understands the values that drive our decisions, regardless of the specific project or technology. Without this shared philosophy, any framework we adopt would just be a list of rules without purpose.
 
-* [**Cornerstone**]("docs/Ways of Working/cornerstone_framework.md") is our **Practical Framework**. It’s the "how." This is the detailed, actionable blueprint that puts the philosophy into practice. It provides the specific processes, team structures, and artifacts (like ADRs and RTMs) needed to build complex products. It's the detailed itinerary that helps us navigate the real world, complete with clear steps and contingency plans.
+* [**Cornerstone**](docs/ways-of-working/cornerstone_framework.md) is our **Practical Framework**. It’s the "how." This is the detailed, actionable blueprint that puts the philosophy into practice. It provides the specific processes, team structures, and artifacts (like ADRs and RTMs) needed to build complex products. It's the detailed itinerary that helps us navigate the real world, complete with clear steps and contingency plans.
 
 Together, they create a powerful combination: a clear strategic direction grounded in core values, with a flexible, pragmatic approach for real-world delivery.
 
 ## 🌟 Our Core Philosophy: An Integrative Approach to Engineering Leadership and Delivery
 
-At the heart of our "Ways of Working" is an **integrative philosophy** that synthesizes insights from leading thinkers in leadership, systems engineering, and software architecture. This foundational document, [An Approach to Engineering Leadership and Delivery]("docs/Ways of Working/An-Approach-to-Engineering-and-Delivery.md"), outlines *what* matters and *why* these elements are critical for effective engineering.
+At the heart of our "Ways of Working" is an **integrative philosophy** that synthesizes insights from leading thinkers in leadership, systems engineering, and software architecture. This foundational document, [An Approach to Engineering Leadership and Delivery](docs/ways-of-working/An-Approach-to-Engineering-and-Delivery.md), outlines *what* matters and *why* these elements are critical for effective engineering.
 
 It focuses on key tenets like:
 
@@ -42,7 +42,7 @@ This document serves as our guiding star, providing the philosophical underpinni
 
 ## 🌉 Cornerstone: A Hybrid Delivery Framework for Product Development
 
-[Cornerstone]("docs/Ways of Working/cornerstone_framework.md") introduces "Cornerstone," our comprehensive framework designed to navigate the complexities of modern product development, especially for integrated products involving software, firmware, hardware, and mechanical components.
+[Cornerstone](docs/ways-of-working/cornerstone_framework.md) introduces "Cornerstone," our comprehensive framework designed to navigate the complexities of modern product development, especially for integrated products involving software, firmware, hardware, and mechanical components.
 
 Cornerstone is a pragmatic synthesis, blending the rigour of the V-model with the adaptability of Agile. It's about finding the "sweet spot" for integrated product development, ensuring predictability and traceability while maintaining agility and responsiveness.
 
@@ -124,9 +124,9 @@ We aim for this repository to be a continuously evolving resource, reflecting ou
 
 ## 📂 Repository Contents
 
-* [An Approach to Engineering Leadership and Delivery]("docs/Ways of Working/An-Approach-to-Engineering-Leadership-and-Delivery.md"): Our foundational philosophy on engineering leadership and delivery.
+* [An Approach to Engineering Leadership and Delivery](docs/ways-of-working/An-Approach-to-Engineering-Leadership-and-Delivery.md): Our foundational philosophy on engineering leadership and delivery.
 
-* [Cornerstone]("docs/Ways of Working/cornerstone_framework.md"): The detailed outline for the Cornerstone hybrid delivery framework.
+* [Cornerstone](docs/ways-of-working/cornerstone_framework.md): The detailed outline for the Cornerstone hybrid delivery framework.
 
 * [LICENSE](LICENSE.txt): The licensing information for this repository.
 
@@ -137,6 +137,7 @@ This repository is a living document! We welcome feedback, suggestions, and cont
 ## 📄 License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for full details.
+
 
 
 
