@@ -16,7 +16,7 @@ Together, they create a powerful combination: a clear strategic direction ground
 
 ## 🌟 Our Core Philosophy: An Integrative Approach to Engineering Leadership and Delivery
 
-At the heart of our "Ways of Working" is an **integrative philosophy** that synthesizes insights from leading thinkers in leadership, systems engineering, and software architecture. This foundational document, [An Approach to Engineering Leadership and Delivery](An-Approach-to-Engineering-and-Delivery.md), outlines *what* matters and *why* these elements are critical for effective engineering.
+At the heart of our "Ways of Working" is an **integrative philosophy** that synthesizes insights from leading thinkers in leadership, systems engineering, and software architecture. This foundational document, [An Approach to Engineering Leadership and Delivery]("docs/Ways of Working/An-Approach-to-Engineering-and-Delivery.md"), outlines *what* matters and *why* these elements are critical for effective engineering.
 
 It focuses on key tenets like:
 
@@ -137,4 +137,5 @@ This repository is a living document! We welcome feedback, suggestions, and cont
 ## 📄 License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for full details.
+
 
