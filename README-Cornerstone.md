@@ -8,7 +8,7 @@ We believe in lightweight, meaningful documentation and embrace the **"Docs as C
 
 It can seem a bit strange to have two documents covering what appears to be the same topic. From a solution architect's perspective, this split is intentional and crucial:
 
-* [**An Approach to Engineering Leadership and Delivery**]("docs/Ways of Working/An-Approach-to-Engineering-Leadership-and-Delivery.md") is our **Foundational Philosophy**. It’s the "what" and the "why." This document sets the high-level principles and vision. It's our guiding map, ensuring everyone understands the values that drive our decisions, regardless of the specific project or technology. Without this shared philosophy, any framework we adopt would just be a list of rules without purpose.
+* [**An Approach to Engineering Leadership and Delivery**](docs/Ways of Working/An-Approach-to-Engineering-Leadership-and-Delivery.md) is our **Foundational Philosophy**. It’s the "what" and the "why." This document sets the high-level principles and vision. It's our guiding map, ensuring everyone understands the values that drive our decisions, regardless of the specific project or technology. Without this shared philosophy, any framework we adopt would just be a list of rules without purpose.
 
 * [**Cornerstone**]("docs/Ways of Working/cornerstone_framework.md") is our **Practical Framework**. It’s the "how." This is the detailed, actionable blueprint that puts the philosophy into practice. It provides the specific processes, team structures, and artifacts (like ADRs and RTMs) needed to build complex products. It's the detailed itinerary that helps us navigate the real world, complete with clear steps and contingency plans.
 
@@ -137,5 +137,6 @@ This repository is a living document! We welcome feedback, suggestions, and cont
 ## 📄 License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for full details.
+
 
 
