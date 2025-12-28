@@ -1,5 +1,18 @@
 # SECTION I – FOUNDATIONS: PHILOSOPHY, PURPOSE, AND SYSTEMS THINKING
 
+This section establishes the intellectual and ethical foundations of Cornerstone. It defines how engineering leadership is understood, what the engineering function exists to achieve, and how organisations must be viewed in order to reason effectively about delivery, quality, and sustainability.
+
+Cornerstone begins deliberately with philosophy rather than process. This is not an academic preference; it is a practical necessity. Organisations that start with methods, tools, or frameworks without first clarifying purpose and assumptions tend to optimise locally, manage symptoms, and repeat the same failures under new labels. This section exists to prevent that outcome.
+
+The chapters that follow make explicit the beliefs that constrain everything else in the book. They define engineering leadership as a systems discipline, clarify what is meant by “systems” in a rigorous and non-metaphorical way, and articulate the purpose of the engineering function in terms of value creation rather than activity or output. They also establish leadership responsibility for system health as non-delegable.
+
+A central theme of this section is that outcomes in engineering organisations are produced by interacting systems, not by individual effort, talent, or compliance with process. Human systems, organisational systems, socio-technical systems, delivery systems, technical architectures, and economic constraints all interact continuously. None of these can be optimised in isolation without degrading the whole. Engineering leadership is therefore framed as the act of aligning, governing, and evolving these systems coherently over time.
+
+This section also introduces several non-negotiable constraints that recur throughout Cornerstone: the primacy of flow over utilisation, the necessity of slack for learning and resilience, the centrality of feedback, and the distinction between outputs and outcomes. These are not preferences. They are properties of complex systems that leaders ignore at their own cost.
+
+Nothing later in the book overrides what is defined here. Framework elements, governance structures, delivery models, and processes are valid only insofar as they are compatible with these foundations. If a practice contradicts the principles established in this section, the practice is wrong, regardless of how common or fashionable it may be.
+
+
 # FOUNDATIONS: PHILOSOPHY, PURPOSE, AND SYSTEMS THINKING
 
 Cornerstone begins with philosophy, not process.
@@ -1589,7 +1602,33 @@ The principles do not bend.
 
 The next section moves from philosophy into structure, showing how Cornerstone becomes a **framework** without losing its soul.
 
-# SSECTION II – FROM PHILOSOPHY TO FRAMEWORK: STRUCTURE AND DECISION LOGIC
+# SECTION II – FROM PHILOSOPHY TO FRAMEWORK: STRUCTURE AND DECISION LOGIC
+
+Section I established Cornerstone’s philosophical foundations: a systems view of organisations, a clear definition of the purpose of engineering, and leadership responsibility for long-term systemic health. This section takes the next deliberate step: translating those principles into a **framework** without collapsing into a prescriptive process.
+
+This distinction matters. Philosophy without structure becomes vague aspiration. Process without philosophy becomes mechanical compliance. Cornerstone exists in the space between the two. Section II defines the **structural elements, boundaries, and decision logic** that allow the philosophy to be applied consistently, repeatably, and at scale, while still remaining adaptable to context.
+
+The chapters in this section describe Cornerstone as a **layered construct**:
+
+- A stable philosophical core that defines purpose, values, and non-negotiables  
+- A framework layer that defines roles, artefacts, lifecycle shape, governance boundaries, and decision rights  
+- Process choices that are intentionally left flexible and context-dependent  
+
+This section is where Cornerstone becomes operationally meaningful without becoming dogmatic.
+
+A central concern here is **clarity without rigidity**. Complex product development requires enough structure to manage risk, coordinate multiple disciplines, and satisfy regulatory or commercial constraints. At the same time, excessive prescription destroys learning, flow, and ownership. Section II explains how Cornerstone balances these forces through explicit lifecycle framing, defined transition points, and lightweight but intentional governance.
+
+This section also makes explicit what Cornerstone is *not*. It is not a replacement for project management, architecture, quality engineering, or compliance disciplines. Instead, it provides a coherent structure within which those functions can operate without working at cross purposes. Business cases, requirements, gates, and assurance activities are all addressed here, but always as **means to an outcome**, not as ends in themselves.
+
+Throughout Section II, the emphasis remains on **decision-making under uncertainty**. The framework is designed to help leaders and teams reason about trade-offs, risk, and sequencing, rather than to follow a fixed path. Concepts such as iterative cores, structured foundations, validation arms, and profile-based tailoring are introduced to support this reasoning.
+
+By the end of this section, the reader should understand:
+- How Cornerstone is structured
+- What elements are fixed versus adaptable
+- Where authority and accountability sit
+- How the framework supports different delivery contexts without fragmenting
+
+Section II is the connective tissue of the book. It ensures that everything that follows is grounded, coherent, and aligned to the philosophy that precedes it.
 
 ## Chapter 11 – Why Frameworks Fail Without Philosophy
 
@@ -3140,6 +3179,36 @@ It ensures risk is **consciously managed**, rather than silently accumulated.
 The next section moves from framework into delivery, showing how these principles are embodied in the **Cornerstone Delivery Shell**, where risk, learning, and validation are deliberately structured rather than left to chance.
 
 # SECTION III – THE CORNERSTONE DELIVERY MODEL: LIFECYCLE AND FLOW
+
+Sections I and II established Cornerstone’s philosophical foundations and its structural framework. This section addresses the hardest part of any delivery model: **operating it effectively over time, at scale, and under real organisational constraints**.
+
+Most frameworks fail not because their ideas are wrong, but because they do not survive contact with complexity. They work in small teams, pilot projects, or idealised environments, then collapse under the weight of regulation, portfolio pressure, organisational politics, legacy systems, or sheer scale. Section III exists to confront those realities directly.
+
+The chapters in this section focus on Cornerstone as a **living operating system**, not a project methodology. They examine how the framework behaves when products span years rather than months, when dozens or hundreds of people are involved, when regulatory and quality obligations are unavoidable, and when delivery is continuous rather than episodic.
+
+A central theme of this section is **systemic integrity under load**. As organisations grow, pressures emerge to centralise control, increase utilisation, standardise tools, and optimise locally. These pressures are understandable but dangerous. Without deliberate leadership, they degrade flow, destroy slack, and turn adaptive systems into brittle ones. Section III explains how Cornerstone preserves learning, resilience, and outcome focus as complexity increases.
+
+This section also makes explicit the role of **quality engineering, assurance, and compliance** within Cornerstone. Quality is treated neither as a downstream testing activity nor as a bureaucratic overlay, but as a system-level property that must be designed in. The chapters here show how Cornerstone aligns naturally with standards such as ISO 9001 and safety-critical regimes, without allowing compliance to dominate or distort delivery.
+
+Modern realities are addressed head-on. This includes:
+- Long-lived platforms and continuous product evolution  
+- Multi-team and multi-vendor delivery models  
+- Portfolio-level prioritisation and funding mechanisms  
+- AI-augmented development, automation, and agent-based tooling  
+- Organisational inertia and legacy constraints  
+
+Rather than treating these as special cases, Cornerstone treats them as normal operating conditions.
+
+Another critical focus of this section is **leadership behaviour over time**. Sustaining Cornerstone requires leaders who understand when to intervene and when to step back, how to protect slack, how to govern without suffocating, and how to evolve systems deliberately rather than reactively. The framework does not replace leadership judgement; it demands it.
+
+By the end of Section III, the reader should understand:
+- How to scale Cornerstone without introducing fragility  
+- How governance, quality, and compliance fit without becoming dominant  
+- How to operate Cornerstone in continuous, open-ended environments  
+- How to evolve the framework as technology, markets, and organisations change  
+
+Section III completes the transition from philosophy, through framework, to **durable practice**. It is where Cornerstone stops being an idea and becomes an operating reality.
+
 
 ## Chapter 19 – Why Pure Agile and Pure Sequential Models Fail
 
@@ -5220,6 +5289,32 @@ The next section turns outward, applying these principles to **teams, organisati
 
 # Section IV
 
+Up to this point, Cornerstone has been described as a philosophy and a framework capable of guiding individual teams and product initiatives. Section IV addresses a harder reality: **how Cornerstone behaves when engineering is no longer small, contained, or simple**.
+
+Most delivery approaches break down not at the level of individual teams, but at the level of **organisations**. As products scale, teams multiply, dependencies grow, and informal coordination stops working. Decision latency increases, local optimisation becomes rational behaviour, and delivery slows despite ever-increasing activity. This section exists to address that systemic failure mode directly.
+
+Section IV treats teams and organisations as **first-class systems**. It assumes that structure shapes behaviour more powerfully than intent, and that delivery outcomes emerge from how teams are organised, funded, incentivised, and connected, not from individual effort or heroic leadership. This aligns directly with Cornerstone’s systems view: human systems, organisational systems, socio-technical systems, and delivery systems are inseparable at scale.
+
+A central concern of this section is **flow across multiple teams**. As scale increases, the dominant risks shift from technical complexity to coordination failure: excessive handoffs, unclear ownership, overloaded teams, brittle interfaces, and governance structures that optimise reporting rather than delivery. Section IV explains how Cornerstone mitigates these risks through deliberate team design, explicit interfaces, bounded autonomy, and architectural coherence.
+
+This section also makes explicit the role of **slack** in scaled organisations. High utilisation may appear efficient on paper, but it destroys adaptability, learning, and resilience. At scale, the absence of slack amplifies small disturbances into systemic failure. Cornerstone treats slack not as waste, but as a strategic investment that enables recovery, innovation, and sustained delivery under uncertainty.
+
+Organisational design and Conway’s Law are addressed directly. Cornerstone does not pretend organisations can ignore their existing structures. Instead, it provides guidance on:
+- Working effectively within current organisational constraints  
+- Designing team boundaries that minimise cognitive load and dependencies  
+- Evolving organisational structure deliberately over time to improve outcomes  
+
+Delivery at scale also introduces governance pressures: portfolio management, funding models, cross-team prioritisation, and executive oversight. Section IV explains how Cornerstone supports governance **without collapsing into command-and-control**, ensuring that alignment is achieved through shared context and decision transparency rather than top-down mandates.
+
+By the end of this section, the reader should understand:
+- How to design and evolve team structures for sustained flow  
+- How to manage dependencies without centralising all decisions  
+- How to scale delivery while preserving autonomy and accountability  
+- How to apply Cornerstone across portfolios and programmes, not just projects  
+
+Section IV marks a shift from *how teams deliver* to *how organisations sustain delivery*. It is where Cornerstone moves decisively beyond team-level practices and becomes a framework for **long-term organisational effectiveness at scale**.
+
+
 ## Chapter 27 – Teams as Socio-Technical Systems
 
 Teams are not containers for tasks.
@@ -6733,6 +6828,36 @@ The next section moves from coordination to execution, grounding these portfolio
 
 # SECTION V – ENGINEERING PRACTICE ACROSS DISCIPLINES
 
+Cornerstone is intentionally multi-disciplinary. It exists for organisations building real products, not abstractions. Section V addresses how Cornerstone’s philosophy and framework translate into **day-to-day engineering practice across software, firmware, hardware, mechanical, and quality disciplines**, while preserving coherence at the system level.
+
+A common failure mode in product development is treating disciplines as loosely coupled silos, each operating with its own methods, artefacts, and success measures. This leads to local optimisation, late integration, brittle interfaces, and systemic risk that only becomes visible when it is expensive or irreversible. Section V is explicitly designed to prevent that outcome.
+
+This section treats engineering practice as a **socio-technical system**. Code, schematics, CAD models, tests, simulations, and tooling are inseparable from communication patterns, decision rights, and organisational structure. Technical excellence is not achieved through tools or techniques alone, but through the alignment of people, practices, and architecture around a shared purpose.
+
+Section V makes explicit that different disciplines operate on **different timescales and cost curves**. Software is cheap to change, hardware is not. Firmware sits in between. Mechanical and manufacturing decisions carry long-lived consequences. Cornerstone does not attempt to flatten these differences. Instead, it provides a structured way to coordinate them through:
+- Clear interfaces and ownership boundaries  
+- Iterative learning where it is cheap and early  
+- Deliberate commitment points where change becomes costly  
+
+Quality engineering is treated as a **system-level property**, not a downstream function. Verification and validation are integrated into everyday practice across disciplines, with explicit traceability back to requirements, risks, and business intent. This allows Cornerstone to align naturally with regulated and safety-critical environments without distorting delivery.
+
+Modern engineering realities are addressed directly. Section V includes guidance on:
+- Continuous integration across heterogeneous toolchains  
+- Simulation, emulation, and hardware-in-the-loop testing  
+- Managing technical debt and architectural drift over long lifecycles  
+- Integrating AI-assisted development and agent-based tooling responsibly  
+
+The emphasis throughout is on **coherence over uniformity**. Cornerstone does not mandate identical practices across disciplines. It mandates shared intent, shared interfaces, and shared accountability for outcomes. Practices are allowed to vary where it makes sense, provided they strengthen the overall system rather than fragment it.
+
+By the end of Section V, the reader should understand:
+- How different engineering disciplines fit together as a single delivery system  
+- How to manage integration, testing, and change across uneven iteration speeds  
+- How to maintain architectural and quality integrity over time  
+- How to apply Cornerstone in modern, tool-rich, AI-augmented environments  
+
+Section V grounds Cornerstone in engineering reality. It is where the framework proves that it can support the messy, constrained, high-stakes work of building real products, not just elegant diagrams.
+
+
 # Chapter 33 – Software and Firmware Development in Cornerstone
 
 Software and firmware development sit at the centre of most modern products, even when the product itself is not “software-first”. In Cornerstone, software and firmware are treated neither as special cases nor as generic commodities. They are **socio-technical systems embedded within larger product, organisational, and economic systems**.
@@ -8140,6 +8265,27 @@ The next section shifts focus from practice to assurance, examining **quality en
 
 # SECTION VI – QUALITY, REGULATION, AND ASSURANCE
 
+Quality, regulation, and assurance are where many delivery frameworks quietly fail. Either they are treated as afterthoughts, bolted on once “real work” is finished, or they dominate delivery to the point where learning, ownership, and adaptability collapse. Section VI exists to establish a different position: **quality and assurance are system properties that must be designed in, governed deliberately, and led actively**.
+
+Cornerstone treats quality as inseparable from leadership, architecture, and delivery. It is not the responsibility of a single role, phase, or function. It emerges from how requirements are framed, how decisions are made, how work is verified, and how risk is surfaced and managed over time. In this sense, quality is a consequence of system design, not individual diligence.
+
+This section makes explicit that **regulation is not the enemy of good engineering**. Poorly interpreted regulation is. Many organisations struggle not because standards such as ISO 9001, IEC 62304, ISO 26262, or sector-specific defence and safety regimes are unreasonable, but because they are applied mechanically, without understanding their intent. Section VI focuses on aligning Cornerstone’s artefacts and practices to regulatory *outcomes*, not checklist compliance.
+
+Assurance is treated as an ongoing activity, not a final gate. Evidence is generated continuously through living artefacts, traceability, automated verification, and transparent decision records. This allows Cornerstone to satisfy audit and certification requirements without creating parallel documentation systems or slowing delivery unnecessarily.
+
+A central theme of this section is **proportionality**. Not all products require the same level of rigour. Not all risks deserve equal treatment. Cornerstone supports lightweight, balanced, and regulated operating profiles precisely so that assurance effort scales with risk, impact, and context. Over-assurance wastes capacity and destroys slack. Under-assurance creates latent failure. Leadership judgement is required to navigate that boundary.
+
+Section VI also clarifies roles and responsibilities. Quality is not delegated away from leadership, and assurance is not synonymous with policing. Engineers, architects, testers, managers, and auditors each play distinct but complementary roles within a coherent assurance system. When those roles are misaligned, quality becomes performative rather than real.
+
+By the end of this section, the reader should understand:
+- How Cornerstone embeds quality into everyday delivery  
+- How regulatory standards map naturally onto Cornerstone artefacts  
+- How to generate assurance evidence continuously, not retrospectively  
+- How to scale assurance effort without destroying flow or ownership  
+
+Section VI reframes quality and regulation as **enablers of trust**, not constraints on delivery. When designed correctly, they allow organisations to move faster with confidence, reduce systemic risk, and sustain long-term product integrity.
+
+
 ## Chapter 39 – Quality Engineering as a Leadership Discipline
 
 Quality is not a phase.
@@ -9306,6 +9452,32 @@ An organisation’s incident practices tell you everything you need to know abou
 The next section builds on this foundation by examining how **AI, automation, and agent-based systems change the nature of incidents, accountability, and learning**.
 
 # SECTION VII – AI, AUTONOMY, AND THE FUTURE OF ENGINEERING WORK
+
+Engineering work is undergoing a structural shift. AI-assisted development, automated decision support, and agent-based systems are changing how work is performed, how decisions are made, and how value is created. Section VII addresses these changes directly, without exaggeration or denial, and situates them firmly within Cornerstone’s systems-based philosophy.
+
+Cornerstone does not treat AI as a special case or a separate discipline. AI is understood as an **amplifier of existing systems**. It accelerates what already works and magnifies what is already broken. Poorly designed organisational systems become more chaotic under automation. Well-designed systems become more capable. This section focuses on ensuring Cornerstone strengthens the latter.
+
+A central concern of this section is **autonomy and accountability**. AI tools and agents can generate code, designs, test cases, documentation, and even architectural suggestions at unprecedented speed. What they cannot do is assume responsibility. Leadership, judgement, and ethical accountability remain human concerns. Section VII makes explicit where autonomy can safely increase and where control, oversight, and deliberate constraint are still required.
+
+This section also addresses the changing nature of engineering skill. As implementation becomes faster and cheaper, **sense-making, system design, risk reasoning, and decision quality** become more valuable, not less. Cornerstone’s emphasis on context, architectural thinking, and systemic health is deliberately aligned with this shift.
+
+Operational realities are addressed head-on:
+- AI-assisted development across software, firmware, and systems engineering  
+- Agent-driven workflows in CI/CD, testing, and documentation  
+- The impact of automation on cognitive load, skill development, and team structure  
+- New failure modes introduced by opaque models and probabilistic outputs  
+
+Rather than prescribing tools or platforms, Section VII provides **governance principles and operating constraints** for using AI responsibly. This includes decision traceability, human-in-the-loop boundaries, auditability, and explicit ownership of outcomes. These principles ensure that AI enhances delivery without eroding trust, safety, or quality.
+
+This section also reinforces the importance of **slack** in an AI-augmented environment. Increased throughput does not eliminate uncertainty. In fact, it often increases the rate at which poor decisions can propagate. Slack remains essential for reflection, correction, learning, and ethical consideration. Cornerstone explicitly protects slack even as automation increases speed.
+
+By the end of Section VII, the reader should understand:
+- How AI fits within Cornerstone’s systems view  
+- How to increase autonomy without losing accountability  
+- How leadership responsibilities evolve in AI-augmented teams  
+- How to govern emerging tools without freezing innovation  
+
+Section VII positions Cornerstone not as a framework for the past, but as one designed to **evolve alongside engineering work itself**. It ensures that as tools change, the principles that protect quality, trust, and long-term value remain intact.
 
 ## Chapter 43 – Incident Management and Learning Systems
 
@@ -10492,6 +10664,26 @@ Automated systems without preserved accountability will eventually cause harm, e
 The next chapter shifts focus from systems to organisations, addressing **readiness, adoption, and maturity**, where many otherwise sound frameworks fail in practice.
 
 # SECTION VIII – ADOPTION, EVOLUTION, AND PRACTICAL REALITY
+
+No framework succeeds on the strength of its ideas alone. Success is determined by how those ideas are introduced, adapted, resisted, misapplied, corrected, and sustained over time. Section VIII exists to address this final, unavoidable truth: **Cornerstone must live inside real organisations, with real constraints, real incentives, and real history**.
+
+This section is not about ideal implementations. It is about adoption in imperfect conditions. Organisations do not reset themselves to adopt a new framework. They carry legacy systems, ingrained behaviours, political pressures, and sunk costs. Cornerstone explicitly assumes this reality and is designed to evolve within it, rather than pretending it can be bypassed.
+
+A central theme of Section VIII is **deliberate, progressive adoption**. Cornerstone is not rolled out wholesale. It is introduced through pilots, selective application, and gradual expansion. Leadership responsibility lies in choosing where to apply structure, where to allow emergence, and where to intervene when the system begins to drift or calcify.
+
+This section also makes explicit that Cornerstone is not static. Markets change. Products mature. Teams turn over. Technologies evolve. AI reshapes workflows. Regulation tightens or relaxes. Section VIII explains how Cornerstone itself should be treated as a **living system**, subject to inspection, learning, and intentional redesign.
+
+Failure modes are addressed directly. Cargo-cult adoption, tool-first rollouts, over-formalisation, under-governance, and premature scaling are all common ways frameworks lose credibility. Section VIII names these anti-patterns explicitly and provides guidance on how to recognise and correct them early, before they harden into organisational habits.
+
+This section also reinforces the role of **leadership stewardship over time**. Adopting Cornerstone is not a one-off transformation programme. It is an ongoing act of care: protecting slack, maintaining clarity of purpose, resisting short-term optimisation that damages long-term health, and ensuring that the framework continues to serve the organisation rather than the reverse.
+
+By the end of Section VIII, the reader should understand:
+- How to introduce Cornerstone incrementally and safely  
+- How to adapt it without losing coherence  
+- How to recognise and correct common adoption failures  
+- How to sustain the framework through organisational and technological change  
+
+Section VIII closes the book not with a prescription, but with a responsibility. Cornerstone does not replace judgement. It demands it. The framework’s value is realised only when leaders and teams continue to engage with it critically, evolve it deliberately, and use it to build organisations that can deliver meaningful value over the long term.
 
 ## Chapter 49 – Assessing Organisational Readiness
 
@@ -11687,6 +11879,27 @@ The next chapter closes the framework by returning to its philosophical core, de
 
 # SECTION IX – CONCLUSION AND CONTINUITY
 
+Cornerstone does not conclude with a destination. It concludes with a commitment.
+
+This final section exists to reinforce the central idea that engineering leadership, system design, and delivery excellence are **ongoing responsibilities**, not problems that can be solved once and put aside. Frameworks do not endure because they are complete. They endure because they remain useful, adaptable, and grounded in reality.
+
+Throughout this book, Cornerstone has been presented as a layered construct: a philosophical core, a structural framework, and context-specific practices. That layering is intentional. It allows the framework to remain stable where it must, flexible where it should, and evolvable where it needs to be. Section IX brings those layers back together and emphasises their continued stewardship.
+
+This section is not a summary of techniques. It is a reaffirmation of purpose. Engineering exists to deliver value to customers and, in doing so, create value for the business. Leadership exists to create the conditions under which that work can happen sustainably, ethically, and effectively. Systems exist to amplify human capability, not to replace responsibility.
+
+Continuity is the defining theme here. Products outlive projects. Organisations outlive restructures. Technical decisions outlive the people who made them. Section IX challenges leaders and practitioners to think in those longer time horizons and to treat Cornerstone as a means of maintaining coherence, trust, and learning across them.
+
+The section also addresses succession and institutional memory. No framework survives if it depends on a small number of champions. Cornerstone is designed to be taught, adapted, questioned, and handed on. Its artefacts, principles, and practices are intentionally transparent so that future leaders can understand not just *what* decisions were made, but *why*.
+
+By the end of this section, the reader should leave with:
+- A clear understanding of Cornerstone’s enduring intent  
+- A sense of responsibility for how it is applied and evolved  
+- Confidence to adapt it without diluting its core principles  
+
+Cornerstone’s value is not measured by adherence. It is measured by outcomes: resilient products, healthy teams, trustworthy systems, and organisations capable of learning in the face of uncertainty.
+
+The work continues.
+
 ## Chapter 54 – Cornerstone as a Living Framework
 
 Cornerstone is not a framework to be implemented, rolled out, and completed.
@@ -12497,4 +12710,1867 @@ That is the long view.
 That is the work.
 
 # Appendices 
+
+## Appendix A – Glossary of Terms
+
+This glossary defines how key terms are used **specifically within Cornerstone**.  
+Many of these words are commonly used in engineering and management, but Cornerstone applies them with **deliberate, precise meaning**. Where Cornerstone’s usage differs from casual or industry-ambiguous definitions, that distinction is made explicit.
+
+This appendix is normative.  
+When a term appears elsewhere in the book, it carries the meaning defined here.
+
+---
+
+### Architecture
+The structural design of technical systems, including software, hardware, platforms, infrastructure, interfaces, and integration boundaries.  
+In Cornerstone, architecture is not an abstract technical artefact but a **delivery-enabling system** that encodes assumptions about change, ownership, coordination, and risk. Architecture directly shapes flow, autonomy, and long-term system health.
+
+---
+
+### Architectural Guardrails
+Explicit constraints, principles, and boundaries that guide architectural decision-making without prescribing specific solutions.  
+Guardrails enable decentralised decision-making while preserving coherence and reducing systemic risk. They are a mechanism for **lightweight governance**, not control.
+
+---
+
+### Blame
+The attribution of failure to individuals rather than to system design, incentives, or constraints.  
+Cornerstone treats blame as a **learning inhibitor** that suppresses information, delays risk discovery, and degrades system health.
+
+---
+
+### Cognitive Load
+The total amount of mental effort required to perform work within a system.  
+High cognitive load reduces decision quality, slows learning, and increases error rates. Cornerstone treats cognitive load as a **design constraint** influenced by architecture, team structure, tooling, and governance.
+
+---
+
+### Context
+The shared understanding of purpose, constraints, priorities, risks, and boundaries within which teams operate.  
+Context enables autonomy by allowing teams to make good decisions without constant escalation. Lack of context produces defensive behaviour and local optimisation.
+
+---
+
+### Delivery System
+The end-to-end system by which ideas move from concept to customer.  
+Includes batch sizes, handoffs, validation mechanisms, feedback loops, risk management, and release practices. Delivery performance is determined primarily by system design rather than individual effort.
+
+---
+
+### Decision Latency
+The time taken for a decision to be made and acted upon once it is needed.  
+Decision latency is a key signal of organisational health. Excessive latency indicates unclear authority, over-governance, or fear-based systems.
+
+---
+
+### Decision Record (ADR)
+A lightweight, durable record of a significant decision, including its context, rationale, trade-offs, and consequences.  
+ADRs exist to preserve **system memory**, not to create documentation overhead.
+
+---
+
+### Empowered Autonomy
+The ability for teams to make decisions independently **within clearly defined boundaries**.  
+Empowered autonomy is neither uncontrolled freedom nor delegated responsibility without authority. It is autonomy enabled by context and constrained by shared intent.
+
+---
+
+### Engineering Function
+The organisational capability responsible for creating value through engineering activity.  
+In Cornerstone, the engineering function exists to **deliver value to customers and, in doing so, create value for the business — sustainably and repeatedly**.
+
+---
+
+### Engineering Leadership
+The non-delegable responsibility for designing, aligning, governing, and evolving the systems that produce engineering outcomes.  
+Engineering leadership is a systems discipline, not a role, title, or set of ceremonies.
+
+---
+
+### Feedback Loop
+A mechanism by which the outcomes of decisions or actions influence future decisions.  
+Fast, honest feedback is essential for learning. Delayed feedback amplifies risk and cost.
+
+---
+
+### Flow
+The rate at which value moves through the system from idea to customer.  
+Flow is distinct from activity or speed. Good flow is predictable, low-variance, and enables rapid learning.
+
+---
+
+### Framework
+The structured set of decision logic, governance mechanisms, and boundaries that translate philosophy into repeatable organisational behaviour.  
+In Cornerstone, the framework sits **between philosophy and process** and constrains both.
+
+---
+
+### Governance
+The mechanisms by which decisions are guided, constrained, reviewed, and escalated.  
+Cornerstone defines governance as **decision support**, not decision suppression. Its purpose is to improve decision quality while enabling autonomy.
+
+---
+
+### Human Systems
+Systems involving people, including motivation, trust, incentives, psychological safety, communication patterns, and decision-making dynamics.  
+Cornerstone assumes people behave rationally within the systems they are placed in.
+
+---
+
+### Learning System
+A system designed to detect signals, generate feedback, and adapt behaviour over time.  
+Delivery is treated as a learning system, not merely an execution pipeline.
+
+---
+
+### Local Optimisation
+Improving performance in one part of a system at the expense of overall system health.  
+Cornerstone treats local optimisation as a primary source of systemic failure.
+
+---
+
+### Outcome
+A meaningful, observable change in the world that creates value for customers or the business.  
+Outcomes are distinct from outputs, which are intermediate artefacts such as features or documents.
+
+---
+
+### Output
+An artefact produced by engineering activity, such as code, designs, or documentation.  
+Outputs only matter insofar as they lead to outcomes.
+
+---
+
+### Philosophy
+The explicit set of beliefs, values, and constraints that define what matters and why.  
+In Cornerstone, philosophy constrains the framework, which in turn constrains process.
+
+---
+
+### Process
+The specific practices, tools, workflows, and ceremonies used to execute work in a given context.  
+Processes are intentionally flexible and context-dependent, provided they align with the framework and philosophy.
+
+---
+
+### Psychological Safety
+A system property in which individuals can speak up, admit uncertainty, report failure, and challenge assumptions without disproportionate personal risk.  
+Psychological safety is a prerequisite for learning, not a lack of accountability.
+
+---
+
+### Queue
+Any point at which work waits rather than progresses.  
+Queues increase lead time, hide risk, and delay feedback. They are a primary cost centre in delivery systems.
+
+---
+
+### Slack
+Deliberately unallocated capacity within a system that enables learning, recovery, improvement, and adaptation.  
+Slack is not waste. It is a **structural requirement** for resilience and long-term performance.
+
+---
+
+### Socio-Technical System
+The interaction between people and technology, including tooling, automation, documentation, CI/CD, observability, and operational workflows.  
+Technical systems always encode assumptions about communication, authority, and responsibility.
+
+---
+
+### Stewardship
+Leadership responsibility exercised over time, focused on system health rather than short-term optimisation.  
+Stewardship prioritises sustainability, learning, and long-term value over immediate efficiency.
+
+---
+
+### System
+A set of interacting elements whose collective behaviour produces outcomes over time.  
+In Cornerstone, systems include human, organisational, socio-technical, delivery, technical, and economic systems.
+
+---
+
+### System Health
+The ability of a system to deliver value predictably, adapt to change, and recover from failure without degrading over time.  
+System health is prioritised over short-term efficiency.
+
+---
+
+### Technical Debt
+The accumulated cost of decisions that make future change more difficult, expensive, or risky.  
+Cornerstone treats technical debt as a **strategic and economic concern**, not merely a technical one.
+
+---
+
+### Utilisation
+The proportion of available capacity that is actively engaged in work.  
+Cornerstone explicitly rejects utilisation maximisation as a primary management objective, as it degrades flow and resilience.
+
+---
+
+### Value
+A meaningful benefit realised by a customer or the business.  
+Value is contextual, outcome-based, and realised only when solutions perform effectively in real conditions.
+
+---
+
+### Work in Progress (WIP)
+All work that has been started but not yet completed.  
+High WIP increases queues, delays feedback, and reduces predictability. Cornerstone treats WIP as a controllable system variable.
+
+---
+
+### Whole-System Optimisation
+The practice of improving overall system outcomes, even when it reduces apparent efficiency in individual components.  
+Cornerstone consistently prioritises whole-system optimisation over local gains.
+
+---
+
+This glossary is intentionally comprehensive.  
+Its purpose is not academic precision, but **shared understanding**, enabling consistent interpretation and application of the Cornerstone philosophy across teams, roles, and contexts.
+
+## Appendix B – Cornerstone Templates
+
+This appendix provides a **canonical set of lightweight, pragmatic templates** used throughout Cornerstone.  
+They are intentionally minimal, text-first, and compatible with a Docs-as-Code approach.
+
+These templates are **not mandatory artefacts**.  
+They exist to reduce cognitive load, improve consistency, and preserve decision context where it matters.
+
+Teams should tailor them, but **not dilute their intent**.
+
+---
+
+### B.1 Vision Brief Template
+
+**Purpose:**  
+Establish shared understanding of *why* the product exists and *what problem it serves*.
+
+```markdown
+# Vision Brief – <Product / Initiative Name>
+
+## Purpose
+Why does this product exist?
+What customer problem or opportunity does it address?
+
+## Target Users / Customers
+Who is this for?
+What context do they operate in?
+
+## Value Proposition
+What meaningful value does this deliver to the customer?
+Why is this valuable to the business?
+
+## Success Criteria (Outcomes)
+How will we know this is successful?
+Focus on outcomes, not outputs.
+
+## Constraints
+Known constraints (regulatory, technical, commercial, time).
+
+## Strategic Risks
+Key risks that could invalidate the vision.
+
+## Non-Goals
+Explicitly state what this product is *not* trying to do.
+```
+
+---
+
+### B.2 Architecture Decision Record (ADR) Template
+
+**Purpose:**  
+Capture **why** a significant decision was made, not just what was chosen.
+
+```markdown
+# ADR-<ID>: <Decision Title>
+
+## Status
+Proposed | Accepted | Superseded | Deprecated
+
+## Context
+What problem are we solving?
+What forces, constraints, or trade-offs exist?
+
+## Decision
+What decision has been made?
+
+## Rationale
+Why this option over alternatives?
+What trade-offs were accepted?
+
+## Consequences
+Positive and negative consequences.
+What does this enable or constrain?
+
+## Alternatives Considered
+Briefly list rejected options and why.
+
+## Follow-Ups
+Actions, reviews, or revisit conditions.
+```
+
+---
+
+### B.3 Request for Comment (RFC) / Design Proposal Template
+
+**Purpose:**  
+Enable **collaborative design thinking** before commitment.
+
+```markdown
+# RFC: <Title>
+
+## Problem Statement
+What problem are we trying to solve?
+Why now?
+
+## Proposed Approach
+High-level description of the proposal.
+
+## Impacted Systems
+What systems, teams, or interfaces are affected?
+
+## Trade-Offs
+What do we gain?
+What do we give up?
+
+## Risks & Unknowns
+Key uncertainties or assumptions.
+
+## Open Questions
+What feedback or decisions are needed?
+
+## Decision Owner
+Who will decide and by when?
+```
+
+---
+
+### B.4 Requirements Template (System / Product Level)
+
+**Purpose:**  
+Define intent clearly without over-specification.
+
+```markdown
+# Requirements – <System / Product Name>
+
+## Scope
+What is in scope?
+What is explicitly out of scope?
+
+## Functional Requirements
+- FR-001: <Statement>
+- FR-002: <Statement>
+
+## Non-Functional Requirements
+Performance, reliability, security, safety, usability, etc.
+
+## Regulatory / Compliance Requirements
+Standards, certifications, legal obligations.
+
+## Assumptions
+Key assumptions that influence design.
+
+## Acceptance Criteria
+How will these requirements be verified?
+```
+
+---
+
+### B.5 Requirements Traceability Matrix (RTM) – Lightweight Form
+
+```markdown
+| Requirement ID | Design Ref | Implementation Ref | Test Ref | Status |
+|----------------|------------|--------------------|----------|--------|
+| FR-001         | ADR-004    | Repo:module-x      | TC-012   | Done   |
+```
+
+---
+
+### B.6 Risk Register Template
+
+```markdown
+# Risk Register – <Product / Programme>
+
+| Risk ID | Description | Likelihood | Impact | Mitigation | Owner | Status |
+|--------|-------------|------------|--------|------------|-------|--------|
+| R-001  | Component lead time | High | High | Alternate supplier | Ops | Open |
+```
+
+---
+
+### B.7 Incident Review / Postmortem Template
+
+```markdown
+# Incident Review – <ID / Date>
+
+## Summary
+What happened?
+
+## Impact
+Who was affected and how?
+
+## Timeline
+Key events in chronological order.
+
+## Root Causes (Systemic)
+What system conditions enabled this?
+
+## What Went Well
+What helped contain or resolve the issue?
+
+## What Didn’t Go Well
+Where did the system fail?
+
+## Actions
+Concrete improvements to prevent recurrence.
+
+## Learning Captured
+What should we remember next time?
+```
+
+---
+
+### B.8 C4 Architecture Diagram Index Template
+
+```markdown
+# Architecture Overview – <System Name>
+
+## Context Diagram
+Link or embed diagram.
+
+## Container Diagrams
+- Container A – Purpose
+- Container B – Purpose
+
+## Component Diagrams
+Links to detailed views.
+
+## Key Architectural Principles
+Non-negotiable design principles.
+
+## Known Constraints
+Technical or organisational constraints.
+```
+
+---
+
+### B.9 Delivery Health Check Template
+
+```markdown
+# Delivery Health Check – <Team / Product>
+
+## Flow
+Is work flowing predictably?
+
+## Feedback
+How fast do we learn from customers and failures?
+
+## Quality
+Are defects escaping into production?
+
+## Sustainability
+Is pace sustainable?
+Is slack present?
+
+## Risks
+What keeps us awake at night?
+
+## Actions
+What system adjustments are needed?
+```
+
+---
+
+### B.10 Adoption & Tailoring Checklist
+
+```markdown
+# Cornerstone Adoption Checklist
+
+- Philosophy understood and agreed
+- Leadership responsibilities explicit
+- Guardrails defined
+- Core artefacts selected
+- Slack explicitly protected
+- Feedback loops established
+- Risk visibility in place
+- Governance lightweight and intentional
+```
+
+---
+
+### B.11 Template Usage Guidance
+
+- Templates are **starting points**, not contracts.
+- Prefer clarity over completeness.
+- Text-first beats tools-first.
+- Review templates periodically and retire those that no longer add value.
+- Treat templates as **system components**, subject to evolution.
+
+# Appendix C – Architectural Principles for Cornerstone
+
+This appendix defines a **pragmatic, principle-led set of architectural principles** aligned to the Cornerstone philosophy.
+They draw inspiration from established architectural thinking (including TOGAF-style principles) but are **explicitly adapted** for modern, multi-disciplinary product development rather than enterprise IT alone.
+
+These principles are intended to:
+- Guide architectural decisions at all levels (system, solution, component)
+- Act as **architectural guardrails**, not rigid rules
+- Support autonomy while preserving coherence
+- Optimise for long-term system health and value delivery
+
+They should be **few, durable, and enforceable through conversation**, not bureaucracy.
+
+---
+
+### C.1 Principle Structure
+
+Each principle is expressed using a consistent structure:
+
+- **Statement** – The principle itself
+- **Rationale** – Why this matters
+- **Implications** – What this means in practice
+
+---
+
+### C.2 Foundational Architectural Principles
+
+#### AP-01: Architecture Exists to Enable Value Delivery
+
+**Statement**  
+Architecture must directly enable the delivery of customer and business value.
+
+**Rationale**  
+Architecture that optimises elegance, theoretical purity, or control at the expense of delivery speed and learning is counterproductive. Architecture is a means, not an end.
+
+**Implications**
+- Architectural work must be justified in terms of outcomes
+- Architectural decisions should shorten feedback loops, not lengthen them
+- “Nice to have” architectural complexity should be actively challenged
+
+---
+
+#### AP-02: Optimise for Whole-System Health
+
+**Statement**  
+Architectural decisions must optimise the health of the entire system, not individual components.
+
+**Rationale**  
+Local optimisation creates systemic fragility, hidden coupling, and long-term delivery degradation.
+
+**Implications**
+- Trade-offs are evaluated across human, organisational, delivery, and technical systems
+- Component efficiency may be sacrificed for system resilience
+- Architectural reviews consider downstream operational impact
+
+---
+
+#### AP-03: Architecture Must Assume Change
+
+**Statement**  
+All architectures must be designed with the expectation of change.
+
+**Rationale**  
+Requirements, technologies, markets, and constraints will evolve. Architectures that assume stability accumulate risk rapidly.
+
+**Implications**
+- Prefer modularity, clear interfaces, and replaceable components
+- Avoid irreversible early decisions where possible
+- Explicitly document assumptions and revisit them
+
+---
+
+#### AP-04: Decisions Are More Important Than Diagrams
+
+**Statement**  
+The quality and clarity of architectural decisions matter more than the completeness of architectural documentation.
+
+**Rationale**  
+Unrecorded decisions decay organisational memory and force teams to re-learn context through failure.
+
+**Implications**
+- Use ADRs to capture key decisions and trade-offs
+- Diagrams support understanding but do not replace decision rationale
+- Architecture is judged by decision quality, not artefact volume
+
+---
+
+### C.3 Human and Organisational Alignment Principles
+
+#### AP-05: Architecture Must Reduce Cognitive Load
+
+**Statement**  
+Architecture should minimise unnecessary cognitive load on teams.
+
+**Rationale**  
+High cognitive load degrades decision quality, increases error rates, and slows learning.
+
+**Implications**
+- Prefer simple, consistent patterns
+- Avoid unnecessary technology diversity
+- Make ownership and responsibilities explicit
+
+---
+
+#### AP-06: Conway’s Law Is a Design Constraint
+
+**Statement**  
+Architecture must acknowledge and deliberately respond to organisational communication structures.
+
+**Rationale**  
+Ignoring Conway’s Law leads to brittle architectures that conflict with how teams actually work.
+
+**Implications**
+- Team boundaries should align with architectural boundaries
+- Architectural refactoring may require organisational change
+- Temporary misalignment should be explicit and managed
+
+---
+
+#### AP-07: Authority Must Match Responsibility
+
+**Statement**  
+Teams responsible for systems must have sufficient architectural decision authority.
+
+**Rationale**  
+Responsibility without authority creates bottlenecks, delays, and disengagement.
+
+**Implications**
+- Architectural guardrails replace centralised approval
+- Escalation paths are explicit and rare
+- Decisions are made as close to the work as possible
+
+---
+
+### C.4 Delivery and Evolution Principles
+
+#### AP-08: Enable Fast, Honest Feedback
+
+**Statement**  
+Architecture must support rapid feedback from real usage and failure.
+
+**Rationale**  
+Feedback is the primary mechanism for learning and improvement in complex systems.
+
+**Implications**
+- Observability is a first-class architectural concern
+- Failure modes are designed, not ignored
+- Testability and diagnosability influence design choices
+
+---
+
+#### AP-09: Build for Incremental Validation
+
+**Statement**  
+Systems should be architected so that value and risk can be validated incrementally.
+
+**Rationale**  
+Late validation amplifies cost, risk, and rework.
+
+**Implications**
+- Support partial integration and staged releases
+- Avoid designs that require “big bang” validation
+- Enable prototyping and early system integration
+
+---
+
+#### AP-10: Slack Is a Structural Requirement
+
+**Statement**  
+Architectures must allow slack for learning, recovery, and improvement.
+
+**Rationale**  
+Systems designed for maximum utilisation are brittle and fail catastrophically under stress.
+
+**Implications**
+- Capacity headroom is planned, not accidental
+- Performance targets include resilience margins
+- Teams are not architecturally forced into constant firefighting
+
+---
+
+### C.5 Governance and Risk Principles
+
+#### AP-11: Governance Through Principles, Not Permission
+
+**Statement**  
+Architectural governance should guide decisions rather than approve them.
+
+**Rationale**  
+Permission-based governance increases latency and suppresses learning.
+
+**Implications**
+- Principles are explicit and widely understood
+- Exceptions are discussed, not hidden
+- Governance focuses on outcomes and risks
+
+---
+
+#### AP-12: Make Risk Explicit and Visible
+
+**Statement**  
+Architectural risk must be made visible and actively managed.
+
+**Rationale**  
+Hidden risk accumulates interest and surfaces late, when options are limited.
+
+**Implications**
+- High-risk decisions are addressed early
+- Risk trade-offs are documented
+- Technical debt is tracked as an economic concern
+
+---
+
+#### AP-13: Security and Safety Are Architectural Properties
+
+**Statement**  
+Security and safety must be designed into the architecture, not added later.
+
+**Rationale**  
+Retrofitting safety or security is expensive and unreliable.
+
+**Implications**
+- Threat modelling and hazard analysis inform design
+- Compliance requirements influence architectural structure
+- Safety-critical paths are isolated and protected
+
+---
+
+### C.6 Technology and Platform Principles
+
+#### AP-14: Prefer Proven Before Novel
+
+**Statement**  
+Prefer proven technologies unless novelty delivers clear, justified value.
+
+**Rationale**  
+Novelty increases uncertainty, learning cost, and risk.
+
+**Implications**
+- New technology adoption requires explicit rationale
+- Experiments are isolated and time-bound
+- Exit strategies are defined early
+
+---
+
+#### AP-15: Minimise Irreversible Decisions
+
+**Statement**  
+Architectures should delay irreversible decisions until sufficient information is available.
+
+**Rationale**  
+Early irreversible commitments amplify uncertainty and lock in poor assumptions.
+
+**Implications**
+- Use abstraction where it buys optionality
+- Avoid premature standardisation
+- Revisit early decisions intentionally
+
+---
+
+#### AP-16: Platforms Exist to Enable Teams
+
+**Statement**  
+Platforms exist to reduce cognitive load and accelerate delivery for stream-aligned teams.
+
+**Rationale**  
+Platforms that impose friction or control undermine their own purpose.
+
+**Implications**
+- Platform teams operate as internal service providers
+- Platform success is measured by team enablement
+- Forced adoption without value is avoided
+
+---
+
+### C.7 Applying These Principles
+
+These principles:
+- Are **context-sensitive**, not absolute
+- May occasionally conflict, requiring judgement
+- Should be revisited as the organisation evolves
+
+Their purpose is not compliance, but **better decisions, faster learning, and healthier systems**.
+
+Architecture under Cornerstone is a leadership responsibility.
+These principles exist to make that responsibility explicit, shared, and actionable.
+
+## Appendix D – Minimal, Balanced, and Regulated Cornerstone Profiles
+
+This appendix defines **three canonical Cornerstone profiles**.  
+They are not maturity levels and not prescriptive methodologies.  
+They are **intentional configurations** of the same philosophy and framework, tuned to different organisational, product, and regulatory contexts.
+
+Cornerstone is deliberately designed to scale **both up and down** without changing its core principles.
+
+The profiles differ in:
+- Degree of formality
+- Depth of artefacts
+- Governance intensity
+- Validation rigor
+- Regulatory alignment
+
+They do **not** differ in philosophy.
+
+---
+
+### D.1 Why Profiles Exist
+
+A common failure mode in engineering frameworks is assuming one “correct” level of process.
+
+Cornerstone explicitly rejects this.
+
+Instead, it recognises that:
+- Over-structure kills speed and learning in small systems
+- Under-structure kills safety, trust, and predictability in complex or regulated systems
+- The *same organisation* may need different profiles for different products
+
+Profiles exist to:
+- Reduce cognitive overhead when tailoring
+- Prevent accidental over- or under-engineering
+- Make trade-offs explicit rather than implicit
+
+---
+
+### D.2 Profile Overview
+
+| Dimension | Minimal | Balanced | Regulated |
+|---------|--------|----------|-----------|
+| Primary Goal | Speed & learning | Sustainable delivery | Safety, assurance & compliance |
+| Typical Context | Startups, internal tools | Scale-ups, IoT, SaaS | Medical, automotive, defence |
+| Governance | Principles only | Lightweight gates | Formal gates & reviews |
+| Documentation | Minimal viable | Living, structured | Comprehensive & auditable |
+| Validation | Continuous, informal | Continuous + formal | Formal V&V + audits |
+| Traceability | Implicit | Selective | Mandatory |
+| Slack | Explicit but informal | Explicit & planned | Explicit & governed |
+
+---
+
+### D.3 Minimal Cornerstone Profile
+
+#### D.3.1 Intended Context
+
+Minimal Cornerstone is appropriate where:
+- Teams are small and highly collaborative
+- Risk of harm is low
+- Regulatory burden is minimal
+- Speed of learning outweighs predictability
+
+Typical examples:
+- Early-stage startups
+- Internal business tools
+- Early product discovery phases
+- Prototypes and pilots
+
+---
+
+#### D.3.2 Core Characteristics
+
+Minimal Cornerstone emphasises:
+- Fast feedback
+- Low ceremony
+- High trust
+- Direct communication
+
+Governance exists primarily through **shared understanding**, not artefacts.
+
+---
+
+#### D.3.3 Artefact Set (Minimal)
+
+Required:
+- Vision Brief (1–2 pages)
+- Lightweight backlog
+- ADRs for irreversible decisions only
+
+Optional:
+- High-level architecture diagram
+- Risk list (informal)
+- Delivery health check (occasional)
+
+Explicitly avoided:
+- Heavy traceability matrices
+- Formal stage gates
+- Detailed upfront specifications
+
+---
+
+#### D.3.4 Validation & Quality
+
+- Continuous testing embedded in development
+- Informal acceptance based on outcomes
+- Peer review over formal sign-off
+- Quality is owned by the team, not a function
+
+---
+
+#### D.3.5 Risks and Failure Modes
+
+Common risks:
+- Accidental architectural drift
+- Hidden technical debt
+- Implicit decisions becoming permanent
+
+Mitigations:
+- Regular architectural conversations
+- Periodic “decision archaeology”
+- Explicit slack for refactoring and learning
+
+---
+
+### D.4 Balanced Cornerstone Profile
+
+#### D.4.1 Intended Context
+
+Balanced Cornerstone is the **default profile**.
+
+It fits contexts where:
+- Products are customer-facing
+- Multiple teams or disciplines are involved
+- Some regulatory or contractual obligations exist
+- Long-term maintainability matters
+
+Typical examples:
+- IoT platforms
+- Commercial SaaS
+- Embedded products
+- Regulated but non-safety-critical systems
+
+---
+
+#### D.4.2 Core Characteristics
+
+Balanced Cornerstone balances:
+- Speed with predictability
+- Autonomy with coherence
+- Learning with accountability
+
+Governance is **visible but lightweight**.
+
+---
+
+#### D.4.3 Artefact Set (Balanced)
+
+Required:
+- Vision Brief
+- System-level requirements
+- Architecture overview (C4 context/container)
+- ADRs for significant decisions
+- Risk register
+- Delivery health checks
+
+Optional:
+- RFCs for complex changes
+- Selective traceability (RTM where it adds value)
+- Formal test plans for critical paths
+
+---
+
+#### D.4.4 Validation & Quality
+
+- Continuous integration and automated testing
+- Defined acceptance criteria
+- Regular system-level validation
+- Quality engineering embedded, not siloed
+
+---
+
+### D.4.5 Governance Model
+
+- Lightweight transition gates at major lifecycle boundaries
+- Architectural guardrails instead of approvals
+- Exceptions discussed openly, not hidden
+
+---
+
+#### D.4.6 Risks and Failure Modes
+
+Common risks:
+- Gradual process creep
+- Tool-driven rather than outcome-driven behaviour
+- Governance becoming implicit again
+
+Mitigations:
+- Periodic governance reviews
+- Explicit removal of low-value artefacts
+- Leadership ownership of system health
+
+---
+
+### D.5 Regulated Cornerstone Profile
+
+#### D.5.1 Intended Context
+
+Regulated Cornerstone applies where:
+- Failure can cause harm
+- Compliance is mandatory
+- External audits are expected
+- Traceability is non-negotiable
+
+Typical examples:
+- Medical devices
+- Automotive systems
+- Aerospace and defence
+- Energy and critical infrastructure
+
+---
+
+#### D.5.2 Core Characteristics
+
+Regulated Cornerstone:
+- Preserves learning and iteration
+- Adds formality where risk demands it
+- Treats compliance as a design constraint, not an afterthought
+
+It is **not waterfall**, even when heavily governed.
+
+---
+
+#### D.5.3 Artefact Set (Regulated)
+
+Required:
+- Vision Brief
+- Formal system and sub-system requirements
+- Full RTM
+- Architecture documentation (C4 + detailed views)
+- ADRs (comprehensive)
+- Risk register & hazard analysis
+- Formal test plans and reports
+- Configuration and change records
+
+---
+
+#### D.5.4 Validation & Verification
+
+- Explicit V&V strategy
+- Formal reviews and sign-offs
+- Independent verification where required
+- Evidence generation integrated into delivery flow
+
+---
+
+#### D.5.5 Governance Model
+
+- Defined lifecycle gates with clear entry/exit criteria
+- Formal architectural and safety reviews
+- Clear accountability and escalation paths
+
+Governance is designed to:
+- Reduce uncertainty
+- Support audits
+- Protect system integrity
+
+---
+
+#### D.5.6 Slack in Regulated Systems
+
+Slack is **mandatory**, not optional.
+
+- Capacity reserved for defect resolution
+- Time allocated for audits and reviews
+- Margin built into schedules and designs
+
+Regulated systems without slack fail catastrophically.
+
+---
+
+### D.6 Moving Between Profiles
+
+Profiles are **not permanent**.
+
+Products may:
+- Start Minimal, then become Balanced
+- Operate Balanced with Regulated subsystems
+- Temporarily tighten governance after incidents
+
+Key rule:
+> Change profiles deliberately, not accidentally.
+
+---
+
+### D.7 Leadership Responsibilities Across Profiles
+
+Leadership must:
+- Select the appropriate profile consciously
+- Explain *why* a profile is chosen
+- Protect slack regardless of profile
+- Prevent profile drift through neglect
+
+Cornerstone succeeds when **intentionality replaces habit**.
+
+---
+
+### D.8 Summary
+
+Minimal, Balanced, and Regulated Cornerstone are not different frameworks.
+They are different expressions of the same philosophy.
+
+What changes is **how much structure is required to protect system health**.
+
+What never changes:
+- Focus on outcomes
+- Respect for people
+- Systemic thinking
+- Learning over blame
+- Long-term value creation
+
+## Appendix E – End-to-End Worked Example  
+
+### A Single Product Through the Full Cornerstone Lifecycle
+
+This appendix provides a **concrete, end-to-end example** of how Cornerstone is applied to a single product across its full lifecycle.
+
+The goal is not to prescribe a “correct” implementation, but to **demonstrate how philosophy, framework, and process interact** in practice, and how artefacts remain lightweight, living, and value-focused.
+
+---
+
+### E.1 Product Context
+
+#### Product Overview
+
+**Product:** Smart Gas Meter (NB‑IoT enabled)  
+**Domain:** Regulated IoT / critical national infrastructure  
+**Disciplines:** Firmware, hardware, cloud software, manufacturing, operations  
+**Regulatory Context:** MID, security standards, safety requirements  
+**Profile Used:** Regulated Cornerstone (with a Balanced delivery core)
+
+---
+
+#### Business Objectives
+
+- Enable accurate, remote gas metering
+- Support prepayment and credit modes
+- Reduce operational cost via remote management
+- Meet regulatory, security, and safety obligations
+
+Value is realised **only when meters operate reliably in the field over many years**, not when features are shipped.
+
+---
+
+### E.2 Philosophy in Action
+
+From day one, leadership explicitly sets context:
+
+- **Purpose:** Safe, reliable metering that customers trust
+- **Constraints:** Regulation, security, battery life, field longevity
+- **Non‑Goals:** Rapid feature churn, experimental hardware in production
+- **Slack:** Explicit buffer for learning, audits, and field feedback
+
+This context enables teams to make local decisions without constant escalation.
+
+---
+
+### E.3 Structured Foundation Phase
+
+#### E.3.1 Vision Brief
+
+A concise Vision Brief is created:
+
+- Problem statement
+- Customer and regulator needs
+- Success criteria (accuracy, uptime, audit success)
+- Explicit constraints
+- Known risks
+
+This document is reviewed once, then evolves slowly.
+
+---
+
+#### E.3.2 System Requirements
+
+System-level requirements are captured:
+
+- Functional (metering, communications, updates)
+- Non-functional (battery life, latency, reliability)
+- Regulatory and safety requirements
+
+Requirements are written to **express intent**, not implementation.
+
+---
+
+#### E.3.3 High-Level Architecture
+
+Architecture work focuses on:
+
+- System boundaries (meter, cloud, head-end)
+- Key interfaces (radio, security, manufacturing)
+- Failure modes and recovery paths
+
+C4 Context and Container diagrams are created and version-controlled.
+
+---
+
+#### E.3.4 Early Architectural Decisions
+
+Key ADRs are written for:
+- Communications protocol
+- Security model
+- Key hardware components
+
+Each ADR captures trade-offs and future implications.
+
+---
+
+### E.4 Iterative Development Core
+
+#### E.4.1 Breaking Down Work
+
+System requirements are decomposed into:
+- Firmware features
+- Hardware revisions
+- Cloud services
+- Manufacturing processes
+
+A lightweight RTM links:
+- Requirement → ADR → implementation → tests
+
+---
+
+#### E.4.2 Firmware & Software Iterations
+
+Development proceeds in short cycles:
+
+- Firmware stubs against simulated hardware
+- Cloud services mocked early
+- Continuous integration on every change
+- Automated tests executed on-host and on-target
+
+Feedback is constant and visible.
+
+---
+
+#### E.4.3 Hardware Iteration
+
+Hardware progresses in parallel:
+
+- Early prototypes
+- Iterative PCB revisions
+- Emulators used to decouple firmware from hardware delays
+
+Hardware lead times are treated as **explicit risks**, not surprises.
+
+---
+
+#### E.4.4 Managing Risk
+
+A living risk register tracks:
+- Supply chain risks
+- Security risks
+- Performance uncertainties
+
+High-risk items are addressed early through spikes and prototypes.
+
+---
+
+### E.5 Validation and Verification Arm
+
+#### E.5.1 System Integration
+
+Software, firmware, and hardware converge:
+
+- Full system builds
+- Integration testing
+- Fault injection and failure testing
+
+Integration is incremental, not a “big bang”.
+
+---
+
+#### E.5.2 Formal Verification
+
+Formal V&V includes:
+- Accuracy testing
+- Environmental testing
+- Security penetration testing
+- Compliance verification
+
+Evidence is generated **as part of normal delivery**, not as a separate phase.
+
+---
+
+#### E.5.3 Acceptance and Release
+
+Release readiness is assessed against:
+- System requirements
+- Risk posture
+- Operational readiness
+
+Sign-off is based on **confidence**, not checkbox completion.
+
+---
+
+### E.6 Operational Feedback Loop
+
+#### E.6.1 Field Deployment
+
+Once deployed:
+- Telemetry feeds back into engineering
+- Operational incidents are reviewed blamelessly
+- Assumptions are validated or challenged
+
+The system continues to evolve.
+
+---
+
+#### E.6.2 Incident Learning
+
+When incidents occur:
+- Root causes are systemic
+- ADRs are updated if assumptions change
+- Architecture evolves deliberately
+
+Failure strengthens the system.
+
+---
+
+### E.7 Artefact Summary
+
+| Artefact | Nature |
+|--------|-------|
+| Vision Brief | Stable, concise |
+| Requirements | Living, traceable |
+| ADRs | Continuous |
+| Architecture Diagrams | Updated as system evolves |
+| Risk Register | Actively maintained |
+| Test Evidence | Generated continuously |
+
+No artefact exists without purpose.
+
+---
+
+### E.8 Profile Transitions
+
+During early discovery:
+- Minimal Cornerstone applied locally
+
+During development:
+- Balanced practices dominate
+
+For release and compliance:
+- Regulated profile governs
+
+Profile changes are explicit and communicated.
+
+---
+
+### E.9 What This Example Demonstrates
+
+- Cornerstone scales without changing philosophy
+- Regulation does not require waterfall
+- Slack enables learning and resilience
+- Architecture is a delivery enabler
+- Leadership is exercised through system design
+
+---
+
+### E.10 Key Takeaway
+
+Cornerstone works when:
+- Context is explicit
+- Systems are designed intentionally
+- Learning is prioritised over blame
+- Governance serves delivery, not the reverse
+
+This example is representative, not exhaustive.
+Its purpose is to show **how the pieces fit together in reality**.
+
+## Appendix F – Leadership and Delivery Anti-Patterns Cornerstone Is Designed to Prevent
+
+This appendix documents **common leadership, architectural, and delivery anti-patterns** that repeatedly undermine engineering organisations.
+
+Cornerstone does not exist to impose a new process.
+It exists to **systematically prevent these failure modes** by design.
+
+Each anti-pattern is described with:
+- What it looks like
+- Why it is harmful
+- How Cornerstone counters it
+
+This appendix is intentionally direct.
+
+---
+
+### F.1 Leadership Anti-Patterns
+
+#### F.1.1 Proxy Leadership
+
+**What it looks like**  
+Leadership is replaced by frameworks, tools, or roles. Decisions are deferred to process rather than owned by leaders.
+
+**Why it is harmful**  
+- Responsibility becomes diluted  
+- Teams lose clarity on intent  
+- Governance becomes performative
+
+**How Cornerstone counters it**  
+- Makes leadership a **non-delegable systems responsibility**  
+- Frames frameworks as support, not substitutes  
+- Forces explicit ownership of system health
+
+---
+
+#### F.1.2 Hero Leadership
+
+**What it looks like**  
+Delivery relies on a small number of individuals working excessive hours to “save” projects.
+
+**Why it is harmful**  
+- Masks systemic failures  
+- Creates fragility and burnout  
+- Prevents learning
+
+**How Cornerstone counters it**  
+- Explicitly protects slack  
+- Treats heroics as system failure signals  
+- Optimises for sustainable throughput
+
+---
+
+#### F.1.3 Control Through Fear
+
+**What it looks like**  
+Metrics used to punish, audits used to intimidate, escalation used as threat.
+
+**Why it is harmful**  
+- Suppresses bad news  
+- Delays risk discovery  
+- Encourages gaming behaviour
+
+**How Cornerstone counters it**  
+- Emphasises psychological safety  
+- Separates learning metrics from performance judgement  
+- Uses governance to guide, not punish
+
+---
+
+### F.2 Organisational and Governance Anti-Patterns
+
+#### F.2.1 Decision Bottlenecking
+
+**What it looks like**  
+All meaningful decisions flow through a small central group.
+
+**Why it is harmful**  
+- High decision latency  
+- Reduced ownership  
+- Local optimisation by avoidance
+
+**How Cornerstone counters it**  
+- Uses architectural guardrails instead of approvals  
+- Pushes decisions to the edge  
+- Makes escalation rare and explicit
+
+---
+
+#### F.2.2 Governance Theatre
+
+**What it looks like**  
+Reviews, gates, and documents exist primarily to demonstrate compliance rather than reduce risk.
+
+**Why it is harmful**  
+- Adds cost without value  
+- Creates false confidence  
+- Encourages box-ticking
+
+**How Cornerstone counters it**  
+- Requires every artefact to have a clear purpose  
+- Treats evidence generation as part of delivery  
+- Optimises governance for risk reduction, not optics
+
+---
+
+#### F.2.3 Tool-Led Transformation
+
+**What it looks like**  
+New tools are introduced as a substitute for fixing underlying system issues.
+
+**Why it is harmful**  
+- Increases cognitive load  
+- Avoids real change  
+- Creates superficial progress
+
+**How Cornerstone counters it**  
+- Prioritises process consistency over tool uniformity  
+- Treats tooling as a socio-technical choice  
+- Forces justification of tools against outcomes
+
+---
+
+### F.3 Delivery and Process Anti-Patterns
+
+#### F.3.1 Cargo-Cult Agile
+
+**What it looks like**  
+Scrum ceremonies without autonomy, iterations without learning, backlogs without outcomes.
+
+**Why it is harmful**  
+- Creates motion without progress  
+- Erodes trust in agile thinking  
+- Hides systemic issues
+
+**How Cornerstone counters it**  
+- Separates principles from practices  
+- Anchors delivery to outcomes  
+- Makes learning explicit
+
+---
+
+#### F.3.2 Waterfall Disguised as Agile
+
+**What it looks like**  
+Upfront design and commitment with iterative labels applied later.
+
+**Why it is harmful**  
+- Late discovery of risk  
+- False sense of adaptability  
+- Costly rework
+
+**How Cornerstone counters it**  
+- Enforces incremental validation  
+- Encourages early integration  
+- Treats assumptions as revisitable
+
+---
+
+#### F.3.3 Output Obsession
+
+**What it looks like**  
+Success measured by features delivered, tickets closed, or utilisation maximised.
+
+**Why it is harmful**  
+- Disconnects work from value  
+- Encourages overproduction  
+- Increases WIP and delays feedback
+
+**How Cornerstone counters it**  
+- Shifts focus to outcomes  
+- Treats WIP as a system variable  
+- Measures success through value realised
+
+---
+
+### F.4 Architectural Anti-Patterns
+
+#### F.4.1 Big Design Up Front (BDUF)
+
+**What it looks like**  
+Extensive upfront design attempting to eliminate uncertainty.
+
+**Why it is harmful**  
+- Assumes stability  
+- Locks in poor assumptions  
+- Delays learning
+
+**How Cornerstone counters it**  
+- Assumes change by default  
+- Uses evolutionary architecture  
+- Preserves optionality
+
+---
+
+#### F.4.2 Accidental Architecture
+
+**What it looks like**  
+Architecture emerges unintentionally from local decisions.
+
+**Why it is harmful**  
+- Hidden coupling  
+- Inconsistent patterns  
+- Long-term fragility
+
+**How Cornerstone counters it**  
+- Makes architecture a leadership concern  
+- Uses ADRs to surface intent  
+- Maintains architectural coherence
+
+---
+
+#### F.4.3 Platform as Control
+
+**What it looks like**  
+Platforms impose constraints primarily to enforce compliance or control teams.
+
+**Why it is harmful**  
+- Increases friction  
+- Reduces autonomy  
+- Encourages workarounds
+
+**How Cornerstone counters it**  
+- Defines platforms as enablement mechanisms  
+- Measures platform success by team outcomes  
+- Treats adoption as value-driven
+
+---
+
+### F.5 Quality and Risk Anti-Patterns
+
+#### F.5.1 Late Quality
+
+**What it looks like**  
+Testing and validation deferred to the end of delivery.
+
+**Why it is harmful**  
+- Amplifies cost of defects  
+- Delays feedback  
+- Creates blame cycles
+
+**How Cornerstone counters it**  
+- Integrates V&V continuously  
+- Shifts testing left  
+- Treats quality as systemic
+
+---
+
+#### F.5.2 Hidden Risk
+
+**What it looks like**  
+Risks known but unspoken due to fear or incentives.
+
+**Why it is harmful**  
+- Explodes late  
+- Forces crisis response  
+- Damages trust
+
+**How Cornerstone counters it**  
+- Makes risk visibility explicit  
+- Links risk to leadership responsibility  
+- Normalises early escalation
+
+---
+
+#### F.5.3 Zero-Slack Systems
+
+**What it looks like**  
+Teams run at full utilisation with no buffer.
+
+**Why it is harmful**  
+- Eliminates learning capacity  
+- Turns small issues into crises  
+- Guarantees burnout
+
+**How Cornerstone counters it**  
+- Treats slack as a structural requirement  
+- Plans capacity intentionally  
+- Protects recovery and improvement time
+
+---
+
+### F.6 Cultural Anti-Patterns
+
+#### F.6.1 Blame-Oriented Postmortems
+
+**What it looks like**  
+Incidents framed around who failed rather than what failed.
+
+**Why it is harmful**  
+- Suppresses information  
+- Prevents improvement  
+- Encourages risk hiding
+
+**How Cornerstone counters it**  
+- Enforces blameless reviews  
+- Focuses on system conditions  
+- Converts failure into learning
+
+---
+
+#### F.6.2 Local Optimisation Culture
+
+**What it looks like**  
+Teams rewarded for local efficiency regardless of system impact.
+
+**Why it is harmful**  
+- Creates silos  
+- Degrades end-to-end flow  
+- Undermines collaboration
+
+**How Cornerstone counters it**  
+- Optimises for whole-system outcomes  
+- Aligns incentives to shared success  
+- Makes dependencies visible
+
+---
+
+### F.7 Summary
+
+Cornerstone is intentionally designed to:
+- Surface reality early
+- Prevent silent failure modes
+- Replace heroics with systems
+- Trade false certainty for learning
+- Optimise for long-term value
+
+Anti-patterns do not disappear through good intentions.
+They disappear when **systems are redesigned to make them impossible or expensive**.
+
+That is the purpose of Cornerstone.
+
+## Appendix G – Bibliography and Further Reading
+
+This bibliography is deliberate and opinionated.
+
+The works listed here directly inform the philosophy, structure, and delivery logic of Cornerstone. They shape how Cornerstone treats leadership, systems, risk, learning, architecture, flow, quality, and human behaviour. These are not optional influences; they are the intellectual foundations that prevent Cornerstone from collapsing into a shallow hybrid of existing methods.
+
+Where appropriate, short context is provided to explain why each work matters.
+
+---
+
+### G.1 Systems Thinking and Organisational Dynamics
+
+#### Donella H. Meadows – *Thinking in Systems*
+Foundational to Cornerstone’s systems worldview. Reinforces feedback loops, leverage points, and long-term consequences. Cornerstone’s rejection of local optimisation and short-term efficiency is rooted directly in this work.
+
+#### W. Edwards Deming – *Out of the Crisis*
+Introduces the idea that most failures are systemic, not individual. Cornerstone’s leadership stance, quality philosophy, and rejection of blame are deeply Deming-aligned.
+
+#### Russell Ackoff – *Re-Creating the Corporation*
+Explains why optimising parts of a system degrades the whole. Directly informs Cornerstone’s portfolio thinking and organisational design guidance.
+
+---
+
+### G.2 Leadership, Authority, and Responsibility
+
+#### L. David Marquet – *Turn the Ship Around!*
+Strong influence on Cornerstone’s leadership model. Authority is pushed to where information exists, while accountability remains with leadership. This aligns with Cornerstone’s “context over control” stance.
+
+#### Simon Sinek – *Start With Why*, *Leaders Eat Last*, *The Infinite Game*
+Reinforces:
+- Purpose-driven leadership
+- Long-term, infinite-game thinking
+- Leadership as stewardship of people and systems  
+Cornerstone adopts these ideas explicitly while grounding them in delivery reality.
+
+#### Jocko Willink & Leif Babin – *Extreme Ownership*
+Informs Cornerstone’s principle that leadership responsibility for system health cannot be delegated, even when authority is distributed.
+
+#### General Stanley McChrystal – *Team of Teams*
+Supports Cornerstone’s emphasis on adaptability, decentralised execution, and information flow in complex environments.
+
+#### Frederic Laloux – *Reinventing Organizations*
+Influences Cornerstone’s thinking on organisational evolution, trust, and self-management, without assuming idealised maturity.
+
+---
+
+### G.3 Human Systems, Motivation, and Team Health
+
+#### Tom DeMarco & Tim Lister – *Peopleware*
+One of the strongest influences on Cornerstone.
+Key ideas adopted directly:
+- Productivity is dominated by system design
+- Interruptions destroy thinking
+- Environment matters more than tools
+
+#### Tom DeMarco – *Slack*
+Provides the intellectual basis for Cornerstone’s insistence that slack is structural, not waste. Zero-slack systems are fragile and unethical.
+
+#### Dan Pink – *Drive*
+Informs Cornerstone’s treatment of autonomy, mastery, and purpose as system design goals rather than motivational techniques.
+
+#### Susan Fowler – *Why Motivating People Doesn’t Work… and What Does*
+Reinforces intrinsic motivation and autonomy-supportive leadership, aligning with Cornerstone’s rejection of incentive-driven control.
+
+#### Patrick Lencioni – *The Five Dysfunctions of a Team*
+Used selectively to support Cornerstone’s focus on trust, conflict, and accountability, without oversimplifying team dynamics.
+
+#### Kim Scott – *Radical Candor*
+Supports Cornerstone’s stance on high-trust, high-accountability leadership communication.
+
+---
+
+### G.4 Engineering Management and Leadership Practice
+
+#### Camille Fournier – *The Manager’s Path*
+Informs Cornerstone’s guidance on engineering leadership roles, progression, and responsibility boundaries.
+
+#### Will Larson – *An Elegant Puzzle*
+Strong alignment with Cornerstone’s systems-first view of engineering management, especially around scaling and organisational constraints.
+
+#### Michael Lopp – *Managing Humans*
+Reinforces Cornerstone’s people-centred leadership stance with practical, experience-based insight.
+
+#### Ben Collins-Sussman, Brian Fitzpatrick, Dan Pilone – *Team Geek*
+Supports Cornerstone’s emphasis on humility, trust, and collaboration in technical teams.
+
+---
+
+### G.5 Software Engineering and Architecture
+
+#### Frederick P. Brooks – *The Mythical Man-Month*
+Cornerstone’s scepticism of heroics, linear scaling, and schedule compression comes directly from Brooks.
+
+#### John Ousterhout – *A Philosophy of Software Design*
+Strong influence on Cornerstone’s architectural principles:
+- Complexity as the primary enemy
+- Cognitive load as a first-class concern
+
+#### Mark Richards & Neal Ford – *Fundamentals of Software Architecture*  
+#### Mark Richards & Neal Ford – *Software Architecture: The Hard Parts*
+Inform Cornerstone’s architectural decision-making, trade-off analysis, and evolutionary design stance.
+
+#### Neal Ford, Rebecca Parsons, Patrick Kua – *Building Evolutionary Architectures*
+Directly informs Cornerstone’s approach to change, fitness functions, and long-lived systems.
+
+#### Nick Rozanski & Eóin Woods – *Software Systems Architecture*
+Supports structured architectural reasoning without prescribing heavyweight frameworks.
+
+---
+
+### G.6 Flow, Economics, and Risk
+
+#### Donald G. Reinertsen – *Managing the Design Factory*  
+#### Donald G. Reinertsen – *Principles of Product Development Flow*
+Cornerstone’s economic view of flow, batch size, queues, and cost of delay is heavily influenced by Reinertsen.
+
+#### Tom DeMarco & Tim Lister – *Waltzing with Bears*
+Informs Cornerstone’s explicit risk management stance and rejection of false certainty in planning.
+
+#### Douglas W. Hubbard – *How to Measure Anything*
+Supports Cornerstone’s pragmatic approach to measurement, uncertainty, and decision-making under imperfect information.
+
+#### Tom DeMarco – *The Deadline*
+A narrative reinforcement of systems thinking, leadership behaviour, and organisational dysfunctions relevant to delivery.
+
+---
+
+### G.7 DevOps, Delivery, and Socio-Technical Systems
+
+#### Forsgren, Humble, Kim – *Accelerate*
+Empirical reinforcement of flow, feedback, and learning as predictors of performance.
+
+#### Gene Kim et al. – *The DevOps Handbook*
+Informs Cornerstone’s socio-technical systems thinking and operational feedback loops.
+
+#### Mary & Tom Poppendieck – *Lean Software Development*
+Reinforces flow-based delivery and waste reduction without collapsing into minimalism.
+
+---
+
+### G.8 Team Design and Communication
+
+#### Matthew Skelton & Manuel Pais – *Team Topologies*
+Direct influence on Cornerstone’s team design guidance, cognitive load management, and interaction modes.
+
+#### Brandenburg & Strohschneider – *Communication Patterns*
+Supports Cornerstone’s explicit treatment of communication as a designed system, not an emergent property.
+
+---
+
+### G.9 Documentation, Knowledge, and Governance
+
+#### Anne Gentle – *Docs as Code*
+Direct influence on Cornerstone’s documentation philosophy and artefact governance model.
+
+#### The Agile Manifesto
+Referenced as historical context and a source of values, not as a sufficient delivery model.
+
+---
+
+### G.10 How to Use This Bibliography
+
+This bibliography is not meant to be read linearly.
+
+Instead:
+- Treat it as a map of ideas
+- Revisit works as organisational maturity increases
+- Use books as lenses, not rulebooks
+
+Cornerstone exists precisely because no single book, framework, or methodology is sufficient on its own.
 
