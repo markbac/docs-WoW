@@ -30,6 +30,10 @@ geometry:
 
 highlight-style: tango
 
+# Cover art
+front-cover: "book/cover/front.png"
+back-cover: "book/cover/back.png"
+
 keywords:
   - engineering leadership
   - systems thinking
