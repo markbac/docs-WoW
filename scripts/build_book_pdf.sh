@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# -----------------------------
-# Configuration
-# -----------------------------
 BOOK_DIR="book"
 DIST_DIR="dist"
 TEMPLATE="templates/book.tex"
 OUTPUT_PDF="keystone.pdf"
-
-FRONT_COVER="${BOOK_DIR}/cover/front.png"
-BACK_COVER="${BOOK_DIR}/cover/back.png"
 
 # -----------------------------
 # Traceability
@@ -24,9 +18,6 @@ if [ "$GIT_DIRTY" != "0" ]; then
   DIRTY_STATUS="Dirty"
 fi
 
-# -----------------------------
-# Build
-# -----------------------------
 mkdir -p "$DIST_DIR"
 
 echo "📘 Building Keystone PDF"
@@ -39,8 +30,6 @@ pandoc \
   --from markdown+yaml_metadata_block \
   --template="$TEMPLATE" \
   --metadata-file="$BOOK_DIR/book.yaml" \
-  --metadata front-cover="$FRONT_COVER" \
-  $( [ -f "$BACK_COVER" ] && echo "--metadata back-cover=$BACK_COVER" ) \
   --metadata build_date="$BUILD_DATE" \
   --metadata git_commit="$GIT_HASH" \
   --metadata git_dirty="$DIRTY_STATUS" \
