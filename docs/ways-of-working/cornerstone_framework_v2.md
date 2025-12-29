@@ -42,8 +42,9 @@ keywords:
 
 edition: "First Edition"
 version: "0.1"
+---
 
----# SECTION I – FOUNDATIONS: PHILOSOPHY, PURPOSE, AND SYSTEMS THINKING
+# SECTION I – FOUNDATIONS: PHILOSOPHY, PURPOSE, AND SYSTEMS THINKING
 
 This section establishes the intellectual and ethical foundations of Cornerstone. It defines how engineering leadership is understood, what the engineering function exists to achieve, and how organisations must be viewed in order to reason effectively about delivery, quality, and sustainability.
 
