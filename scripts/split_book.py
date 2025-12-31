@@ -9,10 +9,10 @@ Split a monolithic Markdown book into:
 - Front matter preserved separately
 
 Additionally:
-- Auto-generates structural control directories:
-  - _front_control.md           -> \\frontmatter
-  - TOC                         -> \\tableofcontents
-  - main matter                 -> \\mainmatter
+- Auto-generates structural control directories inserted between
+  Acknowledgements and Introduction:
+  - 03_toc/00_section.md        -> ToC (with correct page breaks and TOC entry)
+  - 04_mainmatter/00_section.md -> \\mainmatter (start Arabic numbering)
 
 Rules:
 - ANY single-# heading starts a new section
@@ -75,11 +75,7 @@ log = logging.getLogger(__name__)
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$")
 NUMBER_PREFIX_RE = re.compile(r"^\d+(\.\d+)*\s+")
-CHAPTER_PREFIX_RE = re.compile(
-    r"^chapter\s+\d+\s*[:\-–]\s*",
-    re.IGNORECASE,
-)
-
+CHAPTER_PREFIX_RE = re.compile(r"^chapter\s+\d+\s*[:\-–]\s*", re.IGNORECASE)
 
 # ---------------------------------------------------------------------------
 # Normalisation helpers
@@ -87,12 +83,14 @@ CHAPTER_PREFIX_RE = re.compile(
 
 
 def strip_heading_numbers(title: str) -> str:
-    """Remove numeric prefixes from headings."""
+    """Remove numeric prefixes from headings (e.g. '1.2 Title' -> 'Title')."""
     return NUMBER_PREFIX_RE.sub("", title).strip()
 
+
 def strip_chapter_prefix(title: str) -> str:
-    """Remove 'Chapter X – ' style prefixes from chapter titles."""
+    """Remove 'Chapter X - ' style prefixes from chapter headings."""
     return CHAPTER_PREFIX_RE.sub("", title).strip()
+
 
 def normalise_heading(line: str) -> str:
     """Strip numbering from any markdown heading."""
@@ -136,8 +134,8 @@ def split_book(input_file: Path, output_dir: Path) -> None:
     current_chapter_slug: Optional[str] = None
     current_chapter_lines: List[str] = []
 
-    toc_written = False
-    mainmatter_written = False
+    inserted_controls = False
+    last_section_title_lower: Optional[str] = None
 
     def route_line(line: str) -> None:
         if current_chapter_slug:
@@ -157,7 +155,6 @@ def split_book(input_file: Path, output_dir: Path) -> None:
             / f"{chapter_index:02d}_{current_chapter_slug}.md"
         )
         path.parent.mkdir(parents=True, exist_ok=True)
-
         log.debug("Writing chapter: %s", path)
         path.write_text("".join(current_chapter_lines), encoding="utf-8")
 
@@ -167,38 +164,48 @@ def split_book(input_file: Path, output_dir: Path) -> None:
 
         path = output_dir / current_section_slug / "00_section.md"
         path.parent.mkdir(parents=True, exist_ok=True)
-
         log.debug("Writing section intro: %s", path)
         path.write_text("".join(current_section_lines), encoding="utf-8")
 
-    def write_toc_and_mainmatter() -> None:
-        nonlocal section_index, toc_written, mainmatter_written
+    def insert_toc_and_mainmatter() -> None:
+        """
+        Insert:
+          NN_toc/00_section.md
+          NN_mainmatter/00_section.md
 
-        if not toc_written:
-            section_index += 1
-            toc_dir = output_dir / f"{section_index:02d}_toc"
-            toc_dir.mkdir(parents=True, exist_ok=True)
-            (toc_dir / "00_section.md").write_text(
-                "\\cleardoublepage\n"
-                "\\pdfbookmark[0]{Contents}{toc}\n"
-                "\\tableofcontents\n"
-                "\\cleardoublepage\n",
-                encoding="utf-8",
-            )
+        This is the *only* place we inject ToC placement.
+        The LaTeX template must NOT emit \\tableofcontents or \\mainmatter.
+        """
+        nonlocal section_index, inserted_controls
 
-            log.info("Writing TOC section: %s", toc_dir)
-            toc_written = True
+        if inserted_controls:
+            return
 
-        if not mainmatter_written:
-            section_index += 1
-            mainmatter_dir = output_dir / f"{section_index:02d}_mainmatter"
-            mainmatter_dir.mkdir(parents=True, exist_ok=True)
-            (mainmatter_dir / "00_section.md").write_text(
-                "\\mainmatter\n",
-                encoding="utf-8",
-            )
-            log.info("Writing main matter section: %s", mainmatter_dir)
-            mainmatter_written = True
+        # ToC folder
+        section_index += 1
+        toc_dir = output_dir / f"{section_index:02d}_toc"
+        toc_dir.mkdir(parents=True, exist_ok=True)
+        (toc_dir / "00_section.md").write_text(
+            "\\clearpage\n"
+            "\\phantomsection\n"
+            "\\addcontentsline{toc}{chapter}{Contents}\n"
+            "\\tableofcontents\n"
+            "\\clearpage\n",
+            encoding="utf-8",
+        )
+        log.info("Inserted ToC: %s", toc_dir)
+
+        # Mainmatter folder
+        section_index += 1
+        mainmatter_dir = output_dir / f"{section_index:02d}_mainmatter"
+        mainmatter_dir.mkdir(parents=True, exist_ok=True)
+        (mainmatter_dir / "00_section.md").write_text(
+            "\\mainmatter\n",
+            encoding="utf-8",
+        )
+        log.info("Inserted mainmatter: %s", mainmatter_dir)
+
+        inserted_controls = True
 
     log.info("Reading input: %s", input_file)
 
@@ -240,29 +247,30 @@ def split_book(input_file: Path, output_dir: Path) -> None:
             if match:
                 level, raw_title = match.groups()
                 clean_title = strip_heading_numbers(raw_title)
-                
-                if level == "##":
-                    clean_title = strip_chapter_prefix(clean_title)
 
                 # New section
                 if level == "#":
                     flush_chapter()
                     flush_section_intro()
 
-                    if clean_title.lower() == "introduction":
-                        write_toc_and_mainmatter()
+                    # If the previous section was acknowledgements, we insert
+                    # ToC + mainmatter BEFORE creating the next section folder.
+                    if (
+                        not inserted_controls
+                        and last_section_title_lower in ("acknowledgements", "acknowledgments")
+                    ):
+                        insert_toc_and_mainmatter()
 
                     section_index += 1
                     chapter_index = 0
 
-                    current_section_slug = (
-                        f"{section_index:02d}_{slugify(clean_title)}"
-                    )
+                    current_section_slug = f"{section_index:02d}_{slugify(clean_title)}"
                     current_section_lines = [f"# {clean_title}\n"]
 
                     current_chapter_slug = None
                     current_chapter_lines = []
 
+                    last_section_title_lower = clean_title.strip().lower()
                     log.info("New section: %s", clean_title)
                     continue
 
@@ -271,14 +279,12 @@ def split_book(input_file: Path, output_dir: Path) -> None:
                     flush_chapter()
 
                     chapter_index += 1
-                    current_chapter_slug = slugify(clean_title)
-                    current_chapter_lines = [f"## {clean_title}\n"]
+                    chap_title = strip_chapter_prefix(clean_title)
 
-                    log.info(
-                        "  Chapter %02d: %s",
-                        chapter_index,
-                        clean_title,
-                    )
+                    current_chapter_slug = slugify(chap_title)
+                    current_chapter_lines = [f"## {chap_title}\n"]
+
+                    log.info("  Chapter %02d: %s", chapter_index, chap_title)
                     continue
 
             # ------------------------------------------------------------
@@ -301,7 +307,6 @@ def split_book(input_file: Path, output_dir: Path) -> None:
     # ------------------------------------------------------------------
     # Structural control artefacts
     # ------------------------------------------------------------------
-
     front_control = output_dir / "_front_control.md"
     front_control.write_text("\\frontmatter\n", encoding="utf-8")
     log.info("Writing front matter control: %s", front_control)

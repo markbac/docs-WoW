@@ -1,5 +1,5 @@
 ---
-title: "Keystone: A Framework for Sustainable Engineering Delivery"
+title: "Cornerstone: A Framework for Sustainable Engineering Delivery"
 subtitle: "Designing the Systems That Make Delivery Possible"
 author: "Mark Bacon"
 date: "2025-01-10"
@@ -21,7 +21,6 @@ top-level-division: chapter
 draft: true
 
 lang: en-GB
-documentclass: book
 
 papersize: A4
 fontsize: 11pt
@@ -31,9 +30,6 @@ geometry:
 
 highlight-style: tango
 
-front-cover: "book/cover/front.png"
-back-cover: "book/cover/back.png"
-
 keywords:
   - engineering leadership
   - systems thinking
@@ -42,7 +38,7 @@ keywords:
   - governance
   - organisational design
   - sustainable delivery
-  - keystone framework
+  - Cornerstone framework
 
 edition: "First Edition"
 version: "0.1"
@@ -50,7 +46,6 @@ version: "0.1"
 
 
 # Preface
-
 This book exists because too many engineering organisations are busy yet ineffective, well-intentioned yet fragile, and highly skilled yet structurally constrained.
 
 Across industries, teams are asked to deliver complex products under uncertainty, regulatory pressure, and commercial constraint. When outcomes disappoint, the response is often to change the process, adopt a new framework, scale an existing one, or add another layer of governance. These interventions are usually sincere. They are also frequently ineffective.
@@ -69,7 +64,6 @@ If you are looking for prescriptive rituals, templates, or certification paths, 
 If you are willing to take responsibility for the systems you lead, it may be useful.
 
 # Acknowledgements
-
 This book draws on ideas that have been developed, challenged, and refined over many years. While the framework presented here is my own, it stands on the shoulders of thinkers and practitioners who have consistently prioritised clarity, humanity, and systems over fashion.
 
 In particular, I owe an intellectual debt to those who have articulated why organisations fail when they confuse activity with progress, efficiency with effectiveness, and control with leadership. The influence of work on systems thinking, organisational behaviour, software engineering discipline, and motivation is present throughout, even where not explicitly cited.
@@ -82,7 +76,7 @@ Finally, this book would not exist without the patience and support of my family
 
 Any errors, omissions, or stubborn positions remain my own.
 
-# Introduction
+# Introduction {-}
 
 Most engineering organisations do not suffer from a lack of process.  
 They suffer from a lack of coherence.

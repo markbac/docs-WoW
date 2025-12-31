@@ -1,30 +1,12 @@
 % =================================================
 % Document class
 % =================================================
-%
-% openany   -> chapters/parts can start on any page (PDF / draft)
-% openright -> chapters/parts start on right-hand pages (PRINT)
-%
-% Switch THIS ONE LINE when preparing a printed book.
-%
+% NOTE:
+% - Do NOT pass $papersize$ as a class option. Pandoc/geometry handle it.
+% - Keep it simple and deterministic.
 \documentclass[
-  $fontsize$,
-  $papersize$,
-  openany
-]{book}
-
-% =================================================
-% PART BEHAVIOUR OVERRIDE
-% =================================================
-% Keep parts visually clean but predictable.
-% Uses cleardoublepage so print layouts still behave correctly.
-%
-\makeatletter
-\renewcommand\part{\cleardoublepage
-  \thispagestyle{plain}
-  \secdef\@part\@spart}
-\makeatother
-
+  $fontsize$
+]{report}
 
 % =================================================
 % Core packages
@@ -38,18 +20,25 @@
 \usepackage{fancyhdr}
 \usepackage{emptypage}
 \usepackage{calc}
+\usepackage{eso-pic}
 
 % =================================================
-% Global image sizing
+% Page geometry & line spacing
+% =================================================
+\geometry{
+  margin=25mm
+}
+\setstretch{$linestretch$}
+
+% =================================================
+% Global image sizing (content images)
 % =================================================
 \setkeys{Gin}{width=0.85\linewidth, keepaspectratio}
 
 % =================================================
 % Hyperlink appearance
 % =================================================
-\hypersetup{
-  hidelinks
-}
+\hypersetup{hidelinks}
 
 % =================================================
 % Pandoc tables support
@@ -59,34 +48,37 @@
 \usepackage{array}
 
 % =================================================
-% Subtitle support
+% Subtitle support (robust)
 % =================================================
+% IMPORTANT:
+% - Initialise \@subtitle to empty.
+% - Only print subtitle if non-empty.
 \makeatletter
-\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
-\newcommand{\@subtitle}{}
+\providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+\providecommand{\@subtitle}{} % safe default
+
 \renewcommand{\maketitle}{%
   \begin{titlepage}
     \centering
     {\huge\bfseries \@title \par}
     \vspace{1em}
-    {\Large \@subtitle \par}
-    \vspace{2em}
-    {\large \@author \par}
+    \ifx\@subtitle\@empty\else
+      {\Large \@subtitle \par}
+      \vspace{2em}
+    \fi
+    \ifx\@author\@empty\else
+      {\large \@author \par}
+    \fi
     \vfill
-    {\large \@date \par}
+    \ifx\@date\@empty\else
+      {\large \@date \par}
+    \fi
   \end{titlepage}
 }
 \makeatother
 
 % =================================================
-% Pandoc compatibility: allow 'none' as counter value
-% =================================================
-\makeatletter
-\@ifundefined{c@none}{\newcounter{none}}{}
-\makeatother
-
-% =================================================
-% Draft watermark (optional, metadata-driven)
+% Draft watermark (optional)
 % =================================================
 $if(draft)$
 \usepackage{draftwatermark}
@@ -94,12 +86,6 @@ $if(draft)$
 \SetWatermarkScale{1}
 \SetWatermarkColor[gray]{0.9}
 $endif$
-
-% =================================================
-% Page geometry & line spacing
-% =================================================
-\geometry{margin=25mm}
-\setstretch{$linestretch$}
 
 % =================================================
 % Header / footer configuration
@@ -118,7 +104,7 @@ $endif$
 }
 
 % =================================================
-% Pandoc compatibility: code blocks
+% Pandoc compatibility: code blocks + highlighting
 % =================================================
 \usepackage{color}
 \usepackage{framed}
@@ -132,16 +118,11 @@ $endif$
   \end{snugshade}%
 }
 
-% =================================================
-% Pandoc code highlighting environment
-% =================================================
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{%
-  commandchars=\\\{\}
+  commandchars=\\\{\}%
 }
 
-% =================================================
 % Pandoc syntax highlighting token definitions
-% =================================================
 \newcommand{\AlertTok}[1]{\textcolor{red}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor{gray}{#1}}
 \newcommand{\AttributeTok}[1]{#1}
@@ -174,14 +155,145 @@ $endif$
 \newcommand{\WarningTok}[1]{\textcolor{red}{#1}}
 
 % =================================================
-% Pandoc compatibility (Pandoc >= 3.x)
+% Pandoc compatibility: allow 'none' as counter value
+% =================================================
+\makeatletter
+\@ifundefined{c@none}{\newcounter{none}}{}
+\makeatother
+
+% =================================================
+% Pandoc >= 3.x compatibility
 % =================================================
 \providecommand{\pandocbounded}[1]{#1}
+
+% =================================================
+% Matter controls (report does NOT provide these)
+% =================================================
+\makeatletter
+\newcommand{\frontmatter}{%
+  \cleardoublepage%
+  \pagenumbering{roman}%
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+}
+\newcommand{\mainmatter}{%
+  \cleardoublepage%
+  \pagenumbering{arabic}%
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+}
+\newcommand{\backmatter}{%
+  \cleardoublepage%
+}
+\makeatother
+
+% =================================================
+% Heading + numbering model
+% =================================================
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thechapter.\arabic{subsection}}
+
+% =================================================
+% Make "Chapter" not print as the word "Chapter"
+% =================================================
+\renewcommand{\chaptername}{}
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{20pt}%
+  {\parindent 0pt \raggedright
+    \normalfont\huge\bfseries
+    \ifnum \c@chapter>0
+      \thechapter\quad
+    \fi
+    #1\par\nobreak
+    \vspace{12pt}%
+  }%
+}
+\def\@makeschapterhead#1{%
+  \vspace*{20pt}%
+  {\parindent 0pt \raggedright
+    \normalfont\huge\bfseries
+    #1\par\nobreak
+    \vspace{12pt}%
+  }%
+}
+\makeatother
+
+% =================================================
+% Make top-level "SECTION I ..." headings bigger/bolder than chapters
+% =================================================
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus .2ex}%
+  {\normalfont\Huge\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\Large\bfseries}}
+\makeatother
+
+% =================================================
+% TOC styling
+% =================================================
+\renewcommand{\cfttoctitlefont}{\Huge\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\setlength{\cftchapindent}{0pt}
+\setlength{\cftchapnumwidth}{2.5em}
+
+\renewcommand{\cftsecfont}{\Large\bfseries}
+\renewcommand{\cftsecpagefont}{\Large\bfseries}
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsecnumwidth}{3.0em}
+
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\setlength{\cftsubsecindent}{0pt}
+\setlength{\cftsubsecnumwidth}{3.0em}
 
 % =================================================
 % Document starts here
 % =================================================
 \begin{document}
+
+% Covers and title pages should not carry headers/footers or numbers
+\pagestyle{empty}
+\pagenumbering{gobble}
+
+% -------------------------------------------------
+% Front cover (full-bleed)
+% -------------------------------------------------
+% -------------------------------------------------
+% Front cover (centred, aspect-safe)
+% -------------------------------------------------
+$if(cover_front)$
+\clearpage
+\thispagestyle{empty}
+\AddToShipoutPictureBG*{%
+  \AtPageCenter{%
+    \makebox(0,0){%
+      \includegraphics[
+        width=\paperwidth,
+        height=\paperheight,
+        keepaspectratio
+      ]{$cover_front$}%
+    }%
+  }%
+}
+\mbox{}
+\clearpage
+\ClearShipoutPictureBG
+$endif$
+
 
 % -------------------------------------------------
 % Title page
@@ -214,36 +326,41 @@ $copyright$
 \clearpage
 $endif$
 
-% =================================================
-% FRONT MATTER
-% =================================================
-%
-% Roman numerals
-% Preface, Acknowledgements, etc.
-%
-\frontmatter
-
+% -------------------------------------------------
+% Body
+% -------------------------------------------------
+% Expect \frontmatter / \tableofcontents / \mainmatter
+% to be injected via your control/section files.
 $body$
 
-% =================================================
-% TABLE OF CONTENTS
-% =================================================
-%
-% Convention:
-% - Comes AFTER front matter
-% - Does NOT list itself
-%
-\cleardoublepage
-\tableofcontents
-\cleardoublepage
+% -------------------------------------------------
+% Back cover (full-bleed)
+% -------------------------------------------------
+% -------------------------------------------------
+% Back cover (full-bleed, isolated)
+% -------------------------------------------------
+% -------------------------------------------------
+% Back cover (centred, aspect-safe)
+% -------------------------------------------------
+$if(cover_back)$
+\clearpage
+\thispagestyle{empty}
+\AddToShipoutPictureBG*{%
+  \AtPageCenter{%
+    \makebox(0,0){%
+      \includegraphics[
+        width=\paperwidth,
+        height=\paperheight,
+        keepaspectratio
+      ]{$cover_back$}%
+    }%
+  }%
+}
+\mbox{}
+\clearpage
+\ClearShipoutPictureBG
+$endif$
 
-% =================================================
-% MAIN MATTER
-% =================================================
-%
-% Arabic numerals start here
-% Introduction and all chapters follow
-%
-\mainmatter
+
 
 \end{document}

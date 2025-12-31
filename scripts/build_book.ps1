@@ -17,7 +17,7 @@ param (
 )
 
 # =================================================
-# Logging helpers (ASCII-safe)
+# Logging helpers
 # =================================================
 function Log($msg)  { Write-Host "[INFO]  $msg" -ForegroundColor Cyan }
 function Ok($msg)   { Write-Host "[ OK ]  $msg" -ForegroundColor Green }
@@ -26,6 +26,51 @@ function Dbg($msg)  {
     if ($DebugMode) {
         Write-Host "[DBG ]  $msg" -ForegroundColor DarkGray
     }
+}
+
+# =================================================
+# Copy cover images into Pandoc media
+# =================================================
+function Copy-CoverImages {
+    param (
+        [Parameter(Mandatory)]
+        [string] $Root,
+
+        [Parameter(Mandatory)]
+        [string] $MediaDir
+    )
+
+    $FrontCoverSrc = Join-Path $Root "..\front.png"
+    $BackCoverSrc  = Join-Path $Root "..\back.png"
+
+    if (-not (Test-Path $MediaDir)) {
+        throw "Media directory not found: $MediaDir"
+    }
+
+    $result = @{
+        Front = $null
+        Back  = $null
+    }
+
+    if (Test-Path $FrontCoverSrc) {
+        $dst = Join-Path $MediaDir "front.png"
+        Copy-Item -Force $FrontCoverSrc $dst
+        Ok "Copied front cover to $dst"
+        $result.Front = $dst
+    } else {
+        Warn "Front cover not found: $FrontCoverSrc"
+    }
+
+    if (Test-Path $BackCoverSrc) {
+        $dst = Join-Path $MediaDir "back.png"
+        Copy-Item -Force $BackCoverSrc $dst
+        Ok "Copied back cover to $dst"
+        $result.Back = $dst
+    } else {
+        Warn "Back cover not found: $BackCoverSrc"
+    }
+
+    return $result
 }
 
 # =================================================
@@ -53,27 +98,12 @@ function Flatten-PandocMedia {
 
     Get-ChildItem -Path $Root -Recurse -Directory -Filter media | ForEach-Object {
         Get-ChildItem -Path $_.FullName -File | ForEach-Object {
-            $name = $_.Name
-
-            if ($seen.ContainsKey($name)) {
-                throw @"
-Media filename collision detected:
-
-  $name
-  - $($seen[$name])
-  - $($_.FullName)
-
-Media filenames must be globally unique.
-"@
+            if ($seen.ContainsKey($_.Name)) {
+                throw "Media filename collision detected: $($_.Name)"
             }
-
-            $seen[$name] = $_.FullName
-
-            Copy-Item `
-                -Path $_.FullName `
-                -Destination (Join-Path $mediaOut $name)
-
-            Dbg "  + $name"
+            $seen[$_.Name] = $_.FullName
+            Copy-Item -Force $_.FullName (Join-Path $mediaOut $_.Name)
+            Dbg "  + $($_.Name)"
         }
     }
 
@@ -81,11 +111,9 @@ Media filenames must be globally unique.
 }
 
 # =================================================
-# Resolve and validate paths
+# Resolve paths
 # =================================================
-if (-not (Test-Path $Root)) {
-    throw "Root directory not found: $Root"
-}
+if (-not (Test-Path $Root)) { throw "Root directory not found: $Root" }
 $Root = (Resolve-Path $Root).Path
 
 if (-not (Test-Path $Dist)) {
@@ -94,9 +122,7 @@ if (-not (Test-Path $Dist)) {
 $Dist = (Resolve-Path $Dist).Path
 
 if ($Template) {
-    if (-not (Test-Path $Template)) {
-        throw "Template not found: $Template"
-    }
+    if (-not (Test-Path $Template)) { throw "Template not found: $Template" }
     $Template = (Resolve-Path $Template).Path
 }
 
@@ -118,7 +144,7 @@ Dbg "Root       : $Root"
 Dbg "Dist       : $Dist"
 
 # =================================================
-# Collect Markdown files (numeric, deterministic)
+# Collect Markdown files
 # =================================================
 $InputFiles = @()
 
@@ -127,82 +153,63 @@ if (-not (Test-Path $FrontMatter)) {
     throw "Missing _front_matter.md in $Root"
 }
 $InputFiles += $FrontMatter
-Dbg "Front matter: _front_matter.md"
 
 $FrontControl = Join-Path $Root "_front_control.md"
 if (Test-Path $FrontControl) {
     $InputFiles += $FrontControl
-    Dbg "Front control: _front_control.md"
 }
 
-$Sections = Get-ChildItem $Root -Directory |
+Get-ChildItem $Root -Directory |
     Where-Object { $_.Name -match '^\d{2}_' } |
-    Sort-Object Name
+    Sort-Object Name |
+    ForEach-Object {
+        $intro = Join-Path $_.FullName "00_section.md"
+        if (Test-Path $intro) { $InputFiles += $intro }
 
-foreach ($Section in $Sections) {
-    Dbg "Dir: $($Section.Name)"
-
-    $SectionIntro = Join-Path $Section.FullName "00_section.md"
-    if (Test-Path $SectionIntro) {
-        $InputFiles += $SectionIntro
-        Dbg "  + 00_section.md"
+        Get-ChildItem $_.FullName -File -Filter "*.md" |
+            Where-Object { $_.Name -ne "00_section.md" } |
+            Sort-Object Name |
+            ForEach-Object { $InputFiles += $_.FullName }
     }
-
-    Get-ChildItem $Section.FullName -File -Filter "*.md" |
-        Where-Object { $_.Name -ne "00_section.md" } |
-        Sort-Object Name |
-        ForEach-Object {
-            $InputFiles += $_.FullName
-            Dbg "  + $($_.Name)"
-        }
-}
 
 Ok "Collected $($InputFiles.Count) Markdown files"
 
 # =================================================
-# Optional covers
-# =================================================
-$CoverMeta = @()
-
-$FrontCover = Join-Path $Root "cover\front.png"
-$BackCover  = Join-Path $Root "cover\back.png"
-
-if (Test-Path $FrontCover) {
-    $CoverMeta += "--metadata"
-    $CoverMeta += "front-cover=$FrontCover"
-    Dbg "Front cover: $FrontCover"
-} else {
-    Warn "Front cover not found, skipping"
-}
-
-if (Test-Path $BackCover) {
-    $CoverMeta += "--metadata"
-    $CoverMeta += "back-cover=$BackCover"
-    Dbg "Back cover: $BackCover"
-} else {
-    Warn "Back cover not found, skipping"
-}
-
-# =================================================
-# Flatten media
+# Media preparation
 # =================================================
 $FlattenedMedia = Join-Path $Dist "_pandoc_media"
+Flatten-PandocMedia -Root $Root -OutDir $FlattenedMedia
 
-Flatten-PandocMedia `
-    -Root $Root `
-    -OutDir $FlattenedMedia
+$MediaDir = Join-Path $FlattenedMedia "media"
+$covers = Copy-CoverImages -Root $Root -MediaDir $MediaDir
+
+# =================================================
+# Cover metadata (safe keys)
+# =================================================
+$CoverMeta = @(
+    "--metadata", "cover_front=front.png",
+    "--metadata", "cover_back=back.png"
+)
 
 # =================================================
 # Common Pandoc arguments
 # =================================================
 $PandocCommon = @(
     "--from", "markdown+yaml_metadata_block",
-    "--number-sections",
-    "--top-level-division=chapter",
+    "--lua-filter=..\..\scripts\chapter_mapping.lua",
     "--metadata", "build_date=$BuildDate",
     "--metadata", "git_commit=$GitHash",
     "--metadata", "git_dirty=$GitDirty",
-    "--resource-path=$FlattenedMedia"
+    "--metadata", "subtitle=",
+    "--resource-path=$FlattenedMedia",
+    "--section-divs",
+    "--standalone",
+    "--metadata=link-citations=true"
+)
+
+$PandocPdfOnly = @(
+    "--top-level-division=chapter",
+    "--pdf-engine=xelatex"
 )
 
 # =================================================
@@ -213,13 +220,13 @@ Log "Generating PDF"
 $pandocPdf = @()
 $pandocPdf += $InputFiles
 $pandocPdf += $PandocCommon
+$pandocPdf += $PandocPdfOnly
 $pandocPdf += $CoverMeta
 
 if ($Template) {
     $pandocPdf += "--template=$Template"
 }
 
-$pandocPdf += "--pdf-engine=xelatex"
 $pandocPdf += "-o"
 $pandocPdf += (Join-Path $Dist $Pdf)
 
@@ -238,8 +245,13 @@ Log "Generating EPUB"
 $pandocEpub = @()
 $pandocEpub += $InputFiles
 $pandocEpub += $PandocCommon
-$pandocEpub += $CoverMeta
-$pandocEpub += "--to=epub"
+$pandocEpub += "--toc"
+$pandocEpub += "--toc-depth=2"
+
+if ($covers.Front) {
+    $pandocEpub += "--epub-cover-image=$($covers.Front)"
+}
+
 $pandocEpub += "-o"
 $pandocEpub += (Join-Path $Dist $Epub)
 
