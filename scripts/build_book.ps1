@@ -144,35 +144,48 @@ Dbg "Root       : $Root"
 Dbg "Dist       : $Dist"
 
 # =================================================
-# Collect Markdown files
+# Collect Markdown files (new structure)
 # =================================================
 $InputFiles = @()
 
+# Front matter (must be first)
 $FrontMatter = Join-Path $Root "_front_matter.md"
 if (-not (Test-Path $FrontMatter)) {
     throw "Missing _front_matter.md in $Root"
 }
 $InputFiles += $FrontMatter
 
+# Front control (optional)
 $FrontControl = Join-Path $Root "_front_control.md"
 if (Test-Path $FrontControl) {
     $InputFiles += $FrontControl
 }
 
+# Sections
 Get-ChildItem $Root -Directory |
     Where-Object { $_.Name -match '^\d{2}_' } |
     Sort-Object Name |
     ForEach-Object {
-        $intro = Join-Path $_.FullName "00_section.md"
-        if (Test-Path $intro) { $InputFiles += $intro }
 
-        Get-ChildItem $_.FullName -File -Filter "*.md" |
-            Where-Object { $_.Name -ne "00_section.md" } |
-            Sort-Object Name |
-            ForEach-Object { $InputFiles += $_.FullName }
+        # Section intro
+        $sectionIntro = Join-Path $_.FullName "00_section.md"
+        if (Test-Path $sectionIntro) {
+            $InputFiles += $sectionIntro
+        }
+
+        # Chapters (new location)
+        $chaptersDir = Join-Path $_.FullName "chapters"
+        if (Test-Path $chaptersDir) {
+            Get-ChildItem $chaptersDir -File -Filter "*.md" |
+                Sort-Object Name |
+                ForEach-Object {
+                    $InputFiles += $_.FullName
+                }
+        }
     }
 
 Ok "Collected $($InputFiles.Count) Markdown files"
+
 
 # =================================================
 # Media preparation
@@ -206,6 +219,7 @@ $PandocCommon = @(
     "--standalone",
     "--metadata=link-citations=true"
 )
+
 
 $PandocPdfOnly = @(
     "--top-level-division=chapter",

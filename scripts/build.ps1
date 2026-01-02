@@ -24,15 +24,15 @@ Write-Host "== Cornerstone build started ==" -ForegroundColor Cyan
 
 $RootDir      = Get-Location
 $ScriptsDir   = Resolve-Path "..\..\scripts"
-$InputMd      = Join-Path $RootDir "cornerstone_framework_v2.md"
+$InputMd      = Join-Path $RootDir "Firmitas_Framework.md"
 
 $SplitDir     = Join-Path $RootDir "split"
 $DiagDir      = Join-Path $RootDir "diag"
 $DistDir      = Join-Path $RootDir "dist"
 
 $TemplateTex  = Join-Path $ScriptsDir "templates\book.tex"
-$PdfOut       = "cornerstone.pdf"
-$EpubOut      = "cornerstone.epub"
+$PdfOut       = "Firmitas.pdf"
+$EpubOut      = "Firmitas.epub"
 
 # ------------------------------------------------------------
 # Clean previous outputs
@@ -40,10 +40,10 @@ $EpubOut      = "cornerstone.epub"
 
 Write-Host "Cleaning previous build artefacts..." -ForegroundColor Yellow
 
-if (Test-Path $SplitDir) {
-    Write-Host "  Removing split/" -ForegroundColor DarkGray
-    Remove-Item -Recurse -Force $SplitDir
-}
+#if (Test-Path $SplitDir) {
+#    Write-Host "  Removing split/" -ForegroundColor DarkGray
+#    Remove-Item -Recurse -Force $SplitDir
+#}
 
 if (Test-Path $DiagDir) {
     Write-Host "  Removing diag/" -ForegroundColor DarkGray
@@ -59,13 +59,13 @@ if (Test-Path $DistDir) {
 # Step 1: Split book
 # ------------------------------------------------------------
 
-Write-Host "Splitting book markdown..." -ForegroundColor Cyan
+#Write-Host "Splitting book markdown..." -ForegroundColor Cyan
 
-python `
-    "$ScriptsDir\split_book.py" `
-    --verbose `
-    "$InputMd" `
-    --out "$SplitDir"
+#python `
+#    "$ScriptsDir\split_book.py" `
+#    --verbose `
+#    "$InputMd" `
+#    --out "$SplitDir"
 
 # ------------------------------------------------------------
 # Step 2: Render diagrams (Kroki)

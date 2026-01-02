@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -76,11 +78,8 @@ jobs:
       - name: Install Mermaid CLI (global)
         run: |
           npm install -g @mermaid-js/mermaid-cli@10.4.0
-          echo "✅ Mermaid CLI installed"
+          echo "Mermaid CLI installed"
 
-      # ────────────────────────────────────────────────
-      # 🧩 Debug instrumentation
-      # ────────────────────────────────────────────────
       - name: Enable debug logging
         run: |
           echo "ACTIONS_STEP_DEBUG=true" >> $GITHUB_ENV
@@ -115,8 +114,6 @@ jobs:
           npm --version
           which mmdc || echo "no mmdc"
           which chromium || which google-chrome || echo "no chromium"
-          echo "Available Chrome binaries:"
-          find /opt -name "chrome*" 2>/dev/null | head -n 20
 
       - name: Build MkDocs Site (HTML)
         run: mkdocs build --clean
@@ -126,27 +123,36 @@ jobs:
         with:
           path: site
 
-      - name: Build PDFs (verbose)
+      - name: Build MkDocs PDFs
         env:
           ENABLE_PDF_EXPORT: "1"
-          DEBUG: puppeteer:*
           PUPPETEER_NO_SANDBOX: false
-          WEASYPRINT_LOG_LEVEL: DEBUG
         run: |
-          echo "=== Environment check ==="
-          which mmdc || echo "mmdc not found"
-          mmdc --version || true
-          node --version
-          npm --version
-          echo "========================="
-          python3 scripts/mkdocs_pdf_build.py --src mkdocs.yml --keep-site --max-image-height 1100 || true
+          python3 scripts/mkdocs_pdf_build.py \
+            --src mkdocs.yml \
+            --keep-site \
+            --max-image-height 1100
 
-      - name: Upload PDF artefacts
+      # ────────────────────────────────────────────────
+      # 📘 Firmitas book build
+      # ────────────────────────────────────────────────
+      - name: Build Firmitas book (PDF + EPUB)
+        run: |
+          chmod +x scripts/build.sh
+          ./scripts/build.sh
+
+      - name: Verify book outputs
+        run: |
+          ls -lh docs/ways-of-working/dist
+
+      - name: Upload Firmitas book artefacts
         uses: actions/upload-artifact@v4
         with:
-          name: pdfs
-          path: site/pdf/*.pdf
-          if-no-files-found: warn
+          name: Firmitas-book
+          path: |
+            docs/ways-of-working/dist/Firmitas.pdf
+            docs/ways-of-working/dist/Firmitas.epub
+          if-no-files-found: error
 
   deploy:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'

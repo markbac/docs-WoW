@@ -1,5 +1,5 @@
 ---
-title: "Cornerstone: A Framework for Sustainable Engineering Delivery"
+title: "Firmitas: A Framework for Sustainable Engineering Delivery"
 subtitle: "Designing the Systems That Make Delivery Possible"
 author: "Mark Bacon"
 date: "2025-01-10"
@@ -38,7 +38,7 @@ keywords:
   - governance
   - organisational design
   - sustainable delivery
-  - Cornerstone framework
+  - Firmitas framework
 
 edition: "First Edition"
 version: "0.1"

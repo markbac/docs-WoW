@@ -5,7 +5,7 @@ They suffer from a lack of coherence.
 
 Teams operate within overlapping frameworks, competing incentives, and unclear decision boundaries. Leaders ask for speed while demanding certainty, autonomy while retaining control, and quality while compressing every margin that makes quality possible. When results disappoint, the system tightens rather than reflects.
 
-_Cornerstone_ is a response to this pattern.
+_Firmitas_ is a response to this pattern.
 
 It provides a **philosophy-led engineering framework** that makes explicit:
 
@@ -15,7 +15,7 @@ It provides a **philosophy-led engineering framework** that makes explicit:
 -   and where adaptation is both possible and necessary.
     
 
-At its core, _Cornerstone_ is built around a simple ordering:
+At its core, _Firmitas_ is built around a simple ordering:
 
 1.  **Philosophy** defines what matters and why 
 1.  **Framework** defines structure, decision logic, and governance boundaries
@@ -26,9 +26,9 @@ This ordering is non-negotiable. Reversing it is how organisations end up with p
 
 The framework treats engineering as a systems discipline. Human behaviour, organisational design, technical architecture, delivery flow, and economic constraint are all treated as interacting systems that must be aligned. Optimising any one of these in isolation reliably degrades the whole.
 
-Some aspects of _Cornerstone_ are intentionally fixed. Leadership responsibility for system health cannot be delegated. Flow matters more than utilisation. Slack is a prerequisite for sustainability. Learning requires fast, honest feedback. These are not preferences; they are properties of complex systems.
+Some aspects of _Firmitas_ are intentionally fixed. Leadership responsibility for system health cannot be delegated. Flow matters more than utilisation. Slack is a prerequisite for sustainability. Learning requires fast, honest feedback. These are not preferences; they are properties of complex systems.
 
-Other aspects are deliberately adaptable. Delivery processes, lifecycle models, tooling choices, and organisational forms must vary with context. _Cornerstone_ provides boundaries and decision logic, not a single prescribed way of working.
+Other aspects are deliberately adaptable. Delivery processes, lifecycle models, tooling choices, and organisational forms must vary with context. _Firmitas_ provides boundaries and decision logic, not a single prescribed way of working.
 
 This book is structured in layers:
 
@@ -42,7 +42,7 @@ The book therefore moves deliberately from **why**, to **how to reason**, to **h
     
 You do not need to agree with everything in this book for it to be useful. But you do need to take the ideas seriously enough to test them against your own system. Where they conflict with your current practices, the tension is the point.
 
-_Cornerstone_ does not promise speed, certainty, or comfort.  
+_Firmitas_ does not promise speed, certainty, or comfort.  
 It aims instead to make delivery **possible, sustainable, and repeatable**.
 
 That is a harder goal. It is also the only one that lasts.

@@ -54,3 +54,7 @@ Thumbs.db
 # PlantUML / diagram cache
 # ------------------------------------
 .plantuml-cache/
+
+# Generated book artefacts (Pandoc / diagrams)
+docs/ways-of-working/diag/
+docs/ways-of-working/dist/

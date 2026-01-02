@@ -5,25 +5,27 @@ split_book.py
 Split a monolithic Markdown book into:
 - One folder per top-level section (# ...)
 - One file per chapter (## ...)
+- Chapters stored under a 'chapters/' subdirectory
 - All ### and deeper content remains inside its chapter
 - Front matter preserved separately
 
 Additionally:
 - Auto-generates structural control directories inserted between
   Acknowledgements and Introduction:
-  - 03_toc/00_section.md        -> ToC (with correct page breaks and TOC entry)
-  - 04_mainmatter/00_section.md -> \\mainmatter (start Arabic numbering)
+  - 03_toc/00_section.md        -> ToC
+  - 04_mainmatter/00_section.md -> \\mainmatter
+
+MkDocs integration:
+- Writes a root `.pages` file
+- Writes per-section `.pages` files
+- Reader-facing section numbering skips structural sections
 
 Rules:
 - ANY single-# heading starts a new section
 - Headings inside fenced code blocks are ignored
-- Fenced code blocks are preserved verbatim
 - YAML front matter handled explicitly
-- Section and chapter ordering is explicit and stable
 
 PEP 8 compliant.
-Coloured logging.
-Windows-safe filesystem output.
 """
 
 from __future__ import annotations
@@ -43,8 +45,6 @@ from typing import List, Optional
 
 
 class ColourFormatter(logging.Formatter):
-    """ANSI-coloured log formatter."""
-
     COLOURS = {
         logging.DEBUG: "\033[36m",
         logging.INFO: "\033[32m",
@@ -56,8 +56,8 @@ class ColourFormatter(logging.Formatter):
 
     def format(self, record: logging.LogRecord) -> str:
         colour = self.COLOURS.get(record.levelno, "")
-        message = super().format(record)
-        return f"{colour}{message}{self.RESET}"
+        msg = super().format(record)
+        return f"{colour}{msg}{self.RESET}"
 
 
 def configure_logging(verbose: bool) -> None:
@@ -78,32 +78,27 @@ NUMBER_PREFIX_RE = re.compile(r"^\d+(\.\d+)*\s+")
 CHAPTER_PREFIX_RE = re.compile(r"^chapter\s+\d+\s*[:\-–]\s*", re.IGNORECASE)
 
 # ---------------------------------------------------------------------------
-# Normalisation helpers
+# Helpers
 # ---------------------------------------------------------------------------
 
 
 def strip_heading_numbers(title: str) -> str:
-    """Remove numeric prefixes from headings (e.g. '1.2 Title' -> 'Title')."""
     return NUMBER_PREFIX_RE.sub("", title).strip()
 
 
 def strip_chapter_prefix(title: str) -> str:
-    """Remove 'Chapter X - ' style prefixes from chapter headings."""
     return CHAPTER_PREFIX_RE.sub("", title).strip()
 
 
 def normalise_heading(line: str) -> str:
-    """Strip numbering from any markdown heading."""
     match = HEADING_RE.match(line)
     if not match:
         return line
-
     hashes, title = match.groups()
     return f"{hashes} {strip_heading_numbers(title)}\n"
 
 
 def slugify(text: str) -> str:
-    """Convert heading text into a filesystem-safe slug."""
     text = unicodedata.normalize("NFKD", text)
     text = text.encode("ascii", "ignore").decode("ascii")
     text = re.sub(r"[^\w\s-]", "", text)
@@ -112,23 +107,55 @@ def slugify(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# MkDocs helpers
+# ---------------------------------------------------------------------------
+
+
+def write_root_pages(output_dir: Path) -> None:
+    (output_dir / ".pages").write_text(
+        'title: "Firmitas Framework"\n',
+        encoding="utf-8",
+    )
+    log.info("Created root .pages file")
+
+
+def write_section_pages(
+    section_dir: Path,
+    visible_index: Optional[int],
+    title: str,
+) -> None:
+    pages_file = section_dir / ".pages"
+
+    if visible_index is None:
+        pages_file.write_text("hide: true\n", encoding="utf-8")
+    else:
+        pages_file.write_text(
+            f'title: "Section {visible_index:02d} – {title}"\n',
+            encoding="utf-8",
+        )
+
+
+# ---------------------------------------------------------------------------
 # Core logic
 # ---------------------------------------------------------------------------
 
 
 def split_book(input_file: Path, output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    write_root_pages(output_dir)
+
     in_front_matter = False
     front_matter_started = False
     in_code_block = False
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-
     front_matter: List[str] = []
 
     section_index = 0
+    visible_section_index = 0
     chapter_index = 0
 
-    current_section_slug: Optional[str] = None
+    current_section_dir: Optional[Path] = None
+    current_section_title: Optional[str] = None
     current_section_lines: List[str] = []
 
     current_chapter_slug: Optional[str] = None
@@ -137,179 +164,147 @@ def split_book(input_file: Path, output_dir: Path) -> None:
     inserted_controls = False
     last_section_title_lower: Optional[str] = None
 
-    def route_line(line: str) -> None:
-        if current_chapter_slug:
-            current_chapter_lines.append(line)
-        elif current_section_slug:
-            current_section_lines.append(line)
-        else:
-            front_matter.append(line)
-
     def flush_chapter() -> None:
-        if not current_section_slug or not current_chapter_slug:
+        if not current_section_dir or not current_chapter_slug:
             return
 
-        path = (
-            output_dir
-            / current_section_slug
-            / f"{chapter_index:02d}_{current_chapter_slug}.md"
-        )
-        path.parent.mkdir(parents=True, exist_ok=True)
-        log.debug("Writing chapter: %s", path)
+        chapter_dir = current_section_dir / "chapters"
+        chapter_dir.mkdir(exist_ok=True)
+
+        path = chapter_dir / f"{chapter_index:02d}_{current_chapter_slug}.md"
         path.write_text("".join(current_chapter_lines), encoding="utf-8")
 
     def flush_section_intro() -> None:
-        if not current_section_slug:
+        if not current_section_dir:
             return
 
-        path = output_dir / current_section_slug / "00_section.md"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        log.debug("Writing section intro: %s", path)
+        path = current_section_dir / "00_section.md"
         path.write_text("".join(current_section_lines), encoding="utf-8")
 
     def insert_toc_and_mainmatter() -> None:
-        """
-        Insert:
-          NN_toc/00_section.md
-          NN_mainmatter/00_section.md
-
-        This is the *only* place we inject ToC placement.
-        The LaTeX template must NOT emit \\tableofcontents or \\mainmatter.
-        """
         nonlocal section_index, inserted_controls
 
         if inserted_controls:
             return
 
-        # ToC folder
-        section_index += 1
-        toc_dir = output_dir / f"{section_index:02d}_toc"
-        toc_dir.mkdir(parents=True, exist_ok=True)
-        (toc_dir / "00_section.md").write_text(
-            "\\clearpage\n"
-            "\\phantomsection\n"
-            "\\addcontentsline{toc}{chapter}{Contents}\n"
-            "\\tableofcontents\n"
-            "\\clearpage\n",
-            encoding="utf-8",
-        )
-        log.info("Inserted ToC: %s", toc_dir)
-
-        # Mainmatter folder
-        section_index += 1
-        mainmatter_dir = output_dir / f"{section_index:02d}_mainmatter"
-        mainmatter_dir.mkdir(parents=True, exist_ok=True)
-        (mainmatter_dir / "00_section.md").write_text(
-            "\\mainmatter\n",
-            encoding="utf-8",
-        )
-        log.info("Inserted mainmatter: %s", mainmatter_dir)
+        for name, content in (
+            ("toc", "\\tableofcontents\n"),
+            ("mainmatter", "\\mainmatter\n"),
+        ):
+            section_index += 1
+            d = output_dir / f"{section_index:02d}_{name}"
+            d.mkdir()
+            (d / "00_section.md").write_text(content, encoding="utf-8")
+            write_section_pages(d, None, "")
+            log.info("Inserted %s", name)
 
         inserted_controls = True
 
     log.info("Reading input: %s", input_file)
 
-    with input_file.open("r", encoding="utf-8") as fh:
+    with input_file.open(encoding="utf-8") as fh:
         for line in fh:
             stripped = line.strip()
 
-            # ------------------------------------------------------------
-            # Fenced code blocks
-            # ------------------------------------------------------------
             if stripped.startswith("```"):
                 in_code_block = not in_code_block
-                route_line(line)
+                if current_chapter_slug:
+                    current_chapter_lines.append(line)
+                elif current_section_dir:
+                    current_section_lines.append(line)
+                else:
+                    front_matter.append(line)
                 continue
 
-            # ------------------------------------------------------------
-            # YAML front matter
-            # ------------------------------------------------------------
             if stripped == "---":
                 if not front_matter_started:
                     in_front_matter = True
                     front_matter_started = True
-                    front_matter.append(line)
-                    continue
-                if in_front_matter:
+                elif in_front_matter:
                     in_front_matter = False
-                    front_matter.append(line)
-                    continue
+                front_matter.append(line)
+                continue
 
             if in_front_matter:
                 front_matter.append(line)
                 continue
 
-            # ------------------------------------------------------------
-            # Headings (ignored in code blocks)
-            # ------------------------------------------------------------
             match = None if in_code_block else HEADING_RE.match(line)
 
             if match:
                 level, raw_title = match.groups()
                 clean_title = strip_heading_numbers(raw_title)
+                clean_lower = clean_title.lower()
 
-                # New section
                 if level == "#":
                     flush_chapter()
                     flush_section_intro()
 
-                    # If the previous section was acknowledgements, we insert
-                    # ToC + mainmatter BEFORE creating the next section folder.
                     if (
                         not inserted_controls
-                        and last_section_title_lower in ("acknowledgements", "acknowledgments")
+                        and last_section_title_lower
+                        in ("acknowledgements", "acknowledgments")
                     ):
                         insert_toc_and_mainmatter()
 
                     section_index += 1
                     chapter_index = 0
 
-                    current_section_slug = f"{section_index:02d}_{slugify(clean_title)}"
+                    slug = f"{section_index:02d}_{slugify(clean_title)}"
+                    current_section_dir = output_dir / slug
+                    current_section_dir.mkdir()
+
+                    current_section_title = clean_title
                     current_section_lines = [f"# {clean_title}\n"]
 
                     current_chapter_slug = None
                     current_chapter_lines = []
 
-                    last_section_title_lower = clean_title.strip().lower()
+                    if clean_lower not in ("toc", "mainmatter"):
+                        visible_section_index += 1
+                        write_section_pages(
+                            current_section_dir,
+                            visible_section_index,
+                            clean_title,
+                        )
+                    else:
+                        write_section_pages(current_section_dir, None, "")
+
+                    last_section_title_lower = clean_lower
                     log.info("New section: %s", clean_title)
                     continue
 
-                # New chapter
-                if level == "##" and current_section_slug:
+                if level == "##" and current_section_dir:
                     flush_chapter()
-
                     chapter_index += 1
-                    chap_title = strip_chapter_prefix(clean_title)
 
+                    chap_title = strip_chapter_prefix(clean_title)
                     current_chapter_slug = slugify(chap_title)
                     current_chapter_lines = [f"## {chap_title}\n"]
 
                     log.info("  Chapter %02d: %s", chapter_index, chap_title)
                     continue
 
-            # ------------------------------------------------------------
-            # Content routing
-            # ------------------------------------------------------------
-            route_line(normalise_heading(line))
+            if current_chapter_slug:
+                current_chapter_lines.append(normalise_heading(line))
+            elif current_section_dir:
+                current_section_lines.append(normalise_heading(line))
+            else:
+                front_matter.append(line)
 
-    # Final flush
     flush_chapter()
     flush_section_intro()
 
-    # ------------------------------------------------------------------
-    # Write preserved YAML front matter
-    # ------------------------------------------------------------------
     if front_matter:
-        path = output_dir / "_front_matter.md"
-        log.info("Writing front matter: %s", path)
-        path.write_text("".join(front_matter), encoding="utf-8")
+        (output_dir / "_front_matter.md").write_text(
+            "".join(front_matter),
+            encoding="utf-8",
+        )
 
-    # ------------------------------------------------------------------
-    # Structural control artefacts
-    # ------------------------------------------------------------------
-    front_control = output_dir / "_front_control.md"
-    front_control.write_text("\\frontmatter\n", encoding="utf-8")
-    log.info("Writing front matter control: %s", front_control)
+    (output_dir / "_front_control.md").write_text(
+        "\\frontmatter\n",
+        encoding="utf-8",
+    )
 
     log.info("Split complete")
 
@@ -320,16 +315,10 @@ def split_book(input_file: Path, output_dir: Path) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Split a Markdown book into ordered sections and chapters."
-    )
-    parser.add_argument("input", type=Path, help="Input markdown file")
-    parser.add_argument(
-        "--out", type=Path, default=Path("split"), help="Output directory"
-    )
-    parser.add_argument(
-        "--verbose", action="store_true", help="Enable verbose logging"
-    )
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input", type=Path)
+    parser.add_argument("--out", type=Path, default=Path("split"))
+    parser.add_argument("--verbose", action="store_true")
     return parser.parse_args()
 
 

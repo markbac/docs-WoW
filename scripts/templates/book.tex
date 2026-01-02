@@ -1,12 +1,18 @@
 % =================================================
 % Document class
 % =================================================
-% NOTE:
-% - Do NOT pass $papersize$ as a class option. Pandoc/geometry handle it.
-% - Keep it simple and deterministic.
+% Model:
+% - Split markdown is authoritative structure
+% - Pandoc translates headings -> LaTeX sections
+% - LaTeX styles only (no manual bookmarks, no addcontentsline hacks)
+%
+% IMPORTANT:
+% - Use a class that actually supports \chapter.
+%   Pandoc maps top-level headings (#) to \chapter by default (unless you force otherwise).
+%   Your previous 'report' class will not behave consistently for that.
 \documentclass[
   $fontsize$
-]{report}
+]{book}
 
 % =================================================
 % Core packages
@@ -38,7 +44,11 @@
 % =================================================
 % Hyperlink appearance
 % =================================================
-\hypersetup{hidelinks}
+\hypersetup{
+  hidelinks,
+  bookmarksopen=true,
+  bookmarksnumbered=true
+}
 
 % =================================================
 % Pandoc tables support
@@ -50,9 +60,6 @@
 % =================================================
 % Subtitle support (robust)
 % =================================================
-% IMPORTANT:
-% - Initialise \@subtitle to empty.
-% - Only print subtitle if non-empty.
 \makeatletter
 \providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
 \providecommand{\@subtitle}{} % safe default
@@ -167,24 +174,20 @@ $endif$
 \providecommand{\pandocbounded}[1]{#1}
 
 % =================================================
-% Matter controls (report does NOT provide these)
+% Matter controls (book provides these, but keep explicit wrappers)
 % =================================================
+% We keep them so your injected control files can call \frontmatter/\mainmatter
+% even if you later swap class options.
 \makeatletter
-\newcommand{\frontmatter}{%
+\providecommand{\frontmatter}{%
   \cleardoublepage%
   \pagenumbering{roman}%
-  \setcounter{chapter}{0}%
-  \setcounter{section}{0}%
-  \setcounter{subsection}{0}%
 }
-\newcommand{\mainmatter}{%
+\providecommand{\mainmatter}{%
   \cleardoublepage%
   \pagenumbering{arabic}%
-  \setcounter{chapter}{0}%
-  \setcounter{section}{0}%
-  \setcounter{subsection}{0}%
 }
-\newcommand{\backmatter}{%
+\providecommand{\backmatter}{%
   \cleardoublepage%
 }
 \makeatother
@@ -192,22 +195,24 @@ $endif$
 % =================================================
 % Heading + numbering model
 % =================================================
+% Model alignment:
+% - #  -> \chapter  (Section in your book)
+% - ## -> \section  (Chapter in your book)
+% - ### -> \subsection
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
-\renewcommand{\thechapter}{\arabic{chapter}}
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-\renewcommand{\thesubsection}{\thechapter.\arabic{subsection}}
-
 % =================================================
-% Make "Chapter" not print as the word "Chapter"
+% Chapter styling
 % =================================================
-\renewcommand{\chaptername}{}
+% Keep chapters clean, but do not destroy LaTeX semantics.
+% Do NOT inject bookmarks manually here.
 \makeatletter
+\renewcommand{\chaptername}{}
 \def\@makechapterhead#1{%
   \vspace*{20pt}%
   {\parindent 0pt \raggedright
-    \normalfont\huge\bfseries
+    \normalfont\Huge\bfseries
     \ifnum \c@chapter>0
       \thechapter\quad
     \fi
@@ -218,7 +223,7 @@ $endif$
 \def\@makeschapterhead#1{%
   \vspace*{20pt}%
   {\parindent 0pt \raggedright
-    \normalfont\huge\bfseries
+    \normalfont\Huge\bfseries
     #1\par\nobreak
     \vspace{12pt}%
   }%
@@ -226,17 +231,19 @@ $endif$
 \makeatother
 
 % =================================================
-% Make top-level "SECTION I ..." headings bigger/bolder than chapters
+% Section / subsection styling (chapters should remain the top)
 % =================================================
+% Your previous template made \section bigger than \chapter,
+% which breaks the reader's mental model.
 \makeatletter
 \renewcommand\section{\@startsection{section}{1}{\z@}%
-  {-3.5ex \@plus -1ex \@minus -.2ex}%
-  {2.3ex \@plus .2ex}%
-  {\normalfont\Huge\bfseries}}
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-  {-3.25ex\@plus -1ex \@minus -.2ex}%
-  {1.5ex \@plus .2ex}%
+  {-3.0ex \@plus -1ex \@minus -.2ex}%
+  {1.4ex \@plus .2ex}%
   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-2.5ex\@plus -1ex \@minus -.2ex}%
+  {1.0ex \@plus .2ex}%
+  {\normalfont\large\bfseries}}
 \makeatother
 
 % =================================================
@@ -248,17 +255,17 @@ $endif$
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftchappagefont}{\bfseries}
 \setlength{\cftchapindent}{0pt}
-\setlength{\cftchapnumwidth}{2.5em}
+\setlength{\cftchapnumwidth}{3.0em}
 
-\renewcommand{\cftsecfont}{\Large\bfseries}
-\renewcommand{\cftsecpagefont}{\Large\bfseries}
-\setlength{\cftsecindent}{0pt}
-\setlength{\cftsecnumwidth}{3.0em}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\setlength{\cftsecindent}{1.8em}
+\setlength{\cftsecnumwidth}{3.6em}
 
 \renewcommand{\cftsubsecfont}{\normalfont}
 \renewcommand{\cftsubsecpagefont}{\normalfont}
-\setlength{\cftsubsecindent}{0pt}
-\setlength{\cftsubsecnumwidth}{3.0em}
+\setlength{\cftsubsecindent}{3.6em}
+\setlength{\cftsubsecnumwidth}{4.2em}
 
 % =================================================
 % Document starts here
@@ -269,9 +276,6 @@ $endif$
 \pagestyle{empty}
 \pagenumbering{gobble}
 
-% -------------------------------------------------
-% Front cover (full-bleed)
-% -------------------------------------------------
 % -------------------------------------------------
 % Front cover (centred, aspect-safe)
 % -------------------------------------------------
@@ -293,7 +297,6 @@ $if(cover_front)$
 \clearpage
 \ClearShipoutPictureBG
 $endif$
-
 
 % -------------------------------------------------
 % Title page
@@ -329,16 +332,12 @@ $endif$
 % -------------------------------------------------
 % Body
 % -------------------------------------------------
-% Expect \frontmatter / \tableofcontents / \mainmatter
-% to be injected via your control/section files.
+% Structure is injected via control files produced by the split:
+% - _front_control.md contains \frontmatter
+% - 03_toc/00_section.md contains \cleardoublepage \tableofcontents \cleardoublepage
+% - 04_mainmatter/00_section.md contains \mainmatter
 $body$
 
-% -------------------------------------------------
-% Back cover (full-bleed)
-% -------------------------------------------------
-% -------------------------------------------------
-% Back cover (full-bleed, isolated)
-% -------------------------------------------------
 % -------------------------------------------------
 % Back cover (centred, aspect-safe)
 % -------------------------------------------------
@@ -360,7 +359,5 @@ $if(cover_back)$
 \clearpage
 \ClearShipoutPictureBG
 $endif$
-
-
 
 \end{document}
