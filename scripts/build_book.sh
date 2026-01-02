@@ -121,7 +121,7 @@ log "Flattening media for Pandoc"
 rm -rf "$FLATTENED_MEDIA"
 mkdir -p "$MEDIA_OUT"
 
-declare -A SEEN
+declare -A SEEN=()
 
 while IFS= read -r -d '' media_dir; do
   while IFS= read -r -d '' file; do
