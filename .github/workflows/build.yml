@@ -69,6 +69,18 @@ jobs:
             libayatana-appindicator3-1 \
             xdg-utils \
             wget
+            
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            pandoc \
+            texlive \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-xetex \
+            lmodern
 
       - name: Set up Node
         uses: actions/setup-node@v4
