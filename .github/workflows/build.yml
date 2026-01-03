@@ -137,13 +137,12 @@ jobs:
       # 📘 Firmitas book build
       # ────────────────────────────────────────────────
       - name: Build Firmitas book (PDF + EPUB)
-        working-directory: docs/ways-of-working
         run: |
-          chmod +x ../../scripts/build_book.sh
+          chmod +x scripts/build_book.sh
           # explicitly run with bash so associative arrays work
-          bash ../../scripts/build_book.sh \
-            --root . \
-            --dist ../dist \
+          bash scripts/build_book.sh \
+            --root docs/ways-of-working \
+            --dist docs/ways-of-working/dist \
             --pdf cornerstone.pdf \
             --epub cornerstone.epub
 
