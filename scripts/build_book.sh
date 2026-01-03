@@ -123,9 +123,19 @@ for section in "$ROOT"/[0-9][0-9]_*; do
   if [ -d "$chapters" ]; then
     while IFS= read -r -d '' file; do
       INPUT_FILES+=("$file")
-    done < <(find "$chapters" -type f -name '*.md' | sort -z)
+    done < <(find "$chapters" -type f -name '*.md' -print0 | sort -z)
   fi
 done
+
+dbg "Pandoc input files:"
+for f in "${INPUT_FILES[@]}"; do
+  dbg "  $f"
+  [[ -f "$f" ]] || {
+    echo "[ERR ] Input file does not exist: $f"
+    exit 1
+  }
+done
+
 
 ok "Collected ${#INPUT_FILES[@]} Markdown files"
 
