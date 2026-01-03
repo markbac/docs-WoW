@@ -141,7 +141,7 @@ jobs:
           chmod +x scripts/build_book.sh
           # explicitly run with bash so associative arrays work
           bash scripts/build_book.sh \
-            --root docs/ways-of-working/docs \
+            --root docs/ways-of-working/firmitas \
             --dist docs/ways-of-working/dist \
             --pdf Firmitas.pdf \
             --debug \
