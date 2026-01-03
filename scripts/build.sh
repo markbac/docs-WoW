@@ -90,7 +90,7 @@ ROOT_DIR="$(pwd)"
 SCRIPTS_DIR="$(cd ../../scripts && pwd)"
 INPUT_MD="${ROOT_DIR}/Firmitas_Framework.md"
 
-SPLIT_DIR="${ROOT_DIR}/split"
+SPLIT_DIR="${ROOT_DIR}/firmitas"
 DIAG_DIR="${ROOT_DIR}/diag"
 DIST_DIR="${ROOT_DIR}/dist"
 
