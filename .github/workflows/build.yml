@@ -123,15 +123,15 @@ jobs:
         with:
           path: site
 
-      - name: Build MkDocs PDFs
-        env:
-          ENABLE_PDF_EXPORT: "1"
-          PUPPETEER_NO_SANDBOX: false
-        run: |
-          python3 scripts/mkdocs_pdf_build.py \
-            --src mkdocs.yml \
-            --keep-site \
-            --max-image-height 1100
+      #- name: Build MkDocs PDFs
+      #  env:
+      #    ENABLE_PDF_EXPORT: "1"
+      #    PUPPETEER_NO_SANDBOX: false
+      #  run: |
+      #    python3 scripts/mkdocs_pdf_build.py \
+      #      --src mkdocs.yml \
+      #      --keep-site \
+      #      --max-image-height 1100
 
       # ────────────────────────────────────────────────
       # 📘 Firmitas book build
@@ -139,8 +139,13 @@ jobs:
       - name: Build Firmitas book (PDF + EPUB)
         working-directory: docs/ways-of-working
         run: |
-          chmod +x ../../scripts/build.sh
-          ../../scripts/build.sh
+          chmod +x ../../scripts/build_book.sh
+          # explicitly run with bash so associative arrays work
+          bash ../../scripts/build_book.sh \
+            --root . \
+            --dist ../dist \
+            --pdf cornerstone.pdf \
+            --epub cornerstone.epub
 
       - name: Verify book outputs
         run: |
