@@ -80,7 +80,7 @@ fi
 # Banner
 # ------------------------------------------------------------
 
-log_info "== Cornerstone build started =="
+log_info "== Firmitas build started =="
 
 # ------------------------------------------------------------
 # Paths
