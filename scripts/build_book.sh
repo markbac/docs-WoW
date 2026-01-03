@@ -62,6 +62,26 @@ if [ -n "$TEMPLATE" ]; then
   TEMPLATE="$(cd "$(dirname "$TEMPLATE")" && pwd)/$(basename "$TEMPLATE")"
 fi
 
+# ------------------------------------------------------------
+# Toolchain checks
+# ------------------------------------------------------------
+
+require_cmd() {
+  command -v "$1" >/dev/null 2>&1 || {
+    echo "[ERROR] Required tool not found: $1" >&2
+    exit 127
+  }
+}
+
+echo "[INFO] Checking build toolchain..."
+
+require_cmd pandoc
+require_cmd pdflatex
+
+echo "[OK ] Pandoc version: $(pandoc --version | head -n1)"
+echo "[OK ] LaTeX version : $(pdflatex --version | head -n1)"
+
+
 # =================================================
 # Traceability
 # =================================================
