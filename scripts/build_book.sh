@@ -172,8 +172,8 @@ ok "Flattened ${#SEEN[@]} media files"
 # Copy cover images
 # =================================================
 
-FRONT_COVER_SRC="$ROOT/../front.png"
-BACK_COVER_SRC="$ROOT/../back.png"
+FRONT_COVER_SRC="$ROOT/front.png"
+BACK_COVER_SRC="$ROOT/back.png"
 
 COVER_FRONT=""
 COVER_BACK=""
