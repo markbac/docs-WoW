@@ -221,6 +221,8 @@ if ($covers.Back) {
 $PandocCommon = @(
     "--from", "markdown+yaml_metadata_block",
     "--lua-filter=scripts\chapter_mapping.lua",
+    "--metadata", "fontsize=10pt",
+    "--metadata", "linestretch=1.15",
     "--metadata", "build_date=$BuildDate",
     "--metadata", "git_commit=$GitHash",
     "--metadata", "git_dirty=$GitDirty",
