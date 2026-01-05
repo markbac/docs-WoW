@@ -163,6 +163,8 @@ jobs:
           path: |
             docs/ways-of-working/dist/firmitas_*.pdf
             docs/ways-of-working/dist/firmitas_*.epub
+            docs/ways-of-working/firmitas/front.png
+            docs/ways-of-working/firmitas/back.png
           if-no-files-found: error
 
       # -------------------------------------------------
@@ -177,8 +179,10 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            docs/ways-of-working/dist/firmitas_${{ github.ref_name }}.pdf
-            docs/ways-of-working/dist/firmitas_${{ github.ref_name }}.epub
+            docs/ways-of-working/dist/firmitas_*.pdf
+            docs/ways-of-working/dist/firmitas_*.epub
+            docs/ways-of-working/firmitas/front.png
+            docs/ways-of-working/firmitas/back.png
 
   # -------------------------------------------------
   # Pages deployment
