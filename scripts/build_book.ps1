@@ -16,6 +16,8 @@ param (
     [switch]$DebugMode
 )
 
+$ErrorActionPreference = "Stop"
+
 # =================================================
 # Logging helpers
 # =================================================
@@ -40,34 +42,27 @@ function Copy-CoverImages {
         [string] $MediaDir
     )
 
-    $FrontCoverSrc = Join-Path $Root "\front.png"
-    $BackCoverSrc  = Join-Path $Root "\back.png"
+    $FrontCoverSrc = Join-Path $Root "front.png"
+    $BackCoverSrc  = Join-Path $Root "back.png"
 
-    if (-not (Test-Path $MediaDir)) {
-        throw "Media directory not found: $MediaDir"
-    }
-
-    $result = @{
-        Front = $null
-        Back  = $null
-    }
+    $result = @{ Front = $null; Back = $null }
 
     if (Test-Path $FrontCoverSrc) {
         $dst = Join-Path $MediaDir "front.png"
         Copy-Item -Force $FrontCoverSrc $dst
-        Ok "Copied front cover to $dst"
+        Ok "Copied front cover"
         $result.Front = $dst
     } else {
-        Warn "Front cover not found: $FrontCoverSrc"
+        Warn "Front cover not found"
     }
 
     if (Test-Path $BackCoverSrc) {
         $dst = Join-Path $MediaDir "back.png"
         Copy-Item -Force $BackCoverSrc $dst
-        Ok "Copied back cover to $dst"
+        Ok "Copied back cover"
         $result.Back = $dst
     } else {
-        Warn "Back cover not found: $BackCoverSrc"
+        Warn "Back cover not found"
     }
 
     return $result
@@ -113,82 +108,76 @@ function Flatten-PandocMedia {
 # =================================================
 # Resolve paths
 # =================================================
-if (-not (Test-Path $Root)) { throw "Root directory not found: $Root" }
 $Root = (Resolve-Path $Root).Path
-
 if (-not (Test-Path $Dist)) {
     New-Item -ItemType Directory -Path $Dist | Out-Null
 }
 $Dist = (Resolve-Path $Dist).Path
 
 if ($Template) {
-    if (-not (Test-Path $Template)) { throw "Template not found: $Template" }
     $Template = (Resolve-Path $Template).Path
 }
 
 # =================================================
 # Traceability
 # =================================================
-$GitHash = (git rev-parse --short HEAD 2>$null)
-if (-not $GitHash) { $GitHash = "N/A" }
-
+$GitHash = (git rev-parse --short HEAD 2>$null) ?? "N/A"
 $DirtyCount = (git status --porcelain 2>$null | Measure-Object).Count
 $GitDirty = if ($DirtyCount -gt 0) { "Dirty" } else { "Clean" }
-
 $BuildDate = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'")
 
 Log "Building Firmitas"
 Dbg "Git commit : $GitHash ($GitDirty)"
 Dbg "Build date : $BuildDate"
-Dbg "Root       : $Root"
-Dbg "Dist       : $Dist"
 
 # =================================================
-# Collect Markdown files (new structure)
+# Collect Markdown files
 # =================================================
-$InputFiles = @()
+function Collect-MarkdownFiles {
+    param (
+        [bool] $IncludeToc
+    )
 
-# Front matter (must be first)
-$FrontMatter = Join-Path $Root "_front_matter.md"
-if (-not (Test-Path $FrontMatter)) {
-    throw "Missing _front_matter.md in $Root"
-}
-$InputFiles += $FrontMatter
+    $files = @()
 
-# Front control (optional)
-$FrontControl = Join-Path $Root "_front_control.md"
-if (Test-Path $FrontControl) {
-    $InputFiles += $FrontControl
-}
-
-# Sections
-Get-ChildItem $Root -Directory |
-    Where-Object { $_.Name -match '^\d{2}_' } |
-    Sort-Object Name |
-    ForEach-Object {
-
-        # Section intro
-        $sectionIntro = Join-Path $_.FullName "00_section.md"
-        if (Test-Path $sectionIntro) {
-            $InputFiles += $sectionIntro
-        }
-
-        # Chapters (new location)
-        $chaptersDir = Join-Path $_.FullName "chapters"
-        if (Test-Path $chaptersDir) {
-            Get-ChildItem $chaptersDir -File -Filter "*.md" |
-                Sort-Object Name |
-                ForEach-Object {
-                    $InputFiles += $_.FullName
-                }
-        }
+    $files += (Join-Path $Root "_front_matter.md")
+    if (Test-Path (Join-Path $Root "_front_control.md")) {
+        $files += (Join-Path $Root "_front_control.md")
     }
 
-Ok "Collected $($InputFiles.Count) Markdown files"
+    Get-ChildItem $Root -Directory |
+        Where-Object { $_.Name -match '^\d{2}_' } |
+        Sort-Object Name |
+        ForEach-Object {
 
+            $isToc = $_.Name -like "03_toc*"
+            $intro = Join-Path $_.FullName "00_section.md"
+
+            if ($isToc -and -not $IncludeToc) {
+                Dbg "Skipping ToC section"
+            } elseif (Test-Path $intro) {
+                $files += $intro
+            }
+
+            $chapters = Join-Path $_.FullName "chapters"
+            if (Test-Path $chapters) {
+                Get-ChildItem $chapters -File -Filter "*.md" |
+                    Sort-Object Name |
+                    ForEach-Object { $files += $_.FullName }
+            }
+        }
+
+    return $files
+}
+
+$InputWithToc    = Collect-MarkdownFiles -IncludeToc $true
+$InputWithoutToc = Collect-MarkdownFiles -IncludeToc $false
+
+Ok "Collected markdown (with ToC): $($InputWithToc.Count)"
+Ok "Collected markdown (no ToC) : $($InputWithoutToc.Count)"
 
 # =================================================
-# Media preparation
+# Media prep
 # =================================================
 $FlattenedMedia = Join-Path $Dist "_pandoc_media"
 Flatten-PandocMedia -Root $Root -OutDir $FlattenedMedia
@@ -197,26 +186,7 @@ $MediaDir = Join-Path $FlattenedMedia "media"
 $covers = Copy-CoverImages -Root $Root -MediaDir $MediaDir
 
 # =================================================
-# Cover metadata (safe keys)
-# =================================================
-$CoverMeta = @()
-
-if ($covers.Front) {
-    $frontTexPath = ($covers.Front -replace '\\', '/')
-    $CoverMeta += "--metadata"
-    $CoverMeta += "cover_front=$frontTexPath"
-}
-
-if ($covers.Back) {
-    $backTexPath = ($covers.Back -replace '\\', '/')
-    $CoverMeta += "--metadata"
-    $CoverMeta += "cover_back=$backTexPath"
-}
-
-
-
-# =================================================
-# Common Pandoc arguments
+# Pandoc arguments
 # =================================================
 $PandocCommon = @(
     "--from", "markdown+yaml_metadata_block",
@@ -229,64 +199,63 @@ $PandocCommon = @(
     "--metadata", "subtitle=",
     "--resource-path=$FlattenedMedia",
     "--section-divs",
-    "--standalone",
-    "--metadata=link-citations=true"
+    "--standalone"
 )
-
 
 $PandocPdfOnly = @(
     "--top-level-division=chapter",
     "--pdf-engine=xelatex"
 )
 
+$CoverMeta = @()
+if ($covers.Front) { $CoverMeta += "--metadata"; $CoverMeta += "cover_front=$($covers.Front -replace '\\','/')" }
+if ($covers.Back)  { $CoverMeta += "--metadata"; $CoverMeta += "cover_back=$($covers.Back -replace '\\','/')" }
+
 # =================================================
-# PDF
+# PDF with ToC
 # =================================================
-Log "Generating PDF"
+Log "Generating PDF (with ToC)"
 
-$pandocPdf = @()
-$pandocPdf += $InputFiles
-$pandocPdf += $PandocCommon
-$pandocPdf += $PandocPdfOnly
-$pandocPdf += $CoverMeta
+pandoc `
+    $InputWithToc `
+    $PandocCommon `
+    $PandocPdfOnly `
+    $CoverMeta `
+    ${Template:+ "--template=$Template"} `
+    -o (Join-Path $Dist $Pdf)
 
-if ($Template) {
-    $pandocPdf += "--template=$Template"
-}
+Ok "PDF with ToC written"
 
-$pandocPdf += "-o"
-$pandocPdf += (Join-Path $Dist $Pdf)
+# =================================================
+# PDF without ToC
+# =================================================
+$PdfNoToc = [System.IO.Path]::GetFileNameWithoutExtension($Pdf) + "-notoc.pdf"
 
-pandoc @pandocPdf
-if ($LASTEXITCODE -ne 0) {
-    throw "Pandoc PDF build failed"
-}
+Log "Generating PDF (without ToC)"
 
-Ok "PDF written to $(Join-Path $Dist $Pdf)"
+pandoc `
+    $InputWithoutToc `
+    $PandocCommon `
+    $PandocPdfOnly `
+    $CoverMeta `
+    ${Template:+ "--template=$Template"} `
+    -o (Join-Path $Dist $PdfNoToc)
+
+Ok "PDF without ToC written"
 
 # =================================================
 # EPUB
 # =================================================
 Log "Generating EPUB"
 
-$pandocEpub = @()
-$pandocEpub += $InputFiles
-$pandocEpub += $PandocCommon
-$pandocEpub += "--toc"
-$pandocEpub += "--toc-depth=2"
+pandoc `
+    $InputWithToc `
+    $PandocCommon `
+    --toc `
+    --toc-depth=2 `
+    ${covers.Front:+ "--epub-cover-image=$($covers.Front)"} `
+    -o (Join-Path $Dist $Epub)
 
-if ($covers.Front) {
-    $pandocEpub += "--epub-cover-image=$($covers.Front)"
-}
-
-$pandocEpub += "-o"
-$pandocEpub += (Join-Path $Dist $Epub)
-
-pandoc @pandocEpub
-if ($LASTEXITCODE -ne 0) {
-    throw "Pandoc EPUB build failed"
-}
-
-Ok "EPUB written to $(Join-Path $Dist $Epub)"
+Ok "EPUB written"
 
 Log "Build complete"
