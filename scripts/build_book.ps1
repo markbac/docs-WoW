@@ -209,7 +209,7 @@ $CoverMeta = @(
 # =================================================
 $PandocCommon = @(
     "--from", "markdown+yaml_metadata_block",
-    "--lua-filter=..\..\scripts\chapter_mapping.lua",
+    "--lua-filter=scripts\chapter_mapping.lua",
     "--metadata", "build_date=$BuildDate",
     "--metadata", "git_commit=$GitHash",
     "--metadata", "git_dirty=$GitDirty",
