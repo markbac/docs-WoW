@@ -4,10 +4,10 @@
 #
 # Shell equivalent of build_book.ps1
 #
-# Produces:
-# - PDF with ToC (normal build)
-# - PDF without ToC (same inputs, minus 03_toc/00_section.md)
-# - EPUB (unchanged)
+# Outputs:
+# - PDF with covers
+# - PDF without covers
+# - EPUB
 #
 
 set -euo pipefail
@@ -47,10 +47,10 @@ done
 # Logging helpers
 # =================================================
 
-log()  { echo "[INFO]  $*" ; }
-ok()   { echo "[ OK ]  $*" ; }
-warn() { echo "[WARN]  $*" ; }
-dbg()  { $DEBUG && echo "[DBG ]  $*" ; }
+log()  { echo "[INFO]  $*"; }
+ok()   { echo "[ OK ]  $*"; }
+warn() { echo "[WARN]  $*"; }
+dbg()  { $DEBUG && echo "[DBG ]  $*"; }
 
 # =================================================
 # Resolve paths
@@ -78,13 +78,13 @@ require_cmd() {
   }
 }
 
-echo "[INFO] Checking build toolchain..."
+log "Checking build toolchain..."
 
 require_cmd pandoc
 require_cmd pdflatex
 
-echo "[OK ] Pandoc version: $(pandoc --version | head -n1)"
-echo "[OK ] LaTeX version : $(pdflatex --version | head -n1)"
+ok "Pandoc version: $(pandoc --version | head -n1)"
+ok "LaTeX version : $(pdflatex --version | head -n1)"
 
 # =================================================
 # Traceability
@@ -131,30 +131,7 @@ for section in "$ROOT"/[0-9][0-9]_*; do
   fi
 done
 
-dbg "Pandoc input files:"
-for f in "${INPUT_FILES[@]}"; do
-  dbg "  $f"
-  [[ -f "$f" ]] || {
-    echo "[ERR ] Input file does not exist: $f"
-    exit 1
-  }
-done
-
 ok "Collected ${#INPUT_FILES[@]} Markdown files"
-
-# Build a second list that is identical except it excludes the ToC control file
-TOC_FILE="$ROOT/03_toc/00_section.md"
-INPUT_FILES_NO_TOC=()
-
-for f in "${INPUT_FILES[@]}"; do
-  if [ "$f" = "$TOC_FILE" ]; then
-    dbg "Excluding ToC file for no-ToC PDF: $f"
-    continue
-  fi
-  INPUT_FILES_NO_TOC+=("$f")
-done
-
-ok "Collected ${#INPUT_FILES_NO_TOC[@]} Markdown files (no ToC)"
 
 # =================================================
 # Flatten media for Pandoc
@@ -236,21 +213,14 @@ PANDOC_COMMON=(
 
 COVER_META=()
 
-if [ -n "$COVER_FRONT" ]; then
-  COVER_FRONT_TEX="${COVER_FRONT//\\//}"
-  COVER_META+=(--metadata "cover_front=$COVER_FRONT_TEX")
-fi
-
-if [ -n "$COVER_BACK" ]; then
-  COVER_BACK_TEX="${COVER_BACK//\\//}"
-  COVER_META+=(--metadata "cover_back=$COVER_BACK_TEX")
-fi
+[ -n "$COVER_FRONT" ] && COVER_META+=(--metadata "cover_front=${COVER_FRONT//\\//}")
+[ -n "$COVER_BACK"  ] && COVER_META+=(--metadata "cover_back=${COVER_BACK//\\//}")
 
 # =================================================
-# PDF (with ToC)
+# PDF (with covers)
 # =================================================
 
-log "Generating PDF (with ToC)"
+log "Generating PDF (with covers)"
 
 pandoc \
   "${INPUT_FILES[@]}" \
@@ -264,23 +234,22 @@ pandoc \
 ok "PDF written to $DIST/$PDF"
 
 # =================================================
-# PDF (without ToC)
+# PDF (no covers)
 # =================================================
 
-PDF_NO_TOC="${PDF%.pdf}-notoc.pdf"
+PDF_NO_COVER="${PDF%.pdf}-nocover.pdf"
 
-log "Generating PDF (without ToC)"
+log "Generating PDF (no covers)"
 
 pandoc \
-  "${INPUT_FILES_NO_TOC[@]}" \
+  "${INPUT_FILES[@]}" \
   "${PANDOC_COMMON[@]}" \
   --top-level-division=chapter \
   --pdf-engine=xelatex \
-  "${COVER_META[@]}" \
   ${TEMPLATE:+--template="$TEMPLATE"} \
-  -o "$DIST/$PDF_NO_TOC"
+  -o "$DIST/$PDF_NO_COVER"
 
-ok "PDF (no ToC) written to $DIST/$PDF_NO_TOC"
+ok "PDF (no covers) written to $DIST/$PDF_NO_COVER"
 
 # =================================================
 # EPUB
