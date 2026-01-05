@@ -283,21 +283,21 @@ $endif$
 $if(cover_front)$
 \clearpage
 \thispagestyle{empty}
+
 \AddToShipoutPictureBG*{%
-  \AtPageCenter{%
-    \makebox(0,0){%
-      \includegraphics[
-        width=\paperwidth,
-        height=\paperheight,
-        keepaspectratio
-      ]{$cover_front$}%
-    }%
+  \AtPageLowerLeft{%
+    \includegraphics[
+      width=\paperwidth,
+      height=\paperheight
+    ]{$cover_front$}%
   }%
 }
-\mbox{}
-\clearpage
+
+\null
+\newpage
 \ClearShipoutPictureBG
 $endif$
+
 
 % -------------------------------------------------
 % Title page
@@ -345,20 +345,20 @@ $body$
 $if(cover_back)$
 \clearpage
 \thispagestyle{empty}
+
 \AddToShipoutPictureBG*{%
-  \AtPageCenter{%
-    \makebox(0,0){%
-      \includegraphics[
-        width=\paperwidth,
-        height=\paperheight,
-        keepaspectratio
-      ]{$cover_back$}%
-    }%
+  \AtPageLowerLeft{%
+    \includegraphics[
+      width=\paperwidth,
+      height=\paperheight
+    ]{$cover_back$}%
   }%
 }
-\mbox{}
-\clearpage
+
+\null
+\newpage
 \ClearShipoutPictureBG
 $endif$
+
 
 \end{document}
