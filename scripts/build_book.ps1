@@ -40,8 +40,8 @@ function Copy-CoverImages {
         [string] $MediaDir
     )
 
-    $FrontCoverSrc = Join-Path $Root "..\front.png"
-    $BackCoverSrc  = Join-Path $Root "..\back.png"
+    $FrontCoverSrc = Join-Path $Root "\front.png"
+    $BackCoverSrc  = Join-Path $Root "\back.png"
 
     if (-not (Test-Path $MediaDir)) {
         throw "Media directory not found: $MediaDir"
