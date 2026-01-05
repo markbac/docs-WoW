@@ -45,10 +45,11 @@ done
 # Logging helpers
 # =================================================
 
-log()  { echo "[INFO]  $*"; }
-ok()   { echo "[ OK ]  $*"; }
-warn() { echo "[WARN]  $*"; }
-dbg()  { $DEBUG && echo "[DBG ]  $*"; }
+log()  { echo "[INFO]  $*" >&2; }
+ok()   { echo "[ OK ]  $*" >&2; }
+warn() { echo "[WARN]  $*" >&2; }
+dbg()  { $DEBUG && echo "[DBG ]  $*" >&2; }
+
 
 # =================================================
 # Resolve paths
