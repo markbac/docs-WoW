@@ -2,10 +2,12 @@
 #
 # buildbook.sh
 #
-# Build Firmitas:
-# - PDF with ToC (content-driven via 03_toc/00_section.md)
-# - PDF without ToC
-# - EPUB (Pandoc-generated ToC)
+# Shell equivalent of build_book.ps1
+#
+# Produces:
+# - PDF with ToC (normal build)
+# - PDF without ToC (same inputs, minus 03_toc/00_section.md)
+# - EPUB (unchanged)
 #
 
 set -euo pipefail
@@ -45,11 +47,10 @@ done
 # Logging helpers
 # =================================================
 
-log()  { echo "[INFO]  $*" >&2; }
-ok()   { echo "[ OK ]  $*" >&2; }
-warn() { echo "[WARN]  $*" >&2; }
-dbg()  { $DEBUG && echo "[DBG ]  $*" >&2; }
-
+log()  { echo "[INFO]  $*" ; }
+ok()   { echo "[ OK ]  $*" ; }
+warn() { echo "[WARN]  $*" ; }
+dbg()  { $DEBUG && echo "[DBG ]  $*" ; }
 
 # =================================================
 # Resolve paths
@@ -66,9 +67,9 @@ if [ -n "$TEMPLATE" ]; then
   TEMPLATE="$(cd "$(dirname "$TEMPLATE")" && pwd)/$(basename "$TEMPLATE")"
 fi
 
-# =================================================
+# ------------------------------------------------------------
 # Toolchain checks
-# =================================================
+# ------------------------------------------------------------
 
 require_cmd() {
   command -v "$1" >/dev/null 2>&1 || {
@@ -77,12 +78,13 @@ require_cmd() {
   }
 }
 
-log "Checking build toolchain..."
+echo "[INFO] Checking build toolchain..."
+
 require_cmd pandoc
 require_cmd pdflatex
 
-ok "Pandoc version: $(pandoc --version | head -n1)"
-ok "LaTeX version : $(pdflatex --version | head -n1)"
+echo "[OK ] Pandoc version: $(pandoc --version | head -n1)"
+echo "[OK ] LaTeX version : $(pdflatex --version | head -n1)"
 
 # =================================================
 # Traceability
@@ -99,59 +101,60 @@ BUILD_DATE="$(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 log "Building Firmitas"
 dbg "Git commit : $GIT_HASH ($GIT_DIRTY)"
 dbg "Build date : $BUILD_DATE"
+dbg "Root       : $ROOT"
+dbg "Dist       : $DIST"
 
 # =================================================
 # Collect Markdown files
 # =================================================
 
-collect_markdown() {
-  local include_toc="$1"
-  local files=()
+INPUT_FILES=()
 
-  local FRONT_MATTER="$ROOT/_front_matter.md"
-  [ ! -f "$FRONT_MATTER" ] && {
-    echo "[ERR ] Missing _front_matter.md in $ROOT"
+FRONT_MATTER="$ROOT/_front_matter.md"
+[ ! -f "$FRONT_MATTER" ] && echo "[ERR ] Missing _front_matter.md in $ROOT" && exit 1
+INPUT_FILES+=("$FRONT_MATTER")
+
+FRONT_CONTROL="$ROOT/_front_control.md"
+[ -f "$FRONT_CONTROL" ] && INPUT_FILES+=("$FRONT_CONTROL")
+
+for section in "$ROOT"/[0-9][0-9]_*; do
+  [ ! -d "$section" ] && continue
+
+  intro="$section/00_section.md"
+  [ -f "$intro" ] && INPUT_FILES+=("$intro")
+
+  chapters="$section/chapters"
+  if [ -d "$chapters" ]; then
+    while IFS= read -r -d '' file; do
+      INPUT_FILES+=("$file")
+    done < <(find "$chapters" -type f -name '*.md' -print0 | sort -z)
+  fi
+done
+
+dbg "Pandoc input files:"
+for f in "${INPUT_FILES[@]}"; do
+  dbg "  $f"
+  [[ -f "$f" ]] || {
+    echo "[ERR ] Input file does not exist: $f"
     exit 1
   }
-  files+=("$FRONT_MATTER")
+done
 
-  local FRONT_CONTROL="$ROOT/_front_control.md"
-  [ -f "$FRONT_CONTROL" ] && files+=("$FRONT_CONTROL")
+ok "Collected ${#INPUT_FILES[@]} Markdown files"
 
-  for section in "$ROOT"/[0-9][0-9]_*; do
-    [ ! -d "$section" ] && continue
+# Build a second list that is identical except it excludes the ToC control file
+TOC_FILE="$ROOT/03_toc/00_section.md"
+INPUT_FILES_NO_TOC=()
 
-    local name
-    name="$(basename "$section")"
-    local intro="$section/00_section.md"
+for f in "${INPUT_FILES[@]}"; do
+  if [ "$f" = "$TOC_FILE" ]; then
+    dbg "Excluding ToC file for no-ToC PDF: $f"
+    continue
+  fi
+  INPUT_FILES_NO_TOC+=("$f")
+done
 
-    if [[ "$name" == 03_toc* ]]; then
-      if $include_toc; then
-        [ -f "$intro" ] && files+=("$intro")
-        dbg "Including ToC section"
-      else
-        dbg "Skipping ToC section"
-      fi
-    else
-      [ -f "$intro" ] && files+=("$intro")
-    fi
-
-    local chapters="$section/chapters"
-    if [ -d "$chapters" ]; then
-      while IFS= read -r -d '' file; do
-        files+=("$file")
-      done < <(find "$chapters" -type f -name '*.md' -print0 | sort -z)
-    fi
-  done
-
-  printf '%s\n' "${files[@]}"
-}
-
-mapfile -t INPUT_WITH_TOC    < <(collect_markdown true)
-mapfile -t INPUT_WITHOUT_TOC < <(collect_markdown false)
-
-ok "Collected markdown (with ToC)   : ${#INPUT_WITH_TOC[@]}"
-ok "Collected markdown (without ToC): ${#INPUT_WITHOUT_TOC[@]}"
+ok "Collected ${#INPUT_FILES_NO_TOC[@]} Markdown files (no ToC)"
 
 # =================================================
 # Flatten media for Pandoc
@@ -186,23 +189,30 @@ ok "Flattened ${#SEEN[@]} media files"
 # Copy cover images
 # =================================================
 
+FRONT_COVER_SRC="$ROOT/front.png"
+BACK_COVER_SRC="$ROOT/back.png"
+
 COVER_FRONT=""
 COVER_BACK=""
 
-[ -f "$ROOT/front.png" ] && {
-  cp -f "$ROOT/front.png" "$MEDIA_OUT/front.png"
-  COVER_FRONT="$MEDIA_OUT/front.png"
+if [ -f "$FRONT_COVER_SRC" ]; then
+  cp -f "$FRONT_COVER_SRC" "$MEDIA_OUT/front.png"
   ok "Copied front cover"
-} || warn "Front cover not found"
+  COVER_FRONT="$MEDIA_OUT/front.png"
+else
+  warn "Front cover not found: $FRONT_COVER_SRC"
+fi
 
-[ -f "$ROOT/back.png" ] && {
-  cp -f "$ROOT/back.png" "$MEDIA_OUT/back.png"
-  COVER_BACK="$MEDIA_OUT/back.png"
+if [ -f "$BACK_COVER_SRC" ]; then
+  cp -f "$BACK_COVER_SRC" "$MEDIA_OUT/back.png"
   ok "Copied back cover"
-} || warn "Back cover not found"
+  COVER_BACK="$MEDIA_OUT/back.png"
+else
+  warn "Back cover not found: $BACK_COVER_SRC"
+fi
 
 # =================================================
-# Pandoc arguments
+# Common Pandoc args
 # =================================================
 
 PANDOC_COMMON=(
@@ -217,35 +227,44 @@ PANDOC_COMMON=(
   --resource-path="$FLATTENED_MEDIA"
   --section-divs
   --standalone
+  --metadata link-citations=true
 )
-
-PANDOC_PDF_ONLY=(
-  --top-level-division=chapter
-  --pdf-engine=xelatex
-)
-
-COVER_META=()
-[ -n "$COVER_FRONT" ] && COVER_META+=(--metadata "cover_front=${COVER_FRONT//\\//}")
-[ -n "$COVER_BACK"  ] && COVER_META+=(--metadata "cover_back=${COVER_BACK//\\//}")
 
 # =================================================
-# PDF with ToC
+# Cover metadata
+# =================================================
+
+COVER_META=()
+
+if [ -n "$COVER_FRONT" ]; then
+  COVER_FRONT_TEX="${COVER_FRONT//\\//}"
+  COVER_META+=(--metadata "cover_front=$COVER_FRONT_TEX")
+fi
+
+if [ -n "$COVER_BACK" ]; then
+  COVER_BACK_TEX="${COVER_BACK//\\//}"
+  COVER_META+=(--metadata "cover_back=$COVER_BACK_TEX")
+fi
+
+# =================================================
+# PDF (with ToC)
 # =================================================
 
 log "Generating PDF (with ToC)"
 
 pandoc \
-  "${INPUT_WITH_TOC[@]}" \
+  "${INPUT_FILES[@]}" \
   "${PANDOC_COMMON[@]}" \
-  "${PANDOC_PDF_ONLY[@]}" \
+  --top-level-division=chapter \
+  --pdf-engine=xelatex \
   "${COVER_META[@]}" \
   ${TEMPLATE:+--template="$TEMPLATE"} \
   -o "$DIST/$PDF"
 
-ok "PDF with ToC written to $DIST/$PDF"
+ok "PDF written to $DIST/$PDF"
 
 # =================================================
-# PDF without ToC
+# PDF (without ToC)
 # =================================================
 
 PDF_NO_TOC="${PDF%.pdf}-notoc.pdf"
@@ -253,14 +272,15 @@ PDF_NO_TOC="${PDF%.pdf}-notoc.pdf"
 log "Generating PDF (without ToC)"
 
 pandoc \
-  "${INPUT_WITHOUT_TOC[@]}" \
+  "${INPUT_FILES_NO_TOC[@]}" \
   "${PANDOC_COMMON[@]}" \
-  "${PANDOC_PDF_ONLY[@]}" \
+  --top-level-division=chapter \
+  --pdf-engine=xelatex \
   "${COVER_META[@]}" \
   ${TEMPLATE:+--template="$TEMPLATE"} \
   -o "$DIST/$PDF_NO_TOC"
 
-ok "PDF without ToC written to $DIST/$PDF_NO_TOC"
+ok "PDF (no ToC) written to $DIST/$PDF_NO_TOC"
 
 # =================================================
 # EPUB
@@ -272,7 +292,7 @@ EPUB_ARGS=()
 [ -n "$COVER_FRONT" ] && EPUB_ARGS+=(--epub-cover-image="$COVER_FRONT")
 
 pandoc \
-  "${INPUT_WITH_TOC[@]}" \
+  "${INPUT_FILES[@]}" \
   "${PANDOC_COMMON[@]}" \
   --toc \
   --toc-depth=2 \
