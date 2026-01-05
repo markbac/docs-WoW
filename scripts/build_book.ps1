@@ -137,7 +137,7 @@ $GitDirty = if ($DirtyCount -gt 0) { "Dirty" } else { "Clean" }
 
 $BuildDate = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'")
 
-Log "Building Cornerstone"
+Log "Building Firmitas"
 Dbg "Git commit : $GitHash ($GitDirty)"
 Dbg "Build date : $BuildDate"
 Dbg "Root       : $Root"
@@ -199,10 +199,21 @@ $covers = Copy-CoverImages -Root $Root -MediaDir $MediaDir
 # =================================================
 # Cover metadata (safe keys)
 # =================================================
-$CoverMeta = @(
-    "--metadata", "cover_front=front.png",
-    "--metadata", "cover_back=back.png"
-)
+$CoverMeta = @()
+
+if ($covers.Front) {
+    $frontTexPath = ($covers.Front -replace '\\', '/')
+    $CoverMeta += "--metadata"
+    $CoverMeta += "cover_front=$frontTexPath"
+}
+
+if ($covers.Back) {
+    $backTexPath = ($covers.Back -replace '\\', '/')
+    $CoverMeta += "--metadata"
+    $CoverMeta += "cover_back=$backTexPath"
+}
+
+
 
 # =================================================
 # Common Pandoc arguments
