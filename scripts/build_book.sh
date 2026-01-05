@@ -94,7 +94,7 @@ DIRTY_COUNT="$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
 
 BUILD_DATE="$(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 
-log "Building Cornerstone"
+log "Building Firmitas"
 dbg "Git commit : $GIT_HASH ($GIT_DIRTY)"
 dbg "Build date : $BUILD_DATE"
 dbg "Root       : $ROOT"
@@ -217,13 +217,25 @@ PANDOC_COMMON=(
 
 log "Generating PDF"
 
+COVER_META=()
+
+if [ -n "$COVER_FRONT" ]; then
+  COVER_FRONT_TEX="${COVER_FRONT//\\//}"
+  COVER_META+=(--metadata "cover_front=$COVER_FRONT_TEX")
+fi
+
+if [ -n "$COVER_BACK" ]; then
+  COVER_BACK_TEX="${COVER_BACK//\\//}"
+  COVER_META+=(--metadata "cover_back=$COVER_BACK_TEX")
+fi
+
+
 pandoc \
   "${INPUT_FILES[@]}" \
   "${PANDOC_COMMON[@]}" \
   --top-level-division=chapter \
   --pdf-engine=xelatex \
-  --metadata cover_front=front.png \
-  --metadata cover_back=back.png \
+  "${COVER_META[@]}" g \
   ${TEMPLATE:+--template="$TEMPLATE"} \
   -o "$DIST/$PDF"
 
