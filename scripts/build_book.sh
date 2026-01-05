@@ -201,6 +201,8 @@ fi
 PANDOC_COMMON=(
   --from markdown+yaml_metadata_block
   --lua-filter=scripts/chapter_mapping.lua
+  --metadata fontsize=10.5pt
+  --metadata linestretch=1.15
   --metadata "build_date=$BUILD_DATE"
   --metadata "git_commit=$GIT_HASH"
   --metadata "git_dirty=$GIT_DIRTY"
