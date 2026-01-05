@@ -61,15 +61,17 @@ You own:
 
 ```mermaid
 flowchart TD
-  A[Author opens PR] --> B{PR ready?}
-  B -- No --> B1[Draft PR\nEarly feedback only] --> C
-  B -- Yes --> C[CI runs\nlint/test/build/security]
-  C --> D{Checks green?}
-  D -- No --> D1[Fix failures\npush updates] --> C
-  D -- Yes --> E[Review requested\nincl. domain + code owners]
+  A[Author opens PR] --> B{PR ready}
+  B -- No --> B1[Draft PR for early feedback] --> C
+  B -- Yes --> C[CI runs checks]
+  C --> D{Checks green}
+  D -- No --> D1[Fix failures and update PR] --> C
+  D -- Yes --> E[Review requested]
   E --> F{Review outcome}
-  F -- Changes requested --> G[Author updates\nresponds to comments] --> C
-  F -- Approved --> H[Merge\n(squash/rebase as per repo)] --> I[Post-merge\nmonitor + follow-ups]
+  F -- Changes requested --> G[Author updates and responds] --> C
+  F -- Approved --> H[Merge PR]
+  H --> I[Post merge monitoring]
+
 ```
 
 ## PR standards
