@@ -235,7 +235,7 @@ pandoc \
   "${PANDOC_COMMON[@]}" \
   --top-level-division=chapter \
   --pdf-engine=xelatex \
-  "${COVER_META[@]}" g \
+  "${COVER_META[@]}" \
   ${TEMPLATE:+--template="$TEMPLATE"} \
   -o "$DIST/$PDF"
 
