@@ -216,11 +216,30 @@ COVER_META=()
 [ -n "$COVER_FRONT" ] && COVER_META+=(--metadata "cover_front=${COVER_FRONT//\\//}")
 [ -n "$COVER_BACK"  ] && COVER_META+=(--metadata "cover_back=${COVER_BACK//\\//}")
 
+dbg "COVER_FRONT = '$COVER_FRONT'"
+dbg "COVER_BACK  = '$COVER_BACK'"
+
+dbg "COVER_META entries:"
+for item in "${COVER_META[@]}"; do
+  dbg "  $item"
+done
+
 # =================================================
 # PDF (with covers)
 # =================================================
 
 log "Generating PDF (with covers)"
+if $DEBUG; then
+  echo "[DBG ] Pandoc command:"
+  printf '  %q\n' pandoc \
+    "${INPUT_FILES[@]}" \
+    "${PANDOC_COMMON[@]}" \
+    --top-level-division=chapter \
+    --pdf-engine=xelatex \
+    "${COVER_META[@]}" \
+    ${TEMPLATE:+--template="$TEMPLATE"} \
+    -o "$DIST/$PDF"
+fi
 
 pandoc \
   "${INPUT_FILES[@]}" \
