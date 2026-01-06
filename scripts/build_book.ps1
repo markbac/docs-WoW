@@ -109,6 +109,7 @@ function Flatten-PandocMedia {
 # Resolve paths
 # =================================================
 $Root = (Resolve-Path $Root).Path
+
 if (-not (Test-Path $Dist)) {
     New-Item -ItemType Directory -Path $Dist | Out-Null
 }
@@ -121,9 +122,19 @@ if ($Template) {
 # =================================================
 # Traceability
 # =================================================
-$GitHash = (git rev-parse --short HEAD 2>$null) ?? "N/A"
-$DirtyCount = (git status --porcelain 2>$null | Measure-Object).Count
-$GitDirty = if ($DirtyCount -gt 0) { "Dirty" } else { "Clean" }
+$GitHash = git rev-parse --short HEAD 2>$null
+if ([string]::IsNullOrWhiteSpace($GitHash)) {
+    $GitHash = "N/A"
+}
+
+$DirtyCount = 0
+try {
+    $DirtyCount = (git status --porcelain 2>$null | Measure-Object).Count
+} catch {
+    $DirtyCount = 0
+}
+
+$GitDirty  = if ($DirtyCount -gt 0) { "Dirty" } else { "Clean" }
 $BuildDate = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'")
 
 Log "Building Firmitas"
@@ -131,18 +142,16 @@ Dbg "Git commit : $GitHash ($GitDirty)"
 Dbg "Build date : $BuildDate"
 
 # =================================================
-# Collect Markdown files
+# Collect Markdown files (single content set)
 # =================================================
 function Collect-MarkdownFiles {
-    param (
-        [bool] $IncludeToc
-    )
-
     $files = @()
 
     $files += (Join-Path $Root "_front_matter.md")
-    if (Test-Path (Join-Path $Root "_front_control.md")) {
-        $files += (Join-Path $Root "_front_control.md")
+
+    $frontControl = Join-Path $Root "_front_control.md"
+    if (Test-Path $frontControl) {
+        $files += $frontControl
     }
 
     Get-ChildItem $Root -Directory |
@@ -150,12 +159,8 @@ function Collect-MarkdownFiles {
         Sort-Object Name |
         ForEach-Object {
 
-            $isToc = $_.Name -like "03_toc*"
             $intro = Join-Path $_.FullName "00_section.md"
-
-            if ($isToc -and -not $IncludeToc) {
-                Dbg "Skipping ToC section"
-            } elseif (Test-Path $intro) {
+            if (Test-Path $intro) {
                 $files += $intro
             }
 
@@ -170,11 +175,8 @@ function Collect-MarkdownFiles {
     return $files
 }
 
-$InputWithToc    = Collect-MarkdownFiles -IncludeToc $true
-$InputWithoutToc = Collect-MarkdownFiles -IncludeToc $false
-
-Ok "Collected markdown (with ToC): $($InputWithToc.Count)"
-Ok "Collected markdown (no ToC) : $($InputWithoutToc.Count)"
+$InputMarkdown = Collect-MarkdownFiles
+Ok "Collected markdown files: $($InputMarkdown.Count)"
 
 # =================================================
 # Media prep
@@ -183,7 +185,7 @@ $FlattenedMedia = Join-Path $Dist "_pandoc_media"
 Flatten-PandocMedia -Root $Root -OutDir $FlattenedMedia
 
 $MediaDir = Join-Path $FlattenedMedia "media"
-$covers = Copy-CoverImages -Root $Root -MediaDir $MediaDir
+$covers   = Copy-CoverImages -Root $Root -MediaDir $MediaDir
 
 # =================================================
 # Pandoc arguments
@@ -207,41 +209,56 @@ $PandocPdfOnly = @(
     "--pdf-engine=xelatex"
 )
 
+$TemplateArg = @()
+if ($Template) {
+    $TemplateArg += "--template=$Template"
+}
+
 $CoverMeta = @()
-if ($covers.Front) { $CoverMeta += "--metadata"; $CoverMeta += "cover_front=$($covers.Front -replace '\\','/')" }
-if ($covers.Back)  { $CoverMeta += "--metadata"; $CoverMeta += "cover_back=$($covers.Back -replace '\\','/')" }
+if ($covers.Front) {
+    $CoverMeta += "--metadata"
+    $CoverMeta += "cover_front=$($covers.Front -replace '\\','/')"
+}
+if ($covers.Back) {
+    $CoverMeta += "--metadata"
+    $CoverMeta += "cover_back=$($covers.Back -replace '\\','/')"
+}
+
+$EpubCoverArg = @()
+if ($covers.Front) {
+    $EpubCoverArg += "--epub-cover-image=$($covers.Front)"
+}
 
 # =================================================
-# PDF with ToC
+# PDF with covers
 # =================================================
-Log "Generating PDF (with ToC)"
+Log "Generating PDF (with covers)"
 
 pandoc `
-    $InputWithToc `
+    $InputMarkdown `
     $PandocCommon `
     $PandocPdfOnly `
     $CoverMeta `
-    ${Template:+ "--template=$Template"} `
+    $TemplateArg `
     -o (Join-Path $Dist $Pdf)
 
-Ok "PDF with ToC written"
+Ok "PDF with covers written"
 
 # =================================================
-# PDF without ToC
+# PDF without covers
 # =================================================
-$PdfNoToc = [System.IO.Path]::GetFileNameWithoutExtension($Pdf) + "-notoc.pdf"
+$PdfNoCovers = [System.IO.Path]::GetFileNameWithoutExtension($Pdf) + "-nocovers.pdf"
 
-Log "Generating PDF (without ToC)"
+Log "Generating PDF (no covers)"
 
 pandoc `
-    $InputWithoutToc `
+    $InputMarkdown `
     $PandocCommon `
     $PandocPdfOnly `
-    $CoverMeta `
-    ${Template:+ "--template=$Template"} `
-    -o (Join-Path $Dist $PdfNoToc)
+    $TemplateArg `
+    -o (Join-Path $Dist $PdfNoCovers)
 
-Ok "PDF without ToC written"
+Ok "PDF without covers written"
 
 # =================================================
 # EPUB
@@ -249,11 +266,11 @@ Ok "PDF without ToC written"
 Log "Generating EPUB"
 
 pandoc `
-    $InputWithToc `
+    $InputMarkdown `
     $PandocCommon `
     --toc `
     --toc-depth=2 `
-    ${covers.Front:+ "--epub-cover-image=$($covers.Front)"} `
+    $EpubCoverArg `
     -o (Join-Path $Dist $Epub)
 
 Ok "EPUB written"

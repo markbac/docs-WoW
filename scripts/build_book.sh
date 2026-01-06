@@ -211,10 +211,11 @@ PANDOC_COMMON=(
 # Cover metadata
 # =================================================
 
-COVER_META=()
+COVER_META=(
+  --metadata "cover_front=${COVER_FRONT//\\//}"
+  --metadata "cover_back=${COVER_BACK//\\//}"
+)
 
-[ -n "$COVER_FRONT" ] && COVER_META+=(--metadata "cover_front=${COVER_FRONT//\\//}")
-[ -n "$COVER_BACK"  ] && COVER_META+=(--metadata "cover_back=${COVER_BACK//\\//}")
 
 dbg "COVER_FRONT = '$COVER_FRONT'"
 dbg "COVER_BACK  = '$COVER_BACK'"
