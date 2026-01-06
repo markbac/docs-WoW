@@ -67,9 +67,9 @@ if [ -n "$TEMPLATE" ]; then
   TEMPLATE="$(cd "$(dirname "$TEMPLATE")" && pwd)/$(basename "$TEMPLATE")"
 fi
 
-# ------------------------------------------------------------
+# =================================================
 # Toolchain checks
-# ------------------------------------------------------------
+# =================================================
 
 require_cmd() {
   command -v "$1" >/dev/null 2>&1 || {
@@ -81,10 +81,10 @@ require_cmd() {
 log "Checking build toolchain..."
 
 require_cmd pandoc
-require_cmd pdflatex
+require_cmd xelatex
 
 ok "Pandoc version: $(pandoc --version | head -n1)"
-ok "LaTeX version : $(pdflatex --version | head -n1)"
+ok "LaTeX version : $(xelatex --version | head -n1)"
 
 # =================================================
 # Traceability
@@ -111,7 +111,7 @@ dbg "Dist       : $DIST"
 INPUT_FILES=()
 
 FRONT_MATTER="$ROOT/_front_matter.md"
-[ ! -f "$FRONT_MATTER" ] && echo "[ERR ] Missing _front_matter.md in $ROOT" && exit 1
+[ ! -f "$FRONT_MATTER" ] && echo "[ERR ] Missing _front_matter.md" && exit 1
 INPUT_FILES+=("$FRONT_MATTER")
 
 FRONT_CONTROL="$ROOT/_front_control.md"
@@ -166,30 +166,17 @@ ok "Flattened ${#SEEN[@]} media files"
 # Copy cover images
 # =================================================
 
-FRONT_COVER_SRC="$ROOT/front.png"
-BACK_COVER_SRC="$ROOT/back.png"
+COVER_FRONT="$MEDIA_OUT/front.png"
+COVER_BACK="$MEDIA_OUT/back.png"
 
-COVER_FRONT=""
-COVER_BACK=""
+[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$COVER_FRONT" || COVER_FRONT=""
+[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$COVER_BACK"  || COVER_BACK=""
 
-if [ -f "$FRONT_COVER_SRC" ]; then
-  cp -f "$FRONT_COVER_SRC" "$MEDIA_OUT/front.png"
-  ok "Copied front cover"
-  COVER_FRONT="$MEDIA_OUT/front.png"
-else
-  warn "Front cover not found: $FRONT_COVER_SRC"
-fi
-
-if [ -f "$BACK_COVER_SRC" ]; then
-  cp -f "$BACK_COVER_SRC" "$MEDIA_OUT/back.png"
-  ok "Copied back cover"
-  COVER_BACK="$MEDIA_OUT/back.png"
-else
-  warn "Back cover not found: $BACK_COVER_SRC"
-fi
+[ -n "$COVER_FRONT" ] && ok "Copied front cover" || warn "Front cover not found"
+[ -n "$COVER_BACK"  ] && ok "Copied back cover"  || warn "Back cover not found"
 
 # =================================================
-# Common Pandoc args
+# Pandoc argument arrays
 # =================================================
 
 PANDOC_COMMON=(
@@ -204,57 +191,42 @@ PANDOC_COMMON=(
   --resource-path="$FLATTENED_MEDIA"
   --section-divs
   --standalone
-  --metadata link-citations=true
 )
 
-# =================================================
-# Cover metadata
-# =================================================
+PANDOC_PDF=(
+  --top-level-division=chapter
+  --pdf-engine=xelatex
+)
+
+TEMPLATE_ARG=()
+[ -n "$TEMPLATE" ] && TEMPLATE_ARG+=(--template="$TEMPLATE")
 
 COVER_META=(
-  --metadata "cover_front=${COVER_FRONT//\\//}"
-  --metadata "cover_back=${COVER_BACK//\\//}"
+  --metadata "cover_front=${COVER_FRONT}"
+  --metadata "cover_back=${COVER_BACK}"
 )
 
-
-dbg "COVER_FRONT = '$COVER_FRONT'"
-dbg "COVER_BACK  = '$COVER_BACK'"
-
-dbg "COVER_META entries:"
-for item in "${COVER_META[@]}"; do
-  dbg "  $item"
-done
+EPUB_ARGS=()
+[ -n "$COVER_FRONT" ] && EPUB_ARGS+=(--epub-cover-image="$COVER_FRONT")
 
 # =================================================
-# PDF (with covers)
+# PDF with covers
 # =================================================
 
 log "Generating PDF (with covers)"
-if $DEBUG; then
-  echo "[DBG ] Pandoc command:"
-  printf '  %q\n' pandoc \
-    "${INPUT_FILES[@]}" \
-    "${PANDOC_COMMON[@]}" \
-    --top-level-division=chapter \
-    --pdf-engine=xelatex \
-    "${COVER_META[@]}" \
-    ${TEMPLATE:+--template="$TEMPLATE"} \
-    -o "$DIST/$PDF"
-fi
 
 pandoc \
   "${INPUT_FILES[@]}" \
   "${PANDOC_COMMON[@]}" \
-  --top-level-division=chapter \
-  --pdf-engine=xelatex \
+  "${PANDOC_PDF[@]}" \
   "${COVER_META[@]}" \
-  ${TEMPLATE:+--template="$TEMPLATE"} \
+  "${TEMPLATE_ARG[@]}" \
   -o "$DIST/$PDF"
 
-ok "PDF written to $DIST/$PDF"
+ok "PDF with covers written"
 
 # =================================================
-# PDF (no covers)
+# PDF without covers
 # =================================================
 
 PDF_NO_COVER="${PDF%.pdf}-nocover.pdf"
@@ -264,21 +236,17 @@ log "Generating PDF (no covers)"
 pandoc \
   "${INPUT_FILES[@]}" \
   "${PANDOC_COMMON[@]}" \
-  --top-level-division=chapter \
-  --pdf-engine=xelatex \
-  ${TEMPLATE:+--template="$TEMPLATE"} \
+  "${PANDOC_PDF[@]}" \
+  "${TEMPLATE_ARG[@]}" \
   -o "$DIST/$PDF_NO_COVER"
 
-ok "PDF (no covers) written to $DIST/$PDF_NO_COVER"
+ok "PDF without covers written"
 
 # =================================================
 # EPUB
 # =================================================
 
 log "Generating EPUB"
-
-EPUB_ARGS=()
-[ -n "$COVER_FRONT" ] && EPUB_ARGS+=(--epub-cover-image="$COVER_FRONT")
 
 pandoc \
   "${INPUT_FILES[@]}" \
@@ -288,6 +256,6 @@ pandoc \
   "${EPUB_ARGS[@]}" \
   -o "$DIST/$EPUB"
 
-ok "EPUB written to $DIST/$EPUB"
+ok "EPUB written"
 
 log "Build complete"
