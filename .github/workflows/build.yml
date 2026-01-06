@@ -148,6 +148,7 @@ jobs:
           bash scripts/build_book.sh \
             --root docs/ways-of-working/firmitas \
             --dist docs/ways-of-working/dist \
+            --template scripts/templates/book.tex \
             --pdf "firmitas_${VERSION}.pdf" \
             --epub "firmitas_${VERSION}.epub" \
             --debug
