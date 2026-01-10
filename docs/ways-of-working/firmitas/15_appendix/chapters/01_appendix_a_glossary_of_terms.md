@@ -39,8 +39,8 @@ Context enables autonomy by allowing teams to make good decisions without consta
 
 
 ### Delivery System
-The end-to-end system by which ideas move from concept to customer.  
-Includes batch sizes, handoffs, validation mechanisms, feedback loops, risk management, and release practices. Delivery performance is determined primarily by system design rather than individual effort.
+The socio-technical system that builds and delivers the **Product System**; the "machine that builds".  
+It comprises the teams, processes, and culture that turn ideas into value. Firmitas treats the Delivery System as an engineered system that must be designed as rigorously as the code.
 
 
 
@@ -137,6 +137,12 @@ In Firmitas, philosophy constrains the framework, which in turn constrains proce
 ### Process
 The specific practices, tools, workflows, and ceremonies used to execute work in a given context.  
 Processes are intentionally flexible and context-dependent, provided they align with the framework and philosophy.
+
+
+
+### Product System
+The technical asset being built to deliver value and generate a return on investment (ROI); the "asset being built".  
+This is the software, hardware, or service that customers use. It is the output of the **Delivery System**.
 
 
 
