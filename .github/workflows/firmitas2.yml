@@ -112,15 +112,22 @@ jobs:
       
       - name: Install Missing LaTeX Packages
         run: |
-          # Now tlmgr will be found in the path
+          # 1. Point to the official TeX Live mirror instead of the TinyTeX default
+          tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
+          
+          # 2. Update tlmgr itself first
+          tlmgr update --self
+          
+          # 3. Install the packages (Note the corrected font package names)
+          # 'longtable' is part of 'tools', but tlmgr should find it if repository is set correctly.
           tlmgr install xetex fontspec realscripts xunicode \
                         geometry xcolor hyperref titlesec \
                         etoolbox mdframed tcolorbox environ \
                         thinlines fancyhdr lastpage caption \
-                        enumitem setspace booktabs longtable \
-                        sourcesanspro sourcecodepro sourceserifpro
-    
-          # Update the font cache so XeLaTeX sees your Source Pro fonts
+                        enumitem setspace booktabs \
+                        adobe-sourcesanspro adobe-sourceserifpro sourcecodepro
+          
+          # 4. Update the font cache
           luaotfload-tool --update
       
       # -------------------------------------------------
