@@ -202,8 +202,8 @@ TEMPLATE_ARG=()
 [ -n "$TEMPLATE" ] && TEMPLATE_ARG+=(--template="$TEMPLATE")
 
 COVER_META=(
-  --metadata "cover_front=${COVER_FRONT}"
-  --metadata "cover_back=${COVER_BACK}"
+  --metadata "cover_front=$(basename "$COVER_FRONT")"
+  --metadata "cover_back=$(basename "$COVER_BACK")"
 )
 
 EPUB_ARGS=()
