@@ -68,12 +68,6 @@ jobs:
           sudo apt-get install -y \
             graphviz \
             pandoc \
-            texlive \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-xetex \
-            lmodern \
             wget \
             fonts-liberation \
             libasound2t64 \
@@ -101,7 +95,24 @@ jobs:
             libxss1 \
             libxtst6 \
             xdg-utils
+      - name: Install TinyTeX
+        run: |
+          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+          # Add to path for subsequent steps
+          echo "$HOME/bin" >> $GITHUB_PATH
+          ~/bin/tinytex install-bin-unix
 
+      - name: Install Missing LaTeX Packages
+        run: |
+          # Core engine and essential Pandoc requirements
+          tlmgr install xetex fontspec realscripts xunicode
+          
+          # Packages used in your book.tex template
+          tlmgr install geometry xcolor hyperref titlesec \
+                        etoolbox mdframed tcolorbox environ \
+                        thinlines fancyhdr lastpage caption \
+                        enumitem setspace booktabs longtable \
+                        sourcesanspro sourcecodepro sourceserifpro
       # -------------------------------------------------
       # Diagram tooling
       # -------------------------------------------------
