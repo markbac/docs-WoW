@@ -112,21 +112,25 @@ jobs:
       
       - name: Install Missing LaTeX Packages
         run: |
-          # 1. Point to the official TeX Live mirror instead of the TinyTeX default
+          # 1. Switch to the primary CTAN mirror
           tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
           
-          # 2. Update tlmgr itself first
-          tlmgr update --self
-          
-          # 3. Install the packages (Note the corrected font package names)
-          # 'longtable' is part of 'tools', but tlmgr should find it if repository is set correctly.
+          # 2. Install the guaranteed structural packages first
           tlmgr install xetex fontspec realscripts xunicode \
-                  geometry xcolor hyperref titlesec \
-                  etoolbox mdframed tcolorbox environ \
-                  fancyhdr lastpage caption enumitem setspace booktabs \
-                  tools bezos sourcesanspro sourceserifpro sourcecodepro
+                        geometry xcolor hyperref titlesec \
+                        etoolbox mdframed tcolorbox environ \
+                        fancyhdr lastpage caption enumitem \
+                        setspace booktabs tools trimspaces pgf
           
-          # 4. Update the font cache
+          # 3. Install bundles that contain your missing pieces
+          # 'bezos' contains thinlines, 'ms' often contains extra layout tools
+          tlmgr install bezos ms
+          
+          # 4. Install fonts (using '|| true' so the build continues if a mirror is out of sync)
+          # Your template uses Source Sans/Serif/Code Pro
+          tlmgr install sourcesanspro sourceserifpro sourcecodepro || true
+          
+          # 5. Finalize
           luaotfload-tool --update
       
       # -------------------------------------------------
