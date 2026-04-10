@@ -5,6 +5,7 @@ on:
     branches: [ main, master ]
     paths:
       - 'docs/ways-of-working/firmitas2/**'
+      - '.github/workflows/firmitas2.yml'
       - 'scripts/**'
       - 'scripts/templates/**'
       - 'mkdocs.yml'
@@ -15,6 +16,7 @@ on:
   pull_request:
     paths:
       - 'docs/ways-of-working/firmitas2/**'
+      - '.github/workflows/firmitas2.yml'
       - 'scripts/**'
       - 'scripts/templates/**'
       - 'mkdocs.yml'
@@ -95,24 +97,32 @@ jobs:
             libxss1 \
             libxtst6 \
             xdg-utils
+
       - name: Install TinyTeX
         run: |
+          # 1. Download and run the installer
           wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-          # Add to path for subsequent steps
-          echo "$HOME/bin" >> $GITHUB_PATH
-          ~/bin/tinytex install-bin-unix
-
+          
+          # 2. Manually add the newly created bin directory to the GitHub Path
+          # TinyTeX usually installs binaries to ~/.TinyTeX/bin/x86_64-linux
+          echo "$HOME/.TinyTeX/bin/x86_64-linux" >> $GITHUB_PATH
+          
+          # 3. Ensure the runner can see the path immediately for this specific step
+          export PATH="$HOME/.TinyTeX/bin/x86_64-linux:$PATH"
+      
       - name: Install Missing LaTeX Packages
         run: |
-          # Core engine and essential Pandoc requirements
-          tlmgr install xetex fontspec realscripts xunicode
-          
-          # Packages used in your book.tex template
-          tlmgr install geometry xcolor hyperref titlesec \
+          # Now tlmgr will be found in the path
+          tlmgr install xetex fontspec realscripts xunicode \
+                        geometry xcolor hyperref titlesec \
                         etoolbox mdframed tcolorbox environ \
                         thinlines fancyhdr lastpage caption \
                         enumitem setspace booktabs longtable \
                         sourcesanspro sourcecodepro sourceserifpro
+    
+          # Update the font cache so XeLaTeX sees your Source Pro fonts
+          luaotfload-tool --update
+      
       # -------------------------------------------------
       # Diagram tooling
       # -------------------------------------------------
