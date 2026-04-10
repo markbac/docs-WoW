@@ -1,9 +1,5 @@
 # Firmitas: A Framework for Sustainable Engineering Delivery
 
-**Document:** 02 — Chapter 1: The Programme That Failed Predictably
-**Book section:** Part One — Why Programmes Fail
-
----
 
 # Part One: Why Programmes Fail
 
