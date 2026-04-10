@@ -121,11 +121,10 @@ jobs:
           # 3. Install the packages (Note the corrected font package names)
           # 'longtable' is part of 'tools', but tlmgr should find it if repository is set correctly.
           tlmgr install xetex fontspec realscripts xunicode \
-                        geometry xcolor hyperref titlesec \
-                        etoolbox mdframed tcolorbox environ \
-                        thinlines fancyhdr lastpage caption \
-                        enumitem setspace booktabs \
-                        adobe-sourcesanspro adobe-sourceserifpro sourcecodepro
+                  geometry xcolor hyperref titlesec \
+                  etoolbox mdframed tcolorbox environ \
+                  fancyhdr lastpage caption enumitem setspace booktabs \
+                  tools bezos sourcesanspro sourceserifpro sourcecodepro
           
           # 4. Update the font cache
           luaotfload-tool --update
