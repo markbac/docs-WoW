@@ -1,10 +1,5 @@
 # Firmitas: A Framework for Sustainable Engineering Delivery
 
-**Document:** 01 — Acknowledgements
-**Book section:** Front matter, appears after Preface and before Part One
-
----
-
 ## Acknowledgements
 
 The ideas in this book are not new.
