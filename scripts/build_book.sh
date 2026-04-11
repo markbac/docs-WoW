@@ -3,6 +3,12 @@
 # buildbook.sh
 #
 # Shell equivalent of build_book.ps1
+#
+# Outputs:
+# - PDF with covers
+# - PDF without covers
+# - EPUB
+#
 
 set -euo pipefail
 
@@ -157,30 +163,17 @@ done < <(find "$ROOT" -type d -name media -print0)
 ok "Flattened ${#SEEN[@]} media files"
 
 # =================================================
-# Copy cover images (DIAGNOSTIC SECTION)
+# Copy cover images
 # =================================================
 
-# ROOT CAUSE FIX: Defensive initialization for 'set -u'
-COVER_FRONT_META=""
-COVER_BACK_META=""
+COVER_FRONT="$MEDIA_OUT/front.png"
+COVER_BACK="$MEDIA_OUT/back.png"
 
-# Force covers to the resource search root to bypass XeLaTeX path-depth issues
-log "Staging cover assets..."
-if [ -f "$ROOT/front.png" ]; then
-    cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/front.png"
-    COVER_FRONT_META="front.png"
-    dbg "Front cover staged at: $FLATTENED_MEDIA/front.png"
-else
-    warn "Front cover not found in $ROOT"
-fi
+[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$COVER_FRONT" || COVER_FRONT=""
+[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$COVER_BACK"  || COVER_BACK=""
 
-if [ -f "$ROOT/back.png" ]; then
-    cp -f "$ROOT/back.png" "$FLATTENED_MEDIA/back.png"
-    COVER_BACK_META="back.png"
-    dbg "Back cover staged at: $FLATTENED_MEDIA/back.png"
-else
-    warn "Back cover not found in $ROOT"
-fi
+[ -n "$COVER_FRONT" ] && ok "Copied front cover" || warn "Front cover not found"
+[ -n "$COVER_BACK"  ] && ok "Copied back cover"  || warn "Back cover not found"
 
 # =================================================
 # Pandoc argument arrays
@@ -206,37 +199,21 @@ PANDOC_PDF=(
 )
 
 TEMPLATE_ARG=()
-if [ -n "$TEMPLATE" ]; then
-  TEMPLATE_ARG+=(--template="$TEMPLATE")
-fi
+[ -n "$TEMPLATE" ] && TEMPLATE_ARG+=(--template="$TEMPLATE")
 
-# Use the verified relative filenames for metadata injection
 COVER_META=(
-  --metadata "cover_front=${COVER_FRONT_META}"
-  --metadata "cover_back=${COVER_BACK_META}"
+  --metadata "cover_front=${COVER_FRONT}"
+  --metadata "cover_back=${COVER_BACK}"
 )
 
 EPUB_ARGS=()
-if [ -n "$COVER_FRONT_META" ]; then
-    EPUB_ARGS+=(--epub-cover-image="$FLATTENED_MEDIA/front.png")
-fi
+[ -n "$COVER_FRONT" ] && EPUB_ARGS+=(--epub-cover-image="$COVER_FRONT")
 
 # =================================================
-# PDF Build with Full Diagnostic Audit
+# PDF with covers
 # =================================================
 
 log "Generating PDF (with covers)"
-
-# DIAGNOSTIC: Audit the search path immediately before failure point
-if [ "$DEBUG" = true ]; then
-  dbg "=== FILESYSTEM AUDIT BEGIN ==="
-  dbg "Current User: $(whoami)"
-  dbg "Resource Path ($FLATTENED_MEDIA) Contents:"
-  ls -laR "$FLATTENED_MEDIA" || warn "Could not list resource path"
-  dbg "Front Meta Var: '$COVER_FRONT_META'"
-  dbg "Back Meta Var : '$COVER_BACK_META'"
-  dbg "=== FILESYSTEM AUDIT END ==="
-fi
 
 pandoc \
   "${INPUT_FILES[@]}" \
@@ -248,6 +225,12 @@ pandoc \
 
 ok "PDF with covers written"
 
+# =================================================
+# PDF without covers
+# =================================================
+
+PDF_NO_COVER="${PDF%.pdf}-nocover.pdf"
+
 log "Generating PDF (no covers)"
 
 pandoc \
@@ -255,9 +238,13 @@ pandoc \
   "${PANDOC_COMMON[@]}" \
   "${PANDOC_PDF[@]}" \
   "${TEMPLATE_ARG[@]}" \
-  -o "$DIST/${PDF%.pdf}-nocover.pdf"
+  -o "$DIST/$PDF_NO_COVER"
 
 ok "PDF without covers written"
+
+# =================================================
+# EPUB
+# =================================================
 
 log "Generating EPUB"
 
