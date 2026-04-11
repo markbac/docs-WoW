@@ -116,6 +116,9 @@ function CodeBlock(el)
   end
 
   return pandoc.Para({
-    pandoc.Image({}, outfile)
+    pandoc.Image({}, outfile, "", {
+        width = "95%",
+        height = "90vh"
+        })
   })
 end
