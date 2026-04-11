@@ -1,9 +1,12 @@
 -- kroki-filter.lua
 --
--- Fail-safe diagram rendering via Kroki
--- - retries
--- - logs failures
--- - graceful fallback in output
+-- Unified diagram rendering via Kroki
+-- - Supports multiple diagram types
+-- - Outputs PDF for LaTeX, SVG for EPUB
+-- - Caching via content hash
+-- - Retry via curl
+-- - Graceful failure with visible fallback
+-- - Debug logging for CI (GitHub Actions compatible)
 
 local path = require("pandoc.path")
 
@@ -13,7 +16,36 @@ local kroki_url = os.getenv("KROKI_URL") or "https://kroki.io"
 
 os.execute("mkdir -p " .. output_dir)
 
--- simple hash
+-- =================================================
+-- Debug / logging
+-- =================================================
+
+local DEBUG = os.getenv("KROKI_DEBUG") == "1"
+
+local function dbg(msg)
+  if DEBUG then
+    io.stderr:write("[kroki] " .. msg .. "\n")
+  end
+end
+
+local function gha_warn(msg)
+  io.stderr:write("::warning::" .. msg .. "\n")
+end
+
+local function gha_error(msg)
+  io.stderr:write("::error::" .. msg .. "\n")
+end
+
+local function log_error(msg)
+  local f = io.open(log_file, "a")
+  f:write(os.date("%Y-%m-%d %H:%M:%S") .. " | " .. msg .. "\n")
+  f:close()
+end
+
+-- =================================================
+-- Helpers
+-- =================================================
+
 local function hash(str)
   local h = 0
   for i = 1, #str do
@@ -28,13 +60,10 @@ local function write_file(filename, content)
   f:close()
 end
 
-local function log_error(msg)
-  local f = io.open(log_file, "a")
-  f:write(os.date("%Y-%m-%d %H:%M:%S") .. " | " .. msg .. "\n")
-  f:close()
-end
+-- =================================================
+-- Language handling
+-- =================================================
 
--- aliases
 local aliases = {
   uml = "plantuml",
   puml = "plantuml",
@@ -43,7 +72,6 @@ local aliases = {
   gv = "dot"
 }
 
--- supported
 local supported = {
   mermaid = true,
   plantuml = true,
@@ -62,8 +90,12 @@ local supported = {
   rackdiag = true,
   d2 = true,
   nomnoml = true,
-  wireviz = true
+  wireviz = true -- may require self-hosted Kroki
 }
+
+-- =================================================
+-- Main handler
+-- =================================================
 
 function CodeBlock(el)
   local lang = el.classes[1]
@@ -77,20 +109,41 @@ function CodeBlock(el)
     return nil
   end
 
+  dbg("Processing block lang=" .. lang)
+
   local h = hash(el.text)
-  local outfile = path.join({output_dir, h .. ".svg"})
+
+  -- format selection
+  local format = FORMAT:match("latex") and "pdf" or "svg"
+
+  local outfile = path.join({output_dir, h .. "." .. format})
   local infile = path.join({output_dir, h .. ".txt"})
 
-  -- cache check
+  -- =================================================
+  -- Cache check
+  -- =================================================
+
   local f = io.open(outfile, "r")
   if f then
     f:close()
-    return pandoc.Para({ pandoc.Image({}, outfile) })
+    dbg("Cache hit: " .. outfile)
+    return pandoc.Para({
+      pandoc.Image({}, outfile, "", { width = "95%" })
+    })
   end
+
+  -- =================================================
+  -- Render via Kroki
+  -- =================================================
 
   write_file(infile, el.text)
 
-  local url = string.format("%s/%s/svg", kroki_url, lang)
+  local url = string.format("%s/%s/%s", kroki_url, lang, format)
+
+  dbg("Rendering via Kroki: " .. lang)
+  dbg("Input: " .. infile)
+  dbg("Output: " .. outfile)
+  dbg("URL: " .. url)
 
   local cmd = string.format(
     "curl -s -f --retry 3 --retry-delay 1 --retry-all-errors " ..
@@ -100,25 +153,38 @@ function CodeBlock(el)
     outfile
   )
 
+  dbg("Executing: " .. cmd)
   local ok = os.execute(cmd)
+  dbg("Exit code: " .. tostring(ok))
+
+  -- =================================================
+  -- Failure handling
+  -- =================================================
 
   if ok ~= 0 then
     local msg = string.format("FAILED [%s] hash=%s", lang, h)
-    log_error(msg)
 
-    -- visible fallback in document
+    log_error(msg)
+    dbg(msg)
+    gha_error(msg)
+
     return {
       pandoc.Para({
         pandoc.Str("[Diagram failed to render: " .. lang .. "]")
       }),
-      el -- include original code block for reference
+      el
     }
   end
 
+  dbg("Rendered successfully: " .. outfile)
+
+  -- =================================================
+  -- Success
+  -- =================================================
+
   return pandoc.Para({
     pandoc.Image({}, outfile, "", {
-        width = "95%",
-        height = "90vh"
-        })
+      width = "95%"
+    })
   })
 end

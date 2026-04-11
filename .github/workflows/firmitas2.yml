@@ -153,6 +153,8 @@ jobs:
       # Firmitas 2 book build
       # -------------------------------------------------
       - name: Build Firmitas 2 book (PDF + EPUB)
+        env:
+          KROKI_DEBUG: "1"
         run: |
           VERSION="${GITHUB_REF_NAME:-dev}"
           chmod +x scripts/build_book.sh
