@@ -70,6 +70,12 @@ jobs:
           sudo apt-get install -y \
             graphviz \
             pandoc \
+            texlive \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-xetex \
+            lmodern \
             wget \
             fonts-liberation \
             libasound2t64 \
@@ -97,41 +103,6 @@ jobs:
             libxss1 \
             libxtst6 \
             xdg-utils
-
-      - name: Install TinyTeX
-        run: |
-          # 1. Download and run the installer
-          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-          
-          # 2. Manually add the newly created bin directory to the GitHub Path
-          # TinyTeX usually installs binaries to ~/.TinyTeX/bin/x86_64-linux
-          echo "$HOME/.TinyTeX/bin/x86_64-linux" >> $GITHUB_PATH
-          
-          # 3. Ensure the runner can see the path immediately for this specific step
-          export PATH="$HOME/.TinyTeX/bin/x86_64-linux:$PATH"
-      
-      - name: Install Missing LaTeX Packages
-        run: |
-          # 1. Switch to the primary CTAN mirror
-          tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
-          
-          # 2. Install the guaranteed structural packages first
-          tlmgr install xetex fontspec realscripts xunicode \
-                        geometry xcolor hyperref titlesec \
-                        etoolbox mdframed tcolorbox environ \
-                        fancyhdr lastpage caption enumitem \
-                        setspace booktabs tools trimspaces pgf
-          
-          # 3. Install bundles that contain your missing pieces
-          # 'bezos' contains thinlines, 'ms' often contains extra layout tools
-          tlmgr install bezos ms
-          
-          # 4. Install fonts (using '|| true' so the build continues if a mirror is out of sync)
-          # Your template uses Source Sans/Serif/Code Pro
-          tlmgr install sourcesanspro sourceserifpro sourcecodepro || true
-          
-          # 5. Finalize
-          luaotfload-tool --update
       
       # -------------------------------------------------
       # Diagram tooling
