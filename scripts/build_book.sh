@@ -157,29 +157,29 @@ done < <(find "$ROOT" -type d -name media -print0)
 ok "Flattened ${#SEEN[@]} media files"
 
 # =================================================
-# Copy cover images
+# Copy cover images (DIAGNOSTIC SECTION)
 # =================================================
 
-# ROOT CAUSE FIX: Initialize metadata variables to empty strings 
-# to prevent "unbound variable" errors under 'set -u'
+# ROOT CAUSE FIX: Defensive initialization for 'set -u'
 COVER_FRONT_META=""
 COVER_BACK_META=""
 
-# Copy directly to the search root for reliable XeLaTeX access
+# Force covers to the resource search root to bypass XeLaTeX path-depth issues
+log "Staging cover assets..."
 if [ -f "$ROOT/front.png" ]; then
     cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/front.png"
     COVER_FRONT_META="front.png"
-    ok "Copied front cover"
+    dbg "Front cover staged at: $FLATTENED_MEDIA/front.png"
 else
-    warn "Front cover missing at $ROOT/front.png"
+    warn "Front cover not found in $ROOT"
 fi
 
 if [ -f "$ROOT/back.png" ]; then
     cp -f "$ROOT/back.png" "$FLATTENED_MEDIA/back.png"
     COVER_BACK_META="back.png"
-    ok "Copied back cover"
+    dbg "Back cover staged at: $FLATTENED_MEDIA/back.png"
 else
-    warn "Back cover missing at $ROOT/back.png"
+    warn "Back cover not found in $ROOT"
 fi
 
 # =================================================
@@ -210,7 +210,7 @@ if [ -n "$TEMPLATE" ]; then
   TEMPLATE_ARG+=(--template="$TEMPLATE")
 fi
 
-# ROOT CAUSE FIX: Use the verified relative filenames
+# Use the verified relative filenames for metadata injection
 COVER_META=(
   --metadata "cover_front=${COVER_FRONT_META}"
   --metadata "cover_back=${COVER_BACK_META}"
@@ -222,15 +222,20 @@ if [ -n "$COVER_FRONT_META" ]; then
 fi
 
 # =================================================
-# PDF Build Process
+# PDF Build with Full Diagnostic Audit
 # =================================================
 
 log "Generating PDF (with covers)"
-# Verbose diagnostic log for audit trail
+
+# DIAGNOSTIC: Audit the search path immediately before failure point
 if [ "$DEBUG" = true ]; then
-  dbg "Resource Path: $FLATTENED_MEDIA"
-  dbg "Files in Resource Path Root:"
-  ls -la "$FLATTENED_MEDIA"
+  dbg "=== FILESYSTEM AUDIT BEGIN ==="
+  dbg "Current User: $(whoami)"
+  dbg "Resource Path ($FLATTENED_MEDIA) Contents:"
+  ls -laR "$FLATTENED_MEDIA" || warn "Could not list resource path"
+  dbg "Front Meta Var: '$COVER_FRONT_META'"
+  dbg "Back Meta Var : '$COVER_BACK_META'"
+  dbg "=== FILESYSTEM AUDIT END ==="
 fi
 
 pandoc \
