@@ -124,7 +124,7 @@ function CodeBlock(el)
 
   local outfile = path.join({output_dir, h .. "." .. format})
   local infile = path.join({output_dir, h .. ".txt"})
-  local headers_file = path.join({output_dir, h .. ".headers")
+  local headers_file = path.join({output_dir, h .. ".headers"})
 
   -- =================================================
   -- Cache check
