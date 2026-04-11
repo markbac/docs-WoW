@@ -166,17 +166,16 @@ ok "Flattened ${#SEEN[@]} media files"
 # Copy cover images
 # =================================================
 
-# Change these variables to relative filenames only
 COVER_FRONT="front.png"
 COVER_BACK="back.png"
 
-# Ensure the files are copied into the flattened media directory
-[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$MEDIA_OUT/front.png"
-[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$MEDIA_OUT/back.png"
+# Copy directly to the root of the resource-path ($FLATTENED_MEDIA)
+[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/front.png"
+[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$FLATTENED_MEDIA/back.png"
 
-# Check if they exist in the destination to set flags for Pandoc
-[ -f "$MEDIA_OUT/front.png" ] && ok "Copied front cover" || { warn "Front cover not found"; COVER_FRONT=""; }
-[ -f "$MEDIA_OUT/back.png"  ] && ok "Copied back cover"  || { warn "Back cover not found"; COVER_BACK=""; }
+# Set flags for Pandoc
+[ -f "$FLATTENED_MEDIA/front.png" ] && ok "Copied front cover" || COVER_FRONT=""
+[ -f "$FLATTENED_MEDIA/back.png"  ] && ok "Copied back cover"  || COVER_BACK=""
 
 # =================================================
 # Pandoc argument arrays
@@ -206,8 +205,8 @@ TEMPLATE_ARG=()
 
 # Update this array to use the predictable flattened path
 COVER_META=(
-  --metadata "cover_front=media/front.png"
-  --metadata "cover_back=media/back.png"
+  --metadata "cover_front=front.png"
+  --metadata "cover_back=back.png"
 )
 
 EPUB_ARGS=()
