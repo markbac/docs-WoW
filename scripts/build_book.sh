@@ -3,12 +3,6 @@
 # buildbook.sh
 #
 # Shell equivalent of build_book.ps1
-#
-# Outputs:
-# - PDF with covers
-# - PDF without covers
-# - EPUB
-#
 
 set -euo pipefail
 
@@ -166,19 +160,26 @@ ok "Flattened ${#SEEN[@]} media files"
 # Copy cover images
 # =================================================
 
-COVER_FRONT_NAME="front.png"
-COVER_BACK_NAME="back.png"
+# ROOT CAUSE FIX: Initialize metadata variables to empty strings 
+# to prevent "unbound variable" errors under 'set -u'
+COVER_FRONT_META=""
+COVER_BACK_META=""
 
-# Copy directly to the search root
-[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/$COVER_FRONT_NAME"
-[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$FLATTENED_MEDIA/$COVER_BACK_NAME"
-
-# Verify and set metadata variables
-if [ -f "$FLATTENED_MEDIA/$COVER_FRONT_NAME" ]; then
-    COVER_FRONT_META="$COVER_FRONT_NAME"
-    ok "Verified cover at: $FLATTENED_MEDIA/$COVER_FRONT_NAME"
+# Copy directly to the search root for reliable XeLaTeX access
+if [ -f "$ROOT/front.png" ]; then
+    cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/front.png"
+    COVER_FRONT_META="front.png"
+    ok "Copied front cover"
 else
-    COVER_FRONT_META=""
+    warn "Front cover missing at $ROOT/front.png"
+fi
+
+if [ -f "$ROOT/back.png" ]; then
+    cp -f "$ROOT/back.png" "$FLATTENED_MEDIA/back.png"
+    COVER_BACK_META="back.png"
+    ok "Copied back cover"
+else
+    warn "Back cover missing at $ROOT/back.png"
 fi
 
 # =================================================
@@ -205,22 +206,32 @@ PANDOC_PDF=(
 )
 
 TEMPLATE_ARG=()
-[ -n "$TEMPLATE" ] && TEMPLATE_ARG+=(--template="$TEMPLATE")
+if [ -n "$TEMPLATE" ]; then
+  TEMPLATE_ARG+=(--template="$TEMPLATE")
+fi
 
-# Update this array to use the predictable flattened path
+# ROOT CAUSE FIX: Use the verified relative filenames
 COVER_META=(
   --metadata "cover_front=${COVER_FRONT_META}"
   --metadata "cover_back=${COVER_BACK_META}"
 )
 
 EPUB_ARGS=()
-[ -n "$COVER_FRONT" ] && EPUB_ARGS+=(--epub-cover-image="$COVER_FRONT")
+if [ -n "$COVER_FRONT_META" ]; then
+    EPUB_ARGS+=(--epub-cover-image="$FLATTENED_MEDIA/front.png")
+fi
 
 # =================================================
-# PDF with covers
+# PDF Build Process
 # =================================================
 
 log "Generating PDF (with covers)"
+# Verbose diagnostic log for audit trail
+if [ "$DEBUG" = true ]; then
+  dbg "Resource Path: $FLATTENED_MEDIA"
+  dbg "Files in Resource Path Root:"
+  ls -la "$FLATTENED_MEDIA"
+fi
 
 pandoc \
   "${INPUT_FILES[@]}" \
@@ -232,12 +243,6 @@ pandoc \
 
 ok "PDF with covers written"
 
-# =================================================
-# PDF without covers
-# =================================================
-
-PDF_NO_COVER="${PDF%.pdf}-nocover.pdf"
-
 log "Generating PDF (no covers)"
 
 pandoc \
@@ -245,13 +250,9 @@ pandoc \
   "${PANDOC_COMMON[@]}" \
   "${PANDOC_PDF[@]}" \
   "${TEMPLATE_ARG[@]}" \
-  -o "$DIST/$PDF_NO_COVER"
+  -o "$DIST/${PDF%.pdf}-nocover.pdf"
 
 ok "PDF without covers written"
-
-# =================================================
-# EPUB
-# =================================================
 
 log "Generating EPUB"
 
