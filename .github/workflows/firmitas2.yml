@@ -78,6 +78,7 @@ jobs:
             lmodern \
             wget \
             fonts-liberation \
+            librsvg2-bin \
             libasound2t64 \
             libatk1.0-0 \
             libcairo2 \
