@@ -166,16 +166,20 @@ ok "Flattened ${#SEEN[@]} media files"
 # Copy cover images
 # =================================================
 
-COVER_FRONT="front.png"
-COVER_BACK="back.png"
+COVER_FRONT_NAME="front.png"
+COVER_BACK_NAME="back.png"
 
-# Copy directly to the root of the resource-path ($FLATTENED_MEDIA)
-[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/front.png"
-[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$FLATTENED_MEDIA/back.png"
+# Copy directly to the search root
+[ -f "$ROOT/front.png" ] && cp -f "$ROOT/front.png" "$FLATTENED_MEDIA/$COVER_FRONT_NAME"
+[ -f "$ROOT/back.png"  ] && cp -f "$ROOT/back.png"  "$FLATTENED_MEDIA/$COVER_BACK_NAME"
 
-# Set flags for Pandoc
-[ -f "$FLATTENED_MEDIA/front.png" ] && ok "Copied front cover" || COVER_FRONT=""
-[ -f "$FLATTENED_MEDIA/back.png"  ] && ok "Copied back cover"  || COVER_BACK=""
+# Verify and set metadata variables
+if [ -f "$FLATTENED_MEDIA/$COVER_FRONT_NAME" ]; then
+    COVER_FRONT_META="$COVER_FRONT_NAME"
+    ok "Verified cover at: $FLATTENED_MEDIA/$COVER_FRONT_NAME"
+else
+    COVER_FRONT_META=""
+fi
 
 # =================================================
 # Pandoc argument arrays
@@ -205,8 +209,8 @@ TEMPLATE_ARG=()
 
 # Update this array to use the predictable flattened path
 COVER_META=(
-  --metadata "cover_front=front.png"
-  --metadata "cover_back=back.png"
+  --metadata "cover_front=${COVER_FRONT_META}"
+  --metadata "cover_back=${COVER_BACK_META}"
 )
 
 EPUB_ARGS=()
