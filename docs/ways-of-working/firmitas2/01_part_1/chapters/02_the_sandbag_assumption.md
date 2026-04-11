@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 03 — Chapter 2: The Sandbag Assumption
-**Book section:** Part One — Why Programmes Fail
-
----
-
-# Chapter 2 — The Sandbag Assumption
+## Chapter 2 — The Sandbag Assumption
 
 There is a belief, held widely and often unconsciously, by the people who govern engineering programmes. It runs something like this:
 
@@ -17,7 +10,7 @@ It is one of the most consequential beliefs in engineering programme management.
 
 ---
 
-## Where the belief comes from
+### Where the belief comes from
 
 The sandbag assumption does not emerge from nowhere. It has a history, and that history contains enough partial truth to make the belief feel empirically grounded.
 
@@ -33,7 +26,7 @@ The overrun was not extracted from a padded estimate by commercial pressure. It 
 
 ---
 
-## What the assumption costs
+### What the assumption costs
 
 The sandbag assumption has a specific, measurable effect on how programmes are governed — and that effect consistently makes outcomes worse rather than better.
 
@@ -49,7 +42,7 @@ And what does the organisation learn? Not that the estimate was honest and the r
 
 ---
 
-## The honest estimate under pressure
+### The honest estimate under pressure
 
 To understand why the sandbag assumption is wrong, it helps to understand what happens to estimation accuracy when pressure is applied.
 
@@ -65,7 +58,7 @@ The sandbag assumption, when applied as a management tool, creates the sandbaggi
 
 ---
 
-## The authority-experience gap
+### The authority-experience gap
 
 There is a structural condition that makes the sandbag assumption both more common and more damaging than it would otherwise be. It is worth naming directly.
 
@@ -83,7 +76,7 @@ The ones who struggle are not the ones who lack direct experience. They are the 
 
 ---
 
-## What honest estimation looks like
+### What honest estimation looks like
 
 If the sandbag assumption is wrong, and if pressure does not extract better estimates but instead destroys honest ones, then the question becomes: what does honest estimation actually look like, and how do you know when you are getting it?
 
@@ -97,7 +90,7 @@ The third is that the estimate and the risk register are the same document, not 
 
 ---
 
-## Breaking the cycle
+### Breaking the cycle
 
 The sandbag assumption is self-reinforcing, but it is not unbreakable. The organisations that have moved past it share a specific set of conditions.
 
@@ -109,7 +102,7 @@ The organisations that apply pressure to estimates and believe it extracts bette
 
 ---
 
-## A note on genuine sandbagging
+### A note on genuine sandbagging
 
 It would be dishonest to claim that sandbagging never occurs. It does. In low-trust environments where engineers have learned that honest estimates are punished, some engineers do pad their numbers as rational self-protection. This is the behaviour that the sandbag assumption claims to be correcting.
 
@@ -121,14 +114,10 @@ When those conditions exist, estimates become more accurate, programmes become m
 
 ---
 
-## The next step
+### The next step
 
 The sandbag assumption is a belief about engineers. What this chapter has argued is that it is primarily a belief about the wrong thing — that it looks at the behaviour of engineers and sees character where it should see structure.
 
 Engineers produce inflated estimates when the system makes honest estimation irrational. They produce accurate estimates when the system makes honest estimation safe. The variable is not the engineer. The variable is the system.
 
 The next chapter examines the specific structural mechanism that most commonly makes honest estimation unsafe: the commitment that arrives from above, already made, by people who were not in the room when the work was assessed and will not be in the room when the consequences arrive.
-
----
-
-*End of Chapter 2*
