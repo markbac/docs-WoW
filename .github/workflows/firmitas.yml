@@ -3,9 +3,23 @@ name: Build MkDocs site and Firmitas releases
 on:
   push:
     branches: [ main, master ]
+    paths:
+      - 'docs/ways-of-working/firmitas/**'
+      - 'scripts/**'
+      - 'scripts/templates/**'
+      - 'mkdocs.yml'
+      - 'requirements.txt'
     tags:
       - 'firmitas_v*'
+
   pull_request:
+    paths:
+      - 'docs/ways-of-working/firmitas/**'
+      - 'scripts/**'
+      - 'scripts/templates/**'
+      - 'mkdocs.yml'
+      - 'requirements.txt'
+
   workflow_dispatch:
 
 jobs:
