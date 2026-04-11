@@ -1,4 +1,4 @@
-## Chapter 7 — Leadership Owns the System
+## Leadership Owns the System
 
 The programme board in Chapter 1 did not design the system that produced the failure. It inherited it. The governance culture that treated risk registers as reporting artefacts rather than decision instruments had been established over years, across many programmes, by many decisions that individually seemed reasonable and collectively produced a structure incapable of acting on the information it received.
 

@@ -1,4 +1,4 @@
-## Chapter 5 - The Learning That Doesn't Happen
+## The Learning That Doesn't Happen
 
 Every organisation that runs the failure cycle described in the previous chapters believes it learns from it.
 

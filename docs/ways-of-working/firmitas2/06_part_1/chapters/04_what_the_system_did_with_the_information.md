@@ -1,4 +1,4 @@
-## Chapter 4 - What the System Did With the Information
+## What the System Did With the Information
 
 The programme in Chapter 1 did not fail because the information was absent. It failed because the system did not know what to do with the information it had.
 

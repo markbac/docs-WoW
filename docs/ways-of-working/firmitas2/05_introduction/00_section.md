@@ -1,10 +1,3 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 01b - Introduction
-**Book section:** Front matter, appears after Acknowledgements and before Part One
-
----
-
 # Introduction
 
 This book is built around a single observation.
@@ -17,7 +10,7 @@ What has not existed, or not existed clearly enough, is a framework that address
 
 ---
 
-## What this book argues
+**What this book argues**
 
 Engineering programmes fail for a reason that is rarely named honestly. The people who make delivery commitments are not the people who have to keep them. When programmes fail - and they fail predictably, in ways engineers foresaw and flagged - the accountability travels downward onto people who never made the original commitment. The organisation draws the wrong lesson. The next programme gets tighter control, less trust, and fails faster.
 
@@ -29,7 +22,7 @@ The framework is not a process to be installed. It is a set of structural positi
 
 ---
 
-## How the book is structured
+**How the book is structured**
 
 The book is in three parts.
 
@@ -47,7 +40,7 @@ Part Two is the majority of the book. It is where the practical guidance lives. 
 
 ---
 
-## How to read this book
+**How to read this book**
 
 Different readers will come to this book from different positions. The following is a guide to where to start based on where you are.
 
@@ -63,7 +56,7 @@ Different readers will come to this book from different positions. The following
 
 ---
 
-## What this book is not
+**What this book is not**
 
 It is not a methodology. There is no prescribed sprint length, no mandatory ceremony schedule, no certification path. The process layer of Firmitas is intentionally variable - it adapts to context. What does not vary is the philosophy.
 
@@ -73,7 +66,7 @@ It is not a criticism of any individual or profession. The commercial director w
 
 ---
 
-## A note on the word Firmitas
+**A note on the word Firmitas**
 
 Vitruvius, writing in the first century BCE on the principles of good architecture, argued that any structure worth building required three properties: *firmitas*, *utilitas*, and *venustas* - solidity, usefulness, and beauty.
 

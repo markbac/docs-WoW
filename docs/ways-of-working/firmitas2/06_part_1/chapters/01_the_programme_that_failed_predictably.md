@@ -1,4 +1,4 @@
-## Chapter 1 - The Programme That Failed Predictably
+## The Programme That Failed Predictably
 
 The contract was signed on a Tuesday in October.
 

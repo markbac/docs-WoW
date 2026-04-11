@@ -1,4 +1,4 @@
-## Chapter 2 — The Sandbag Assumption
+## The Sandbag Assumption
 
 There is a belief, held widely and often unconsciously, by the people who govern engineering programmes. It runs something like this:
 

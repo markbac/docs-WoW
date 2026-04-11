@@ -1,4 +1,4 @@
-## Chapter 3 - The Commitment That Wasn't Theirs
+## The Commitment That Wasn't Theirs
 
 At some point in the life of almost every engineering programme, a date is set that the engineering team did not set.
 

@@ -12,29 +12,29 @@ That relationship is described below, before the framework chapters begin.
 
 ---
 
-## The Layered Model
+**The Layered Model**
 
 Firmitas operates in three distinct but interdependent layers. The ordering of these layers is not a stylistic choice. It is the structural logic that separates Firmitas from every framework that has been adopted, applied mechanically, and produced compliance theatre rather than changed outcomes.
 
-### The philosophy layer
+**The philosophy layer**
 
 The philosophy layer defines what matters and why. It contains the non-negotiables - the structural positions about how engineering organisations work, where knowledge lives, what leadership means, and what commitments are. These positions do not change with context. They are the stable foundation on which everything else rests.
 
 The twelve principles in Chapter 6 are the philosophy layer. They constrain everything that follows. Any framework element or process choice that violates them is not Firmitas - regardless of how it is labelled or how closely it resembles the framework in structure.
 
-### The framework layer
+**The framework layer**
 
 The framework layer translates philosophy into repeatable structure. It defines the decision logic, the governance mechanisms, the lifecycle shape, the artefact types, and the role boundaries through which the philosophy is applied in practice.
 
 The chapters in Part Two describe the framework layer. The framework is stable - it does not change under delivery pressure or commercial convenience. It can evolve deliberately as understanding improves. It does not change casually.
 
-### The process layer
+**The process layer**
 
 The process layer defines how work is actually executed in a specific context. It includes methodologies, tooling choices, ceremonies, cadences, and documentation formats. Process is intentionally variable - it should differ by product type, regulatory context, organisational maturity, and team composition.
 
 The only constraint on process is that it must respect the framework and honour the philosophy. A team that uses Kanban rather than Scrum, that writes requirements in structured natural language rather than user stories, that holds weekly risk reviews rather than fortnightly ones - all of this is valid process variation within the framework. A team that reverse-engineers its plan from a committed date, that treats the risk register as a reporting artefact, that defines done as code complete rather than customer-validated outcome - this is process that violates the philosophy, regardless of what methodology label it carries.
 
-### Why the ordering matters
+**Why the ordering matters**
 
 The most consistent failure mode in framework adoption is inversion of the layers. Organisations install process - the artefacts, the ceremonies, the tooling - without engaging with the philosophy that should constrain it. The result is that the new process is absorbed by the existing system. The risk register template changes. The risk register behaviour does not. The estimation ceremony is introduced. The estimates are still compressed toward committed dates. The gate review is scheduled. The gate still does not generate decisions.
 

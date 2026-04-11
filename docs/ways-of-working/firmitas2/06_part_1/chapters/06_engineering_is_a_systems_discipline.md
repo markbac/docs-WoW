@@ -1,4 +1,4 @@
-## Chapter 6 — Engineering Is a Systems Discipline
+## Engineering Is a Systems Discipline
 
 Part One has described a failure. Not a hypothetical one, not an extreme case, but the specific, common, and entirely preventable failure that plays out across engineering organisations in every sector with a consistency that can only be explained by a shared structural cause.
 
