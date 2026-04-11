@@ -1,4 +1,4 @@
-## Acknowledgements
+# Acknowledgements
 
 The ideas in this book are not new.
 

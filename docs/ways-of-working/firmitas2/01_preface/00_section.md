@@ -1,4 +1,4 @@
-## Preface
+# Preface
 
 I have spent the better part of twenty-five years building things. Embedded systems in defence programmes. IoT platforms at scale. Telecoms infrastructure serving millions of customers. Products that had to work in the field, under conditions nobody fully anticipated, built by teams who were asked to commit to dates before they understood the problem and held accountable for outcomes they were never given the authority to shape.
 

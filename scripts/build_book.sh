@@ -182,6 +182,7 @@ COVER_BACK="$MEDIA_OUT/back.png"
 PANDOC_COMMON=(
   --from markdown+yaml_metadata_block
   --lua-filter=scripts/chapter_mapping.lua
+  --lua-filter=scripts/kroki-filter.lua
   --metadata fontsize=10.5pt
   --metadata linestretch=1.15
   --metadata "build_date=$BUILD_DATE"
