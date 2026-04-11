@@ -1,6 +1,4 @@
-## Firmitas: A Framework for Sustainable Engineering Delivery
-
-### Acknowledgements
+## Acknowledgements
 
 The ideas in this book are not new.
 
