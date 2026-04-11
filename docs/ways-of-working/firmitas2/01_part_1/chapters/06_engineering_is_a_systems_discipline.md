@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 07 — Chapter 6: Engineering Is a Systems Discipline
-**Book section:** Part One — Why Programmes Fail
-
----
-
-# Chapter 6 — Engineering Is a Systems Discipline
+## Chapter 6 — Engineering Is a Systems Discipline
 
 Part One has described a failure. Not a hypothetical one, not an extreme case, but the specific, common, and entirely preventable failure that plays out across engineering organisations in every sector with a consistency that can only be explained by a shared structural cause.
 
@@ -17,7 +10,7 @@ This is not an abstract philosophical choice. It is a practical one. The failure
 
 ---
 
-## What a system is
+### What a system is
 
 A system, in the sense used throughout this book, is a set of interacting elements that together produce outcomes. The outcomes are not determined by any single element. They emerge from the interactions — the incentives, constraints, feedback loops, and dependencies that connect the elements to each other.
 
@@ -63,7 +56,7 @@ This is Firmitas applied as process rather than understood as philosophy. It wil
 
 ---
 
-## The twelve principles
+### The twelve principles
 
 The twelve principles below are the philosophy layer of Firmitas. They are not values or aspirations. They are structural positions — explicit statements about how engineering organisations work and what leadership must do in response.
 
@@ -71,7 +64,7 @@ Each principle has been earned by what Part One described. Each connects directl
 
 ---
 
-### Principle 1: Engineering is a systems discipline
+#### Principle 1: Engineering is a systems discipline
 
 Engineering outcomes are produced by interacting systems, not by isolated individuals, teams, or tools. The behaviour of an engineering organisation emerges from the relationships between its human, organisational, socio-technical, delivery, technical, and economic systems. Optimising any one of these in isolation degrades the whole.
 
@@ -79,7 +72,7 @@ This principle is not a statement about methodology. It is a statement about whe
 
 ---
 
-### Principle 2: Engineering exists to deliver outcomes, not outputs — and the difference is always a leadership decision
+#### Principle 2: Engineering exists to deliver outcomes, not outputs — and the difference is always a leadership decision
 
 The engineering function exists to deliver value to the customer and, in doing so, create value for the business — sustainably and repeatedly. Not activity. Not output. Not utilisation. Value is realised only when engineering work solves a real problem, is usable and reliable, and survives contact with the real world.
 
@@ -87,7 +80,7 @@ The difference between outputs and outcomes is not a technical distinction. It i
 
 ---
 
-### Principle 3: A commitment not made by those who must keep it is a target with someone else's name on it
+#### Principle 3: A commitment not made by those who must keep it is a target with someone else's name on it
 
 Presenting a plan to an engineering team and asking whether it is achievable is not making a commitment. Working backwards from a desired date to construct a plan is not making a commitment. A genuine commitment requires that the people responsible for delivery have set the date, had the risks accepted, had the implications acknowledged, and had the plan built with realistic foundations, honest estimates, and adequate slack.
 
@@ -95,7 +88,7 @@ Everything else is a date with someone else's name on it. When that date is miss
 
 ---
 
-### Principle 4: Delivery knowledge lives closest to the work
+#### Principle 4: Delivery knowledge lives closest to the work
 
 The people doing the delivery hold the most accurate information about risk, timescale, and feasibility. A system that does not route decisions through that knowledge will systematically make worse decisions than one that does.
 
@@ -103,7 +96,7 @@ This principle has a direct governance implication. Teams closest to the work mu
 
 ---
 
-### Principle 5: Leadership owns the system, not the intention
+#### Principle 5: Leadership owns the system, not the intention
 
 Leadership responsibility cannot be delegated. Leaders are accountable for the design of the system, the incentives it creates, the behaviours it rewards, and the outcomes it produces. When teams struggle, the system is misdesigned, constraints are unclear or contradictory, or incentives are misaligned. Blaming individuals for the outputs of a system they did not design and cannot change is a failure of leadership, not diagnosis.
 
@@ -111,7 +104,7 @@ Good intent does not compensate for poor outcomes. Effort does not excuse system
 
 ---
 
-### Principle 6: Decisions are first-class engineering artefacts
+#### Principle 6: Decisions are first-class engineering artefacts
 
 Decisions shape systems more than code, hardware, or processes. The decisions made in the first programme review of Chapter 1 — to note the risk register, confirm the delivery date, and move to task status — determined the outcome of the programme more completely than any subsequent technical work.
 
@@ -119,7 +112,7 @@ Significant decisions must be made deliberately, with trade-offs explicit and ra
 
 ---
 
-### Principle 7: Flow matters more than utilisation
+#### Principle 7: Flow matters more than utilisation
 
 Busy systems fail. Full systems cannot adapt. The rate at which value progresses through the entire system — from intent to delivered outcome — is more important than the utilisation rate of any individual team or resource within it.
 
@@ -127,7 +120,7 @@ Queues are risk. Waiting is cost. Work in progress is a liability. Optimising fo
 
 ---
 
-### Principle 8: Slack is not waste — it is the capacity to improve
+#### Principle 8: Slack is not waste — it is the capacity to improve
 
 Slack is not idleness. It is capacity reserved by design to absorb variation, respond to the unexpected, and improve the system without collapsing under the addition of unplanned work. A system with no slack is a system operating at the edge of failure.
 
@@ -135,7 +128,7 @@ Organisations that eliminate slack in pursuit of short-term efficiency trade app
 
 ---
 
-### Principle 9: Quality is a system property, not an inspection activity
+#### Principle 9: Quality is a system property, not an inspection activity
 
 Quality does not emerge from testing at the end of a delivery process. It emerges from the interaction of architecture, feedback loops, testing strategy, incentives, and decision timing throughout the process. Quality engineering is therefore a leadership concern — the conditions that determine whether quality is possible are set by how the system is designed, not by how thoroughly it is inspected afterward.
 
@@ -143,7 +136,7 @@ Late discovery of defects is a signal of systemic failure, not testing weakness.
 
 ---
 
-### Principle 10: Short-term optimisation is a leadership choice — the cost is real, delayed, and paid by people who had no say in the decision
+#### Principle 10: Short-term optimisation is a leadership choice — the cost is real, delayed, and paid by people who had no say in the decision
 
 Every decision to compress scope, reduce resource, defer risk, or sacrifice quality has a cost. That cost does not disappear. It moves — to the people doing the work, to the quality of what is delivered, to the next programme that inherits the consequences, to the operational infrastructure that must be maintained and evolved by teams who were not there when the shortcuts were taken.
 
@@ -151,7 +144,7 @@ Leadership owns that cost whether it acknowledges it or not. The decision to com
 
 ---
 
-### Principle 11: Failure is information — misattributed failure is poison
+#### Principle 11: Failure is information — misattributed failure is poison
 
 When a programme fails and the correct cause is identified, the organisation becomes more capable of preventing the next failure. When a programme fails and the wrong cause is identified, the organisation becomes more likely to fail next time — because it has used the failure to reinforce the conditions that produced it.
 
@@ -159,7 +152,7 @@ Blame is not a learning mechanism. It is the active destruction of the condition
 
 ---
 
-### Principle 12: Your people are your most significant investment — trust and respect their judgement or destroy what you spent years building
+#### Principle 12: Your people are your most significant investment — trust and respect their judgement or destroy what you spent years building
 
 Engineers are not resources to be allocated or headcount to be managed. They are the carriers of delivery knowledge, technical judgement, and institutional memory that no process, framework, or tool can replicate. The knowledge of why the architecture was designed as it was, what the previous programme taught about integration timing, which risks are real and which are theoretical — this knowledge lives in people. When those people are overridden, ignored, or treated as replaceable, they do not simply disengage. They take with them everything the organisation spent years building.
 
@@ -167,7 +160,7 @@ An organisation that consistently fails to trust and act on the judgement of its
 
 ---
 
-## How the principles connect to Part One
+### How the principles connect to Part One
 
 Each of the twelve principles is a direct structural response to something Part One described.
 
@@ -199,6 +192,3 @@ Part Two begins with the framework's structural logic — the layered model that
 
 The reader who has followed Part One should arrive at Part Two with a specific question in mind: what would this programme have needed in order to produce a different outcome at week three? Every chapter in Part Two is an answer to some part of that question.
 
----
-
-*End of Chapter 6 — End of Part One*
