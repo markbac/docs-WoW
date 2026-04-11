@@ -120,7 +120,7 @@ function CodeBlock(el)
   dbg("Processing block lang=" .. lang)
 
   local h = hash(el.text)
-  local format = FORMAT:match("latex") and "pdf" or "svg"
+  local format = "svg"
 
   local outfile = path.join({output_dir, h .. "." .. format})
   local infile = path.join({output_dir, h .. ".txt"})
