@@ -139,7 +139,15 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
-
+          
+      - name: Debug Path Resolution
+        run: |
+          echo "Current Working Directory: $(pwd)"
+          echo "Root Directory Contents:"
+          ls -R docs/ways-of-working/firmitas2
+          echo "Check for covers in root:"
+          [ -f "docs/ways-of-working/firmitas2/front.png" ] && echo "Found front.png" || echo "Missing front.png"
+          
       # -------------------------------------------------
       # Firmitas 2 book build
       # -------------------------------------------------
