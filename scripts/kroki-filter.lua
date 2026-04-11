@@ -1,12 +1,10 @@
 -- kroki-filter.lua
 --
--- Unified diagram rendering via Kroki
--- - Supports multiple diagram types
--- - Outputs PDF for LaTeX, SVG for EPUB
--- - Caching via content hash
--- - Retry via curl
--- - Graceful failure with visible fallback
--- - Debug logging for CI (GitHub Actions compatible)
+-- Robust Kroki rendering filter with:
+-- - correct success detection
+-- - full request/response debug logging
+-- - GitHub Actions visibility
+-- - graceful fallback
 
 local path = require("pandoc.path")
 
@@ -26,10 +24,6 @@ local function dbg(msg)
   if DEBUG then
     io.stderr:write("[kroki] " .. msg .. "\n")
   end
-end
-
-local function gha_warn(msg)
-  io.stderr:write("::warning::" .. msg .. "\n")
 end
 
 local function gha_error(msg)
@@ -58,6 +52,20 @@ local function write_file(filename, content)
   local f = io.open(filename, "w")
   f:write(content)
   f:close()
+end
+
+local function file_exists(name)
+  local f = io.open(name, "r")
+  if f then f:close() return true end
+  return false
+end
+
+local function read_file_head(filename, max_bytes)
+  local f = io.open(filename, "r")
+  if not f then return "" end
+  local content = f:read(max_bytes or 500)
+  f:close()
+  return content or ""
 end
 
 -- =================================================
@@ -90,7 +98,7 @@ local supported = {
   rackdiag = true,
   d2 = true,
   nomnoml = true,
-  wireviz = true -- may require self-hosted Kroki
+  wireviz = true
 }
 
 -- =================================================
@@ -112,79 +120,91 @@ function CodeBlock(el)
   dbg("Processing block lang=" .. lang)
 
   local h = hash(el.text)
-
-  -- format selection
   local format = FORMAT:match("latex") and "pdf" or "svg"
 
   local outfile = path.join({output_dir, h .. "." .. format})
   local infile = path.join({output_dir, h .. ".txt"})
+  local headers_file = path.join({output_dir, h .. ".headers")
 
   -- =================================================
   -- Cache check
   -- =================================================
 
-  local f = io.open(outfile, "r")
-  if f then
-    f:close()
+  if file_exists(outfile) then
     dbg("Cache hit: " .. outfile)
     return pandoc.Para({
       pandoc.Image({}, outfile, "", { width = "95%" })
     })
   end
 
-  -- =================================================
-  -- Render via Kroki
-  -- =================================================
-
   write_file(infile, el.text)
 
   local url = string.format("%s/%s/%s", kroki_url, lang, format)
 
-  dbg("Rendering via Kroki: " .. lang)
-  dbg("Input: " .. infile)
-  dbg("Output: " .. outfile)
+  dbg("--------------------------------------------------")
+  dbg("KROKI REQUEST")
   dbg("URL: " .. url)
+  dbg("INPUT FILE: " .. infile)
+  dbg("OUTPUT FILE: " .. outfile)
+  dbg("FORMAT: " .. format)
+  dbg("--------------------------------------------------")
 
   local cmd = string.format(
     "curl -s -f --retry 3 --retry-delay 1 --retry-all-errors " ..
+    "-D %s " ..                -- capture headers
     "-X POST --data-binary @%s %s -o %s",
+    headers_file,
     infile,
     url,
     outfile
   )
 
   dbg("Executing: " .. cmd)
-  local ok = os.execute(cmd)
-  dbg("Exit code: " .. tostring(ok))
+
+  local ok, _, code = os.execute(cmd)
+
+  dbg("os.execute raw result: " .. tostring(ok))
+  dbg("exit code: " .. tostring(code))
 
   -- =================================================
-  -- Failure handling
+  -- Validate success via file existence
   -- =================================================
 
-  if ok ~= 0 then
-    local msg = string.format("FAILED [%s] hash=%s", lang, h)
+  local success = file_exists(outfile)
 
-    log_error(msg)
-    dbg(msg)
-    gha_error(msg)
+  if success then
+    dbg("KROKI RESPONSE (headers):")
+    dbg(read_file_head(headers_file, 1000))
 
-    return {
-      pandoc.Para({
-        pandoc.Str("[Diagram failed to render: " .. lang .. "]")
-      }),
-      el
-    }
+    dbg("Output file size OK: " .. outfile)
+    dbg("--------------------------------------------------")
+
+    return pandoc.Para({
+      pandoc.Image({}, outfile, "", { width = "95%" })
+    })
   end
 
-  dbg("Rendered successfully: " .. outfile)
-
   -- =================================================
-  -- Success
+  -- Failure handling with full diagnostics
   -- =================================================
 
-  return pandoc.Para({
-    pandoc.Image({}, outfile, "", {
-      width = "95%"
-    })
-  })
+  local response_preview = read_file_head(headers_file, 1000)
+
+  local msg = string.format(
+    "FAILED [%s] hash=%s\nHeaders:\n%s",
+    lang,
+    h,
+    response_preview
+  )
+
+  log_error(msg)
+  dbg(msg)
+  gha_error("Kroki render failed for " .. lang)
+
+  return {
+    pandoc.Para({
+      pandoc.Str("[Diagram failed to render: " .. lang .. "]")
+    }),
+    el
+  }
 end
