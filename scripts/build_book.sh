@@ -196,7 +196,6 @@ PANDOC_COMMON=(
   --section-divs
   --standalone
   --include-in-header="$SCRIPT_DIR/templates/latex-header.tex"
-  --list-of-figures
 )
 
 PANDOC_PDF=(
