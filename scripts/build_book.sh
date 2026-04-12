@@ -62,12 +62,13 @@ ROOT="$(cd "$ROOT" && pwd)"
 mkdir -p "$DIST"
 DIST="$(cd "$DIST" && pwd)"
 
+# Get the directory where this script actually lives
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 if [ -n "$TEMPLATE" ]; then
   [ ! -f "$TEMPLATE" ] && echo "[ERR ] Template not found: $TEMPLATE" && exit 1
   TEMPLATE="$(cd "$(dirname "$TEMPLATE")" && pwd)/$(basename "$TEMPLATE")"
 fi
-# Get the directory where the script itself lives to find internal templates/filters
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # =================================================
 # Toolchain checks
@@ -194,8 +195,7 @@ PANDOC_COMMON=(
   --resource-path="$FLATTENED_MEDIA"
   --section-divs
   --standalone
-  --list-of-figures
-  --include-in-header="$SCRIPT_DIR/latex-header.tex"
+  --include-in-header="$SCRIPT_DIR/templates/latex-header.tex"
   --list-of-figures
 )
 
