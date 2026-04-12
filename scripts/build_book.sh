@@ -66,6 +66,8 @@ if [ -n "$TEMPLATE" ]; then
   [ ! -f "$TEMPLATE" ] && echo "[ERR ] Template not found: $TEMPLATE" && exit 1
   TEMPLATE="$(cd "$(dirname "$TEMPLATE")" && pwd)/$(basename "$TEMPLATE")"
 fi
+# Get the directory where the script itself lives to find internal templates/filters
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # =================================================
 # Toolchain checks
@@ -181,8 +183,8 @@ COVER_BACK="$MEDIA_OUT/back.png"
 
 PANDOC_COMMON=(
   --from markdown+yaml_metadata_block
-  --lua-filter=scripts/chapter_mapping.lua
-  --lua-filter=scripts/kroki-filter.lua
+  --lua-filter="$SCRIPT_DIR/chapter_mapping.lua"
+  --lua-filter="$SCRIPT_DIR/kroki-filter.lua"
   --metadata fontsize=10.5pt
   --metadata linestretch=1.15
   --metadata "build_date=$BUILD_DATE"
@@ -192,7 +194,9 @@ PANDOC_COMMON=(
   --resource-path="$FLATTENED_MEDIA"
   --section-divs
   --standalone
-  --include-in-header=templates/latex-header.tex
+  --list-of-figures
+  --include-in-header="$SCRIPT_DIR/latex-header.tex"
+  --list-of-figures
 )
 
 PANDOC_PDF=(
