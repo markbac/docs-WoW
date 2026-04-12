@@ -1,0 +1,18 @@
+flowchart TD
+    A[Commitment made\nwithout engineering input] --> B[Engineering produces\nhonest three-point estimate]
+    B --> C[Gap between commitment\nand honest estimate]
+    C --> D{Governance\nresponse}
+    D -->|Common| E[Compress estimate\ntoward commitment\nRisk register noted]
+    D -->|Rare| F[Acknowledge gap\nManage risk\nRebaseline or renegotiate]
+    E --> G[Programme proceeds\non unachievable plan]
+    G --> H[Risks materialise\non schedule]
+    H --> I[Programme fails\nor significantly overruns]
+    I --> J[Accountability travels\ndownward to delivery team]
+    J --> K[Organisation concludes:\nengineers cannot deliver]
+    K --> L[Next programme:\ntighter control\nless trust\nmore pressure]
+    L --> A
+    F --> M[Programme proceeds\non honest plan]
+    M --> N[Risks managed\nwhen actioned]
+    N --> O[Programme delivers\nto honest estimate]
+    O --> P[Organisation learns:\nhonest estimates\nare reliable]
+    P --> Q[Next programme:\nmore trust\nbetter estimation\nbetter outcomes]

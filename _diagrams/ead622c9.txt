@@ -1,0 +1,14 @@
+flowchart LR
+    HS["Human system\nFear makes\nhonesty expensive"]
+    OS["Organisational system\nAuthority separated\nfrom knowledge"]
+    ST["Socio-technical system\nRisk register as\nreporting tool\nnot decision instrument"]
+    DS["Delivery system\nLong feedback loops\nLate integration\nLarge batches"]
+    TA["Technical system\nUnvalidated\narchitectural\nassumptions"]
+    ES["Economic system\nFixed price\nPenalty clauses\nDate pressure"]
+
+    HS -->|Risk information\nneutralised| F["Programme\nfailure"]
+    OS -->|Decisions not made\nby people who\nunderstood them| F
+    ST -->|Status shows\ngreen while\nreality is red| F
+    DS -->|Problems surface\ntoo late to\nfix cheaply| F
+    TA -->|Hidden coupling\namplifies\nrework cost| F
+    ES -->|Incentivises\nsuppressing risk\nover managing it| F

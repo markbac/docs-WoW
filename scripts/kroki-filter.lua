@@ -120,7 +120,7 @@ function CodeBlock(el)
   dbg("Processing block lang=" .. lang)
 
   local h = hash(el.text)
-  local format = "svg"
+  local format = "png"
 
   local outfile = path.join({output_dir, h .. "." .. format})
   local infile = path.join({output_dir, h .. ".txt"})
@@ -133,7 +133,7 @@ function CodeBlock(el)
   if file_exists(outfile) then
     dbg("Cache hit: " .. outfile)
     return pandoc.Para({
-      pandoc.Image({}, outfile, "", { width = "95%" })
+      pandoc.Image({}, outfile)
     })
   end
 

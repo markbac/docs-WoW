@@ -192,6 +192,7 @@ PANDOC_COMMON=(
   --resource-path="$FLATTENED_MEDIA"
   --section-divs
   --standalone
+  --include-in-header=templates/latex-header.tex
 )
 
 PANDOC_PDF=(

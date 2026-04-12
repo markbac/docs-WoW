@@ -1,0 +1,13 @@
+flowchart TD
+    A["Programme fails\npredictably"] --> B["Wrong cause identified:\nexecution failure\nnot governance failure"]
+    B --> C["Wrong lesson learned:\nmore process\ntighter control\nless trust"]
+    C --> D["Conditions worsen:\nengineers stop\nvolunteering honest\ninformation"]
+    D --> E["Next programme begins\nwith less accurate\ninformation and\nless trust"]
+    E --> F["Commitment made\nbefore scope understood\nEstimate compressed\nRisks filed"]
+    F --> A
+
+    C --> G["Authority-experience\ngap widens"]
+    G --> E
+
+    C --> H["Engineering capability\nerodes gradually"]
+    H --> E
