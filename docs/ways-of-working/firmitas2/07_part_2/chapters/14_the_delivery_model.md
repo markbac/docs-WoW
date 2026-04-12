@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 16 — Chapter 14: The Delivery Model
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 14 — The Delivery Model
+## The Delivery Model
 
 Every engineering programme operates within a delivery model — a structure that shapes how work is sequenced, how disciplines interact, how decisions are made at key transition points, and how the programme as a whole moves from intent to outcome. Most programmes inherit their delivery model by default: they use the methodology the organisation has always used, or the one the client expects, or the one the team most recently worked within.
 
@@ -17,7 +10,7 @@ This chapter describes the Firmitas delivery model — not as a prescriptive pro
 
 ---
 
-## Why pure sequential models fail
+### Why pure sequential models fail
 
 Sequential delivery models — waterfall, V-model, stage-gate — provide structure, traceability, and clear phase boundaries. These are real advantages, particularly in regulated and safety-critical environments where evidence of controlled development is a compliance requirement.
 
@@ -29,7 +22,7 @@ The sequential model also defers integration. In a programme where each phase mu
 
 ---
 
-## Why pure agile models fail in complex programmes
+### Why pure agile models fail in complex programmes
 
 Iterative and agile approaches address the sequential model's primary weakness — they incorporate learning loops, produce working software early, and adapt to changing requirements. For software-dominant products with short feedback loops and low-cost change, they work well.
 
@@ -41,7 +34,7 @@ The specific failure mode of pure agile in complex programmes is architectural d
 
 ---
 
-## The Firmitas delivery shell
+### The Firmitas delivery shell
 
 The Firmitas delivery model addresses the failure modes of both approaches through a delivery shell that provides the structure that complex programmes require while preserving the iterative learning that complex programmes need.
 
@@ -74,15 +67,15 @@ The phases are sequential in the sense that each creates the conditions for the 
 
 ---
 
-## Phase 1: Structured foundations
+### Phase 1: Structured foundations
 
-### Purpose
+#### Purpose
 
 The structured foundations phase exists to establish the conditions for delivery. Not certainty — certainty is unavailable at the start of a complex programme and should not be pretended. The goal is alignment: a shared, sufficiently detailed understanding of what is to be built, why it matters, what constraints apply, what risks exist, and what the programme will need in order to proceed.
 
 The foundations phase is not big design up front. It is the minimum investment in shared understanding that makes the iterative core productive rather than chaotic. A programme that enters the iterative core without adequate foundations will spend its early iterations discovering things that could have been known before the first sprint — and the cost of that discovery will be paid in rework rather than in the time the foundations would have required.
 
-### What structured foundations produce
+#### What structured foundations produce
 
 **Understood requirements.** Not complete requirements — complete requirements are a fiction at this stage. Requirements that are clear enough at the system level to guide architectural decisions, and broken down to the subsystem level for the components with the highest architectural impact and the highest delivery risk. The Requirement Breakdown Structure described in Chapter 11 is the instrument. The level of decomposition required depends on the programme's complexity and the cost of discovering requirements gaps during development.
 
@@ -96,11 +89,11 @@ The foundations phase is not big design up front. It is the minimum investment i
 
 **Operations involvement.** The operational context established. The teams who will support and operate what is built have been involved in NFR definition, deployment strategy, monitoring requirements, and support model design. Their input has shaped what is being built, not just what will eventually be handed to them.
 
-### Entry criteria
+#### Entry criteria
 
 The structured foundations phase begins when the programme has sufficient scope definition to establish what needs to be understood, and sufficient resource to do the understanding work properly. It does not require a complete specification — it requires enough to begin. The specific entry threshold will vary by programme, but in general: a clear statement of what the programme is for, the key stakeholders and their primary needs, the major constraints (regulatory, commercial, technical), and a preliminary identification of the programme's highest-risk areas.
 
-### Exit criteria
+#### Exit criteria
 
 The structured foundations phase is complete — and the programme is ready to enter the iterative development core — when:
 
@@ -118,21 +111,21 @@ If these conditions are not met, the programme is not ready to enter the iterati
 
 ---
 
-## Phase 2: The iterative development core
+### Phase 2: The iterative development core
 
-### Purpose
+#### Purpose
 
 The iterative development core is where the system is built. Its primary output is not features or components — it is learning. Every iteration should produce validated understanding of something that was uncertain — that a design approach works, that a performance characteristic is achievable, that an interface functions as specified, that a risk identified during the foundations phase has been resolved or requires escalation.
 
 This is the phase that agile methods are best suited to within the delivery shell. The structure established during the foundations phase — the architectural boundaries, the interface definitions, the requirements decomposition — provides the framework within which iterative development can operate productively. Teams have enough shared understanding to work without constant coordination. They have clear boundaries that tell them what is within their scope and what is not. They have interface definitions that allow them to develop against stable contracts without requiring the teams on the other side of the interface to have completed their work.
 
-### What the iterative core produces
+#### What the iterative core produces
 
 Each iteration produces a small vertical slice through the system — a piece of working, integrated, tested functionality that has been demonstrated against real acceptance criteria. Not a component in isolation. Not a feature that has been unit-tested but not integrated. A slice through the architecture that has been tested across the boundaries it depends on and has produced learning that can be used to update the programme's understanding of what is still to come.
 
 The iterative core is also where the risk register is actively worked. Each iteration should retire at least one risk — by validating an assumption, resolving a dependency, completing an investigation, or demonstrating that a technical approach achieves what the programme needs it to achieve. Iterations that produce features without retiring risks are not producing the programme's most valuable output.
 
-### Cross-discipline synchronisation
+#### Cross-discipline synchronisation
 
 The most practically challenging aspect of the iterative development core in complex multi-discipline programmes is synchronisation across disciplines that operate on different cadences. Software teams can iterate in days or weeks. Firmware teams may have longer cycles due to hardware dependencies. Hardware teams operate on weeks-to-months cycles driven by PCB fabrication, component procurement, and physical build times. Mechanical teams may have even longer cycles for tooling and manufacturing.
 
@@ -142,30 +135,53 @@ The resolution is not a unified cadence but a structured synchronisation model �
 
 ```mermaid
 flowchart TD
-    subgraph hw["Hardware stream — 8-12 week cycles"]
-        H1["HW design\nspike"] --> H2["PCB v0.1\nprototype"] --> H3["PCB v1.0\nengineering\nsample"] --> H4["PCB v2.0\nvalidation\nbuild"]
+    %% Streams
+    subgraph hw["Hardware stream — 8–12 week cycles"]
+        H1["Design spike"] --> H2["PCB v0.1<br>Prototype"]
+        H2 --> H3["PCB v1.0<br>Engineering sample"]
+        H3 --> H4["PCB v2.0<br>Validation build"]
     end
 
-    subgraph fw["Firmware stream — 2-4 week cycles"]
-        F1["Firmware\nspike on\nsimulator"] --> F2["Core drivers\non dev kit"] --> F3["Feature\ndevelopment\non v0.1 HW"] --> F4["Full feature\nset on v1.0\nHW"]
+    subgraph fw["Firmware stream — 2–4 week cycles"]
+        F1["Spike on simulator"] --> F2["Core drivers<br>on dev kit"]
+        F2 --> F3["Feature development<br>on v0.1 HW"]
+        F3 --> F4["Full feature set<br>on v1.0 HW"]
     end
 
-    subgraph sw["Software stream — 1-2 week cycles"]
-        S1["API design\nand stub"] --> S2["Core\nservices"] --> S3["Integration\nwith firmware\ninterface"] --> S4["Full\nintegration"]
+    subgraph sw["Software stream — 1–2 week cycles"]
+        S1["API design<br>and stubs"] --> S2["Core services"]
+        S2 --> S3["Integration with<br>firmware interface"]
+        S3 --> S4["Full integration"]
     end
 
-    H1 -.->|"Interface spec\nconfirmed"| F1
-    H2 -->|"Dev hardware\navailable"| F2
-    F2 -.->|"Firmware API\nstabilised"| S2
-    H3 -->|"Engineering\nsample"| F3
-    F3 -->|"Integrated\nfirmware"| S3
-    H4 --> F4
-    F4 --> S4
-    S4 --> INT["System\nintegration\nvalidation"]
+    %% Enablers (not just handoffs)
+    H1 -.->|"Interface constraints"| F1
+    H2 -->|"Early dev hardware"| F2
+    F2 -.->|"Stable firmware API"| S2
+    H3 -->|"Engineering sample"| F3
+    F3 -->|"Integrated firmware"| S3
+    H4 -->|"Production-like HW"| F4
+    F4 -->|"System-ready firmware"| S4
 
+    %% Progressive integration (key improvement)
+    F2 --> INT1["Early integration<br>Dev kit + services"]
+    F3 --> INT2["Mid integration<br>v0.1 system slice"]
+    F4 --> INT3["Late integration<br>v1.0 full system"]
+
+    S2 --> INT1
+    S3 --> INT2
+    S4 --> INT3
+
+    INT1 --> INT2 --> INT3 --> INT["System validation<br>and acceptance"]
+
+    %% Styling
     style hw fill:#E1F5EE,stroke:#0F6E56,color:#085041
     style fw fill:#E6F1FB,stroke:#185FA5,color:#0C447C
     style sw fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+
+    style INT1 fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
+    style INT2 fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
+    style INT3 fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
     style INT fill:#FAEEDA,stroke:#BA7517,color:#412402
 ```
 
@@ -173,7 +189,7 @@ The synchronisation model has three properties. Each stream develops at its natu
 
 The programme in Chapter 1 did not have a synchronisation model. Firmware was developed against a software model of the hardware while the hardware was being designed. When the hardware arrived, the firmware assumptions about the interface diverged from what the hardware actually provided. Early synchronisation — using the hardware specification to drive an early firmware spike, then an integration point as soon as development hardware was available — would have surfaced this divergence in weeks rather than months.
 
-### What done means in a cross-discipline programme
+#### What done means in a cross-discipline programme
 
 In software-only development, done is relatively well defined — the feature works, the tests pass, the acceptance criteria are met. In a cross-discipline programme, done must be defined in terms of the integration state of the work, not just the completion state of individual components.
 
@@ -181,7 +197,7 @@ A firmware component that passes all its unit tests but has never been integrate
 
 This definition of done drives the early integration discipline that the delivery model requires. Teams that can claim done without integration will defer integration. Teams for whom done requires integration will integrate early — and will surface the problems that early integration is designed to find at the point where they are cheapest to address.
 
-### Architectural integrity during iteration
+#### Architectural integrity during iteration
 
 The iterative core is where architectural drift most commonly occurs — where local decisions made under sprint pressure accumulate into structural debt that makes future development progressively more expensive. Chapter 13 described the mechanisms. The delivery model's response to this is specific.
 
@@ -189,11 +205,11 @@ Architectural guardrails — the principles, patterns, and boundaries establishe
 
 This does not slow development. It provides the visibility that allows the governance layer to maintain architectural coherence without micromanaging development decisions. The teams develop within the guardrails. When they encounter a guardrail that the new information they have suggests should be revised, they raise it through the ADR process. The revision is either accepted — with the rationale recorded — or declined — with the reasoning explained. Neither outcome requires a governance meeting. Both outcomes are visible and traceable.
 
-### Entry criteria
+#### Entry criteria
 
 The iterative development core begins when the structured foundations phase exit criteria have been met. The programme has understood requirements, an established architecture, a validated set of key assumptions, a live risk register, and a three-point estimate that programme governance has genuinely accepted — including the conditions and risks.
 
-### Exit criteria
+#### Exit criteria
 
 The iterative development core is complete when:
 
@@ -211,15 +227,15 @@ Operations teams have been progressively involved through the iterative core and
 
 ---
 
-## Phase 3: Rigorous validation
+### Phase 3: Rigorous validation
 
-### Purpose
+#### Purpose
 
 Rigorous validation is not a testing phase. Testing occurs continuously throughout the iterative core. Rigorous validation is the phase in which the programme builds the evidence base that the system performs as required under real or representative operational conditions, and that the accumulated evidence meets the programme's quality, compliance, and regulatory obligations.
 
 The distinction matters. A programme that defers all validation to a late phase is not practicing rigorous validation. It is practicing discovery — finding out late what should have been confirmed early. Rigorous validation, in the Firmitas sense, is the culmination of a continuous validation process that has been running since the foundations phase, producing progressive confidence rather than binary pass/fail at the end.
 
-### What rigorous validation produces
+#### What rigorous validation produces
 
 **System-level evidence.** Demonstration that the integrated system meets its acceptance criteria under representative conditions. Not component-level test results — system-level behaviour, across the full integration surface, under the conditions the system will experience in operation.
 
@@ -229,7 +245,7 @@ The distinction matters. A programme that defers all validation to a late phase 
 
 **A residual risk position.** A formal statement of the risks that the programme has not been able to fully retire, the basis for accepting them, and the conditions under which they would require escalation post-deployment. Every programme deploys with some residual risk. The question is whether that risk is known, bounded, and consciously accepted — or unknown and accumulating.
 
-### Entry and exit criteria
+#### Entry and exit criteria
 
 The rigorous validation phase begins when the iterative development core exit criteria have been met. It does not begin because a calendar date has been reached. If the development core exit criteria have not been met, the programme is not ready for validation — and proceeding regardless is not confidence. It is the systematic generation of validation failures that will need to be resolved before the validation can complete.
 
@@ -247,7 +263,7 @@ No open issues exist that would prevent safe, reliable, and compliant operation.
 
 ---
 
-## Gates as decision points
+### Gates as decision points
 
 The three gates in the delivery shell are not approval ceremonies. They are decision points — moments at which the programme's readiness to proceed to the next phase is evaluated against evidence, and a genuine decision is made to proceed, pause, or change direction.
 
@@ -263,20 +279,36 @@ A gate can and should stop a programme when the evidence does not support procee
 
 ---
 
-## The traceability spine
+### The traceability spine
 
 The delivery model produces a body of evidence that connects the customer need to the delivered outcome. This traceability spine is not a separate documentation exercise. It is the natural output of a programme that has been run with the disciplines described in this book.
 
 ```mermaid
-flowchart LR
-    CN["Customer\nneed"] -->|"Requirements\nengineering"| SR["System\nrequirements"]
-    SR -->|"Decomposition"| CR["Component\nrequirements"]
-    CR -->|"Architecture\ndecisions\nADRs"| DI["Design\nintent"]
-    DI -->|"Implementation"| BC["Built\ncapability"]
-    BC -->|"Testing"| TE["Test\nevidence"]
-    TE -->|"Traceability"| SR
-    TE -->|"Validation"| CN
+flowchart TB
+    CN["Customer need<br>Outcome and value"]
+    SR["System requirements<br>Externally observable behaviour"]
+    CR["Component requirements<br>Allocated responsibilities"]
+    DI["Design intent<br>Architecture decisions (ADRs)"]
+    BC["Built capability<br>Executable system"]
+    TE["Test evidence<br>Objective proof"]
 
+    %% Forward flow (intent)
+    CN -->|"Requirements engineering"| SR
+    SR -->|"Decomposition"| CR
+    CR -->|"Architecture decisions"| DI
+    DI -->|"Implementation"| BC
+    BC -->|"Verification"| TE
+
+    %% Backward flow (evidence)
+    TE -->|"Verifies"| CR
+    TE -->|"Confirms"| SR
+    TE -->|"Validates"| CN
+
+    %% Missing but critical feedback
+    TE -->|"Challenges assumptions"| DI
+    BC -->|"Reveals constraints"| DI
+
+    %% Styling
     style CN fill:#E1F5EE,stroke:#0F6E56,color:#085041
     style SR fill:#E6F1FB,stroke:#185FA5,color:#0C447C
     style CR fill:#EEEDFE,stroke:#534AB7,color:#3C3489
@@ -291,7 +323,7 @@ This traceability spine serves four purposes, each of which has been described i
 
 ---
 
-## The delivery model in the programme of Chapter 1
+### The delivery model in the programme of Chapter 1
 
 The failures of Chapter 1 read differently against the delivery model.
 
@@ -304,7 +336,3 @@ The test environment would have been on the critical path from day one — not b
 The programme board would have governed through the risk register, not through task status. The three red items at week three would have been decision requests that the programme board could not leave the meeting without addressing. The window to change the outcome would not have closed unnoticed.
 
 This is not a guarantee of success. Complex programmes encounter problems that no delivery model can fully anticipate. What the delivery model provides is the structural conditions under which problems surface early, when they are manageable, rather than late, when they are not.
-
----
-
-*End of Chapter 14*

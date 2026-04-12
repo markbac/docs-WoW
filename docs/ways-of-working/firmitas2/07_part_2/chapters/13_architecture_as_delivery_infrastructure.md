@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 15 — Chapter 13: Architecture as Delivery Infrastructure
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 13 — Architecture as Delivery Infrastructure
+## Architecture as Delivery Infrastructure
 
 Architecture is one of the most consistently misunderstood concepts in engineering programme management. In many organisations it is treated as a phase — something that happens at the beginning of a programme, produces a set of documents and diagrams, and is then handed over to the development teams who get on with the real work. In others it is treated as a role — the architect who attends design reviews, approves technical decisions, and maintains the system diagrams. In others still it is treated as a constraint — a set of standards and patterns that teams must comply with, enforced through governance gates.
 
@@ -17,7 +10,7 @@ That framing has a specific implication for engineering leadership: architectura
 
 ---
 
-## Architecture encodes behaviour
+### Architecture encodes behaviour
 
 Every significant architectural decision embeds assumptions about how the system will be used, maintained, and evolved. Those assumptions are not always stated explicitly. They are encoded in the choices themselves — in the coupling between components, in the boundaries between subsystems, in the interfaces that define how the parts interact, in the dependencies that constrain what can change independently and what must change together.
 
@@ -33,7 +26,7 @@ These are not abstract properties. They are the specific conditions that determi
 
 ---
 
-## Architecture and flow
+### Architecture and flow
 
 Chapter 12 established that flow — the smooth progression of value through the entire system — is the primary indicator of programme health. Architecture is one of the primary determinants of flow. It shapes the dependencies, coupling, and integration points that determine how easily value can progress from intent to outcome.
 
@@ -45,7 +38,7 @@ When architecture constrains flow, no amount of delivery process optimisation co
 
 ---
 
-## Architecture as risk distribution
+### Architecture as risk distribution
 
 Every architectural decision is a risk distribution decision — a choice about where risk will reside in the system, when it will become visible, and how expensive it will be to address.
 
@@ -59,7 +52,7 @@ An architecture that delays risk discovery creates false confidence while accumu
 
 ---
 
-## Evolutionary architecture
+### Evolutionary architecture
 
 The false dichotomy between rigorous upfront design and uncontrolled emergent architecture is one of the most persistent sources of architectural failure in engineering programmes. The rigid upfront design camp produces architectures that are theoretically complete but practically disconnected from the realities that emerge as the programme develops — realities about integration complexity, about performance characteristics, about operational requirements that were not fully understood at design time. The emergent architecture camp produces systems that accumulate structural debt as local decisions pile up without reference to a coherent whole, until the resulting architecture is too entangled to evolve safely.
 
@@ -73,7 +66,7 @@ The tension between these two requirements is managed through the governance of 
 
 ---
 
-## Architecture Decision Records
+### Architecture Decision Records
 
 Architectural decisions carry long-term consequences. When the rationale behind a decision is lost — when future teams know what was decided but not why, or what alternatives were considered, or what trade-offs were accepted — the decision becomes an invisible constraint. It cannot be challenged because its reasoning cannot be reconstructed. It cannot be evolved because the understanding that would guide evolution has been lost. It can only be worked around, at accumulating cost, until the workarounds become the architecture.
 
@@ -87,7 +80,7 @@ ADRs are not heavy. They do not require architectural review boards or extensive
 
 ---
 
-## Living design
+### Living design
 
 Architectural documentation that is produced upfront and never updated is not documentation. It is archaeology. The system as it was designed and the system as it was built diverge almost immediately, and by the time the programme is operating in production, the upfront documentation typically describes a system that no longer exists.
 
@@ -99,7 +92,7 @@ The key property of living design artefacts is that they are maintained where th
 
 ---
 
-## Architecture across disciplines
+### Architecture across disciplines
 
 In programmes that span multiple engineering disciplines — hardware, mechanical, firmware, software — architecture is not a single-discipline concern. The architectural boundaries between disciplines are the highest-risk interfaces in the programme, because they are the points at which different design assumptions, different development cadences, and different change management approaches must be reconciled.
 
@@ -109,7 +102,7 @@ Managing architectural boundaries across disciplines requires explicit interface
 
 ---
 
-## Architecture as a leadership responsibility
+### Architecture as a leadership responsibility
 
 The architectural decisions that most affect programme outcomes are made early, when the scope is least well understood, when the people making the decisions have the least information about the constraints that will matter, and when the temptation to defer hard decisions in favour of apparent progress is highest.
 
@@ -123,7 +116,7 @@ Architecture is not someone else's problem. In the Firmitas sense, it is everyon
 
 ---
 
-## What architecture looks like when it is done well
+### What architecture looks like when it is done well
 
 The contrast between the architecture that produced Chapter 1's failures and one designed with delivery in mind is instructive.
 
@@ -136,7 +129,3 @@ The integration testing would have been designed into the architecture — conti
 None of this is architectural sophistication. It is architectural discipline — the application of systematic thinking to the decisions that matter most, at the time when they can still be made cheaply, with the information and the governance support to make them well.
 
 That is what architecture as delivery infrastructure means in practice.
-
----
-
-*End of Chapter 13*

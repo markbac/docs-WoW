@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 18 — Chapter 16: Governance, Guardrails, and Decision Authority
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 16 — Governance, Guardrails, and Decision Authority
+## Governance, Guardrails, and Decision Authority
 
 Governance is one of the most consistently misunderstood concepts in engineering programme management. In most organisations it means one of two things: either the set of approval processes that work must pass through before proceeding, or the committee that reviews programme status and asks questions. Both of these are expressions of governance. Neither is governance itself.
 
@@ -15,7 +8,7 @@ The governance model in Firmitas is built around three principles that this chap
 
 ---
 
-## What governance is for
+### What governance is for
 
 Governance exists to answer four questions consistently, at every level of the programme.
 
@@ -29,7 +22,7 @@ With what accountability? Every significant decision must have a named owner who
 
 ---
 
-## Guardrails, not gates
+### Guardrails, not gates
 
 The fundamental governance design choice in Firmitas is the preference for guardrails over gates wherever the programme's risk profile permits.
 
@@ -43,7 +36,7 @@ A guardrail-based governance system creates a programme culture in which teams o
 
 ---
 
-## Designing guardrails
+### Designing guardrails
 
 A guardrail is only useful if it is explicit, stable, and understood by the people operating within it. Implicit guardrails — the unspoken norms about what requires approval — produce the same failure mode as ambiguous authority: either teams escalate everything because they are uncertain what they can decide, or they decide everything themselves because they are uncertain what requires escalation.
 
@@ -59,7 +52,7 @@ Guardrails in Firmitas are defined across several dimensions.
 
 ---
 
-## Mandatory gates in regulated environments
+### Mandatory gates in regulated environments
 
 The guardrails-not-gates preference has a necessary exception: externally mandated gates that cannot be dissolved into continuous flow without violating the regulatory framework the programme operates within.
 
@@ -75,7 +68,7 @@ The governance principle: mandatory gates are satisfied by the quality of the en
 
 ---
 
-## Evidence-based governance
+### Evidence-based governance
 
 Every significant governance decision should be based on evidence rather than assertion, opinion, or optimism.
 
@@ -91,7 +84,7 @@ The governance layer has the capability to evaluate the evidence it receives. Ev
 
 ---
 
-## Scaling governance without centralisation
+### Scaling governance without centralisation
 
 As programmes scale — across multiple teams, multiple disciplines, multiple delivery streams — the instinct is to centralise governance. A central architecture board. A central change control board. A central quality authority. These mechanisms are introduced with good intent: consistency, coherence, risk management at scale.
 
@@ -105,7 +98,7 @@ The governance test at scale is not: does every significant decision pass throug
 
 ---
 
-## Management by exception as a governance structure
+### Management by exception as a governance structure
 
 Chapter 10 introduced management by exception in the context of the risk and issues register — the principle that senior programme governance acts on escalated items rather than on task-level status. The principle is restated here as a structural governance principle because its implications extend beyond the risk register to the entire governance model.
 
@@ -119,7 +112,7 @@ The programme review that is structured around escalated risks and issues, that 
 
 ---
 
-## Governance theatre and how to recognise it
+### Governance theatre and how to recognise it
 
 Governance theatre is the performance of governance without its substance. It is the gate review that approves the programme because the programme presented well, not because the evidence supports approval. It is the risk register that is reviewed and acknowledged without generating decisions. It is the architecture board that approves designs without the knowledge to evaluate their quality. It is the programme board that notes concerns and moves on.
 
@@ -133,7 +126,7 @@ The corrective is not to add more governance. It is to reconnect the mechanisms 
 
 ---
 
-## Governance in a regulated environment — the mapping
+### Governance in a regulated environment — the mapping
 
 For programmes operating under formal standards, the Firmitas governance model produces the evidence and the process that those standards require. The mapping is direct.
 
@@ -147,7 +140,7 @@ The compliance arises naturally from a programme that is being run correctly. Th
 
 ---
 
-## What good governance looks like
+### What good governance looks like
 
 Good governance is nearly invisible. When governance is working well, decisions are made quickly and well at the appropriate level, the people making decisions have the information they need, the people affected by decisions understand why they were made, and the accountability for outcomes is clear and accepted.
 
@@ -160,7 +153,3 @@ If the answer is yes, the governance is working. The mechanisms that produce tho
 If the answer is no, the governance is not working. And the response is not to add more governance. It is to diagnose what the current governance is failing to produce, and to redesign the mechanisms that connect decision authority to delivery knowledge, risk information to governance action, and evidence to accountability.
 
 That is what governance design means. And that, as Chapter 7 established, is a leadership responsibility.
-
----
-
-*End of Chapter 16*

@@ -145,4 +145,3 @@ The programme board's risk register review was intended to surface programme ris
 That someone was the leadership. That responsibility was theirs.
 
 It still is.
-

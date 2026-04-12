@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 23 — Chapter 21: Portfolio Flow and Prioritisation
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 21 — Portfolio Flow and Prioritisation
+## Portfolio Flow and Prioritisation
 
 Every failure pattern described in this book exists at the programme level. A programme with a reverse-engineered plan. A programme with an unresolved risk register. A programme with a delivery team that was not trusted with its own commitments. The failures are programme-level failures, and the structural responses described in Chapters 7 through 20 are programme-level responses.
 
@@ -15,7 +8,7 @@ This chapter addresses portfolio management as a flow problem — not a planning
 
 ---
 
-## The portfolio as a flow system
+### The portfolio as a flow system
 
 The conventional framing of portfolio management treats the portfolio as a collection of projects to be planned, tracked, and reported on. Projects are selected against a business case, resourced against a capacity plan, scheduled against a timeline, and tracked against a milestone plan. The portfolio review confirms that projects are progressing, identifies projects that are behind, and manages the commercial and strategic implications of portfolio performance.
 
@@ -27,7 +20,7 @@ The application of flow principles to portfolios — limited work in progress, q
 
 ---
 
-## The cost of too much work in flight
+### The cost of too much work in flight
 
 The most consistent portfolio-level failure is accepting more work than the system can productively deliver simultaneously. This failure mode is the portfolio equivalent of the team at full utilisation — a system that appears fully occupied and productive while actually accumulating queues, deferring integration, and degrading the quality of everything it is attempting to deliver.
 
@@ -39,7 +32,7 @@ The governance principle follows from Chapter 12's utilisation argument: limitin
 
 ---
 
-## The prioritisation decision
+### The prioritisation decision
 
 Portfolio prioritisation is the decision about what to start, continue, pause, or stop. It is one of the most important governance decisions an organisation makes, and one of the most poorly made — because it is typically made on the basis of incomplete information, under political pressure, against a plan rather than against current reality, and without the authority to act on what the information says.
 
@@ -51,7 +44,7 @@ This is plan inertia. The plan was a model of the future at the time it was prod
 
 ---
 
-## What good prioritisation requires
+### What good prioritisation requires
 
 Portfolio prioritisation that produces good outcomes requires four things working together.
 
@@ -65,7 +58,7 @@ Portfolio prioritisation that produces good outcomes requires four things workin
 
 ---
 
-## The four prioritisation questions
+### The four prioritisation questions
 
 When assessing what to start, continue, pause, or stop, four questions provide the governance structure for the decision.
 
@@ -79,7 +72,7 @@ When assessing what to start, continue, pause, or stop, four questions provide t
 
 ---
 
-## Dependencies as first-class portfolio risks
+### Dependencies as first-class portfolio risks
 
 Dependencies between initiatives are the most consistently undermanaged risk in portfolio management. Every portfolio has them. Most portfolios do not manage them explicitly until they become blockers.
 
@@ -91,7 +84,7 @@ Dependencies that are not managed explicitly are not being managed. They are bei
 
 ---
 
-## Portfolio governance through risk and issues
+### Portfolio governance through risk and issues
 
 The governance principle established in Chapter 10 — that senior management governs programmes through risks and issues rather than through task status — applies at the portfolio level with the same force.
 
@@ -103,7 +96,7 @@ The portfolio risk and issues register is that mechanism. It aggregates the esca
 
 ---
 
-## Portfolio flow in regulated environments
+### Portfolio flow in regulated environments
 
 In regulated or safety-critical domains, portfolio flow is constrained by validation cycles, certification requirements, and external approval processes that do not respond to portfolio prioritisation decisions in the way that internal dependencies do. A regulatory body that requires a six-month review period for a safety case submission does not compress that period because the portfolio's commercial priorities demand it.
 
@@ -113,7 +106,7 @@ The portfolio that treats regulatory constraints as planning inputs from the sta
 
 ---
 
-## From project lists to value streams
+### From project lists to value streams
 
 The final observation in this chapter addresses the framing of the portfolio itself. A portfolio managed as a list of projects — each with a defined scope, timeline, and budget, each optimised independently — produces the local optimisation failure that Chapter 4 identified at the programme level. Projects complete. The underlying capability they were supposed to produce is delivered in fragments, by teams that have moved on, to stakeholders who must assemble the fragments themselves. The value that the investments were supposed to generate does not follow automatically from the project completions.
 
@@ -122,7 +115,3 @@ A portfolio managed as a set of value streams — persistent, long-lived investm
 This is a different organisational model, and it is not appropriate for every portfolio. Some programmes are genuinely one-time investments that should complete and close. But in portfolios where the same capability requires ongoing investment — where the product will evolve, the platform will be maintained, the regulatory compliance will need to be updated — the project framing creates discontinuity, knowledge loss at every programme close, and the perpetual reinvestment in reestablishing the context that a persistent team would carry.
 
 The portfolio that manages its long-lived investments as value streams rather than as projects retains the capability knowledge, the customer understanding, and the operational continuity that the project model discards at every handoff. The cost of this retention is the ongoing team investment. The return is the compounding improvement in delivery quality and velocity that comes from teams that know their domain deeply rather than learning it afresh each time.
-
----
-
-*End of Chapter 21*

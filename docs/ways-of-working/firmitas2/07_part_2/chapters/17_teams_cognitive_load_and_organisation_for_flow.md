@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 19 — Chapter 17: Teams, Cognitive Load, and Organisation for Flow
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 17 — Teams, Cognitive Load, and Organisation for Flow
+## Teams, Cognitive Load, and Organisation for Flow
 
 The delivery model in Chapter 14, the governance model in Chapter 16, the architectural principles in Chapter 13 — all of these assume something that is rarely examined explicitly: that the teams responsible for delivery are organised in a way that makes delivery possible. Not just capable of delivery, but structured so that the work can flow, the decisions can be made at the right level, and the cognitive load on the people doing the work is manageable rather than overwhelming.
 
@@ -17,7 +10,7 @@ This chapter addresses team design as a delivery discipline — the structural d
 
 ---
 
-## Teams as socio-technical systems
+### Teams as socio-technical systems
 
 A team is not a collection of people with skills. It is a socio-technical system — a combination of people, processes, tools, responsibilities, and relationships that together produce outcomes. The behaviour of a team is not determined by the capability of its individual members. It emerges from how those members interact with each other, with the technical systems they are responsible for, and with the broader organisational context in which they operate.
 
@@ -31,7 +24,7 @@ Conway's Law is not a warning. It is a design tool. The team structure is the ar
 
 ---
 
-## Cognitive load as a first-class design constraint
+### Cognitive load as a first-class design constraint
 
 Cognitive load — the total amount of mental effort required to understand the system a team is working in, reason about changes safely, and make decisions with confidence — is one of the most consistently underestimated constraints in engineering team design.
 
@@ -47,7 +40,7 @@ Cognitive load in engineering systems is not monolithic. Three types interact to
 
 ---
 
-## Ownership as the primary load-reduction mechanism
+### Ownership as the primary load-reduction mechanism
 
 The most effective mechanism for reducing cognitive load is clear, end-to-end ownership — the allocation of a coherent domain of responsibility to a team that includes both the authority to make decisions within that domain and the accountability for the outcomes those decisions produce.
 
@@ -61,7 +54,7 @@ Firmitas insists on end-to-end ownership wherever possible — not because it is
 
 ---
 
-## Team topologies
+### Team topologies
 
 The Team Topologies model, developed by Skelton and Pais, provides a practical vocabulary for designing team structures that optimise for flow. Firmitas uses this vocabulary because it is the most useful currently available — the distinctions it draws between team types and interaction modes are directly relevant to the delivery challenges complex programmes face.
 
@@ -81,7 +74,7 @@ The critical property of a platform team is self-service. A platform that requir
 
 ---
 
-## Interaction modes
+### Interaction modes
 
 The interaction mode between two teams — how they work together and what each expects from the relationship — is as important as the team structure itself. Three interaction modes produce different cognitive loads and different flow properties.
 
@@ -97,7 +90,7 @@ A common failure mode is sustaining collaboration past the point where it is pro
 
 ---
 
-## Boundaries and cognitive load
+### Boundaries and cognitive load
 
 The boundaries between teams are where cognitive load is either contained or leaked.
 
@@ -109,7 +102,7 @@ The restructuring required to move from functional boundaries to system-aligned 
 
 ---
 
-## Organising for flow
+### Organising for flow
 
 The principle that connects team design to the delivery model is straightforward: team boundaries should be designed so that the work the delivery model requires can flow without unnecessary coordination overhead.
 
@@ -121,7 +114,7 @@ The validation phase requires that the evidence produced by each team's developm
 
 ---
 
-## Scaling — boundaries rather than hierarchies
+### Scaling — boundaries rather than hierarchies
 
 As programmes scale — adding teams, increasing the number of disciplines, managing larger portfolios — the temptation is to add governance hierarchy. More managers, more coordination roles, more approval layers. This is the correct response to the problem of maintaining visibility over a larger organisation. It is the incorrect response to the problem of maintaining flow.
 
@@ -133,7 +126,7 @@ This approach has limits. Some decisions genuinely require cross-boundary coordi
 
 ---
 
-## The human dimension
+### The human dimension
 
 Teams are not engineering components. They are groups of people whose performance depends on conditions that extend beyond the technical and structural. Chapter 11 addressed psychological safety and motivation as system properties — and those properties apply directly to team design.
 
@@ -144,7 +137,3 @@ The team design decisions described in this chapter — boundaries, ownership, i
 This is Principle 12 applied to team design: your people are your most significant investment. The structural decisions that determine whether their capability can be applied effectively are leadership decisions. They deserve the same deliberate attention as the architectural decisions that determine whether the system can evolve, and the governance decisions that determine whether the programme can be managed honestly.
 
 Design the teams. Do not inherit them.
-
----
-
-*End of Chapter 17*

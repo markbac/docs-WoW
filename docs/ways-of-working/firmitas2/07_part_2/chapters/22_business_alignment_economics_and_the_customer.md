@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 24 — Chapter 22: Business Alignment, Economics, and the Customer
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 22 — Business Alignment, Economics, and the Customer
+## Business Alignment, Economics, and the Customer
 
 Engineering exists within a commercial reality. Programmes are funded because they are expected to produce value — for customers, for the business, for the portfolio of investments the organisation is managing. The decisions engineers make — about architecture, about quality, about technical debt, about how much time to invest in testing and documentation — carry economic consequences whether or not those consequences are acknowledged. Engineering that ignores commercial reality does not produce better engineering. It produces engineering that is technically excellent and commercially irrelevant, or technically excellent and unaffordable, or technically excellent and delivered to no one who needed it.
 
@@ -17,7 +10,7 @@ This chapter addresses three dimensions of that alignment: the customer, the eco
 
 ---
 
-## The customer is not the business
+### The customer is not the business
 
 The most important alignment distinction in engineering programme management is one that most programmes blur or ignore entirely: the customer is not the business.
 
@@ -35,7 +28,7 @@ The consequences appear at acceptance, at integration, or in the field. The prod
 
 ---
 
-## What happens when engineers see the customer
+### What happens when engineers see the customer
 
 The quality improvement that results from engineering teams having direct visibility of end customers is not a motivational effect, though motivation may improve. It is an informational effect. Engineers who have seen how the customer actually uses the product write different requirements, make different trade-off decisions, and accept different quality compromises from those who have not.
 
@@ -51,7 +44,7 @@ The customer line of sight does not require constant customer access. It require
 
 ---
 
-## Engineering decisions are economic decisions
+### Engineering decisions are economic decisions
 
 Every significant engineering decision carries economic consequences — in development cost, in operational cost, in the cost of future change, in the cost of managing the risk that the decision creates. These consequences exist whether or not they are explicitly calculated.
 
@@ -65,7 +58,7 @@ This requires a vocabulary for expressing economic consequences in terms that go
 
 ---
 
-## The cost of quality is lower than the cost of poor quality
+### The cost of quality is lower than the cost of poor quality
 
 The argument that investing in quality is expensive is consistently true in the short term and consistently wrong over any meaningful time horizon. Quality investment costs time and capacity upfront — in requirements work, in architectural discipline, in test coverage, in documentation discipline, in the governance that ensures quality standards are maintained under delivery pressure. These costs are visible immediately and attributable directly to the quality investment.
 
@@ -77,7 +70,7 @@ This invisibility is the structural reason why quality investment is consistentl
 
 ---
 
-## Business strategy as an upstream constraint
+### Business strategy as an upstream constraint
 
 Engineering programmes do not exist in a strategic vacuum. They are investments made in service of a business strategy — a set of choices about where the organisation will compete, what capabilities it will build, what customers it will serve, and what it will be in the market over the next several years.
 
@@ -91,7 +84,7 @@ The governance response is alignment — ensuring that engineering programmes ar
 
 ---
 
-## Metrics that reveal alignment
+### Metrics that reveal alignment
 
 The measurement of engineering alignment with business outcomes is one of the most consistently mishandled governance activities in engineering programme management. The default metrics — delivery velocity, feature count, milestone completion, defect rates — measure engineering activity. They do not measure whether the engineering activity is producing the business outcomes it was intended to produce.
 
@@ -103,7 +96,7 @@ The governance principle: outcome metrics and activity metrics serve different g
 
 ---
 
-## Funding models and flow
+### Funding models and flow
 
 The relationship between how engineering programmes are funded and how effectively they deliver is rarely discussed explicitly. It is consequential.
 
@@ -117,7 +110,7 @@ The organisation that defaults to project funding for everything, including the 
 
 ---
 
-## The alignment principle
+### The alignment principle
 
 Business alignment, economics, and customer visibility are not three separate concerns. They are three dimensions of the same alignment — the alignment between what engineering is doing, why it is doing it, and whether it is producing the outcomes that justify the investment.
 
@@ -130,7 +123,3 @@ The governance response to each is the same: bring the relevant context into the
 Engineering that knows its customers, understands its economics, and is connected to its strategy is not constrained by commercial reality. It is enabled by it. The constraints are the guardrails within which the engineering work produces outcomes rather than just outputs. The context is the information that makes trade-offs intelligible rather than arbitrary.
 
 That is what alignment means. And that is what it produces.
-
----
-
-*End of Chapter 22*

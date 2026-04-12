@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 17 — Chapter 15: Quality as a System Property
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 15 — Quality as a System Property
+## Quality as a System Property
 
 Quality failures are rarely the result of engineers who did not care about quality. In most organisations that deliver products with significant defects, the engineers knew the quality was insufficient. They knew which tests had been skipped, which requirements had been ambiguously implemented, which technical debt was accumulating in ways that would cost more to address later. They knew because they were the ones making the compromises — rationally, under pressure, in a system that made quality the most available casualty when schedule and cost were threatened.
 
@@ -15,7 +8,7 @@ The implication for leadership is direct. Quality cannot be mandated. It cannot 
 
 ---
 
-## Quality and the failure in Chapter 1
+### Quality and the failure in Chapter 1
 
 The programme in Chapter 1 produced poor quality outcomes not because engineers were careless but because the system produced them.
 
@@ -29,7 +22,7 @@ Each of these quality failures was systemic. Each was visible in advance. None w
 
 ---
 
-## Built-in quality versus inspected quality
+### Built-in quality versus inspected quality
 
 The distinction between built-in quality and inspected quality is fundamental to understanding both why quality fails and how to address it.
 
@@ -41,7 +34,7 @@ The shift from inspected to built-in quality is not the abandonment of testing. 
 
 ---
 
-## Quality and requirements
+### Quality and requirements
 
 The quality of the delivered system is determined, more than by any other single factor, by the quality of the requirements it was built against.
 
@@ -55,7 +48,7 @@ This connection between requirements engineering and quality is why Chapter 11 p
 
 ---
 
-## Quality and architecture
+### Quality and architecture
 
 Architecture determines quality outcomes as directly as it determines delivery performance. The two are inseparable.
 
@@ -73,7 +66,7 @@ Failure isolation is the degree to which the impact of a failure in one componen
 
 ---
 
-## Verification and validation
+### Verification and validation
 
 Verification and validation are frequently conflated but serve different purposes, and the distinction matters for how quality is managed throughout the delivery lifecycle.
 
@@ -89,7 +82,7 @@ The programme that defers all validation to the final phase is not being rigorou
 
 ---
 
-## Quality in regulated and safety-critical contexts
+### Quality in regulated and safety-critical contexts
 
 In regulated environments — programmes operating under IEC 62304, IEC 61508, ISO 9001, DO-178C, and their sector-specific equivalents — quality is not solely an internal engineering concern. It is an external obligation with specific evidence requirements.
 
@@ -101,7 +94,7 @@ Firmitas treats compliance evidence as the output of a quality engineering syste
 
 ---
 
-## Quality, slack, and the system under pressure
+### Quality, slack, and the system under pressure
 
 Quality and slack are connected in the way that Chapter 12 described. A system without slack cannot maintain quality because the activities that maintain quality — proper test coverage, thorough code review, adequate investigation of defects, deliberate refactoring of accumulated debt — are the first casualties of overload.
 
@@ -113,7 +106,7 @@ The leadership responsibility is explicit: protecting the slack that makes quali
 
 ---
 
-## Quality metrics that do not corrupt behaviour
+### Quality metrics that do not corrupt behaviour
 
 Measuring quality is necessary. Measuring it badly destroys the behaviour it is intended to encourage.
 
@@ -125,7 +118,7 @@ The governance principle for quality measurement follows from Chapter 8: metrics
 
 ---
 
-## Quality engineering as a leadership discipline
+### Quality engineering as a leadership discipline
 
 Quality is a system property. Systems are designed by leaders. Quality engineering is therefore a leadership discipline, not a technical one.
 
@@ -134,7 +127,3 @@ This does not mean leaders write test cases or conduct code reviews. It means th
 The programme board in Chapter 1 that confirmed the delivery date without addressing the unvalidated assumptions in the architecture was making a quality decision. The decision was not framed as a quality decision — it was framed as a schedule decision. But schedule decisions that require quality compromises are quality decisions. The leadership layer that makes schedule decisions without acknowledging the quality consequences they carry is not governing quality. It is generating the conditions that will produce quality failures later, at a cost that will be attributed to execution rather than to the governance decision that caused it.
 
 Quality engineering, in the Firmitas sense, begins at the moment the programme board first reviews the programme's plan and risks, and continues throughout the programme's life. It ends when the last field incident has been resolved and the system has been retired. That scope is not a burden. It is what responsibility for outcomes actually means.
-
----
-
-*End of Chapter 15*

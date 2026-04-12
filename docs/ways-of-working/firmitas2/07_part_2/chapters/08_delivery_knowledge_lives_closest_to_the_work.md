@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 10 — Chapter 8: Delivery Knowledge Lives Closest to the Work
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 8 — Delivery Knowledge Lives Closest to the Work
+##  Delivery Knowledge Lives Closest to the Work
 
 The engineers on the programme in Chapter 1 knew what was wrong. They knew it at week three. They knew which risks were real, which assumptions were unsafe, and which decisions were required to change the outcome. They put that knowledge into a risk register and presented it to the people with the authority to act on it.
 
@@ -17,7 +10,7 @@ The principle that delivery knowledge lives closest to the work is not a stateme
 
 ---
 
-## Where delivery knowledge actually lives
+### Where delivery knowledge actually lives
 
 Delivery knowledge is the accumulated understanding of what a specific programme requires — the technical constraints, the integration dependencies, the risk landscape, the realistic timescales, the architectural assumptions that will hold and the ones that will not. It is not generic engineering knowledge, though that is part of it. It is contextual knowledge about this programme, this system, these components, and these conditions.
 
@@ -29,7 +22,7 @@ The governance layers above the engineering team hold different knowledge — co
 
 ---
 
-## The decision authority problem
+### The decision authority problem
 
 The gap between delivery knowledge and decision authority is structural. It is produced by the way engineering organisations are designed — with authority concentrated at the top of a hierarchy and knowledge concentrated at the bottom — and it is reinforced by a set of assumptions about what governance is for that make the gap feel normal rather than dysfunctional.
 
@@ -41,7 +34,7 @@ This is not incompetence. It is a structural mismatch — the wrong type of know
 
 ---
 
-## What genuine autonomy requires
+### What genuine autonomy requires
 
 The response to the decision authority problem is not to move all decisions downward. Some decisions — commercial commitments, portfolio priorities, strategic trade-offs, regulatory obligations — genuinely belong at a governance level that has the commercial and organisational context to make them well. The goal is not to dismantle governance. It is to align decision authority with the knowledge required to exercise it well.
 
@@ -57,7 +50,7 @@ The boundary between these levels is not rigid and will vary by programme type, 
 
 ---
 
-## No micromanagement — no second-guessing
+### No micromanagement — no second-guessing
 
 Genuine autonomy at the team level requires two specific commitments from the governance layers above it.
 
@@ -73,7 +66,7 @@ Uninformed override is one of the most damaging governance behaviours in enginee
 
 ---
 
-## Gates approved without knowledge
+### Gates approved without knowledge
 
 There is a specific governance failure that deserves direct treatment because it is so common and so consequential: the gate review approved by people who do not have the knowledge to evaluate what they are approving.
 
@@ -89,7 +82,7 @@ Firmitas requires that gate reviews are genuine decision points — that the peo
 
 ---
 
-## The authority-experience gap in this context
+### The authority-experience gap in this context
 
 Chapter 2 introduced the authority-experience gap — the structural condition in which the people with the most authority over delivery decisions have the least direct experience of what delivery requires. That gap is relevant here in a specific way.
 
@@ -105,7 +98,7 @@ That is a system design requirement. And system design, as Chapter 7 established
 
 ---
 
-## The principle in practice
+### The principle in practice
 
 The principle that delivery knowledge lives closest to the work has a set of practical implications for how programmes are governed.
 
@@ -119,7 +112,7 @@ Decision boundaries are explicit. Teams know what they can decide independently,
 
 ---
 
-## What changes when this is done well
+### What changes when this is done well
 
 The change is not dramatic. It does not involve new ceremonies or complex process redesign. It involves a shift in where attention is focused and what governance systems are designed to do.
 
@@ -130,7 +123,3 @@ Engineering teams that are genuinely trusted to manage their own delivery behave
 This is the connection between the governance principle in this chapter and the human system principle in Chapter 5's compounding cycle. Delivery knowledge reaches decisions when the governance system is designed to receive it. When it reaches decisions, the decisions improve. When the decisions improve, the programme outcomes improve. And when programme outcomes improve in ways that are attributable to the honest information the engineering team provided, the conditions for the next programme's honest information are better than they were for this one.
 
 That virtuous cycle is available. It requires a governance system designed to produce it.
-
----
-
-*End of Chapter 8*

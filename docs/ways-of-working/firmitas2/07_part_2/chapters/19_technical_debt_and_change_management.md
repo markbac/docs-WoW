@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 21 — Chapter 19: Technical Debt and Change Management
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 19 — Technical Debt and Change Management
+## Technical Debt and Change Management
 
 Every engineering programme makes compromises. Scope is reduced to meet a timeline. An implementation shortcut is taken when the proper approach would take longer than the delivery window allows. A design decision is made on incomplete information and would be made differently if the full picture were available. A dependency is accepted because the alternative would require more time than the programme has.
 
@@ -15,7 +8,7 @@ Technical debt is the accumulated liability of those compromises. Change managem
 
 ---
 
-## What technical debt is and what it is not
+### What technical debt is and what it is not
 
 Technical debt is a useful metaphor, introduced by Ward Cunningham, that describes the future cost of shortcuts taken in the present. Like financial debt, technical debt has a principal — the work that was deferred or done improperly — and interest — the compounding cost of carrying the debt, paid in slower development, higher defect rates, and the accumulated complexity of working around rather than through the underlying problem.
 
@@ -31,7 +24,7 @@ The governance response to these two categories is different. Deliberate debt re
 
 ---
 
-## The four conditions for legitimate debt
+### The four conditions for legitimate debt
 
 Deliberate technical debt is legitimate when four conditions are met. When any of them is absent, the debt is not being managed — it is being deferred with the hope that it will not surface as a problem before it can be addressed.
 
@@ -45,7 +38,7 @@ Deliberate technical debt is legitimate when four conditions are met. When any o
 
 ---
 
-## Technical debt taxonomy
+### Technical debt taxonomy
 
 Not all technical debt is the same. Different types carry different risks, require different governance responses, and have different resolution costs. Understanding the type of debt the programme is carrying determines the urgency and approach of the resolution response.
 
@@ -59,7 +52,7 @@ Not all technical debt is the same. Different types carry different risks, requi
 
 ---
 
-## Who makes the debt call
+### Who makes the debt call
 
 Senior engineers must have the autonomy to identify, manage, and report technical debt. They have the technical understanding to assess what is safe to defer and what constitutes a systemic risk. They have the contextual knowledge to evaluate whether a shortcut is a considered trade-off or a structural liability. They are the people closest to the work, which is where the knowledge that determines the correct debt decision resides.
 
@@ -71,7 +64,7 @@ The second is the authority to ensure that the business-accepted condition is ge
 
 ---
 
-## Change management
+### Change management
 
 Change is not a failure of planning. It is the inevitable product of building complex systems in conditions of genuine uncertainty. Requirements that are specified before the system is fully understood will be revised as understanding improves. Architectural assumptions that were valid when they were made will be invalidated as the system is built and its real behaviour becomes visible. External dependencies will change in ways that affect the programme's commitments.
 
@@ -91,7 +84,7 @@ Architectural change requires the ADR process — an explicit record of the deci
 
 ---
 
-## The cost of thrash
+### The cost of thrash
 
 Change is not free. Every change to requirements, design, or architecture carries a cost — the cost of revising the affected artefacts, updating the affected implementations, re-running the affected tests, and communicating the change to everyone who has been working on assumptions that the change invalidates.
 
@@ -103,7 +96,7 @@ The governance response to thrash is not to prevent change. It is to ensure that
 
 ---
 
-## Knowing when not to change
+### Knowing when not to change
 
 One of the most important and least discussed aspects of change management is the discipline of not changing — of recognising when a proposed change would consume more delivery capacity than the value it would add, and explicitly deciding not to accept it.
 
@@ -117,7 +110,7 @@ The commercial conversation about what a programme can and cannot accommodate is
 
 ---
 
-## Technical debt and the long view
+### Technical debt and the long view
 
 The relationship between technical debt, change management, and the long-term health of the systems the programme produces is the direct expression of Principle 10 and Principle 11 — the cost of short-term optimisation is paid by people who had no say in the decision, and optimising for long-term system health is the leadership responsibility that most directly determines whether what the programme builds will be a sustainable asset or a accumulating liability.
 
@@ -126,7 +119,3 @@ Programmes that manage debt deliberately — accepting it when it is genuinely j
 Programmes that allow debt to accumulate invisibly — through accidental shortcuts, through the systematic treatment of quality as optional under schedule pressure, through the acceptance of change without architectural discipline — produce systems that become progressively harder and more expensive to operate and evolve. The interest on the debt compounds. The cost of each new delivery increases as the system's complexity grows. The teams maintaining the system spend an increasing proportion of their capacity managing the consequences of the decisions made under pressure in previous delivery cycles.
 
 The technical debt that is created in a programme is not just the programme's problem. It is the inheritance of every team that will touch the system afterward — potentially for decades. Engineering stewardship, in the Firmitas sense, extends beyond initial delivery to include responsibility for the operability, maintainability, and evolvability of what is built. Accepting technical debt without managing it is not a programme delivery decision. It is an act of borrowing against the future of the people who will maintain what the programme has built.
-
----
-
-*End of Chapter 19*

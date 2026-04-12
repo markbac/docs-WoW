@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 13 — Chapter 11: Requirements: From Customer Need to Testable Specification
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 11 — Requirements: From Customer Need to Testable Specification
+## Requirements: From Customer Need to Testable Specification
 
 Of all the ways an engineering programme can accumulate hidden risk, none is more consistent or more costly than the gap between what the customer needs and what the engineering team believes they have been asked to build.
 
@@ -17,7 +10,7 @@ The investment in requirements engineering — done properly, at the right level
 
 ---
 
-## The customer and the business
+### The customer and the business
 
 Before addressing how requirements should be written, it is necessary to address where they come from — and specifically, to make explicit a distinction that many programmes obscure.
 
@@ -37,7 +30,7 @@ Trade-offs made with customer context produce different outcomes from trade-offs
 
 ---
 
-## Requirements are not one size fits all
+### Requirements are not one size fits all
 
 The right level of requirements rigour depends on what is being built. This is a principle that is frequently violated in both directions — programmes that apply heavyweight requirements processes to products that do not need them, and programmes that apply user-story-level specification to products that absolutely require more.
 
@@ -49,7 +42,7 @@ The distinction is not about being agile versus being traditional. It is about b
 
 ---
 
-## Properties of a well-written requirement
+### Properties of a well-written requirement
 
 A requirement is the basic unit of specification. Whether it appears in a formal requirements document, a user story, a system design specification, or an interface control document, the same properties distinguish a requirement that can be built and tested from one that will generate assumptions and ambiguity.
 
@@ -69,7 +62,7 @@ A requirement is the basic unit of specification. Whether it appears in a formal
 
 ---
 
-## Catch-all requirements and their cost
+### Catch-all requirements and their cost
 
 Catch-all requirements are the most common and most damaging requirements failure mode. They are requirements written at a level of abstraction that appears to specify something while actually deferring all the specification decisions to the implementer.
 
@@ -81,7 +74,7 @@ A simple test for catch-all language: search the requirements document for the w
 
 ---
 
-## The Requirement Breakdown Structure
+### The Requirement Breakdown Structure
 
 For complex products — those involving multiple disciplines, regulatory obligations, and significant integration dependencies — requirements cannot be managed as a flat list. They must be structured hierarchically, with clear parent-child relationships that enable traceability, change management, and verification planning.
 
@@ -91,25 +84,42 @@ The hierarchy operates across four levels.
 
 ```mermaid
 flowchart TD
-    L1["Level 1 — Business or contractual requirement\nThe customer need or obligation as stated\nExample: The system shall conform to SMETS2\nOwner: Business / Commercial\nVerified by: Acceptance against full specification"]
-    L2["Level 2 — System requirement\nSystem-level behaviour required to satisfy Level 1\nExample: All HAN interfaces shall implement DLMS/COSEM\nper SMETS2 Section 4\nOwner: Systems Engineering\nVerified by: System integration test"]
-    L3["Level 3 — Subsystem or component requirement\nBehaviour required of a specific subsystem or discipline\nExample: The ZigBee SEP 1.2 interface shall support\nthe SMETS2 mandatory command set\nOwner: Firmware / Hardware\nVerified by: Component test"]
-    L4["Level 4 — Derived requirement\nRequirements that emerge from design decisions\nExample: The ZigBee stack shall maintain association\nwith the IHD within 30 seconds of power restoration\nOwner: Firmware\nVerified by: Specific test case with defined pass/fail"]
-    AC["Acceptance criteria\nThe specific testable condition proving the\nrequirement has been met — embedded at every level"]
+    %% Left side — definition
+    L1["Level 1 — Business / Contractual<br>Customer obligation or need<br>Example: Conform to SMETS2"]
+    L2["Level 2 — System<br>System behaviour to satisfy L1<br>Example: HAN uses DLMS/COSEM"]
+    L3["Level 3 — Subsystem / Component<br>Discipline-specific behaviour<br>Example: ZigBee SEP 1.2 command set"]
+    L4["Level 4 — Derived<br>Emergent from design decisions<br>Example: Re-associate within 30s"]
 
-    L1 -->|Decomposes to| L2
-    L2 -->|Decomposes to| L3
-    L3 -->|Decomposes to| L4
-    L4 -->|Verified by| AC
-    L3 -->|Verified by| AC
-    L2 -->|Verified by| AC
-    L1 -->|Verified by| AC
+    %% Right side — verification
+    V1["Acceptance<br>Verified against full specification"]
+    V2["System Integration Test<br>End-to-end behaviour validated"]
+    V3["Component Test<br>Subsystem behaviour validated"]
+    V4["Focused Test Case<br>Specific pass/fail criteria"]
 
+    %% Decomposition (down)
+    L1 -->|Decomposes| L2 -->|Decomposes| L3 -->|Decomposes| L4
+
+    %% Verification (up the V)
+    L4 -->|Verified by| V4
+    L3 -->|Verified by| V3
+    L2 -->|Verified by| V2
+    L1 -->|Verified by| V1
+
+    %% Traceability (diagonal intent)
+    L1 -.-> V2
+    L2 -.-> V3
+    L3 -.-> V4
+
+    %% Styling
     style L1 fill:#E1F5EE,stroke:#0F6E56,color:#085041
     style L2 fill:#E6F1FB,stroke:#185FA5,color:#0C447C
     style L3 fill:#EEEDFE,stroke:#534AB7,color:#3C3489
     style L4 fill:#FAEEDA,stroke:#BA7517,color:#633806
-    style AC fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
+
+    style V1 fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    style V2 fill:#E6F1FB,stroke:#185FA5,color:#0C447C
+    style V3 fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    style V4 fill:#FAEEDA,stroke:#BA7517,color:#633806
 ```
 
 **Level 1 — Business or contractual requirements** are the highest-level obligations — the customer needs, contractual specifications, and regulatory obligations that define what the programme must achieve. They are typically stated at a level of abstraction that is not directly implementable. "The system shall conform to the SMETS2 specification" is a Level 1 requirement. It is correct, complete, and entirely inadequate as a specification for any engineering team. It is a pointer to a body of work that must be decomposed before anything can be built.
@@ -124,7 +134,7 @@ Acceptance criteria are not a separate level. They are embedded at every level �
 
 ---
 
-## The traceability spine
+### The traceability spine
 
 The Requirement Breakdown Structure is the foundation of requirements traceability — the ability to follow the thread from a customer need all the way to the test evidence that confirms it has been met, and back again.
 
@@ -140,7 +150,7 @@ Traceability serves four purposes, all of them operational rather than bureaucra
 
 ---
 
-## The investment argument
+### The investment argument
 
 Requirements engineering done properly takes time. It requires skilled people — not just technical writers, but people who understand both the customer domain and the technical implementation space well enough to write requirements that are specific, testable, and achievable. It requires stakeholder engagement — the client or business representatives who own the needs must participate in requirements review, not just sign off on a document presented to them. It requires iteration — requirements are not correct the first time, and the process of identifying ambiguities, resolving conflicts, and writing acceptance criteria for difficult requirements takes multiple cycles.
 
@@ -156,7 +166,7 @@ Requirements engineering is not overhead. It is the primary act of programme ris
 
 ---
 
-## Requirements management is not one size fits all — but it always has to be clear
+### Requirements management is not one size fits all — but it always has to be clear
 
 The level of formality, the tools used, the documentation structure, and the governance process around requirements will differ by programme type, scale, and regulatory context. A startup building its first mobile application and a tier-one defence contractor building a safety-critical control system will — and should — approach requirements management differently.
 
@@ -167,7 +177,3 @@ A user story that says "as a user I want to log in so that I can access my accou
 The question is never "which requirements methodology should we use." The question is "are our requirements clear enough that the engineering team can build exactly what is needed without making specification decisions that belong to the stakeholder, and precise enough that we can test unambiguously whether what has been built meets what was required?"
 
 If the answer is yes, the requirements process is appropriate to the programme. If the answer is no, the process needs to be more rigorous — regardless of how agile or how lean the team's preferred working style is.
-
----
-
-*End of Chapter 11*

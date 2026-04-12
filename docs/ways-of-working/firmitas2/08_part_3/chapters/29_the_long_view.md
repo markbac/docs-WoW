@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 31 — Chapter 29: The Long View
-**Book section:** Part Three — Making It Stick
-
----
-
-# Chapter 29 — The Long View
+## The Long View
 
 The programme in Chapter 1 was fourteen months long. Or twenty-two months, depending on which number you count from. The decision that determined its outcome was made in week three, when the programme board received three red risk items, noted them, and moved to task status.
 
@@ -17,7 +10,7 @@ The long view is the view that sees those costs. It is the perspective that engi
 
 ---
 
-## What sustainability means in engineering organisations
+### What sustainability means in engineering organisations
 
 Sustainability in an engineering organisation is not a welfare concept. It is an operational one. A sustainable engineering organisation is one that can continue to deliver well over time — through changes in personnel, through market shifts, through the accumulation of programme experience, and through the pressures that consistently incentivise the short-term optimisations that make long-term delivery more expensive.
 
@@ -39,7 +32,7 @@ Sustainability is the protection of these three capacities — variation absorpt
 
 ---
 
-## What erodes over time
+### What erodes over time
 
 Understanding what erodes — what the long view reveals about the cost of the short-term decisions that engineering organisations consistently make — is the prerequisite for protecting against the erosion.
 
@@ -61,7 +54,7 @@ Each departure is a risk event. Most are not treated as one. The knowledge that 
 
 ---
 
-## The compounding nature of doing it right
+### The compounding nature of doing it right
 
 The long view cuts both ways. The costs of the short-term optimisations described above compound negatively over time. The benefits of the disciplines described in this book compound positively.
 
@@ -75,7 +68,7 @@ These are the compounding returns on the governance disciplines the framework de
 
 ---
 
-## Leadership continuity and institutional memory
+### Leadership continuity and institutional memory
 
 The long view requires a specific leadership challenge that most organisations handle badly: the transition of institutional knowledge when leaders change.
 
@@ -91,7 +84,7 @@ The ADR that captures not just the architectural decision but the context in whi
 
 ---
 
-## The ethical dimension
+### The ethical dimension
 
 There is an ethical dimension to the long view that engineering leaders rarely acknowledge explicitly and that this book has circled without naming directly.
 
@@ -105,7 +98,7 @@ Engineering as stewardship, not exploitation. The long view is what makes that d
 
 ---
 
-## What the programme in Chapter 1 would look like today
+### What the programme in Chapter 1 would look like today
 
 Return to the programme one final time. Not the programme that failed. The programme that did not have to fail.
 
@@ -125,7 +118,7 @@ That is what this book has been about.
 
 ---
 
-## A final note
+### A final note
 
 The people who will most benefit from this book are the ones who have been in the room when the risk register was filed rather than acted on. Who produced the honest estimate that was compressed. Who raised the concern at month two and were told to find a way. Who watched the programme fail in exactly the way they predicted, and were held accountable for it.
 
@@ -134,7 +127,3 @@ This book does not give those people authority they do not have. It gives them a
 The programmes that fail predictably are produced by systems. The systems can be changed. The change requires leadership that is willing to govern differently in the specific moments when governance matters — not in principle, but in practice, in the programme board meetings where risk items either generate decisions or get noted, in the estimation reviews where honest numbers are either accepted or challenged, in the failure retrospectives where accountability is either accurately attributed or conveniently displaced.
 
 That willingness is rare. It is also, as this book has argued, the only thing that has ever actually worked.
-
----
-
-*End of Chapter 29 — End of Part Three — End of Firmitas*

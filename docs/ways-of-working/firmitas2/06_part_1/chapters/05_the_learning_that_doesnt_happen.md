@@ -52,18 +52,34 @@ The failure cycle described in Chapter 3 does not simply repeat. It compounds. E
 
 ```mermaid
 flowchart TD
-    A["Programme fails\npredictably"] --> B["Wrong cause identified:\nexecution failure\nnot governance failure"]
-    B --> C["Wrong lesson learned:\nmore process\ntighter control\nless trust"]
-    C --> D["Conditions worsen:\nengineers stop\nvolunteering honest\ninformation"]
-    D --> E["Next programme begins\nwith less accurate\ninformation and\nless trust"]
-    E --> F["Commitment made\nbefore scope understood\nEstimate compressed\nRisks filed"]
+    A["Programme fails<br>predictably"] --> B["Failure misdiagnosed<br>as execution issue<br>not governance failure"]
+
+    B --> C["Governance response<br>More process<br>Tighter control<br>Less trust"]
+
+    %% Core reinforcing loop
+    C --> D["Psychological safety drops<br>Honest reporting declines"]
+    D --> E["Next programme starts<br>with distorted information"]
+    E --> F["Early commitment made<br>before understanding<br>Estimates compressed<br>Risks recorded not acted on"]
     F --> A
 
-    C --> G["Authority-experience\ngap widens"]
+    %% Secondary reinforcing effects
+    C --> G["Authority–experience gap widens"]
     G --> E
 
-    C --> H["Engineering capability\nerodes gradually"]
+    C --> H["Engineering capability erodes<br>over time"]
     H --> E
+
+    %% Styling
+    style A fill:#2B2B2B,stroke:#000,color:#FFFFFF
+    style B fill:#FAEEDA,stroke:#BA7517,color:#412402
+    style C fill:#FCEBEB,stroke:#E24B4A,color:#501313
+
+    style D fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style E fill:#E6F1FB,stroke:#185FA5,color:#042C53
+    style F fill:#E6F1FB,stroke:#185FA5,color:#042C53
+
+    style G fill:#EEEDFE,stroke:#534AB7,color:#26215C
+    style H fill:#E1F5EE,stroke:#0F6E56,color:#04342C
 ```
 
 The compounding effect has a specific character that is worth understanding. It is not rapid. An organisation does not lose its engineering capability in one programme or two. The erosion is slow enough that it is not visible as a trend until it has been running for some time. Individual programmes fail for specific, identifiable reasons. The pattern connecting those reasons - the same misattribution, the same wrong lesson, the same tightening of control, the same erosion of trust - becomes visible only when someone looks across multiple programmes rather than within each one.

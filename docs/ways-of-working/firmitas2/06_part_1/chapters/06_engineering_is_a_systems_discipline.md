@@ -36,9 +36,9 @@ The third layer is process. Process defines how work is actually executed in a s
 
 ```mermaid
 flowchart TD
-    P["Philosophy\nWhat matters and why\nNon-negotiable\nStable"]
-    F["Framework\nDecision logic and structure\nStable but evolvable\nContext-aware"]
-    PR["Process\nContextual execution\nIntentionally variable\nAdapted to need"]
+    P["Philosophy<br>What matters and why<br>Non-negotiable<br>Stable"]
+    F["Framework<br>Decision logic and structure<br>Stable but evolvable<br>Context-aware"]
+    PR["Process<br>Contextual execution<br>Intentionally variable<br>Adapted to need"]
 
     P -->|Constrains| F
     F -->|Constrains| PR
@@ -191,4 +191,3 @@ The diagnosis is made. The cause has been named. The structural conditions that 
 Part Two begins with the framework's structural logic — the layered model that connects philosophy to framework to process — and then works through each element of the framework in the sequence that corresponds to the failure mechanisms Part One described.
 
 The reader who has followed Part One should arrive at Part Two with a specific question in mind: what would this programme have needed in order to produce a different outcome at week three? Every chapter in Part Two is an answer to some part of that question.
-

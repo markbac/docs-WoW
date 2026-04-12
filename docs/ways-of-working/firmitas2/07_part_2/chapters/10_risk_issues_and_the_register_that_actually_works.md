@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 12 — Chapter 10: Risk, Issues, and the Register That Actually Works
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 10 — Risk, Issues, and the Register That Actually Works
+## Risk, Issues, and the Register That Actually Works
 
 The risk register in Chapter 1 was not deficient. It contained the right information. The three red items were correctly identified, correctly rated, and correctly described. The engineering team had done exactly what a risk management process asks of them.
 
@@ -17,7 +10,7 @@ This chapter describes what a risk register that actually works looks like — h
 
 ---
 
-## The distinction between risks and issues
+### The distinction between risks and issues
 
 Before describing what a functional risk register looks like, it is necessary to establish a distinction that most risk registers blur and that most risk management processes treat as optional: the difference between a risk and an issue.
 
@@ -31,7 +24,7 @@ Firmitas requires risks and issues to be managed as separate categories, with se
 
 ---
 
-## What a risk entry must contain
+### What a risk entry must contain
 
 A risk entry in a Firmitas risk register is not a description of something that might go wrong. It is a decision request — a structured statement of a condition that requires a governance response before a defined trigger date.
 
@@ -51,7 +44,7 @@ Each risk entry must contain six elements.
 
 ---
 
-## What an issue entry must contain
+### What an issue entry must contain
 
 An issue entry has a different structure from a risk entry because it requires a different governance response.
 
@@ -71,7 +64,7 @@ Each issue entry must contain five elements.
 
 ---
 
-## The register as a decision instrument
+### The register as a decision instrument
 
 A risk and issues register designed as described above is a fundamentally different tool from the risk register in Chapter 1. It is not a document that records what might go wrong. It is a live management instrument that tracks the specific conditions the programme depends on and surfaces the decisions required to keep those conditions met.
 
@@ -85,7 +78,7 @@ The register must be connected to the programme plan. When a risk materialises o
 
 ---
 
-## Management by exception — how senior management should use the register
+### Management by exception — how senior management should use the register
 
 The risk and issues register is the primary instrument through which senior management should govern a programme. Not task status. Not RAG reports. The register.
 
@@ -109,7 +102,7 @@ The principle, stated plainly: senior management governs programmes through risk
 
 ---
 
-## The software component running late
+### The software component running late
 
 One of the most common issue types on engineering programmes is a software or firmware component that is running behind schedule. It is worth addressing directly because it illustrates how the risk and issues distinction operates in practice and what the governance response should look like.
 
@@ -127,7 +120,7 @@ The impact on the programme plan must be stated honestly and immediately. If the
 
 ---
 
-## The register in a regulated environment
+### The register in a regulated environment
 
 In programmes operating under formal safety or quality standards — IEC 62304, IEC 61508, ISO 9001, DO-178C, and their sector-specific equivalents — the risk register carries formal evidence obligations. Evidence of risk identification, assessment, and management is required by most safety-critical and quality management standards, and that evidence must be demonstrable to auditors and certifying bodies.
 
@@ -139,7 +132,7 @@ This is the Firmitas position on compliance documentation generally: evidence sh
 
 ---
 
-## What the week-three meeting looks like with a functional register
+### What the week-three meeting looks like with a functional register
 
 Return to the programme board at week three in Chapter 1. The same estimate has been presented. The same three red items are on the register. The difference is that the register has been designed as a decision instrument and the governance process has been designed to use it as one.
 
@@ -156,7 +149,3 @@ The meeting ends. Three red items. Three decisions. Three owners. Three deadline
 The programme that follows is not guaranteed to succeed. The client may not resolve the interface ambiguity quickly. The component may still prove unsuitable. But each of those outcomes will be known earlier, when the options for responding are still available at a manageable cost. And the programme will be managed against reality rather than against a plan that has already diverged from it.
 
 That is what a risk register that actually works produces. Not certainty. The conditions under which programme governance can do its job.
-
----
-
-*End of Chapter 10*

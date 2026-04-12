@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 11 — Chapter 9: Commitments, Estimates, and Honest Plans
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 9 — Commitments, Estimates, and Honest Plans
+## Commitments, Estimates, and Honest Plans
 
 The programme in Chapter 1 did not fail at month six when the delay was announced. It failed at the point when a commitment was made that was not based on an honest assessment of what the work required — and then compounded at the point when the honest assessment arrived and was not used to revise the commitment.
 
@@ -15,7 +8,7 @@ These are not process preferences. They are the structural mechanisms by which t
 
 ---
 
-## What a commitment actually is
+### What a commitment actually is
 
 A commitment is a specific promise, made by a specific person or group, to deliver a specific outcome by a specific point in time, based on a genuine assessment of what that outcome requires.
 
@@ -33,7 +26,7 @@ A commitment, in the Firmitas sense, cannot be made until an honest assessment e
 
 ---
 
-## Who makes the commitment
+### Who makes the commitment
 
 Principle 3 states that a commitment not made by those who must keep it is a target with someone else's name on it. This principle requires a specific and practical answer to the question: who should make the commitment?
 
@@ -49,7 +42,7 @@ Making a commitment means the risks are accepted, not just noted. It means the i
 
 ---
 
-## How honest estimates are produced
+### How honest estimates are produced
 
 An honest estimate is produced by the people who will do the work, from a genuine understanding of the scope, the system, the context, and the risks. It is not produced by a project manager working from a high-level work breakdown structure. It is not produced by extrapolation from a previous programme without adequate consideration of what is different about this one. It is not produced under time pressure to hit a governance deadline before the scope has been adequately understood.
 
@@ -63,7 +56,7 @@ Three conditions are necessary for honest estimation.
 
 ---
 
-## The three-point estimate
+### The three-point estimate
 
 A single-point estimate is not an estimate. It is a commitment masquerading as an estimate — a specific number that contains no information about the conditions it depends on or the risks that could invalidate it.
 
@@ -79,7 +72,7 @@ The three numbers together tell the governance layer something a single number c
 
 ---
 
-## The risk register as part of the estimate
+### The risk register as part of the estimate
 
 The risk register attached to a three-point estimate is not a separate document. It is the same document. The risks in the register are the conditions attached to the estimate — the specific items that connect the most likely case to the worst case and that define what actions are required to keep the programme at the better end of the range.
 
@@ -91,7 +84,7 @@ The governance principle follows directly: accepting an estimate requires accept
 
 ---
 
-## What a genuine plan looks like
+### What a genuine plan looks like
 
 A genuine plan is built forward from an honest estimate, not backward from a desired date.
 
@@ -115,7 +108,7 @@ It is revisable without drama. A plan is a model of the future, not a contract w
 
 ---
 
-## The contract reality
+### The contract reality
 
 Fixed-price contracts are a commercial fact of life. They require commitment before understanding and create financial incentives to maintain dates even when honest assessment suggests they are not achievable. This is the commercial context within which most engineering programme commitments are made, and the framework must address it directly rather than pretending it does not exist.
 
@@ -135,7 +128,7 @@ A plan that will breach the contract is not an engineering problem. It is commer
 
 ---
 
-## Accepting a commitment
+### Accepting a commitment
 
 Accepting a commitment in the Firmitas sense is a specific act with specific requirements. It is not the passive acknowledgement of a number presented in a programme governance meeting. It is the active acceptance of a set of conditions — the risks that have been identified, the decisions that are required to manage them, the implications for the programme if those decisions are not made.
 
@@ -153,7 +146,7 @@ When acceptance looks like this, the programme board meeting in Chapter 1 ends d
 
 ---
 
-## A worked example
+### A worked example
 
 The following shows the difference between a rubber-stamped commitment and a genuine one, using the programme from Chapter 1 as the basis.
 
@@ -179,7 +172,7 @@ The difference between these two scenarios is not the estimate. The estimate is 
 
 ---
 
-## The principle restated
+### The principle restated
 
 A commitment is only genuine when the people responsible for delivery have set the date, had the risks accepted, had the implications acknowledged, and had the plan built with slack, honest foundations, and realistic assumptions.
 
@@ -188,7 +181,3 @@ Presenting a plan to an engineering team and asking if it is achievable is not m
 A commitment made without those conditions is a target with someone else's name on it. When it is missed — and it will be missed, because targets without conditions are not plans, they are aspirations — the accountability for missing it belongs with the people who made the target, not with the people who were handed it.
 
 Closing the gap between the people who make commitments and the people who keep them is the central governance challenge of engineering programme management. This chapter has described the structural mechanisms that close it. The chapters that follow build on them.
-
----
-
-*End of Chapter 9*

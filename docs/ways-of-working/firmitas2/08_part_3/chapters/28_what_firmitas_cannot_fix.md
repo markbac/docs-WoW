@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 30 — Chapter 28: What Firmitas Cannot Fix
-**Book section:** Part Three — Making It Stick
-
----
-
-# Chapter 28 — What Firmitas Cannot Fix
+## What Firmitas Cannot Fix
 
 A framework that cannot tell you when it is the wrong tool is not a framework. It is a belief system — one that attributes every failure to insufficient or incorrect application rather than to the possibility that the framework itself does not fit the problem.
 
@@ -61,7 +54,7 @@ Some elements of Firmitas apply in compartmentalised environments. Delivery know
 
 ---
 
-## The conditions under which Firmitas fails even when applied sincerely
+### The conditions under which Firmitas fails even when applied sincerely
 
 **When the programme inherits conditions it cannot change.**
 
@@ -89,7 +82,7 @@ The framework supports judgement by providing structure — the questions to ask
 
 ---
 
-## The self-referential tension
+### The self-referential tension
 
 Firmitas argues against methodology-first thinking. It will be adopted as a methodology by a significant proportion of the organisations that encounter it. Not because those organisations are stupid or dishonest — but because methodology adoption is the default organisational response to delivery problems, and the book will be given to a programme manager who has been told to fix delivery and will reach for it the way they reach for every other framework.
 
@@ -103,7 +96,7 @@ The test is always the outcomes. Not whether the artefacts are complete, not whe
 
 ---
 
-## What to do when the limits apply
+### What to do when the limits apply
 
 The limits described in this chapter do not leave practitioners without options. They define the scope within which the options available within the framework apply, and identify when a different instrument is needed.
 
@@ -119,12 +112,8 @@ For the self-referential tension: there is no permanent resolution. There is onl
 
 ---
 
-## The final honest acknowledgement
+### The final honest acknowledgement
 
 Firmitas, applied sincerely and competently in a receptive organisation with a willing leadership layer, will improve delivery outcomes. Not perfectly. Not without setbacks. Not in a linear progression from current state to ideal state. But the specific, preventable failure patterns described in Part One — the committed date that nobody verified was achievable, the risk register filed rather than acted on, the honest estimate suppressed in favour of the commercial narrative — will become less common. And when they do occur, the organisation will be more likely to identify the real cause and less likely to compound it with the wrong lesson.
 
 That is the claim. It is a modest one compared to the claims most frameworks make. It is an honest one. And it is the only kind worth making.
-
----
-
-*End of Chapter 28*

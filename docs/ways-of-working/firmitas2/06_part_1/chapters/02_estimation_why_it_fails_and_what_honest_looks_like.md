@@ -25,18 +25,7 @@ The cone of uncertainty describes that relationship. At the beginning of a progr
 
 As the programme progresses — as requirements are defined, architecture is established, and the major technical risks are resolved — the cone narrows. The range between the optimistic and pessimistic cases reduces. By the time the programme is well understood and the significant risks have been investigated, estimates can be substantially more precise.
 
-```mermaid
-flowchart LR
-    subgraph cone["Cone of Uncertainty — Estimation Accuracy Improves as Understanding Increases"]
-        direction LR
-        A["Concept\nHigh uncertainty\n4x range"] --> B["Requirements\ndefined\n2x range"] --> C["Architecture\nestablished\n1.5x range"] --> D["Key risks\nresolved\n1.25x range"] --> E["Implementation\nunderway\nNarrow range"]
-    end
-    style A fill:#FCEBEB,stroke:#E24B4A,color:#501313
-    style B fill:#FAEEDA,stroke:#BA7517,color:#412402
-    style C fill:#E1F5EE,stroke:#0F6E56,color:#04342C
-    style D fill:#E6F1FB,stroke:#185FA5,color:#042C53
-    style E fill:#EEEDFE,stroke:#534AB7,color:#26215C
-```
+![Cone of Uncertainty](image.png)
 
 The governance implication is direct. Demanding a precise single-point estimate before requirements are defined is not discipline. It is the demand for certainty that the programme's current state cannot support. The honest response to such a demand is a range — this is what we know, this is what we do not yet know, and this is the range within which the outcome is likely to sit given the current state of understanding.
 
@@ -149,7 +138,3 @@ What matters is what that adaptation costs. Each inflated estimate reinforces th
 The correct response is not more pressure. It is a different environment — one in which honest estimates are accepted, the conditions they depend on are managed, and the gap between a commercial commitment and an honest estimate is treated as a risk to be managed rather than a number to be suppressed.
 
 When that environment exists, the inflated numbers stop. Not because engineers have been challenged into honesty but because honesty has become the rational response. And the programme can be governed against reality rather than against a plan that was manufactured to avoid it.
-
----
-
-*End of Chapter 2*

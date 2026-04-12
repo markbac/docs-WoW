@@ -107,20 +107,41 @@ The economic system also shaped the lessons-learned exercise. The cost of the ov
 The diagram below shows how the six systems interacted to produce the failure in Chapter 1. Each system contributed something. None of them was sufficient alone. The failure was produced by their interaction.
 
 ```mermaid
-flowchart LR
-    HS["Human system\nFear makes\nhonesty expensive"]
-    OS["Organisational system\nAuthority separated\nfrom knowledge"]
-    ST["Socio-technical system\nRisk register as\nreporting tool\nnot decision instrument"]
-    DS["Delivery system\nLong feedback loops\nLate integration\nLarge batches"]
-    TA["Technical system\nUnvalidated\narchitectural\nassumptions"]
-    ES["Economic system\nFixed price\nPenalty clauses\nDate pressure"]
+flowchart TB
+    HS["Human system<br>Fear makes honesty expensive"]
+    OS["Organisational system<br>Authority separated from knowledge"]
+    ST["Socio-technical system<br>Risk register used for reporting<br>not decision-making"]
+    DS["Delivery system<br>Long feedback loops<br>Late integration<br>Large batches"]
+    TA["Technical system<br>Unvalidated architectural assumptions"]
+    ES["Economic system<br>Fixed price<br>Penalty clauses<br>Date pressure"]
 
-    HS -->|Risk information\nneutralised| F["Programme\nfailure"]
-    OS -->|Decisions not made\nby people who\nunderstood them| F
-    ST -->|Status shows\ngreen while\nreality is red| F
-    DS -->|Problems surface\ntoo late to\nfix cheaply| F
-    TA -->|Hidden coupling\namplifies\nrework cost| F
-    ES -->|Incentivises\nsuppressing risk\nover managing it| F
+    F["Programme failure"]
+
+    %% Interactions (system behaviour)
+    HS -->|Suppresses transparency| ST
+    ES -->|Incentivises concealment| HS
+    OS -->|Disconnects decision from reality| ST
+    ST -->|Masks true status| OS
+    DS -->|Delays feedback| ST
+    TA -->|Creates hidden risk| DS
+    DS -->|Amplifies rework| ES
+
+    %% Convergence
+    HS --> F
+    OS --> F
+    ST --> F
+    DS --> F
+    TA --> F
+    ES --> F
+
+    %% Styling
+    style HS fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style OS fill:#FAEEDA,stroke:#BA7517,color:#412402
+    style ST fill:#E6F1FB,stroke:#185FA5,color:#042C53
+    style DS fill:#EEEDFE,stroke:#534AB7,color:#26215C
+    style TA fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style ES fill:#FFF4CC,stroke:#B38F00,color:#4D3B00
+    style F fill:#2B2B2B,stroke:#000,color:#FFFFFF
 ```
 
 The important observation is not that any one of these systems caused the failure. It is that each one was necessary. If the human system had been designed to make honesty safe rather than expensive, the risk information would have been acted on rather than noted. If the organisational system had aligned decision authority with delivery knowledge, the programme board would have had the operational understanding to treat the risk register as urgent rather than routine. If the socio-technical system had been designed as a decision instrument rather than a reporting tool, the three red items would have generated escalation rather than mitigation plans. If the delivery system had used short feedback loops and early integration, the firmware specification problem would have surfaced in week four rather than month four. If the technical architecture had treated the third-party dependency as an architectural risk, it would have been validated before the architecture was built around it. If the economic system had attributed the cost of governance decisions to governance rather than execution, the incentive to suppress risk would have been weaker.
@@ -136,4 +157,3 @@ Part One has described a failure - in Chapter 1, through a specific programme - 
 The framework in Part Two is built as a direct response to what Part One has described. Every element of the framework addresses one or more of the six systems identified in this chapter. The principles that open Part Two are not abstract values. They are structural positions designed to address specific failure mechanisms. The governance model, the estimation approach, the risk register treatment, the delivery model, the team design principles - each is the structural response to a named problem.
 
 Chapter 5 completes Part One's diagnosis by describing what happens when the failure cycle runs without interruption - and specifically, what the organisation learns from it, and why what it learns makes the next failure more likely than the last.
-

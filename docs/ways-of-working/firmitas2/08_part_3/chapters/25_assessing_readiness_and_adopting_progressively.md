@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 27 — Chapter 25: Assessing Readiness and Adopting Progressively
-**Book section:** Part Three — Making It Stick
-
----
-
-# Chapter 25 — Assessing Readiness and Adopting Progressively
+## Assessing Readiness and Adopting Progressively
 
 Firmitas is not installed. It is grown — incrementally, within real organisations, by real leaders who have competing priorities, imperfect information, and limited political capital. The organisations that have successfully changed their delivery governance have not done so through comprehensive framework rollouts or transformation programmes. They have done so through specific, visible changes in specific, observable behaviours, starting where the conditions for success are most favourable and building from there.
 
@@ -15,7 +8,7 @@ Both instruments start from the same premise: the honest assessment of current c
 
 ---
 
-## Assessing organisational readiness
+### Assessing organisational readiness
 
 Before attempting adoption, an organisation must honestly assess whether the conditions for adoption exist. Not whether leadership is enthusiastic — enthusiasm is a weak predictor of sustained change. Whether the systems the framework requires can be established, maintained, and protected in the organisational context that actually exists.
 
@@ -35,7 +28,7 @@ Firmitas readiness is assessed across six dimensions that correspond to the six 
 
 ---
 
-## Signals of low readiness
+### Signals of low readiness
 
 Some conditions indicate that adoption will fail before it has produced enough evidence to survive the first wave of organisational resistance. These are not reasons to abandon adoption — but they are reasons to address the conditions before attempting adoption, or to choose an entry point that is insulated from them.
 
@@ -49,7 +42,7 @@ Zero-slack delivery expectations. When every team is at full utilisation and eve
 
 ---
 
-## The Firmitas Delivery Diagnostic
+### The Firmitas Delivery Diagnostic
 
 The diagnostic that follows is designed to be uncomfortable to answer honestly. That discomfort is the point. Easy questions produce comfortable answers that reveal nothing. The questions here require specific evidence rather than general assessment. If the evidence is not available, the answer is no.
 
@@ -61,7 +54,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-### Dimension 1 — Commitments and Planning
+#### Dimension 1 — Commitments and Planning
 
 **Q1.** Was your current delivery date set by the people who have to meet it?
 
@@ -85,7 +78,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-### Dimension 2 — Requirements
+#### Dimension 2 — Requirements
 
 **Q6.** Can you trace any requirement from the customer need that generated it, through system and subsystem levels, to the test that will prove it has been met?
 
@@ -113,7 +106,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-### Dimension 3 — Knowledge, People, and Capability
+#### Dimension 3 — Knowledge, People, and Capability
 
 **Q12.** Is the reasoning behind your three most critical architectural decisions written down and findable by someone who joined the programme in the last three months?
 
@@ -137,7 +130,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-### Dimension 4 — Delivery and Operations
+#### Dimension 4 — Delivery and Operations
 
 **Q17.** Was your operations team involved in design reviews and NFR definition early enough to influence what was built?
 
@@ -157,7 +150,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-### Dimension 5 — Leadership and Governance
+#### Dimension 5 — Leadership and Governance
 
 **Q21.** Do your engineers know without asking which decisions they are empowered to make and which require escalation?
 
@@ -181,7 +174,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-### Dimension 6 — Culture and Psychological Safety
+#### Dimension 6 — Culture and Psychological Safety
 
 **Q26 — unscored.** If you answered all twenty-five of these questions honestly, wrote your answers down, and showed them to your engineering team — would they agree with what you wrote?
 
@@ -189,7 +182,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-## Scoring and interpretation
+### Scoring and interpretation
 
 **Score one point for each confirmed yes with evidence.**
 
@@ -205,7 +198,7 @@ Score one point for each confirmed yes with evidence. The score and the clusteri
 
 ---
 
-## The clustering insight
+### The clustering insight
 
 Your score matters less than where your nos cluster.
 
@@ -221,11 +214,11 @@ Your score matters less than where your nos cluster.
 
 ---
 
-## Progressive adoption
+### Progressive adoption
 
 The diagnostic reveals where the gaps are. The maturity model guides how to close them — not all at once, but in a sequence that builds capability and trust progressively rather than attempting a transformation that the organisation's current conditions cannot support.
 
-### Stage 1 — Localised discipline
+#### Stage 1 — Localised discipline
 
 Firmitas principles applied within a single team or programme. The risk register is being used as a decision instrument. Estimates are three-point with conditions attached. Gates are generating decisions rather than approvals. The team is managing its own delivery with genuine autonomy within defined boundaries.
 
@@ -233,7 +226,7 @@ This stage builds credibility through results. It does not require organisationa
 
 Diagnostic score range: 7–12.
 
-### Stage 2 — Cross-team alignment
+#### Stage 2 — Cross-team alignment
 
 Shared artefacts and decision logic emerge across teams. Interfaces are explicitly defined and maintained. Dependencies are managed as programme risks with trigger dates and owners. Architecture decisions are documented and accessible. The traceability spine connects requirements to evidence across team boundaries.
 
@@ -241,7 +234,7 @@ This stage requires the architectural and requirements disciplines described in 
 
 Diagnostic score range: 12–17.
 
-### Stage 3 — Organisational integration
+#### Stage 3 — Organisational integration
 
 Portfolio-level thinking replaces project-level optimisation. Economic trade-offs are explicit. Quality, risk, and compliance are integrated into delivery flow. Leadership behaviour starts to align with system needs — governance reviews are driven by risks and issues rather than task status, estimates are accepted with their conditions, and accountability is attributed accurately when programmes fail.
 
@@ -249,7 +242,7 @@ This stage is where the political obstacles described in Chapter 24 are most act
 
 Diagnostic score range: 17–22.
 
-### Stage 4 — System stewardship
+#### Stage 4 — System stewardship
 
 Leadership actively manages system health. Slack is deliberately protected. Learning is institutionalised. The framework's disciplines are embedded in how the organisation works rather than being maintained as an explicit framework adoption. Adaptation becomes continuous rather than episodic.
 
@@ -259,7 +252,7 @@ Diagnostic score range: 22–25.
 
 ---
 
-## Avoiding the framework layering trap
+### Avoiding the framework layering trap
 
 The most consistent adoption failure mode is layering Firmitas on top of existing frameworks without removing or adjusting the conflicting structures. Retaining approval-heavy governance while claiming to have adopted guardrails-based governance. Introducing three-point estimation while continuing to govern programmes against the committed date. Demanding outcomes while measuring outputs.
 
@@ -271,7 +264,7 @@ The adoption sequence matters. The philosophy layer must be established before t
 
 ---
 
-## What success looks like
+### What success looks like
 
 Firmitas is never fully adopted. The framework evolves as understanding improves. The organisation changes as markets shift, programmes complete, and people move. The disciplines that are embedded today require active maintenance to remain embedded as the conditions that produced them change.
 
@@ -280,7 +273,3 @@ The measure of adoption is not compliance with the framework's artefact requirem
 When the answer to those questions is yes — when the governance behaviour has genuinely changed, not just the governance process — the framework is working. The specific artefacts, the specific processes, the specific cadences are secondary. They are the means. The ends are decisions that are informed, accountable, and made at the right level, by the right people, with the right information.
 
 That is what the diagnostic is measuring. That is what the maturity model is building toward. And that is what the rest of Part Three is designed to sustain.
-
----
-
-*End of Chapter 25*

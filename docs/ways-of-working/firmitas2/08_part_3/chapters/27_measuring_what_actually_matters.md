@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 29 — Chapter 27: Measuring What Actually Matters
-**Book section:** Part Three — Making It Stick
-
----
-
-# Chapter 27 — Measuring What Actually Matters
+## Measuring What Actually Matters
 
 Measurement is one of the most powerful forces in any engineering organisation. It shapes behaviour, priorities, and decision-making more strongly than stated values, framework principles, or leadership intent. What gets measured gets optimised. What gets optimised is what the measurement rewards, regardless of whether that is what the organisation intended to reward.
 
@@ -17,7 +10,7 @@ This chapter addresses what to measure, what to avoid measuring, and how measure
 
 ---
 
-## Measurement is never neutral
+### Measurement is never neutral
 
 Every measure creates an incentive. Every incentive changes behaviour. The question is not whether measurement influences outcomes — it always does. The question is whether it influences them deliberately or accidentally.
 
@@ -27,7 +20,7 @@ The governance layer that sees improving metrics and concludes that the programm
 
 ---
 
-## Three categories of measurement
+### Three categories of measurement
 
 Firmitas distinguishes between three categories of measurement that serve different governance purposes and must not substitute for each other.
 
@@ -53,7 +46,7 @@ The organisation that ignores system health measures may maintain strong output 
 
 ---
 
-## The connection to the diagnostic dimensions
+### The connection to the diagnostic dimensions
 
 The measurement framework connects directly to the six diagnostic dimensions in Chapter 25. Each dimension has a corresponding measurement focus that reveals whether the dimension is healthy or degraded.
 
@@ -71,7 +64,7 @@ The measurement framework connects directly to the six diagnostic dimensions in 
 
 ---
 
-## What Firmitas explicitly does not measure
+### What Firmitas explicitly does not measure
 
 The explicit rejection of certain measurement practices is as important as the endorsement of others. Measures that consistently distort behaviour and degrade the conditions the framework requires should be named and avoided.
 
@@ -85,7 +78,7 @@ The explicit rejection of certain measurement practices is as important as the e
 
 ---
 
-## Measurement review cadence
+### Measurement review cadence
 
 Different measures reveal different aspects of programme and organisational health and are most useful at different cadences.
 
@@ -99,7 +92,7 @@ The governance failure is in using the wrong cadence for the wrong measure — r
 
 ---
 
-## The governance principle for measurement
+### The governance principle for measurement
 
 Measurement in Firmitas serves learning, not control.
 
@@ -112,7 +105,3 @@ The governance layer that evaluates its measurement system by whether the measur
 Measurement is in service of governance. Governance is in service of outcomes. Outcomes are what the programme exists to produce. The measurement system that reveals whether outcomes are being produced, and what system conditions are enabling or preventing them, is the measurement system the framework requires.
 
 Everything else is the appearance of management.
-
----
-
-*End of Chapter 27*

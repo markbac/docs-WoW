@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 26 — Chapter 24: The Leader Who Has to Change
-**Book section:** Part Three — Making It Stick
-
----
-
-# Chapter 24 — The Leader Who Has to Change
+##  The Leader Who Has to Change
 
 This chapter is not addressed to the engineers who have been overridden. They know the problem.
 
@@ -17,7 +10,7 @@ This chapter is about what changing that system requires. Not from the system pe
 
 ---
 
-## The diagnostic before the prescription
+### The diagnostic before the prescription
 
 Before addressing what needs to change, it is necessary to be honest about how the leader who most needs this chapter will encounter it.
 
@@ -31,7 +24,7 @@ That is a harder question. It requires accessing memories of specific decisions 
 
 ---
 
-## The specific behaviours that produce Chapter 1
+### The specific behaviours that produce Chapter 1
 
 The failure in Chapter 1 was not produced by a single dramatic leadership failure. It was produced by a sequence of governance decisions, each of which seemed reasonable in isolation and collectively produced a programme that failed predictably.
 
@@ -57,7 +50,7 @@ This behaviour is not conscious dishonesty. The attribution is genuinely believe
 
 ---
 
-## The authority-experience gap — what it requires of leaders
+### The authority-experience gap — what it requires of leaders
 
 Chapter 2 described the authority-experience gap — the structural condition in which leaders with significant programme authority may not have the direct experience of delivery that would allow them to recognise the difference between an honest estimate and a conservative one, between a risk that is being managed and a risk that has been documented, between a governance process that is functioning and one that is performing.
 
@@ -73,7 +66,7 @@ This is not a reason for leaders without delivery experience to defer entirely t
 
 ---
 
-## What it costs to change
+### What it costs to change
 
 The behaviours described above are not comfortable to change. They are embedded in governance cultures, reinforced by the incentive structures that determine what gets rewarded and what gets punished, and protected by the social norms that make certain conversations difficult and others impossible.
 
@@ -87,7 +80,7 @@ None of these changes are easy. They are, however, available. And they are what 
 
 ---
 
-## The political reality
+### The political reality
 
 Chapter 5 described the political obstacle most commonly encountered in organisations attempting to change delivery governance: not a named person resisting change, but a system — process as power, plan as authority — that has been designed around the assumption that change is failure and that control produces outcomes.
 
@@ -101,7 +94,7 @@ The practical implication: the first change of governance behaviour should be ap
 
 ---
 
-## The leader who is the problem
+### The leader who is the problem
 
 Part One made the structural argument that failure is produced by systems rather than by individuals. This chapter has maintained that framing. But there is a specific case that requires direct treatment: the leader whose own behaviour — not the system they are in — is the primary source of the programme's dysfunction.
 
@@ -115,7 +108,7 @@ The answers to those questions, observed honestly across the specific decisions 
 
 ---
 
-## What changing looks like in practice
+### What changing looks like in practice
 
 Structural change does not require dramatic announcements or comprehensive framework rollouts. It requires specific, consistent changes in specific, observable behaviours — the governance behaviours that determine what information the programme produces, how it is used, and what outcomes it generates.
 
@@ -132,7 +125,3 @@ None of these are process changes. They are governance behaviour changes — spe
 That is what change looks like. It is not a transformation programme. It is a decision, made repeatedly in the specific moments when it is uncomfortable, to govern differently from the way the system has always governed.
 
 It is available to every leader who is willing to look honestly at the specific decisions they have made and ask whether different decisions would have produced different outcomes.
-
----
-
-*End of Chapter 24*

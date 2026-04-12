@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 28 — Chapter 26: Common Failure Modes and Anti-Patterns
-**Book section:** Part Three — Making It Stick
-
----
-
-# Chapter 26 — Common Failure Modes and Anti-Patterns
+## Common Failure Modes and Anti-Patterns
 
 Frameworks fail in predictable ways. The specific failure modes of Firmitas adoption are not random — they follow from the specific mechanisms that the framework is designed to address and the specific ways in which organisations resist the changes those mechanisms require.
 
@@ -15,7 +8,7 @@ The chapter also addresses the hardest failure mode of all: the adoption that ap
 
 ---
 
-## The primary failure mode — philosophy discarded, process retained
+### The primary failure mode — philosophy discarded, process retained
 
 Every subsequent failure mode in this chapter is a variant of this one.
 
@@ -29,7 +22,7 @@ The correction is not to add more process. It is to return to the principles —
 
 ---
 
-## Treating the committed date as a governance anchor
+### Treating the committed date as a governance anchor
 
 The most consequential single anti-pattern in engineering programme management — and the one that most directly produces the failure in Chapter 1 — is the treatment of the committed date as the primary governance anchor against which everything else is calibrated.
 
@@ -53,7 +46,7 @@ The correction is not to make the ceremonies more elaborate. It is to reconnect 
 
 ---
 
-## Empowerment theatre
+### Empowerment theatre
 
 Empowerment theatre is the declaration of team autonomy without the structural changes that autonomy requires. Teams are told they own the delivery. They are given autonomy over their ways of working. They are empowered to make decisions.
 
@@ -65,7 +58,7 @@ The correction is the decision authority alignment described in Chapter 8 — ex
 
 ---
 
-## Output obsession in outcome language
+### Output obsession in outcome language
 
 This failure mode occurs when an organisation adopts the language of outcomes — "we focus on value delivery, not feature factories" — while continuing to measure, incentivise, and govern based on outputs.
 
@@ -77,7 +70,7 @@ The correction is the alignment between stated values and actual measurement des
 
 ---
 
-## "Lightweight" becoming "no discipline"
+### "Lightweight" becoming "no discipline"
 
 A specific reaction to heavy governance processes — the approval gates, the documentation requirements, the formal reviews — is to eliminate them entirely in the name of agility or pragmatism. The team is "lightweight" and "pragmatic." It does not produce unnecessary documentation. It does not hold ceremonies that do not add value.
 
@@ -89,7 +82,7 @@ The correction is the distinction between ceremony and discipline — between th
 
 ---
 
-## Delegating system health to teams alone
+### Delegating system health to teams alone
 
 This failure mode occurs when leadership claims to have adopted the framework's philosophy — teams own their delivery, psychological safety is important, learning from failure is valued — while retaining the structural constraints that make those aspirations impossible.
 
@@ -101,7 +94,7 @@ The correction is the leadership accountability described in Chapter 7 — the r
 
 ---
 
-## The meta-failure — not learning from failure
+### The meta-failure — not learning from failure
 
 The failure mode that all the others feed into is the meta-failure: the organisation that experiences programme failures, framework adoption failures, and governance failures repeatedly without updating its understanding of why they occur.
 
@@ -117,7 +110,7 @@ The difference between these two is not the sophistication of the framework. It 
 
 ---
 
-## The first warning signs
+### The first warning signs
 
 The failure modes described in this chapter share a common early signal that appears before the consequences become visible: the governance layer stops asking the question that the framework is designed to answer.
 
@@ -132,7 +125,3 @@ The practical response: at every governance meeting, in every framework review, 
 When the answer is consistently yes — when the governance process is consistently producing informed, accountable decisions at the right level — the framework is working. When the answer is consistently "the process occurred" rather than "decisions were produced," the framework is being performed rather than applied.
 
 That distinction is the only one that matters.
-
----
-
-*End of Chapter 26*

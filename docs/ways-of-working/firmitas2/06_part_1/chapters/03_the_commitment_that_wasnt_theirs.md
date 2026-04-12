@@ -72,23 +72,54 @@ The diagram below shows how this plays out across a programme - and across the p
 
 ```mermaid
 flowchart TD
-    A[Commitment made\nwithout engineering input] --> B[Engineering produces\nhonest three-point estimate]
-    B --> C[Gap between commitment\nand honest estimate]
-    C --> D{Governance\nresponse}
-    D -->|Common| E[Compress estimate\ntoward commitment\nRisk register noted]
-    D -->|Rare| F[Acknowledge gap\nManage risk\nRebaseline or renegotiate]
-    E --> G[Programme proceeds\non unachievable plan]
-    G --> H[Risks materialise\non schedule]
-    H --> I[Programme fails\nor significantly overruns]
-    I --> J[Accountability travels\ndownward to delivery team]
-    J --> K[Organisation concludes:\nengineers cannot deliver]
-    K --> L[Next programme:\ntighter control\nless trust\nmore pressure]
-    L --> A
-    F --> M[Programme proceeds\non honest plan]
-    M --> N[Risks managed\nwhen actioned]
-    N --> O[Programme delivers\nto honest estimate]
-    O --> P[Organisation learns:\nhonest estimates\nare reliable]
-    P --> Q[Next programme:\nmore trust\nbetter estimation\nbetter outcomes]
+    A["Commitment made<br>without engineering input"] --> B["Engineering produces<br>honest three-point estimate"]
+    B --> C["Gap identified<br>Commitment vs estimate"]
+
+    C --> D{"Governance response"}
+
+    %% Negative loop (common)
+    D -->|Common| E["Compress estimate<br>towards commitment<br>Risk noted but accepted"]
+    E --> F["Programme proceeds<br>on unachievable plan"]
+    F --> G["Risks materialise<br>predictably"]
+    G --> H["Programme fails<br>or overruns"]
+    H --> I["Accountability pushed<br>to delivery teams"]
+    I --> J["Conclusion:<br>Engineers cannot deliver"]
+    J --> K["Next programme:<br>More control<br>Less trust<br>More pressure"]
+    K --> A
+
+    %% Positive loop (rare)
+    D -->|Rare| L["Acknowledge gap<br>Make trade-offs visible"]
+    L --> M["Rebaseline or renegotiate<br>scope / time / cost"]
+    M --> N["Programme proceeds<br>on honest plan"]
+    N --> O["Risks actively managed"]
+    O --> P["Programme delivers<br>to realistic expectations"]
+    P --> Q["Conclusion:<br>Estimates are reliable"]
+    Q --> R["Next programme:<br>More trust<br>Better decisions"]
+    R --> A
+
+    %% Styling
+    style A fill:#F5F5F5,stroke:#666,color:#222
+    style B fill:#E6F1FB,stroke:#185FA5,color:#0C447C
+    style C fill:#FAEEDA,stroke:#BA7517,color:#412402
+    style D fill:#FFF4CC,stroke:#B38F00,color:#4D3B00
+
+    %% Negative path
+    style E fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style F fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style G fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style H fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style I fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style J fill:#FCEBEB,stroke:#E24B4A,color:#501313
+    style K fill:#FCEBEB,stroke:#E24B4A,color:#501313
+
+    %% Positive path
+    style L fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style M fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style N fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style O fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style P fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style Q fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style R fill:#E1F5EE,stroke:#0F6E56,color:#04342C
 ```
 
 The left-hand path - the common one - does not produce a single failure. It produces a cycle. Each iteration of the cycle reinforces the conditions that cause the next failure. Trust in engineering estimates decreases. Control increases. The gap between the people who make commitments and the people who keep them widens. The next programme is harder to run well than the one before it.

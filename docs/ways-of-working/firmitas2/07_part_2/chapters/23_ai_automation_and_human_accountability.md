@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 25 — Chapter 23: AI, Automation, and Human Accountability
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 23 — AI, Automation, and Human Accountability
+## AI, Automation, and Human Accountability
 
 Engineering work is changing. The tools available to engineers — for generating code, for producing documentation, for analysing requirements, for designing tests, for reviewing architecture — are developing at a pace that is genuinely transforming the cost of certain activities that previously consumed substantial human effort. A requirements document that took a senior engineer two weeks to produce can now be drafted in hours. Test cases that required careful manual construction can be generated against a specification automatically. Code that implemented a well-specified behaviour can be produced by a tool that did not exist three years ago.
 
@@ -15,7 +8,7 @@ This chapter addresses AI and automation in the context of the Firmitas framewor
 
 ---
 
-## AI as an accelerator, not a replacement
+### AI as an accelerator, not a replacement
 
 The starting position is simple and important: AI tooling is an accelerator, not a replacement for engineering judgement, engineering accountability, or the human understanding that gives engineering work its meaning and its consequences.
 
@@ -29,7 +22,7 @@ In each case, the AI produces the first draft. The human provides the judgement 
 
 ---
 
-## Where AI accelerates across the delivery lifecycle
+### Where AI accelerates across the delivery lifecycle
 
 AI tooling provides genuine acceleration at specific points in the delivery lifecycle. Understanding where the acceleration is real allows organisations to capture it. Understanding where it is illusory prevents them from accepting false confidence in its place.
 
@@ -47,7 +40,7 @@ The specific risk in this phase is the AI-generated test problem. Tests generate
 
 ---
 
-## Specification as the primary engineering discipline
+### Specification as the primary engineering discipline
 
 The collapse of implementation cost has a specific implication that the Firmitas framework addresses directly: as implementation becomes cheaper and faster, specification becomes more important, not less.
 
@@ -59,7 +52,7 @@ The organisation that responds to AI-assisted delivery by relaxing its requireme
 
 ---
 
-## Verification must tighten as generation accelerates
+### Verification must tighten as generation accelerates
 
 The relationship between the speed of generation and the rigour of verification is inverse, not proportional. When generation is slow, verification happens continuously — the human producing the artefact is also verifying it as they produce it, catching errors as they introduce them. When generation is fast, the artefact arrives before the human reviewer is ready for it, and the social pressure to accept the output — because it looks complete and was delivered quickly — creates the conditions for superficial review.
 
@@ -69,7 +62,7 @@ The specific risk to manage is automation bias — the human tendency to trust o
 
 ---
 
-## Provenance and traceability in AI-assisted delivery
+### Provenance and traceability in AI-assisted delivery
 
 When AI tools contribute to engineering artefacts — generating requirements, producing test cases, drafting design rationale, creating documentation — the provenance of those contributions must be visible. Not for blame purposes. For review purposes.
 
@@ -81,7 +74,7 @@ The traceability spine described in Chapter 14 applies with full force to AI-ass
 
 ---
 
-## Accountability cannot be automated away
+### Accountability cannot be automated away
 
 The most fundamental governance principle in AI-assisted engineering delivery is stated in Principle 5 and applies with particular force here: leadership owns the system, not the intention.
 
@@ -99,7 +92,7 @@ Human override mechanisms are present and functional. The ability to stop an aut
 
 ---
 
-## AI governance in regulated programmes
+### AI governance in regulated programmes
 
 For programmes operating in regulated environments, AI governance carries specific obligations that the framework must address.
 
@@ -113,7 +106,7 @@ The third is the question of auditability. Regulatory bodies increasingly expect
 
 ---
 
-## The human skills that become more valuable
+### The human skills that become more valuable
 
 The shift in engineering work produced by AI acceleration does not diminish the value of engineering expertise. It changes which expertise matters most.
 
@@ -129,7 +122,7 @@ These are not new skills. They are the skills that have always distinguished goo
 
 ---
 
-## What does not change
+### What does not change
 
 The Firmitas principles do not change in an AI-assisted environment. They become more relevant.
 
@@ -140,7 +133,3 @@ Principle 4 — delivery knowledge lives closest to the work — applies with gr
 Principle 9 — decisions are first-class engineering artefacts — applies to AI-assisted decisions as fully as to human ones. A decision to accept an AI-generated requirements document without substantive review is a decision with consequences. A decision to deploy AI-generated code without adequate testing is a decision with consequences. These decisions must be visible, owned, and traceable — not hidden inside the automation.
 
 Principle 12 — your people are your most significant investment — applies with particular urgency in a period when AI-assisted delivery creates pressure to reduce headcount in the belief that tools have replaced the need for people. The tools have not replaced the need for people. They have changed which people and which skills matter most. The organisation that responds to AI acceleration by reducing the engineering investment that produces specification quality, systems thinking, and risk reasoning capability will discover, when its AI-assisted programmes fail in the ways this chapter has described, that the tools did not replace the judgement that the people they let go had been providing.
-
----
-
-*End of Chapter 23 — End of Part Two*

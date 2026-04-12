@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 20 — Chapter 18: Communication, Information Flow, and Documentation
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 18 — Communication, Information Flow, and Documentation
+## Communication, Information Flow, and Documentation
 
 The failure in Chapter 1 was, at its most fundamental level, a communication failure. Not in the interpersonal sense — the engineers communicated clearly. They produced a risk register that named three specific, actionable risks. They presented an honest three-point estimate. They described the conditions that the programme depended on. The communication was precise, timely, and accurate.
 
@@ -17,7 +10,7 @@ Communication in Firmitas is a designed system, not an emergent by-product of go
 
 ---
 
-## Communication is a system, not a skill
+### Communication is a system, not a skill
 
 The most persistent misattribution in engineering programme communication is the treatment of communication failures as individual skill failures. When information does not reach the people who need it, the diagnosis is frequently "poor communication" — implying that someone did not communicate clearly enough, frequently enough, or to the right person.
 
@@ -29,7 +22,7 @@ The system determines what information is produced, how honestly it is presented
 
 ---
 
-## Information that must flow
+### Information that must flow
 
 Not all information is equally important to programme outcomes. The information failures that most consistently damage programmes are failures in a specific set of information types — the ones that carry risk, drive decisions, and connect delivery reality to governance action.
 
@@ -51,7 +44,7 @@ Information that contradicts the plan is more valuable than information that con
 
 ---
 
-## The story of what has been done
+### The story of what has been done
 
 Chapter 4 identified organisational memory — the preservation of decisions, reasoning, and the story of why things were built as they were — as one of the most critical and most commonly lost forms of knowledge.
 
@@ -63,7 +56,7 @@ The story is preserved through the practices described in this chapter — the A
 
 ---
 
-## Asynchronous by default
+### Asynchronous by default
 
 Synchronous communication — meetings, calls, real-time conversations — does not scale. It requires all participants to be available simultaneously. It produces decisions and agreements that exist only in the memories of the participants unless someone records them. It creates communication dependencies that become scheduling dependencies, adding latency to the information flows that programmes depend on.
 
@@ -79,7 +72,7 @@ The cultural shift this requires is significant. Many organisations treat synchr
 
 ---
 
-## Documentation as a delivery enabler
+### Documentation as a delivery enabler
 
 Documentation fails in most organisations for systemic reasons, not because engineers are careless. The failures are predictable.
 
@@ -93,7 +86,7 @@ The core principle is not a technical one. It is a cultural one: documentation m
 
 ---
 
-## Documentation types that matter
+### Documentation types that matter
 
 Firmitas deliberately limits the types of documentation it considers essential, focusing on the artefacts that carry decisions, reasoning, and state — rather than the artefacts that exist to satisfy compliance requirements that could be satisfied more efficiently by the former.
 
@@ -109,7 +102,7 @@ Firmitas deliberately limits the types of documentation it considers essential, 
 
 ---
 
-## Signals, noise, and information hygiene
+### Signals, noise, and information hygiene
 
 More information is not better information. The programme that produces comprehensive status reports, detailed meeting minutes, exhaustive design documents, and complete audit trails for every decision creates an information environment in which the signals that matter are buried under the volume of information that exists because someone believed that documentation equalled governance.
 
@@ -121,7 +114,7 @@ The cognitive load of navigating an information environment full of stale, redun
 
 ---
 
-## Leadership's role in information flow
+### Leadership's role in information flow
 
 Leadership behaviour is the strongest determinant of whether information flows honestly in a programme. Not the documentation tools. Not the risk register format. Not the governance processes. The behaviour of the people at the top of the authority structure, and specifically how they respond when information arrives that is uncomfortable.
 
@@ -136,7 +129,3 @@ The programme board in Chapter 1 did not lack information. It lacked the governa
 Communication is a system. Leadership designs the system. The system produces the information environment. The information environment determines the quality of the decisions. The quality of the decisions determines the programme's outcomes.
 
 Design the system deliberately.
-
----
-
-*End of Chapter 18*

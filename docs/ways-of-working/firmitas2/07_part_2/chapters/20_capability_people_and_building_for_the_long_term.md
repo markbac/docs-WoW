@@ -1,11 +1,4 @@
-# Firmitas: A Framework for Sustainable Engineering Delivery
-
-**Document:** 22 — Chapter 20: Capability, People, and Building for the Long Term
-**Book section:** Part Two — The Framework
-
----
-
-# Chapter 20 — Capability, People, and Building for the Long Term
+## Capability, People, and Building for the Long Term
 
 A programme can have sound architecture, honest estimates, a functional risk register, and a governance model that generates decisions rather than acknowledgements — and still fail to deliver if the people responsible for the delivery do not have the capability the work requires. Capability gaps are programme risks. They are among the most common programme risks and among the most consistently underestimated.
 
@@ -15,7 +8,7 @@ This chapter addresses capability as a delivery discipline — how gaps are iden
 
 ---
 
-## Capability gaps are programme risks
+### Capability gaps are programme risks
 
 The lead systems engineer on the programme in Chapter 1 identified three red risks in week three. None of them was a capability gap. That is not because capability gaps did not exist on that programme — they almost certainly did. It is because capability gaps are rarely surfaced as programme risks in the way that technical and integration risks are.
 
@@ -27,7 +20,7 @@ The informal management is not always wrong. Some capability gaps are appropriat
 
 ---
 
-## Identifying capability gaps
+### Identifying capability gaps
 
 Capability gap identification is a structured activity that belongs in the programme's foundations phase, not a conversation that happens when a problem has already surfaced.
 
@@ -39,7 +32,7 @@ The gap between these two assessments is the capability risk. It should be enter
 
 ---
 
-## The capability decision framework
+### The capability decision framework
 
 When a capability gap is identified, the response must be proportional to the criticality of the capability and the duration for which it is needed. The most common response — on-the-job upskilling with minimal support — is chosen because it is cheap and immediate, but it is appropriate only when the gap is small, the capability is not on the critical path, and adequate support and slack exist for genuine learning to occur.
 
@@ -55,7 +48,7 @@ Four questions determine the appropriate response.
 
 ---
 
-## The options and their honest assessment
+### The options and their honest assessment
 
 **On-the-job upskilling with structured support** is the most common response and the most commonly misapplied one. It is appropriate when the gap is modest, the work is not on the critical path, the person has adequate cognitive slack to learn while delivering, and the support — a mentor, a pairing partner, protected learning time — is genuinely provided rather than nominally promised. It is the most likely to be applied when none of these conditions are met, because it is the cheapest option and the one that requires no difficult decisions.
 
@@ -71,7 +64,7 @@ The risk of specialist contractor engagement is dependency — the programme bec
 
 ---
 
-## People are not interchangeable
+### People are not interchangeable
 
 The governance and commercial pressure that produces the capability responses described above also produces a more fundamental misframing: the treatment of people as interchangeable units of capacity that can be swapped in and out of programmes without cost to programme outcomes or to the people themselves.
 
@@ -85,7 +78,7 @@ Principle 12 exists because this cost is real and because the treatment of peopl
 
 ---
 
-## Building capability for the long term
+### Building capability for the long term
 
 The argument in this chapter so far has been primarily about managing capability gaps — the immediate, programme-level responses to capability that is insufficient for current delivery needs. But capability management has a longer horizon than any single programme, and the organisations that consistently deliver well are the ones that build capability deliberately over time rather than responding to gaps reactively when programmes are already at risk.
 
@@ -101,7 +94,7 @@ The organisations that retain deep technical capability offer technical career p
 
 ---
 
-## The cost of getting this wrong
+### The cost of getting this wrong
 
 The cost of poor capability management is not visible on a delivery dashboard. It accumulates in ways that look like execution problems rather than capability problems — slower delivery in areas where the capability is weakest, higher defect rates in components built by engineers who are developing rather than competent, integration failures at the boundaries where discipline-specific knowledge should have been applied and was not.
 
@@ -114,7 +107,3 @@ The governance response, when a capability gap surfaces as a delivery problem, s
 That question is more uncomfortable than the pressure response. It locates the cause correctly. It requires the governance layer to examine its own risk management rather than the team's delivery performance. It produces the learning that might prevent the next programme from experiencing the same gap in the same way.
 
 That is what capability management, properly done, looks like.
-
----
-
-*End of Chapter 20*
