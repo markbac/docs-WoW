@@ -1,2 +1,8 @@
 \cleardoublepage
 \tableofcontents
+
+\cleardoublepage
+\listoffigures
+
+\cleardoublepage
+\listoftables

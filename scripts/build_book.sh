@@ -192,6 +192,8 @@ PANDOC_COMMON=(
   --metadata "git_commit=$GIT_HASH"
   --metadata "git_dirty=$GIT_DIRTY"
   --metadata "subtitle="
+  --metadata lof=true                 # Enables List of Figures logic
+  --metadata lot=true                 # Enables List of Tables logic
   --resource-path="$FLATTENED_MEDIA"
   --section-divs
   --standalone
